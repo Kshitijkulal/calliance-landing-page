@@ -16,6 +16,7 @@
   --color-light-grey: #808285;
   --color-dark-grey: #535353;
   --color-card-border: #E5E5E5;
+  --color-section-alt: #EEECEA;
 
   /* --- Shadows --- */
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
@@ -49,6 +50,7 @@
   --color-light-grey: var(--color-light-grey);
   --color-dark-grey: var(--color-dark-grey);
   --color-card-border: var(--color-card-border);
+  --color-section-alt: var(--color-section-alt);
 
   /* Font Family */
   --font-sans: var(--font-inter);

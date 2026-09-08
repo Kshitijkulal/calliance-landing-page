@@ -55,12 +55,12 @@ export default function IndustriesSection() {
   };
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto py-[6%] flex flex-col gap-[5%] overflow-hidden px-[4%]">
+    <section className="w-full max-w-[1440px] mx-auto py-[6%] flex flex-col gap-8 overflow-hidden px-[4%]">
 
       {/* Header — split layout */}
-      <div className="flex flex-col md:flex-row items-start gap-6 md:gap-[5%]">
-        {/* Heading — takes ~half width on desktop */}
-        <div className="w-full md:w-[45%]">
+      <div className="flex flex-col md:flex-row items-start gap-4 md:gap-[3%]">
+        {/* Heading — 65% width so it wraps to exactly 2 lines */}
+        <div className="w-full md:w-[65%]">
           <h2
             className="font-normal uppercase m-0"
             style={{
@@ -74,10 +74,10 @@ export default function IndustriesSection() {
           </h2>
         </div>
 
-        {/* Description — right side */}
-        <div className="w-full md:w-[45%] flex items-center">
+        {/* Description — 32% width so it wraps to 3 lines like Figma */}
+        <div className="w-full md:w-[32%] flex items-center">
           <p
-            className="text-base sm:text-lg font-normal leading-relaxed m-0"
+            className="text-base font-normal leading-relaxed m-0"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
@@ -137,8 +137,8 @@ export default function IndustriesSection() {
                 className="w-[80vw] sm:w-[60vw] md:w-[349px] h-auto md:h-[316px] shrink-0 flex flex-col gap-3 pt-4 pb-4 px-6 rounded-xl border border-solid"
                 style={{
                   boxShadow: "var(--shadow-industry-card)",
-                  backgroundColor: "var(--color-white)",
-                  borderColor: "var(--color-card-border)",
+                  background: "linear-gradient(135deg, rgba(229, 225, 216, 0.6) 0%, var(--color-primary-beige) 15%, var(--color-primary-beige) 85%, #FFFFFF 100%)",
+                  borderColor: "var(--color-white)",
                 }}
               >
                 {/* Top: Icon + Title */}
