@@ -55,18 +55,19 @@ export default function IndustriesSection() {
   };
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto py-[6%] flex flex-col gap-8 overflow-hidden px-[4%]">
+    <section className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col gap-12 md:gap-19 overflow-hidden px-[6%]">
 
       {/* Header — split layout */}
-      <div className="flex flex-col md:flex-row items-start gap-4 md:gap-[3%]">
-        {/* Heading — 65% width so it wraps to exactly 2 lines */}
-        <div className="w-full md:w-[65%]">
+      <div className="flex flex-col md:flex-row items-start gap-4 md:gap-2">
+        {/* Heading */}
+        <div className="max-w-[680px] shrink-0">
           <h2
             className="font-normal uppercase m-0"
             style={{
               fontFamily: "var(--font-bebas-neue), sans-serif",
-              fontSize: "clamp(28px, 4.5vw, 60px)",
-              lineHeight: "1.1",
+              fontSize: "clamp(28px, 4vw, 54px)",
+              lineHeight: "0.95",
+              letterSpacing: "-0.01em",
               color: "var(--color-primary-black)",
             }}
           >
@@ -74,10 +75,10 @@ export default function IndustriesSection() {
           </h2>
         </div>
 
-        {/* Description — 32% width so it wraps to 3 lines like Figma */}
-        <div className="w-full md:w-[32%] flex items-center">
+        {/* Description */}
+        <div className="max-w-[550px] flex items-center pt-2 md:pl-1">
           <p
-            className="text-base font-normal leading-relaxed m-0"
+            className="text-[19px] font-normal leading-snug m-0"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
@@ -119,7 +120,7 @@ export default function IndustriesSection() {
         <div className="flex-1 relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex items-stretch gap-3 overflow-x-auto overflow-y-hidden pb-2"
+            className="flex items-stretch gap-4 md:gap-6 overflow-x-auto overflow-y-hidden pb-2"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
