@@ -9,11 +9,13 @@
 :root {
   /* --- Colors --- */
   --color-primary-black: #1E1E1E;
+  --color-white: #FFFFFF;
   --color-off-white: #DBDCDC;
   --color-secondary-beige: #FFFDF1;
   --color-primary-beige: #FAF9F5;
   --color-light-grey: #808285;
   --color-dark-grey: #535353;
+  --color-card-border: #E5E5E5;
 
   /* --- Shadows --- */
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
@@ -21,6 +23,7 @@
   --shadow-laptop: 0 20px 60px rgba(0, 0, 0, 0.15);
   --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.05);
   --shadow-glass: 0px 6px 20px 0px #3D073426;
+  --shadow-industry-card: 0px 4px 20px 0px #FF5B041A;
 
   /* --- Glass Effect --- */
   --glass-bg: rgba(255, 255, 255, 0.4);
@@ -39,11 +42,13 @@
 @theme inline {
   /* Colors */
   --color-primary-black: var(--color-primary-black);
+  --color-white: var(--color-white);
   --color-off-white: var(--color-off-white);
   --color-secondary-beige: var(--color-secondary-beige);
   --color-primary-beige: var(--color-primary-beige);
   --color-light-grey: var(--color-light-grey);
   --color-dark-grey: var(--color-dark-grey);
+  --color-card-border: var(--color-card-border);
 
   /* Font Family */
   --font-sans: var(--font-inter);

@@ -119,7 +119,7 @@ export default function IndustriesSection() {
         <div className="flex-1 relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex items-stretch gap-4 sm:gap-5 overflow-x-auto overflow-y-hidden pb-2"
+            className="flex items-stretch gap-3 overflow-x-auto overflow-y-hidden pb-2"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -134,44 +134,48 @@ export default function IndustriesSection() {
                 key={industry.title}
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="w-[75vw] sm:w-[40vw] md:w-[30vw] lg:w-[22vw] min-w-[220px] max-w-[320px] shrink-0 flex flex-col gap-4 p-[6%] sm:p-[5%] rounded-2xl"
+                className="w-[80vw] sm:w-[60vw] md:w-[349px] h-auto md:h-[316px] shrink-0 flex flex-col gap-3 pt-4 pb-4 px-6 rounded-xl border border-solid"
                 style={{
-                  boxShadow: "0px 4px 20px 0px rgba(255, 91, 4, 0.10)",
-                  backgroundColor: "var(--color-secondary-beige)",
+                  boxShadow: "var(--shadow-industry-card)",
+                  backgroundColor: "var(--color-white)",
+                  borderColor: "var(--color-card-border)",
                 }}
               >
-                {/* Icon */}
-                <div
-                  className="p-3 rounded-full inline-flex items-center justify-center self-start"
-                  style={{ backgroundColor: "var(--color-primary-black)" }}
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-                      stroke="var(--color-secondary-beige)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                {/* Top: Icon + Title */}
+                <div className="flex flex-col gap-3">
+                  {/* Icon */}
+                  <div
+                    className="p-3 rounded-full inline-flex items-center justify-center self-start"
+                    style={{ backgroundColor: "var(--color-primary-black)" }}
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                        stroke="var(--color-secondary-beige)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-                {/* Title */}
-                <h3
-                  className="font-normal m-0"
-                  style={{
-                    fontFamily: "var(--font-bebas-neue), sans-serif",
-                    fontSize: "clamp(22px, 2.5vw, 30px)",
-                    lineHeight: "1.2",
-                    color: "var(--color-primary-black)",
-                  }}
-                >
-                  {industry.title}
-                </h3>
+                  {/* Title */}
+                  <h3
+                    className="font-normal m-0"
+                    style={{
+                      fontFamily: "var(--font-bebas-neue), sans-serif",
+                      fontSize: "30px",
+                      lineHeight: "1.2",
+                      color: "var(--color-primary-black)",
+                    }}
+                  >
+                    {industry.title}
+                  </h3>
+                </div>
 
                 {/* Description */}
                 <p
-                  className="text-sm sm:text-base font-normal leading-relaxed m-0"
+                  className="text-base font-normal leading-relaxed m-0"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                     color: "var(--color-primary-black)",
