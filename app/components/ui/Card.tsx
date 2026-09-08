@@ -13,17 +13,17 @@ interface CardProps {
 
 const variantStyles: Record<string, React.CSSProperties> = {
   default: {
-    backgroundColor: "var(--color-white)",
-    border: "1px solid var(--color-border)",
+    backgroundColor: "var(--color-secondary-beige)",
+    border: "1px solid var(--color-off-white)",
     boxShadow: "var(--shadow-card)",
   },
   outlined: {
     backgroundColor: "transparent",
-    border: "1px solid var(--color-border)",
+    border: "1px solid var(--color-off-white)",
   },
   filled: {
     backgroundColor: "var(--color-primary-beige)",
-    border: "1px solid var(--color-border)",
+    border: "1px solid var(--color-off-white)",
   },
 };
 

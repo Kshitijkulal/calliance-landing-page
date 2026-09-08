@@ -147,7 +147,7 @@ export default function CallToWorkSection() {
                   className="w-[384px] min-w-[384px] p-6 rounded-3xl flex flex-col items-center gap-4 outline-1 outline-[rgba(0,0,0,0.06)] -outline-offset-1"
                   style={{
                     boxShadow: "0px 6px 20px 0px rgba(219,220,220,0.10)",
-                    backgroundColor: "var(--color-white)",
+                    backgroundColor: "var(--color-secondary-beige)",
                   }}
                 >
                   {/* Icon */}

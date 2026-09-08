@@ -92,7 +92,7 @@ export default function LaptopMockup({
           {/* Screen content */}
           <div
             style={{
-              backgroundColor: "var(--color-white)",
+              backgroundColor: "var(--color-secondary-beige)",
               borderRadius: "var(--radius-sm) var(--radius-sm) 0 0",
               overflow: "hidden",
               position: "relative",

@@ -146,7 +146,7 @@ export default function FeaturesSection() {
               className="w-full py-5 px-6 rounded-2xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-l-4 border-t-0 border-r-0 border-b-0"
               style={{
                 boxShadow: "0px 4px 15px rgba(0,0,0,0.08)",
-                backgroundColor: "var(--color-white)",
+                backgroundColor: "var(--color-secondary-beige)",
                 borderColor: index === activeIndex ? "var(--color-primary-black)" : "transparent",
               }}
             >
@@ -204,7 +204,7 @@ export default function FeaturesSection() {
                   
                   {/* Filled State Arrow (White) */}
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
-                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="var(--color-white)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="var(--color-secondary-beige)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </motion.div>
               )}

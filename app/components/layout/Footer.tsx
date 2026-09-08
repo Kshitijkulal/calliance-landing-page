@@ -35,7 +35,7 @@ export default function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="inline-flex items-center justify-center w-6 h-6 text-[var(--color-primary-black)] transition-colors duration-200 hover:text-[var(--color-accent)]"
+                className="inline-flex items-center justify-center w-6 h-6 text-[var(--color-primary-black)] transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d={social.path} />
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="w-full border-t border-[var(--color-border-dark)]" />
+        <div className="w-full border-t border-[var(--color-light-grey)]" />
 
         {/* Main Content Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 w-full">
@@ -99,10 +99,10 @@ export default function Footer() {
               Policy
             </h4>
             <div className="flex flex-col gap-3">
-              <a href="#" className="text-sm text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-accent)]">
+              <a href="#" className="text-sm text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-primary-black)]">
                 Refund Policy
               </a>
-              <a href="#" className="text-sm text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-accent)]">
+              <a href="#" className="text-sm text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-primary-black)]">
                 Privacy Policy
               </a>
             </div>
@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Divider */}
-        <div className="w-full border-t border-[var(--color-border-dark)]" />
+        <div className="w-full border-t border-[var(--color-light-grey)]" />
 
         {/* Bottom Row — Copyright + Nav */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -132,7 +132,7 @@ export default function Footer() {
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, "-")}`}
-                className="text-sm text-[var(--color-primary-black)] font-semibold tracking-tight no-underline transition-colors duration-200 hover:text-[var(--color-accent)]"
+                className="text-sm text-[var(--color-primary-black)] font-semibold tracking-tight no-underline transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
               >
                 {label}
               </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
@@ -45,30 +46,15 @@ export default function Navbar() {
         className="mx-auto px-20 py-4 flex items-center justify-between"
       >
         {/* Logo — CALLIENCE */}
-        <a
-          href="#"
-          className="flex items-center gap-2 no-underline font-bold text-xl tracking-[0.08em]"
-          style={{
-            fontFamily: "var(--font-manrope), sans-serif",
-            color: "var(--color-primary-black)",
-          }}
-        >
-          <svg
-            width="28"
-            height="16"
-            viewBox="0 0 28 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}
-          >
-            <path
-              d="M7 1C3.5 1 1 4.5 1 8C1 11.5 3.5 15 7 15C10.5 15 12 12 14 8C16 4 17.5 1 21 1C24.5 1 27 4.5 27 8C27 11.5 24.5 15 21 15C17.5 15 16 12 14 8"
-              stroke="var(--color-primary-black)"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          CALLIENCE
+        <a href="#" className="flex items-center no-underline">
+          <Image
+            src="/logo.png"
+            alt="Callience Logo"
+            width={160}
+            height={40}
+            className="h-8 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop Nav — Pill shaped container */}
@@ -156,7 +142,7 @@ export default function Navbar() {
             style={{
               overflow: "hidden",
               backgroundColor: "var(--color-primary-beige)",
-              borderBottom: "1px solid var(--color-border)",
+              borderBottom: "1px solid var(--color-off-white)",
             }}
             className="md:hidden"
           >

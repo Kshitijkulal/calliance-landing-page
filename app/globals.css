@@ -14,13 +14,6 @@
   --color-primary-beige: #FAF9F5;
   --color-light-grey: #808285;
   --color-dark-grey: #535353;
-  --color-accent: #E8612D;
-  --color-accent-hover: #D4531F;
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-border: #E5E5E5;
-  --color-border-dark: #D0D0D0;
-  --color-accent-light: #FFF0EB;
 
   /* --- Shadows --- */
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
@@ -51,11 +44,6 @@
   --color-primary-beige: var(--color-primary-beige);
   --color-light-grey: var(--color-light-grey);
   --color-dark-grey: var(--color-dark-grey);
-  --color-accent: var(--color-accent);
-  --color-accent-hover: var(--color-accent-hover);
-  --color-accent-light: var(--color-accent-light);
-  --color-border: var(--color-border);
-  --color-border-dark: var(--color-border-dark);
 
   /* Font Family */
   --font-sans: var(--font-inter);
@@ -81,8 +69,8 @@ body {
 
 /* === Selection === */
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-color: var(--color-primary-black);
+  color: var(--color-secondary-beige);
 }
 
 /* === Scrollbar === */

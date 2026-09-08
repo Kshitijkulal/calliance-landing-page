@@ -64,7 +64,7 @@ export default function MoreThanDialerSection() {
               className="flex-1 self-stretch p-4 rounded-xl flex flex-col items-start gap-3 overflow-hidden"
               style={{
                 boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.18)",
-                backgroundColor: "var(--color-white)",
+                backgroundColor: "var(--color-secondary-beige)",
               }}
             >
               <div className="w-full flex-1 px-4 pt-4 pb-3 rounded-sm flex flex-col gap-4">

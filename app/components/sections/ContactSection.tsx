@@ -235,9 +235,9 @@ export default function ContactSection() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-lg font-semibold"
                 style={{
-                  backgroundColor: "var(--color-accent-light)",
+                  backgroundColor: "var(--color-off-white)",
                   fontFamily: "var(--font-manrope), sans-serif",
-                  color: "var(--color-accent)",
+                  color: "var(--color-primary-black)",
                 }}
               >
                 ✓ We&apos;ll be in touch soon!
@@ -257,7 +257,7 @@ export default function ContactSection() {
                   className="text-sm sm:text-lg font-semibold"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
-                    color: "var(--color-white)",
+                    color: "var(--color-secondary-beige)",
                   }}
                 >
                   Request Demo

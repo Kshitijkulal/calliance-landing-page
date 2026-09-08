@@ -18,7 +18,7 @@ interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   primary: {
     backgroundColor: "var(--color-primary-black)",
-    color: "var(--color-white)",
+    color: "var(--color-secondary-beige)",
     border: "none",
   },
   secondary: {
@@ -27,8 +27,8 @@ const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
     border: "1px solid var(--color-primary-black)",
   },
   accent: {
-    backgroundColor: "var(--color-accent)",
-    color: "var(--color-white)",
+    backgroundColor: "var(--color-primary-black)",
+    color: "var(--color-secondary-beige)",
     border: "none",
   },
   ghost: {

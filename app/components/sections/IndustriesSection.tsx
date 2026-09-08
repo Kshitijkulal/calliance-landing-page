@@ -128,7 +128,7 @@ export default function IndustriesSection() {
                 className="w-[320px] min-w-[320px] self-stretch px-6 pt-6 pb-4 rounded-xl flex flex-col items-start gap-3 overflow-hidden"
                 style={{
                   boxShadow: "0px 4px 20px 0px rgba(255,91,4,0.10)",
-                  backgroundColor: "var(--color-white)",
+                  backgroundColor: "var(--color-secondary-beige)",
                 }}
               >
                 <div className="w-full py-3 rounded-sm flex flex-col gap-4">

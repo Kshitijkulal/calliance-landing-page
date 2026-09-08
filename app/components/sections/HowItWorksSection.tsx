@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
             className="flex-[1_1_280px] min-w-[280px] p-6 rounded-xl flex flex-col gap-4"
             style={{
               boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.18)",
-              backgroundColor: "var(--color-white)",
+              backgroundColor: "var(--color-secondary-beige)",
             }}
           >
             {/* Title + Number Badge */}
