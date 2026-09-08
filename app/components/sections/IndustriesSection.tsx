@@ -120,7 +120,7 @@ export default function IndustriesSection() {
         <div className="flex-1 relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex items-stretch gap-4 md:gap-6 overflow-x-auto overflow-y-hidden pb-2"
+            className="flex items-stretch gap-4 md:gap-6 overflow-x-auto overflow-y-hidden pt-4 pb-12 px-2"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
