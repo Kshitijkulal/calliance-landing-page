@@ -72,7 +72,7 @@ html {
 }
 
 body {
-  background-color: var(--color-white);
+  background-color: var(--color-primary-beige);
   color: var(--color-primary-black);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
