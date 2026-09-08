@@ -62,7 +62,7 @@ export default function ContactSection() {
           width: "60%",
           padding: "5%",
           marginTop: "calc(-0.30 * clamp(120px, 19.5vw, 280px))",
-          boxShadow: "0 6px 20px 0 rgba(61, 7, 52, 0.15)",
+          boxShadow: "0px 6px 20px 0px #3D073426",
           backgroundColor: "rgba(255, 255, 255, 0.4)",
         }}
       >
