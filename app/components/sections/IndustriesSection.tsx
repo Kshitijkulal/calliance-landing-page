@@ -137,7 +137,7 @@ export default function IndustriesSection() {
                 className="w-[75vw] sm:w-[40vw] md:w-[30vw] lg:w-[22vw] min-w-[220px] max-w-[320px] shrink-0 flex flex-col gap-4 p-[6%] sm:p-[5%] rounded-2xl"
                 style={{
                   boxShadow: "0px 4px 20px 0px rgba(255, 91, 4, 0.10)",
-                  backgroundColor: "var(--color-white)",
+                  backgroundColor: "var(--color-secondary-beige)",
                 }}
               >
                 {/* Icon */}
