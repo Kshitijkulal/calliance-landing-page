@@ -16,211 +16,179 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+      },
     },
   };
 
   return (
-    <section
-      className="relative w-full"
-      style={{
-        backgroundColor: "var(--color-primary-beige)",
-        // Note: No overflow: hidden here so the rings can extend into the next section!
-      }}
-    >
-      <div
-        className="relative w-full mx-auto min-h-[750px] flex flex-col items-center pt-40 z-[1]"
-      >
-        {/* Concentric Circles & Orbit Dots Background */}
-        <div
-          style={{
-            position: "absolute",
-            width: "1000px",
-            height: "1000px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            top: "9px",
-            zIndex: 0,
-            pointerEvents: "none",
-          }}
+    <section className="relative w-full bg-secondary-beige overflow-hidden">
+      <div className="relative w-full mx-auto min-h-screen flex flex-col items-center pt-24 md:pt-32 z-10">
+        {/* Animated Concentric Rings Background */}
+        <motion.div
+          initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.8 }}
+          animate={{ opacity: 0.8, x: "-50%", y: "-50%", scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute top-70 md:top-120 left-1/2 w-11/12 max-w-3xl aspect-square z-0 pointer-events-none"
         >
-          {/* Ring 4 (innermost) - 256px */}
-          <div style={{ position: "absolute", width: "256px", height: "256px", left: "372px", top: "372px" }}>
+          {/* Ring 1 (Inner) - 25% */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/4 aspect-square">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.55, ease: "easeOut" }}
-              style={{ width: "100%", height: "100%", borderRadius: "50%", border: "1px solid #525252", filter: "blur(1.5px)", opacity: 0.4 }}
-            />
-            <div style={{ position: "absolute", width: "28px", height: "14px", left: "197px", top: "50px", transform: "rotate(-90deg)", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
-            <div style={{ position: "absolute", width: "28px", height: "14px", left: "52px", top: "213px", transform: "rotate(90deg)", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+            </motion.div>
           </div>
 
-          {/* Ring 3 - 541px */}
-          <div style={{ position: "absolute", width: "541px", height: "541px", left: "229px", top: "229px" }}>
+          {/* Ring 2 - 50% */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/4 aspect-square">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-              style={{ width: "100%", height: "100%", borderRadius: "50%", border: "1px solid #525252", filter: "blur(2px)", opacity: 0.4 }}
-            />
-            <div style={{ position: "absolute", width: "14px", height: "14px", left: "55px", top: "125px", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
-            <div style={{ position: "absolute", width: "14px", height: "14px", left: "485px", top: "415px", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
+              initial={{ rotate: 45 }}
+              animate={{ rotate: -315 }}
+              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+            </motion.div>
           </div>
 
-          {/* Ring 2 - 750px */}
-          <div style={{ position: "absolute", width: "750px", height: "750px", left: "125px", top: "125px" }}>
+          {/* Ring 3 - 75% */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.25, ease: "easeOut" }}
-              style={{ width: "100%", height: "100%", borderRadius: "50%", border: "1px solid #525252", filter: "blur(3px)", opacity: 0.4 }}
-            />
-            <div style={{ position: "absolute", width: "20px", height: "20px", left: "119px", top: "540px", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
-            <div style={{ position: "absolute", width: "20px", height: "20px", left: "680px", top: "150px", borderRadius: "20px", backgroundColor: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.2)" }} />
+              initial={{ rotate: 90 }}
+              animate={{ rotate: 450 }}
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+            </motion.div>
           </div>
 
-          {/* Label Pills - Absolute positioned inside the 1000x1000 box to match Figma exactly */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="hidden md:flex"
-            style={{
-              position: "absolute",
-              left: "40px",
-              top: "403px",
-              padding: "10px 20px",
-              borderRadius: "24px",
-              boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.5)",
-              backgroundColor: "rgba(255,255,255,0.95)",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-manrope), sans-serif", color: "var(--color-primary-black)" }}>Experience</span>
-          </motion.div>
+          {/* Ring 4 (Outer) - 100% */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square">
+            <motion.div
+              initial={{ rotate: 135 }}
+              animate={{ rotate: -225 }}
+              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
+            </motion.div>
+          </div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="hidden md:flex"
-            style={{
-              position: "absolute",
-              left: "238px",
-              top: "643px",
-              padding: "10px 20px",
-              borderRadius: "24px",
-              boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.5)",
-              backgroundColor: "rgba(255,255,255,0.95)",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-manrope), sans-serif", color: "var(--color-primary-black)" }}>Intelligence</span>
-          </motion.div>
+        {/* Gradient Blur Overlay extending down from the button's line */}
+        <div
+          className="absolute top-72 md:top-140 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-secondary-beige/40"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent, black 25%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent, black 25%)",
+          }}
+        />
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
-            className="hidden md:flex"
-            style={{
-              position: "absolute",
-              left: "583px",
-              top: "601px",
-              padding: "10px 20px",
-              borderRadius: "24px",
-              boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.5)",
-              backgroundColor: "rgba(255,255,255,0.95)",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-manrope), sans-serif", color: "var(--color-primary-black)" }}>Convenience</span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="hidden md:flex"
-            style={{
-              position: "absolute",
-              left: "-16px",
-              top: "577px",
-              padding: "10px 20px",
-              borderRadius: "24px",
-              boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.5)",
-              backgroundColor: "rgba(255,255,255,0.95)",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-manrope), sans-serif", color: "var(--color-primary-black)" }}>Science</span>
-          </motion.div>
-        </div>
-
-        {/* Content Content - Normal Flow (above rings) */}
-        <div className="relative z-[2] flex flex-col items-center gap-6 w-full p-0">
+        {/* Content - Normal Flow */}
+        <div className="relative z-20 flex flex-col items-center gap-6 w-full p-4 mt-8 md:mt-12 max-w-7xl">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-[0.025em] uppercase m-0"
-            style={{
-              fontFamily: "var(--font-bebas-neue), sans-serif",
-              fontSize: "clamp(48px, 8vw, 96px)",
-              lineHeight: "0.95",
-              color: "var(--color-primary-black)",
-            }}
+            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-primary-black font-bebas max-w-6xl"
           >
-            AI Voice Agents that Automate Outbound<br/>Calling and Scale Your Revenue
+            {"AI Voice Agents that Automate Outbound Calling and Scale Your Revenue"
+              .split(" ")
+              .map((word, i) => (
+                <motion.span
+                  key={i}
+                  variants={wordVariants}
+                  className="inline-block mr-2 sm:mr-3 lg:mr-4"
+                >
+                  {word}
+                </motion.span>
+              ))}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center font-normal leading-[1.4] m-0"
-            style={{
-              fontSize: "clamp(18px, 2vw, 24px)",
-              fontFamily: "var(--font-manrope), sans-serif",
-              color: "var(--color-primary-black)",
-            }}
+            className="text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
           >
-            Deploy custom, multilingual AI voice agents that handle thousands of customers conversations simultaneously. Manage every outcome from one unified platform.
+            Deploy custom, multilingual AI voice agents that handle thousands of
+            customers conversations simultaneously. Manage every outcome from
+            one unified platform.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            style={{ marginTop: "24px" }}
+            className="mt-6 md:mt-8"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-14 p-0 rounded-lg no-underline gap-3"
-              style={{
-                backgroundColor: "var(--color-primary-black)",
-                color: "var(--color-secondary-beige)",
-              }}
+              className="inline-flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige"
             >
-              <span
-                className="text-xl font-semibold"
-                style={{
-                  fontFamily: "var(--font-manrope), sans-serif",
-                }}
-              >
+              <span className="text-base sm:text-lg md:text-xl font-semibold font-manrope">
                 Request Demo
               </span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="var(--color-secondary-beige)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6 stroke-secondary-beige"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M5 12H19M19 12L13 6M19 12L13 18"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </motion.a>
+          </motion.div>
+
+          {/* Glass Bubbles */}
+          <motion.div
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15, delayChildren: 1.2 },
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-nowrap justify-start lg:justify-center gap-4 md:gap-8 lg:gap-16 mt-8 md:mt-4 lg:mt-2 w-full max-w-full overflow-x-auto pb-4 px-4"
+          >
+            {["Intelligence", "Convenience", "Experience", "Science"].map(
+              (text) => (
+                <motion.div
+                  key={text}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.6, ease: "easeOut" },
+                    },
+                  }}
+                  className="inline-flex px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-3xl bg-transparent backdrop-blur-2xl border border-primary-black/5 shadow-glass-bubble justify-center items-center overflow-hidden"
+                >
+                  <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
+                    {text}
+                  </span>
+                </motion.div>
+              ),
+            )}
           </motion.div>
         </div>
       </div>

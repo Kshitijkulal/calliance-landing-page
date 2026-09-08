@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // If you also want to allow port-specific access or localhost variants
+  allowedDevOrigins: [
+    '192.168.1.16',
+    '192.168.1.16:3000', // Include the port if accessing via port directly
+  ],
 };
 
-export default nextConfig;
+export default nextConfig; // or module.exports = nextConfig;

@@ -22,7 +22,7 @@ const variantStyles: Record<string, React.CSSProperties> = {
     border: "1px solid var(--color-off-white)",
   },
   filled: {
-    backgroundColor: "var(--color-primary-beige)",
+    backgroundColor: "var(--color-secondary-beige)",
     border: "1px solid var(--color-off-white)",
   },
 };

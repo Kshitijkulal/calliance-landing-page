@@ -54,6 +54,8 @@
 
   /* Font Family */
   --font-sans: var(--font-inter);
+  --font-bebas: var(--font-bebas-neue);
+  --font-manrope: var(--font-manrope);
 }
 
 /* === Base Styles === */
@@ -63,14 +65,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: var(--color-primary-beige);
+  background-color: var(--color-secondary-beige);
   color: var(--color-primary-black);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* === Selection === */
@@ -85,7 +89,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-primary-beige);
+  background: var(--color-secondary-beige);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -95,5 +99,17 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-dark-grey);
+}
+
+/* === Custom Utilities === */
+@layer utilities {
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, transparent, black 70%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 70%);
+  }
+
+  .shadow-glass-bubble {
+    box-shadow: 0px 7px 44px rgba(219, 220, 220, 0.18);
+  }
 }
 

@@ -33,7 +33,7 @@ export default function HowItWorksSection() {
       id="how-it-works"
       className="flex flex-col items-center pt-20 pb-0 gap-8 w-full"
       style={{
-        backgroundColor: "var(--color-primary-beige)",
+        backgroundColor: "var(--color-secondary-beige)",
       }}
     >
       {/* Header — responsive wrap layout */}

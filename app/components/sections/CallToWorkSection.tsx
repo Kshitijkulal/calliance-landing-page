@@ -74,7 +74,7 @@ export default function CallToWorkSection() {
       id="use-cases"
       className="py-20"
       style={{
-        backgroundColor: "var(--color-primary-beige)",
+        backgroundColor: "var(--color-secondary-beige)",
       }}
     >
       {/* Header */}
