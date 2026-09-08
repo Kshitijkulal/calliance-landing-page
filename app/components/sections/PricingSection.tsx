@@ -17,25 +17,26 @@ export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="w-full mx-auto py-20 flex flex-col items-center gap-8" 
+      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 overflow-hidden px-[6%]" 
     >
       {/* Header */}
-      <div className="w-[1280px] max-w-full flex flex-col gap-2">
+      <div className="w-full max-w-[1280px] flex flex-col gap-2 mx-auto items-center">
         <h2
-          className="w-full text-center font-normal uppercase"
+          className="w-full text-center font-normal uppercase m-0"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
-            fontSize: "clamp(32px, 5vw, 60px)",
-            lineHeight: "1.1",
+            fontSize: "clamp(32px, 5vw, 56px)",
+            lineHeight: "0.9",
             color: "var(--color-primary-black)",
           }}
         >
           Pricing Built Around Your Needs
         </h2>
         <p
-          className="w-full text-center text-xl font-normal leading-7"
+          className="w-full text-center text-[20px] font-normal m-0"
           style={{
             fontFamily: "var(--font-manrope), sans-serif",
+            lineHeight: "1.4",
             color: "var(--color-primary-black)",
           }}
         >
@@ -49,24 +50,26 @@ export default function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="px-6 pt-6 pb-8 rounded-xl flex flex-col items-center gap-8 overflow-hidden"
+        className="w-full max-w-[555px] px-6 py-8 rounded-xl flex flex-col items-start gap-8 border border-solid mx-auto"
         style={{
-          boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.18)",
+          boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -4px -4px 15px rgba(255, 255, 255, 1), var(--shadow-industry-card)",
+          backgroundColor: "var(--color-primary-beige)",
+          borderColor: "var(--color-white)",
         }}
       >
         {/* Checklist */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4 w-full">
           {CHECKLIST.map((item) => (
             <div
               key={item}
-              className="flex items-center gap-2" 
+              className="flex items-center gap-4" 
             >
               {/* Checkmark icon */}
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
                 <path d="M5 13L9 17L19 7" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <span
-                className="text-xl font-normal leading-7"
+                className="text-[19px] font-normal leading-relaxed"
                 style={{
                   fontFamily: "var(--font-manrope), sans-serif",
                   color: "var(--color-primary-black)",
@@ -83,14 +86,14 @@ export default function PricingSection() {
           href="#contact"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="flex items-center justify-center h-14 p-4 rounded-lg outline-2 outline-[color:var(--color-primary-black)] -outline-offset-2 no-underline"
+          className="flex items-center justify-center h-14 p-4 mt-2 mx-auto rounded-xl outline-2 outline-[color:var(--color-primary-black)] -outline-offset-2 no-underline"
           style={{
             backgroundColor: "var(--color-primary-black)",
             color: "var(--color-secondary-beige)",
           }}
         >
           <span
-            className="px-4 text-xl font-semibold tracking-tight"
+            className="px-4 text-[19px] font-semibold tracking-tight"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
             }}
