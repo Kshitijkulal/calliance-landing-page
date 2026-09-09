@@ -89,7 +89,7 @@ export default function HowItWorksSection() {
               borderColor: "var(--color-primary-black)",
               boxShadow: "none"
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0 }}
             className="group flex-[1_1_280px] min-w-[280px] pt-8 pb-8 px-7 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
             style={{
               boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
@@ -100,7 +100,7 @@ export default function HowItWorksSection() {
             {/* Title + Number Badge */}
             <div className="flex justify-between items-center gap-3">
               <h3
-                className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1 pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
+                className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige flex-1 pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
                 style={{
                   fontFamily: "var(--font-bebas-neue), sans-serif",
                 }}
@@ -108,7 +108,7 @@ export default function HowItWorksSection() {
                 {step.title}
               </h3>
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-solid transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden"
+                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-solid group-hover:opacity-0 group-hover:hidden"
                 style={{
                   boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 20px 0px rgba(0, 0, 0, 0.2)",
                   backgroundColor: "var(--color-primary-beige)",
@@ -132,7 +132,7 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-6 group-hover:pr-0"
+              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige pr-6 group-hover:pr-0"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
               }}

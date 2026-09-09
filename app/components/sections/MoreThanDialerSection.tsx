@@ -64,7 +64,7 @@ export default function MoreThanDialerSection() {
                 borderColor: "var(--color-primary-black)",
                 boxShadow: "none"
               }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0 }}
               className="group flex-1 self-stretch flex flex-col gap-3 pt-6 pb-6 px-8 rounded-xl border border-solid cursor-pointer"
               style={{
                 boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
@@ -74,7 +74,7 @@ export default function MoreThanDialerSection() {
             >
               <div className="w-full flex-1 flex flex-col gap-4">
                 <h3
-                  className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
+                  className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
                   }}
@@ -82,7 +82,7 @@ export default function MoreThanDialerSection() {
                   {card.title}
                 </h3>
                 <p
-                  className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-6 group-hover:pr-0"
+                  className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige pr-6 group-hover:pr-0"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                   }}
