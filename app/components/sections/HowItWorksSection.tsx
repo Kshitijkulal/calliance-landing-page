@@ -81,7 +81,7 @@ export default function HowItWorksSection() {
             }}
           >
             {/* Title + Number Badge */}
-            <div className="flex justify-between items-start gap-3">
+            <div className="flex justify-between items-center gap-3">
               <h3
                 className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1"
                 style={{
@@ -100,11 +100,13 @@ export default function HowItWorksSection() {
                 }}
               >
                 <span
+                  className="leading-none flex items-center justify-center"
                   style={{
                     fontSize: "16px",
                     fontWeight: 700,
                     fontFamily: "var(--font-manrope), sans-serif",
                     color: "var(--color-primary-black)",
+                    marginTop: "2px"
                   }}
                 >
                   {step.number}
@@ -114,7 +116,7 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-[18px] group-hover:text-[20px] font-normal leading-[1.3] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
+              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.3] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
               }}
