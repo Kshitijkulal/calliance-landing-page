@@ -115,7 +115,7 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.3] group-hover:leading-[1.15] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-6 group-hover:pr-0"
+              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-6 group-hover:pr-0"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
               }}
