@@ -38,15 +38,6 @@ const USE_CASES = [
   },
 ];
 
-// Pad to 12 items to ensure exactly 4 pages (dots) when showing 3 cards per page on desktop
-const DISPLAY_USE_CASES = [
-  ...USE_CASES,
-  { ...USE_CASES[0], title: USE_CASES[0].title + " " }, // slight title change for unique key
-  { ...USE_CASES[1], title: USE_CASES[1].title + " " },
-  { ...USE_CASES[2], title: USE_CASES[2].title + " " },
-  { ...USE_CASES[3], title: USE_CASES[3].title + " " },
-];
-
 export default function CallToWorkSection() {
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
@@ -67,7 +58,21 @@ export default function CallToWorkSection() {
     return () => window.removeEventListener("resize", updateCardsPerPage);
   }, []);
 
-  const totalPages = Math.ceil(DISPLAY_USE_CASES.length / cardsPerPage);
+  const totalPages = cardsPerPage === 3 ? 4 : cardsPerPage === 2 ? 4 : USE_CASES.length;
+
+  const getPageCards = (pageIndex: number) => {
+    if (cardsPerPage === 3) {
+      const offsets = [0, 3, 4, 5];
+      const start = offsets[pageIndex] || 0;
+      return USE_CASES.slice(start, start + 3);
+    } else if (cardsPerPage === 2) {
+      const offsets = [0, 2, 4, 6];
+      const start = offsets[pageIndex] || 0;
+      return USE_CASES.slice(start, start + 2);
+    } else {
+      return USE_CASES.slice(pageIndex, pageIndex + 1);
+    }
+  };
 
   useEffect(() => {
     if (currentPage >= totalPages) {
@@ -121,16 +126,16 @@ export default function CallToWorkSection() {
             onClick={handlePrev}
             initial={false}
             animate={{ 
-              opacity: currentPage > 0 ? 1 : 0.4,
-              scale: currentPage > 0 ? 1 : 0.95
+              opacity: currentPage > 0 ? 1 : 0,
+              scale: currentPage > 0 ? 1 : 0.8
             }}
             whileHover={currentPage > 0 ? { scale: 1.05 } : {}}
             whileTap={currentPage > 0 ? { scale: 0.95 } : {}}
-            disabled={currentPage === 0}
             className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
             style={{
               backgroundColor: "rgba(113,113,122,0.1)",
               cursor: currentPage > 0 ? "pointer" : "default",
+              pointerEvents: currentPage > 0 ? "auto" : "none",
             }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -147,7 +152,7 @@ export default function CallToWorkSection() {
             >
               {Array.from({ length: totalPages }).map((_, pageIndex) => (
                 <div key={pageIndex} className="w-full flex-shrink-0 flex items-stretch justify-center gap-6">
-                  {DISPLAY_USE_CASES.slice(pageIndex * cardsPerPage, (pageIndex + 1) * cardsPerPage).map((useCase) => (
+                  {getPageCards(pageIndex).map((useCase) => (
                     <div
                       key={useCase.title}
                       className="flex-1 min-w-[280px] max-w-[400px] px-6 py-10 rounded-[32px] flex flex-col items-center gap-6 border border-solid"
@@ -211,16 +216,16 @@ export default function CallToWorkSection() {
             onClick={handleNext}
             initial={false}
             animate={{ 
-              opacity: currentPage < totalPages - 1 ? 1 : 0.4,
-              scale: currentPage < totalPages - 1 ? 1 : 0.95
+              opacity: currentPage < totalPages - 1 ? 1 : 0,
+              scale: currentPage < totalPages - 1 ? 1 : 0.8
             }}
             whileHover={currentPage < totalPages - 1 ? { scale: 1.05 } : {}}
             whileTap={currentPage < totalPages - 1 ? { scale: 0.95 } : {}}
-            disabled={currentPage === totalPages - 1}
             className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
             style={{
               backgroundColor: "rgba(113,113,122,0.1)",
               cursor: currentPage < totalPages - 1 ? "pointer" : "default",
+              pointerEvents: currentPage < totalPages - 1 ? "auto" : "none",
             }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
