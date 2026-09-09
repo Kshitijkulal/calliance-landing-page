@@ -90,7 +90,7 @@ export default function HowItWorksSection() {
               boxShadow: "none"
             }}
             transition={{ duration: 0 }}
-            className="group flex-[1_1_280px] min-w-[280px] pt-8 pb-8 px-7 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
+            className="group flex-[1_1_280px] min-w-[280px] pt-8 pb-8 px-5 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
             style={{
               boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
               backgroundColor: "var(--color-primary-beige)",
