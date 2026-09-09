@@ -95,16 +95,16 @@ export default function HowItWorksSection() {
                 {step.title}
               </h3>
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 border border-solid transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden"
+                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-solid transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden"
                 style={{
-                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 20px 0px rgba(219, 220, 220, 0.4)",
+                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 20px 0px rgba(0, 0, 0, 0.2)",
                   backgroundColor: "var(--color-primary-beige)",
                   borderColor: "var(--color-white)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: "18px",
+                    fontSize: "16px",
                     fontWeight: 700,
                     fontFamily: "var(--font-manrope), sans-serif",
                     color: "var(--color-primary-black)",
