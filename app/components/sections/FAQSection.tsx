@@ -111,10 +111,11 @@ export default function FAQSection() {
               <motion.div
                 whileHover={{ scale: 1.01 }}
                 onClick={() => setOpenIndex(index)}
-                className="w-full p-4 rounded-xl flex flex-col justify-center cursor-pointer"
+                className="w-full p-4 rounded-xl flex flex-col justify-center cursor-pointer border border-solid"
                 style={{
-                  backgroundColor: "rgba(212,212,216,0.2)",
-                  boxShadow: "0px 4px 20px 0px rgba(255,91,4,0.10)",
+                  backgroundColor: "var(--color-primary-beige)",
+                  borderColor: "var(--color-white)",
+                  boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                 }}
               >
                 <div className="flex items-center gap-2">
