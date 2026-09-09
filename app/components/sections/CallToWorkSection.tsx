@@ -41,6 +41,7 @@ const USE_CASES = [
 export default function CallToWorkSection() {
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const updateCardsPerPage = () => {
@@ -80,6 +81,17 @@ export default function CallToWorkSection() {
     }
   }, [totalPages, currentPage]);
 
+  // Auto-play functionality
+  useEffect(() => {
+    if (isHovered) return;
+
+    const timer = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [totalPages, currentPage, isHovered]);
+
   const handleNext = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
   };
@@ -118,7 +130,11 @@ export default function CallToWorkSection() {
       </div>
 
       {/* Slideshow Container */}
-      <div className="w-full max-w-[1280px] mx-auto mt-14 flex flex-col items-center gap-8">
+      <div 
+        className="w-full max-w-[1280px] mx-auto mt-14 flex flex-col items-center gap-8"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         
         <div className="w-full flex items-center justify-between gap-4 md:gap-8">
           {/* Left Arrow */}
@@ -148,7 +164,7 @@ export default function CallToWorkSection() {
             <motion.div
               className="flex"
               animate={{ x: `-${currentPage * 100}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ type: "tween", ease: "easeInOut", duration: 1.5 }}
             >
               {Array.from({ length: totalPages }).map((_, pageIndex) => (
                 <div key={pageIndex} className="w-full flex-shrink-0 flex items-stretch justify-center gap-6">
@@ -236,18 +252,32 @@ export default function CallToWorkSection() {
 
         {/* Dots */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-2">
-            {Array.from({ length: totalPages }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentPage(idx)}
-                className="w-2.5 h-2.5 rounded-full border-none p-0 cursor-pointer transition-colors duration-300"
-                style={{
-                  backgroundColor: currentPage === idx ? "var(--color-primary-black)" : "rgba(113,113,122,0.2)",
-                }}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
+          <div className="flex items-center justify-center gap-3 mt-2">
+            {(() => {
+              const dots = [];
+              let grayCounter = 0;
+              for (let i = 0; i < totalPages; i++) {
+                if (i === currentPage) {
+                  dots.push({ id: "black", type: "active", pageIndex: i });
+                } else {
+                  dots.push({ id: `gray-${grayCounter}`, type: "inactive", pageIndex: i });
+                  grayCounter++;
+                }
+              }
+              return dots.map((dot) => (
+                <motion.button
+                  layout
+                  key={dot.id}
+                  onClick={() => setCurrentPage(dot.pageIndex)}
+                  className="w-3.5 h-3.5 rounded-full border-none p-0 cursor-pointer"
+                  style={{
+                    backgroundColor: dot.type === "active" ? "var(--color-primary-black)" : "rgba(113,113,122,0.2)",
+                  }}
+                  transition={{ type: "tween", ease: "easeInOut", duration: 1.5 }}
+                  aria-label={`Go to slide ${dot.pageIndex + 1}`}
+                />
+              ));
+            })()}
           </div>
         )}
 
