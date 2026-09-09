@@ -38,6 +38,15 @@ const USE_CASES = [
   },
 ];
 
+// Pad to 12 items to ensure exactly 4 pages (dots) when showing 3 cards per page on desktop
+const DISPLAY_USE_CASES = [
+  ...USE_CASES,
+  { ...USE_CASES[0], title: USE_CASES[0].title + " " }, // slight title change for unique key
+  { ...USE_CASES[1], title: USE_CASES[1].title + " " },
+  { ...USE_CASES[2], title: USE_CASES[2].title + " " },
+  { ...USE_CASES[3], title: USE_CASES[3].title + " " },
+];
+
 export default function CallToWorkSection() {
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
@@ -58,7 +67,7 @@ export default function CallToWorkSection() {
     return () => window.removeEventListener("resize", updateCardsPerPage);
   }, []);
 
-  const totalPages = Math.ceil(USE_CASES.length / cardsPerPage);
+  const totalPages = Math.ceil(DISPLAY_USE_CASES.length / cardsPerPage);
 
   useEffect(() => {
     if (currentPage >= totalPages) {
@@ -138,10 +147,10 @@ export default function CallToWorkSection() {
             >
               {Array.from({ length: totalPages }).map((_, pageIndex) => (
                 <div key={pageIndex} className="w-full flex-shrink-0 flex items-stretch justify-center gap-6">
-                  {USE_CASES.slice(pageIndex * cardsPerPage, (pageIndex + 1) * cardsPerPage).map((useCase) => (
+                  {DISPLAY_USE_CASES.slice(pageIndex * cardsPerPage, (pageIndex + 1) * cardsPerPage).map((useCase) => (
                     <div
                       key={useCase.title}
-                      className="flex-1 min-w-[280px] max-w-[400px] p-8 rounded-2xl flex flex-col items-center gap-6 border border-solid"
+                      className="flex-1 min-w-[280px] max-w-[400px] px-6 py-10 rounded-[32px] flex flex-col items-center gap-6 border border-solid"
                       style={{
                         boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                         backgroundColor: "var(--color-primary-beige)",
@@ -150,12 +159,12 @@ export default function CallToWorkSection() {
                     >
                       {/* Icon */}
                       <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+                        className="w-16 h-16 rounded-full flex items-center justify-center shrink-0"
                         style={{
                           backgroundColor: "var(--color-primary-black)",
                         }}
                       >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                           <path
                             d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
                             stroke="var(--color-secondary-beige)"
