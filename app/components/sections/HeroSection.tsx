@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroSection() {
   const containerVariants: Variants = {
@@ -24,14 +25,14 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full overflow-hidden">
       <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-16 md:pb-24 z-0">
         {/* Animated Concentric Rings Background */}
         <motion.div
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-32 md:top-48 lg:top-56 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
+          className="absolute top-32 md:top-52 lg:top-56 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
@@ -120,7 +121,7 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 4 (Outer) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
+          <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -151,7 +152,7 @@ export default function HeroSection() {
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-[1px] bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center gap-6 w-full px-4 mt-4 md:mt-8 max-w-[1350px]">
+        <div className="relative z-20 flex flex-col items-center w-full px-4 mt-16 md:mt-24 lg:mt-32 max-w-[1350px]">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
@@ -175,7 +176,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
+            className="mt-6 md:mt-10 lg:mt-16 text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
           >
             Deploy custom, multilingual AI voice agents that handle thousands of
             customers conversations simultaneously. Manage every outcome from
@@ -186,7 +187,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-6 md:mt-8"
+            className="mt-8 md:mt-12 lg:mt-16"
           >
             <motion.a
               href="#contact"
@@ -222,7 +223,7 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-4 md:gap-6 lg:gap-10 mt-8 md:mt-4 lg:mt-2 w-full max-w-5xl mx-auto pb-4 px-2 sm:px-4"
+            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-6 md:gap-10 lg:gap-16 mt-6 md:mt-8 lg:mt-10 w-full max-w-5xl mx-auto pb-4 px-2 sm:px-4"
           >
             {["Intelligence", "Convenience", "Experience", "Science"].map(
               (text, index) => {
@@ -256,6 +257,180 @@ export default function HeroSection() {
                 );
               },
             )}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Unified Platform Section merged into Hero */}
+      <div
+        id="platform"
+        className="w-full flex justify-center relative z-10 -mt-12 md:-mt-16"
+      >
+        {/* Continuous Blur Overlay for Rings */}
+        <div className="absolute inset-0 z-0 pointer-events-none backdrop-blur-[2px]" />
+
+        {/* Desktop/Large Screen Pixel-Perfect Layout */}
+        <div className="hidden lg:block relative w-full h-[800px] mx-auto z-10">
+          {/* Laptop Image (matches left: 80px, w: 968px) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{
+              position: "absolute",
+              left: "5.5%", // ~80px on 1440px
+              top: "0px",
+              width: "80%", // scaled up
+              height: "800px", // scaled up
+              pointerEvents: "none",
+            }}
+          >
+            <Image
+              src="/Mockup 1.png"
+              alt="AICaller Unified Platform"
+              fill
+              style={{ objectFit: "contain", objectPosition: "left top" }}
+              unoptimized
+            />
+          </motion.div>
+
+          {/* Text Panel (matches left: 822px, top: 240px, w: 538px) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="absolute flex flex-col items-start gap-6 z-10"
+            style={{
+              left: "60%", // shifted slightly right for scaled image
+              top: "140px", // shifted down to center with scaled image
+              width: "35%",
+            }}
+          >
+            <h2
+              className="text-[64px] leading-[0.95] font-normal uppercase m-0"
+              style={{
+                fontFamily: "var(--font-bebas-neue), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            >
+              One Unified Platform , Total Campaign Control
+            </h2>
+            <p
+              className="text-xl font-normal leading-relaxed m-0"
+              style={{
+                fontFamily: "var(--font-manrope), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            >
+              From customer outreach to call intelligence, every conversation is
+              captured, analyzed and instantly converted into actionable CRM
+              data.
+            </p>
+
+            {/* CTA */}
+            <motion.a
+              href="#platform"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline"
+              style={{
+                backgroundColor: "var(--color-primary-black)",
+                color: "var(--color-secondary-beige)",
+              }}
+            >
+              <span
+                className="text-base font-semibold"
+                style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+              >
+                Explore the Platform
+              </span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12H19M19 12L13 6M19 12L13 18"
+                  stroke="var(--color-secondary-beige)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.a>
+          </motion.div>
+        </div>
+
+        {/* Mobile/Tablet Fallback (Stacking) */}
+        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{
+              width: "120%",
+              left: "-10%",
+              position: "relative",
+              aspectRatio: "968/672",
+            }}
+          >
+            <Image
+              src="/Mockup 1.png"
+              alt="AICaller"
+              fill
+              style={{ objectFit: "contain" }}
+              unoptimized
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full flex flex-col gap-6 px-4 sm:px-6"
+          >
+            <h2
+              className="text-5xl leading-none m-0 uppercase"
+              style={{
+                fontFamily: "var(--font-bebas-neue), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            >
+              One Unified Platform , Total Campaign Control
+            </h2>
+            <p
+              className="text-lg m-0"
+              style={{
+                fontFamily: "var(--font-manrope), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            >
+              From customer outreach to call intelligence, every conversation is
+              captured, analyzed and instantly converted into actionable CRM
+              data.
+            </p>
+            <a
+              href="#platform"
+              className="inline-flex items-center justify-center h-14 px-6 rounded-lg gap-3 self-start no-underline"
+              style={{
+                backgroundColor: "var(--color-primary-black)",
+                color: "var(--color-secondary-beige)",
+              }}
+            >
+              <span
+                className="text-base font-semibold"
+                style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+              >
+                Explore the Platform
+              </span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12H19M19 12L13 6M19 12L13 18"
+                  stroke="var(--color-secondary-beige)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>

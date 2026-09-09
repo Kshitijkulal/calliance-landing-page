@@ -1,8 +1,8 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import HeroSection from "./components/sections/HeroSection";
-import UnifiedPlatformSection from "./components/sections/UnifiedPlatformSection";
 import CallToWorkSection from "./components/sections/CallToWorkSection";
+import DataSecuritySection from "./components/sections/DataSecuritySection";
 import HowItWorksSection from "./components/sections/HowItWorksSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
 import MoreThanDialerSection from "./components/sections/MoreThanDialerSection";
@@ -15,9 +15,12 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden" style={{ flex: 1, backgroundColor: "var(--color-primary-beige)" }}>
+      <main
+        className="overflow-x-hidden"
+        style={{ flex: 1, backgroundColor: "var(--color-primary-beige)" }}
+      >
         <HeroSection />
-        <UnifiedPlatformSection />
+        <DataSecuritySection />
         <CallToWorkSection />
         <HowItWorksSection />
         <FeaturesSection />
