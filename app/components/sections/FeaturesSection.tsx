@@ -93,13 +93,8 @@ const FEATURES = [
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % FEATURES.length);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, [activeIndex]);
-
+  // Auto-rotation is now handled by onAnimationComplete in the progress bar
+  // to ensure perfectly synchronized and smooth transitions without race conditions.
   return (
     <section
       id="features"
@@ -168,15 +163,18 @@ export default function FeaturesSection() {
                 </svg>
               )}
 
-              {/* Fast Dark-Gray Fill Animation (Leads the way) */}
+              {/* Clean Fill Animation (Overlays the base content) */}
               {index === activeIndex && (
                 <motion.div
                   initial={{ clipPath: "inset(0 100% 0 0)" }}
                   animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  transition={{ duration: 1.8, ease: "linear" }}
+                  onAnimationComplete={() => setActiveIndex((prev) => (prev + 1) % FEATURES.length)}
                   className="absolute left-0 top-0 w-full h-full z-1 flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[24px] box-border"
                   style={{
-                    backgroundColor: "#3F3F46", // Dark greyish color
+                    backgroundColor: "var(--color-primary-black)",
+                    willChange: "clip-path",
+                    transform: "translateZ(0)",
                   }}
                 >
                   <span
@@ -189,32 +187,6 @@ export default function FeaturesSection() {
                     {feature.title}
                   </span>
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
-                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.div>
-              )}
-
-              {/* Slow Black Fill Animation (Follows behind) */}
-              {index === activeIndex && (
-                <motion.div
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{ duration: 3.5, ease: "linear" }}
-                  className="absolute left-0 top-0 w-full h-full z-2 flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[24px] box-border"
-                  style={{
-                    backgroundColor: "var(--color-primary-black)",
-                  }}
-                >
-                  <span
-                    className="relative z-3 font-semibold text-white"
-                    style={{
-                      fontSize: "clamp(16px, 2vw, 20px)",
-                      fontFamily: "var(--font-manrope), sans-serif",
-                    }}
-                  >
-                    {feature.title}
-                  </span>
-                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-3">
                     <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </motion.div>
