@@ -30,7 +30,7 @@ export default function Navbar() {
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       }}
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 backdrop-blur-sm bg-primary-beige/50 border-b border-white/30 shadow-glass-bubble ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 backdrop-blur-[1px] bg-secondary-beige/40 border-b border-white/30 shadow-glass-bubble ${
         scrolled ? "py-2 sm:py-3" : "py-3 sm:py-5"
       }`}
     >
@@ -51,7 +51,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav — Pill shaped container */}
-        <div className="hidden lg:flex items-center justify-center h-10 sm:h-12 lg:h-14 xl:h-16 px-4 lg:px-8 xl:px-10 rounded-full gap-2 sm:gap-4 lg:gap-6 xl:gap-8 bg-dark-grey/10 backdrop-blur-xl shadow-lg shadow-dark-grey/10 transition-all duration-300">
+        <div className="hidden lg:flex items-center justify-center h-10 sm:h-12 lg:h-14 xl:h-16 px-4 lg:px-8 xl:px-10 rounded-full gap-2 sm:gap-4 lg:gap-6 xl:gap-8 bg-dark-grey/20 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.08),inset_0_2px_4px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.1)] transition-all duration-300">
           {NAV_LINKS.map((link) => (
             <motion.a
               key={link.label}

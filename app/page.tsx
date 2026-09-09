@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main style={{ flex: 1, backgroundColor: "var(--color-primary-beige)" }}>
+      <main className="overflow-x-hidden" style={{ flex: 1, backgroundColor: "var(--color-primary-beige)" }}>
         <HeroSection />
         <UnifiedPlatformSection />
         <CallToWorkSection />

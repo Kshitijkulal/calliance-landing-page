@@ -24,21 +24,41 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full bg-primary-beige overflow-hidden">
-      <div className="relative w-full mx-auto min-h-screen flex flex-col items-center pt-24 md:pt-32 z-10">
+    <section className="relative w-full">
+      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-16 md:pb-24 z-0">
         {/* Animated Concentric Rings Background */}
         <motion.div
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-48 md:top-56 lg:top-64 left-1/2 w-11/12 max-w-3xl aspect-square z-0 pointer-events-none"
+          className="absolute top-32 md:top-48 lg:top-56 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
+            <svg
+              className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+              viewBox="0 0 100 100"
+            >
+              <defs>
+                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="var(--color-dark-grey)" />
+                  <stop offset="100%" stopColor="white" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+                fill="none"
+                stroke="url(#ringGrad)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+              className="w-full h-full rounded-full relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -46,12 +66,26 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 2 */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square opacity-60">
+            <svg
+              className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+                fill="none"
+                stroke="url(#ringGrad)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
             <motion.div
               initial={{ rotate: 45 }}
               animate={{ rotate: -315 }}
               transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+              className="w-full h-full rounded-full relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -59,12 +93,26 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 3 */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square opacity-80">
+            <svg
+              className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+                fill="none"
+                stroke="url(#ringGrad)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
             <motion.div
               initial={{ rotate: 90 }}
               animate={{ rotate: 450 }}
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+              className="w-full h-full rounded-full relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -72,12 +120,26 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 4 (Outer) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
+            <svg
+              className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+                fill="none"
+                stroke="url(#ringGrad)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
             <motion.div
               initial={{ rotate: 135 }}
               animate={{ rotate: -225 }}
               transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-              className="w-full h-full rounded-full border border-dark-grey/30 relative"
+              className="w-full h-full rounded-full relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -86,17 +148,15 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Gradient Blur Overlay extending down from the button's line */}
-        <div
-          className="absolute top-1/3 md:top-1/2 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-primary-beige/40 mask-hero"
-        />
+        <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-[1px] bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center gap-6 w-full p-4 mt-8 md:mt-12 max-w-7xl">
+        <div className="relative z-20 flex flex-col items-center gap-6 w-full px-4 mt-4 md:mt-8 max-w-[1350px]">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-primary-black font-bebas max-w-6xl"
+            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90px] leading-none text-primary-black font-bebas w-full"
           >
             {"AI Voice Agents that Automate Outbound Calling and Scale Your Revenue"
               .split(" ")
@@ -162,27 +222,39 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 lg:gap-16 mt-8 md:mt-4 lg:mt-2 w-full pb-4 px-2 sm:px-4"
+            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-4 md:gap-6 lg:gap-10 mt-8 md:mt-4 lg:mt-2 w-full max-w-5xl mx-auto pb-4 px-2 sm:px-4"
           >
             {["Intelligence", "Convenience", "Experience", "Science"].map(
-              (text) => (
-                <motion.div
-                  key={text}
-                  variants={{
-                    hidden: { opacity: 0, y: "20%" },
-                    visible: {
-                      opacity: 1,
-                      y: "0%",
-                      transition: { duration: 0.6, ease: "easeOut" },
-                    },
-                  }}
-                  className="inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-3xl bg-transparent backdrop-blur-2xl border border-primary-black/5 shadow-glass-bubble justify-center items-center overflow-hidden"
-                >
-                  <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
-                    {text}
-                  </span>
-                </motion.div>
-              ),
+              (text, index) => {
+                let mobileAlignment = "lg:justify-self-center";
+                if (index === 0)
+                  mobileAlignment = "justify-self-start lg:justify-self-center";
+                else if (index === 1)
+                  mobileAlignment = "justify-self-end lg:justify-self-center";
+                else if (index === 2)
+                  mobileAlignment = "justify-self-end lg:justify-self-center";
+                else if (index === 3)
+                  mobileAlignment = "justify-self-start lg:justify-self-center";
+
+                return (
+                  <motion.div
+                    key={text}
+                    variants={{
+                      hidden: { opacity: 0, y: "20%" },
+                      visible: {
+                        opacity: 1,
+                        y: "0%",
+                        transition: { duration: 0.6, ease: "easeOut" },
+                      },
+                    }}
+                    className={`inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full backdrop-blur-[44.34px] bg-off-white/[0.18] border border-white/50 shadow-[0_8px_16px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,0.8),inset_0_-2px_4px_rgba(0,0,0,0.05)] justify-center items-center overflow-hidden ${mobileAlignment}`}
+                  >
+                    <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
+                      {text}
+                    </span>
+                  </motion.div>
+                );
+              },
             )}
           </motion.div>
         </div>
