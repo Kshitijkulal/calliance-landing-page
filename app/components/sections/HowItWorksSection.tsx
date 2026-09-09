@@ -73,7 +73,7 @@ export default function HowItWorksSection() {
               boxShadow: "none"
             }}
             transition={{ duration: 0.3 }}
-            className="group flex-[1_1_280px] min-w-[280px] p-7 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
+            className="group flex-[1_1_280px] min-w-[280px] pt-8 pb-8 px-7 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
             style={{
               boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
               backgroundColor: "var(--color-primary-beige)",
@@ -83,10 +83,9 @@ export default function HowItWorksSection() {
             {/* Title + Number Badge */}
             <div className="flex justify-between items-center gap-3">
               <h3
-                className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1"
+                className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1 pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
                 style={{
                   fontFamily: "var(--font-bebas-neue), sans-serif",
-                  lineHeight: "1.1",
                 }}
               >
                 {step.title}
@@ -116,7 +115,7 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.3] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
+              className="text-[16px] group-hover:text-[18px] font-normal leading-[1.3] group-hover:leading-[1.15] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300 pr-6 group-hover:pr-0"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
               }}
