@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main style={{ flex: 1, backgroundColor: "var(--color-secondary-beige)" }}>
+      <main style={{ flex: 1, backgroundColor: "var(--color-primary-beige)" }}>
         <HeroSection />
         <UnifiedPlatformSection />
         <CallToWorkSection />

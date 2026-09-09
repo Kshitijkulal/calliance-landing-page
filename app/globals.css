@@ -69,7 +69,7 @@ html {
 }
 
 body {
-  background-color: var(--color-secondary-beige);
+  background-color: var(--color-primary-beige);
   color: var(--color-primary-black);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -89,7 +89,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-secondary-beige);
+  background: var(--color-primary-beige);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -104,8 +104,13 @@ body {
 /* === Custom Utilities === */
 @layer utilities {
   .mask-fade-bottom {
-    mask-image: linear-gradient(to bottom, transparent, black 70%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 70%);
+    mask-image: linear-gradient(to bottom, transparent, var(--color-primary-black) 70%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, var(--color-primary-black) 70%);
+  }
+
+  .mask-hero {
+    mask-image: linear-gradient(to bottom, transparent, var(--color-primary-black) 25%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, var(--color-primary-black) 25%);
   }
 
   .shadow-glass-bubble {

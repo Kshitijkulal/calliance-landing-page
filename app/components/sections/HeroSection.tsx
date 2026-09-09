@@ -24,7 +24,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full bg-secondary-beige overflow-hidden">
+    <section className="relative w-full bg-primary-beige overflow-hidden">
       <div className="relative w-full mx-auto min-h-screen flex flex-col items-center pt-24 md:pt-32 z-10">
         {/* Animated Concentric Rings Background */}
         <motion.div
@@ -87,12 +87,7 @@ export default function HeroSection() {
 
         {/* Gradient Blur Overlay extending down from the button's line */}
         <div
-          className="absolute top-72 md:top-140 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-secondary-beige/40"
-          style={{
-            maskImage: "linear-gradient(to bottom, transparent, black 25%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent, black 25%)",
-          }}
+          className="absolute top-72 md:top-140 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-primary-beige/40 mask-hero"
         />
 
         {/* Content - Normal Flow */}
@@ -137,7 +132,7 @@ export default function HeroSection() {
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
             >
               <span className="text-base sm:text-lg md:text-xl font-semibold font-manrope">
                 Request Demo
@@ -167,7 +162,7 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="flex flex-nowrap justify-start lg:justify-center gap-4 md:gap-8 lg:gap-16 mt-8 md:mt-4 lg:mt-2 w-full max-w-full overflow-x-auto pb-4 px-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 lg:gap-16 mt-8 md:mt-4 lg:mt-2 w-full pb-4 px-2 sm:px-4"
           >
             {["Intelligence", "Convenience", "Experience", "Science"].map(
               (text) => (
@@ -181,7 +176,7 @@ export default function HeroSection() {
                       transition: { duration: 0.6, ease: "easeOut" },
                     },
                   }}
-                  className="inline-flex px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-3xl bg-transparent backdrop-blur-2xl border border-primary-black/5 shadow-glass-bubble justify-center items-center overflow-hidden"
+                  className="inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-3xl bg-transparent backdrop-blur-2xl border border-primary-black/5 shadow-glass-bubble justify-center items-center overflow-hidden"
                 >
                   <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                     {text}

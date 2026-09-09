@@ -24,38 +24,38 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: "-100%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-secondary-beige/40 border-black/5"
-          : "bg-secondary-beige/40 border-black/5"
+          ? "backdrop-blur-xl bg-white/50 border-b border-white/40 shadow-glass-bubble"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="mx-auto px-6 md:px-12 xl:px-20 py-4 flex items-center justify-between">
+      <div className="mx-auto px-4 sm:px-6 md:px-12 xl:px-20 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo — CALLIENCE */}
-        <a href="#" className="flex items-center no-underline">
+        <a href="#" className="flex items-center no-underline shrink-0">
           <Image
-            src="/logo.png"
+            src="/ai%20CALLING%20f.svg"
             alt="Callience Logo"
-            width={192}
-            height={28}
-            className="h-5 w-auto sm:h-7 sm:w-48 object-contain"
+            width={216}
+            height={100}
+            className="h-14 sm:h-16 lg:h-16 w-auto object-contain"
             priority
           />
         </a>
 
         {/* Desktop Nav — Pill shaped container */}
-        <div className="hidden lg:flex items-center h-12 px-6 rounded-full gap-6 xl:gap-12 bg-dark-grey/20 shadow-md">
+        <div className="hidden lg:flex items-center h-10 lg:h-12 px-4 lg:px-6 rounded-full gap-2 lg:gap-6 xl:gap-8 bg-white/40 backdrop-blur-md shadow-sm border border-white/50">
           {NAV_LINKS.map((link) => (
             <motion.a
               key={link.label}
               href={link.href}
-              className="no-underline text-base font-bold leading-none inline-block p-2 rounded-full text-primary-black font-sans transition-colors duration-150 hover:bg-black/5"
+              className="no-underline text-sm xl:text-base font-bold leading-none inline-block px-3 py-2 rounded-full text-primary-black font-sans transition-colors duration-150 hover:bg-white/50"
             >
               {link.label}
             </motion.a>
@@ -63,22 +63,20 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA — Request Demo */}
-        <div className="hidden lg:flex pl-1.5">
+        <div className="hidden lg:flex shrink-0">
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center justify-center h-12 px-3 py-4 rounded-lg ring-2 ring-inset ring-primary-black no-underline gap-2.5 bg-primary-black text-secondary-beige"
+            className="flex items-center justify-center h-10 lg:h-12 px-3 py-2 lg:py-4 rounded-lg ring-2 ring-inset ring-primary-black no-underline gap-2 bg-primary-black text-secondary-beige hover:bg-primary-black/90 transition-colors"
           >
-            <span className="px-4 text-base font-bold leading-none tracking-wide font-sans">
+            <span className="px-2 lg:px-4 text-sm lg:text-base font-bold leading-none tracking-wide font-sans">
               Request Demo
             </span>
             <svg
-              width="24"
-              height="24"
+              className="w-4 h-4 lg:w-5 lg:h-5 overflow-hidden"
               viewBox="0 0 24 24"
               fill="none"
-              className="overflow-hidden"
             >
               <path
                 d="M5 12H19M19 12L13 6M19 12L13 18"
@@ -93,21 +91,21 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-1 p-2 bg-transparent border-none cursor-pointer"
+          className="lg:hidden flex flex-col gap-1 p-2 bg-transparent border-none cursor-pointer group"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           <motion.span
-            animate={{ rotate: mobileOpen ? 45 : 0, y: mobileOpen ? 8 : 0 }}
-            className="block w-6 h-0.5 bg-primary-black"
+            animate={{ rotate: mobileOpen ? 45 : 0, y: mobileOpen ? 6 : 0 }}
+            className="block w-6 h-0.5 bg-primary-black transition-colors group-hover:bg-dark-grey"
           />
           <motion.span
             animate={{ opacity: mobileOpen ? 0 : 1 }}
-            className="block w-6 h-0.5 bg-primary-black"
+            className="block w-6 h-0.5 bg-primary-black transition-colors group-hover:bg-dark-grey"
           />
           <motion.span
-            animate={{ rotate: mobileOpen ? -45 : 0, y: mobileOpen ? -8 : 0 }}
-            className="block w-6 h-0.5 bg-primary-black"
+            animate={{ rotate: mobileOpen ? -45 : 0, y: mobileOpen ? -6 : 0 }}
+            className="block w-6 h-0.5 bg-primary-black transition-colors group-hover:bg-dark-grey"
           />
         </button>
       </div>
@@ -120,15 +118,15 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden bg-secondary-beige border-b border-off-white"
+            className="lg:hidden overflow-hidden bg-white/70 backdrop-blur-xl border-b border-white/50 shadow-glass-bubble"
           >
-            <div className="flex flex-col gap-6 px-6 md:px-20 py-6">
+            <div className="flex flex-col gap-4 px-6 sm:px-12 py-6">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="no-underline text-lg font-semibold text-primary-black font-sans"
+                  className="no-underline text-base sm:text-lg font-bold text-primary-black font-sans py-2 border-b border-primary-black/5 hover:text-dark-grey transition-colors"
                 >
                   {link.label}
                 </a>
@@ -136,17 +134,15 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center h-12 px-3 py-4 mt-2 rounded-lg ring-2 ring-inset ring-primary-black no-underline gap-2.5 bg-primary-black text-secondary-beige"
+                className="flex items-center justify-center h-12 px-3 py-4 mt-4 rounded-lg ring-2 ring-inset ring-primary-black no-underline gap-2.5 bg-primary-black text-secondary-beige hover:bg-primary-black/90 transition-colors"
               >
-                <span className="px-4 text-base font-bold leading-none tracking-wide font-sans">
+                <span className="px-4 text-sm sm:text-base font-bold leading-none tracking-wide font-sans">
                   Request Demo
                 </span>
                 <svg
-                  width="24"
-                  height="24"
+                  className="w-5 h-5 overflow-hidden"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="overflow-hidden"
                 >
                   <path
                     d="M5 12H19M19 12L13 6M19 12L13 18"

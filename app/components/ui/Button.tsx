@@ -15,45 +15,17 @@ interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>
   icon?: React.ReactNode;
 }
 
-const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
-  primary: {
-    backgroundColor: "var(--color-primary-black)",
-    color: "var(--color-secondary-beige)",
-    border: "none",
-  },
-  secondary: {
-    backgroundColor: "transparent",
-    color: "var(--color-primary-black)",
-    border: "1px solid var(--color-primary-black)",
-  },
-  accent: {
-    backgroundColor: "var(--color-primary-black)",
-    color: "var(--color-secondary-beige)",
-    border: "none",
-  },
-  ghost: {
-    backgroundColor: "transparent",
-    color: "var(--color-primary-black)",
-    border: "none",
-  },
+const variantClasses: Record<ButtonVariant, string> = {
+  primary: "bg-primary-black text-secondary-beige border-none hover:bg-primary-black/90",
+  secondary: "bg-transparent text-primary-black border border-primary-black hover:bg-primary-black/5",
+  accent: "bg-primary-black text-secondary-beige border-none hover:bg-primary-black/90",
+  ghost: "bg-transparent text-primary-black border-none hover:bg-primary-black/5",
 };
 
-const sizeStyles: Record<ButtonSize, React.CSSProperties> = {
-  sm: {
-    padding: "var(--space-sm) var(--space-md)",
-    fontSize: "var(--font-size-small)",
-    borderRadius: "var(--radius-md)",
-  },
-  md: {
-    padding: "var(--space-md) var(--space-lg)",
-    fontSize: "var(--font-size-nav)",
-    borderRadius: "var(--radius-lg)",
-  },
-  lg: {
-    padding: "var(--space-md) var(--space-xl)",
-    fontSize: "var(--font-size-cta)",
-    borderRadius: "var(--radius-lg)",
-  },
+const sizeClasses: Record<ButtonSize, string> = {
+  sm: "px-3 py-1.5 text-xs sm:text-sm rounded-md",
+  md: "px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base rounded-lg",
+  lg: "px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg md:text-xl rounded-xl",
 };
 
 const hoverTransition: Transition = {
@@ -72,32 +44,20 @@ export default function Button({
   style,
   ...props
 }: ButtonProps) {
-  const combinedStyle: React.CSSProperties = {
-    ...variantStyles[variant],
-    ...sizeStyles[size],
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "var(--space-sm)",
-    fontWeight: 500,
-    cursor: "pointer",
-    transition: "var(--transition-base)",
-    textDecoration: "none",
-    whiteSpace: "nowrap" as const,
-    ...style,
-  };
+  const baseClasses = "inline-flex items-center justify-center gap-2 font-medium cursor-pointer transition-colors duration-200 no-underline whitespace-nowrap";
+  const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
   if (href) {
     return (
       <motion.a
         href={href}
-        style={combinedStyle}
-        className={className}
-        whileHover={{ scale: 1.03, y: -1 }}
+        className={combinedClasses}
+        style={style}
+        whileHover={{ scale: 1.03, y: -2 }}
         whileTap={{ scale: 0.97 }}
         transition={hoverTransition}
       >
-        {icon && <span>{icon}</span>}
+        {icon && <span className="flex items-center justify-center">{icon}</span>}
         {children}
       </motion.a>
     );
@@ -105,13 +65,14 @@ export default function Button({
 
   return (
     <motion.button
-      style={combinedStyle}
-      className={className}
-      whileHover={{ scale: 1.03, y: -1 }}
+      className={combinedClasses}
+      style={style}
+      whileHover={{ scale: 1.03, y: -2 }}
       whileTap={{ scale: 0.97 }}
       transition={hoverTransition}
+      {...props}
     >
-      {icon && <span>{icon}</span>}
+      {icon && <span className="flex items-center justify-center">{icon}</span>}
       {children}
     </motion.button>
   );
