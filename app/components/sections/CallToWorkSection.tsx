@@ -73,9 +73,6 @@ export default function CallToWorkSection() {
     <section
       id="use-cases"
       className="py-20"
-      style={{
-        backgroundColor: "var(--color-secondary-beige)",
-      }}
     >
       {/* Header */}
       <div className="p-0 flex flex-col items-center gap-1.5">

@@ -32,9 +32,6 @@ export default function HowItWorksSection() {
     <section
       id="how-it-works"
       className="flex flex-col items-center pt-20 pb-0 gap-8 w-full"
-      style={{
-        backgroundColor: "var(--color-secondary-beige)",
-      }}
     >
       {/* Header — responsive wrap layout */}
       <div
@@ -65,7 +62,7 @@ export default function HowItWorksSection() {
 
       {/* Step Cards */}
       <div
-        className="w-full px-4 lg:px-20 flex flex-wrap justify-center gap-6"
+        className="w-full px-4 lg:px-20 flex flex-wrap justify-center gap-10"
       >
         {STEPS.map((step) => (
           <motion.div
@@ -76,7 +73,7 @@ export default function HowItWorksSection() {
               boxShadow: "none"
             }}
             transition={{ duration: 0.3 }}
-            className="group flex-[1_1_280px] min-w-[280px] pt-6 pb-6 px-8 rounded-xl flex flex-col gap-4 border border-solid cursor-pointer"
+            className="group flex-[1_1_280px] min-w-[280px] p-7 rounded-xl flex flex-col gap-2 border border-solid cursor-pointer"
             style={{
               boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
               backgroundColor: "var(--color-primary-beige)",
@@ -86,7 +83,7 @@ export default function HowItWorksSection() {
             {/* Title + Number Badge */}
             <div className="flex justify-between items-start gap-3">
               <h3
-                className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1"
+                className="font-normal m-0 text-[26px] group-hover:text-[30px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1"
                 style={{
                   fontFamily: "var(--font-bebas-neue), sans-serif",
                   lineHeight: "1.1",
@@ -117,7 +114,7 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-base group-hover:text-[18px] font-normal leading-relaxed group-hover:leading-snug m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
+              className="text-[18px] group-hover:text-[20px] font-normal leading-[1.3] m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
               }}

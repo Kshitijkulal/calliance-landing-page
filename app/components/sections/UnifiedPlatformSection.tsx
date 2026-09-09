@@ -9,9 +9,6 @@ export default function UnifiedPlatformSection() {
     <section
       id="platform"
       className="w-full flex justify-center relative z-1 overflow-hidden"
-      style={{
-        backgroundColor: "var(--color-secondary-beige)",
-      }}
     >
       {/* Desktop/Large Screen Pixel-Perfect Layout */}
       <div
