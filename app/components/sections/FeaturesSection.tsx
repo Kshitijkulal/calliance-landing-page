@@ -93,8 +93,12 @@ const FEATURES = [
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto-rotation is now handled by onAnimationComplete in the progress bar
-  // to ensure perfectly synchronized and smooth transitions without race conditions.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveIndex((prev) => (prev + 1) % FEATURES.length);
+    }, 2500); 
+    return () => clearTimeout(timer);
+  }, [activeIndex]);
   return (
     <section
       id="features"
@@ -139,13 +143,19 @@ export default function FeaturesSection() {
             <motion.div
               key={feature.title}
               onClick={() => setActiveIndex(index)}
-              className="w-full h-[67px] pt-[20px] pb-[20px] pr-[32px] pl-[24px] rounded-[24px] flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-solid border-t-0 border-r-0 border-b-0 border-l-[9px]"
+              className="w-full h-[67px] pt-[20px] pb-[20px] pr-[32px] pl-[33px] rounded-[24px] flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
               style={{
                 backgroundColor: index === activeIndex ? "white" : "transparent",
                 boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
-                borderColor: index === activeIndex ? "var(--color-primary-black)" : "transparent",
               }}
             >
+              {/* Static 9px Left Border to prevent anti-aliasing gaps */}
+              {index === activeIndex && (
+                <div
+                  className="absolute left-0 top-0 w-[9px] h-full z-10"
+                  style={{ backgroundColor: "var(--color-primary-black)" }}
+                />
+              )}
               {/* Base Content (Always visible, behind the fill) */}
               <span
                 className="relative z-0 font-semibold transition-colors duration-300 ease-in-out"
@@ -163,33 +173,39 @@ export default function FeaturesSection() {
                 </svg>
               )}
 
-              {/* Clean Fill Animation (Overlays the base content) */}
+              {/* Pure CSS Fill Animation — runs on GPU, zero JS overhead */}
               {index === activeIndex && (
-                <motion.div
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{ duration: 1.8, ease: "linear" }}
-                  onAnimationComplete={() => setActiveIndex((prev) => (prev + 1) % FEATURES.length)}
-                  className="absolute left-0 top-0 w-full h-full z-1 flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[24px] box-border"
-                  style={{
-                    backgroundColor: "var(--color-primary-black)",
-                    willChange: "clip-path",
-                    transform: "translateZ(0)",
-                  }}
-                >
-                  <span
-                    className="relative z-2 font-semibold text-white"
+                <div className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
+                  <div
+                    className="absolute left-0 top-0 w-full h-full overflow-hidden"
                     style={{
-                      fontSize: "clamp(16px, 2vw, 20px)",
-                      fontFamily: "var(--font-manrope), sans-serif",
+                      backgroundColor: "var(--color-primary-black)",
+                      animation: "pillFillOuter 2.5s linear forwards",
+                      willChange: "transform",
                     }}
                   >
-                    {feature.title}
-                  </span>
-                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
-                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.div>
+                    <div
+                      className="absolute left-0 top-0 w-full h-full flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[33px] box-border"
+                      style={{
+                        animation: "pillFillInner 2.5s linear forwards",
+                        willChange: "transform",
+                      }}
+                    >
+                      <span
+                        className="relative z-2 font-semibold text-white"
+                        style={{
+                          fontSize: "clamp(16px, 2vw, 20px)",
+                          fontFamily: "var(--font-manrope), sans-serif",
+                        }}
+                      >
+                        {feature.title}
+                      </span>
+                      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
+                        <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               )}
             </motion.div>
           ))}
