@@ -74,7 +74,7 @@ export default function MoreThanDialerSection() {
             >
               <div className="w-full flex-1 flex flex-col gap-4">
                 <h3
-                  className="font-normal m-0 text-[30px] group-hover:text-[44px] text-primary-black group-hover:text-secondary-beige transition-all duration-300"
+                  className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
                     lineHeight: "1.1",
@@ -83,7 +83,7 @@ export default function MoreThanDialerSection() {
                   {card.title}
                 </h3>
                 <p
-                  className="text-base group-hover:text-[22px] font-normal leading-relaxed group-hover:leading-snug m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
+                  className="text-base group-hover:text-[18px] font-normal leading-relaxed group-hover:leading-snug m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                   }}
