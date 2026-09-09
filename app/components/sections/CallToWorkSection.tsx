@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const USE_CASES = [
@@ -39,45 +39,50 @@ const USE_CASES = [
 ];
 
 export default function CallToWorkSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(3);
 
-  const checkScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
-    }
-  };
-
-  React.useEffect(() => {
-    checkScroll();
-    window.addEventListener("resize", checkScroll);
-    return () => window.removeEventListener("resize", checkScroll);
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsPerPage(2);
+      } else {
+        setCardsPerPage(3);
+      }
+    };
+    
+    updateCardsPerPage();
+    window.addEventListener("resize", updateCardsPerPage);
+    return () => window.removeEventListener("resize", updateCardsPerPage);
   }, []);
 
-  const handleScrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 420, behavior: "smooth" });
+  const totalPages = Math.ceil(USE_CASES.length / cardsPerPage);
+
+  useEffect(() => {
+    if (currentPage >= totalPages) {
+      setCurrentPage(Math.max(0, totalPages - 1));
     }
+  }, [totalPages, currentPage]);
+
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
   };
 
-  const handleScrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -420, behavior: "smooth" });
-    }
+  const handlePrev = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 0));
   };
 
   return (
     <section
       id="use-cases"
-      className="py-20"
+      className="py-20 px-[6%]"
     >
       {/* Header */}
-      <div className="p-0 flex flex-col items-center gap-1.5">
+      <div className="flex flex-col items-center gap-1.5 mx-auto max-w-[1008px]">
         <h2
-          className="w-full text-center font-normal uppercase"
+          className="w-full text-center font-normal uppercase m-0"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
             fontSize: "clamp(32px, 5vw, 60px)",
@@ -88,7 +93,7 @@ export default function CallToWorkSection() {
           Put Every Customer Call To Work
         </h2>
         <p
-          className="w-[1008px] max-w-full text-center text-xl font-normal leading-7"
+          className="w-full text-center text-xl font-normal leading-7 m-0 mt-4"
           style={{
             fontFamily: "var(--font-manrope), sans-serif",
             color: "var(--color-primary-black)",
@@ -98,20 +103,25 @@ export default function CallToWorkSection() {
         </p>
       </div>
 
-      {/* Scrollable Cards */}
-      <div className="w-full mx-auto mt-14 flex flex-col items-center gap-12 overflow-hidden">
-        <div className="w-full p-0 flex items-center gap-6">
-          {/* Left Scroll Arrow */}
+      {/* Slideshow Container */}
+      <div className="w-full max-w-[1280px] mx-auto mt-14 flex flex-col items-center gap-8">
+        
+        <div className="w-full flex items-center justify-between gap-4 md:gap-8">
+          {/* Left Arrow */}
           <motion.button
-            onClick={handleScrollLeft}
-            animate={{ opacity: canScrollLeft ? 1 : 0, scale: canScrollLeft ? 1 : 0.8 }}
-            whileHover={canScrollLeft ? { scale: 1.1 } : {}}
-            whileTap={canScrollLeft ? { scale: 0.95 } : {}}
-            className="p-3 rounded-3xl border-none flex items-center justify-center shrink-0"
+            onClick={handlePrev}
+            initial={false}
+            animate={{ 
+              opacity: currentPage > 0 ? 1 : 0.4,
+              scale: currentPage > 0 ? 1 : 0.95
+            }}
+            whileHover={currentPage > 0 ? { scale: 1.05 } : {}}
+            whileTap={currentPage > 0 ? { scale: 0.95 } : {}}
+            disabled={currentPage === 0}
+            className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
             style={{
               backgroundColor: "rgba(113,113,122,0.1)",
-              cursor: canScrollLeft ? "pointer" : "default",
-              pointerEvents: canScrollLeft ? "auto" : "none",
+              cursor: currentPage > 0 ? "pointer" : "default",
             }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -119,85 +129,89 @@ export default function CallToWorkSection() {
             </svg>
           </motion.button>
 
-          <div
-            className="flex-1 h-[240px] relative overflow-hidden" 
-          >
-            <div
-              ref={scrollRef}
-              onScroll={checkScroll}
-              className="absolute inset-0 h-[240px] flex items-center gap-6 overflow-x-auto overflow-y-hidden"
-              style={{
-                scrollbarWidth: "none",
-                msOverflowStyle: "none",
-              }}
+          {/* Cards Track */}
+          <div className="flex-1 overflow-hidden relative px-1 py-4">
+            <motion.div
+              className="flex"
+              animate={{ x: `-${currentPage * 100}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <style>{`
-                div::-webkit-scrollbar {
-                  display: none;
-                }
-              `}</style>
-              {USE_CASES.map((useCase) => (
-                <motion.div
-                  key={useCase.title}
-                  whileHover={{ y: -4, boxShadow: "0px 8px 30px rgba(219,220,220,0.25)" }}
-                  transition={{ duration: 0.2 }}
-                  className="w-[384px] min-w-[384px] p-6 rounded-3xl flex flex-col items-center gap-4 outline-1 outline-[rgba(0,0,0,0.06)] -outline-offset-1"
-                  style={{
-                    boxShadow: "0px 6px 20px 0px rgba(219,220,220,0.10)",
-                    backgroundColor: "var(--color-secondary-beige)",
-                  }}
-                >
-                  {/* Icon */}
-                  <div
-                    className="p-3.5 rounded-[60px] flex items-center justify-center"
-                    style={{
-                      backgroundColor: "var(--color-primary-black)",
-                    }}
-                  >
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                      <path d="M12 2L14.09 8.26L21 9.27L16 14.14L17.18 21.02L12 17.77L6.82 21.02L8 14.14L3 9.27L9.91 8.26L12 2Z" fill="var(--color-secondary-beige)"/>
-                    </svg>
-                  </div>
-
-                  {/* Title */}
-                  <div className="text-center">
-                    <h3
-                      className="text-[30px] font-normal leading-[36px]"
+              {Array.from({ length: totalPages }).map((_, pageIndex) => (
+                <div key={pageIndex} className="w-full flex-shrink-0 flex items-stretch justify-center gap-6">
+                  {USE_CASES.slice(pageIndex * cardsPerPage, (pageIndex + 1) * cardsPerPage).map((useCase) => (
+                    <div
+                      key={useCase.title}
+                      className="flex-1 min-w-[280px] max-w-[400px] p-8 rounded-2xl flex flex-col items-center gap-6 border border-solid"
                       style={{
-                        fontFamily: "var(--font-bebas-neue), sans-serif",
-                        color: "var(--color-primary-black)",
+                        boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
+                        backgroundColor: "var(--color-primary-beige)",
+                        borderColor: "var(--color-white)",
                       }}
                     >
-                      {useCase.title}
-                    </h3>
-                  </div>
+                      {/* Icon */}
+                      <div
+                        className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+                        style={{
+                          backgroundColor: "var(--color-primary-black)",
+                        }}
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                            stroke="var(--color-secondary-beige)"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
 
-                  {/* Description */}
-                  <p
-                    className="text-center text-lg font-normal leading-6"
-                    style={{
-                      fontFamily: "var(--font-manrope), sans-serif",
-                      color: "var(--color-primary-black)",
-                    }}
-                  >
-                    {useCase.description}
-                  </p>
-                </motion.div>
+                      {/* Content */}
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        <h3
+                          className="m-0 uppercase"
+                          style={{
+                            fontFamily: "var(--font-bebas-neue), sans-serif",
+                            fontSize: "30px",
+                            lineHeight: "1.1",
+                            color: "var(--color-primary-black)",
+                          }}
+                        >
+                          {useCase.title}
+                        </h3>
+                        <p
+                          className="m-0 text-[17px] font-normal"
+                          style={{
+                            fontFamily: "var(--font-manrope), sans-serif",
+                            lineHeight: "1.5",
+                            color: "var(--color-primary-black)",
+                          }}
+                        >
+                          {useCase.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Scroll Arrow */}
+          {/* Right Arrow */}
           <motion.button
-            onClick={handleScrollRight}
-            animate={{ opacity: canScrollRight ? 1 : 0, scale: canScrollRight ? 1 : 0.8 }}
-            whileHover={canScrollRight ? { scale: 1.1 } : {}}
-            whileTap={canScrollRight ? { scale: 0.95 } : {}}
-            className="p-3 rounded-3xl border-none flex items-center justify-center shrink-0"
+            onClick={handleNext}
+            initial={false}
+            animate={{ 
+              opacity: currentPage < totalPages - 1 ? 1 : 0.4,
+              scale: currentPage < totalPages - 1 ? 1 : 0.95
+            }}
+            whileHover={currentPage < totalPages - 1 ? { scale: 1.05 } : {}}
+            whileTap={currentPage < totalPages - 1 ? { scale: 0.95 } : {}}
+            disabled={currentPage === totalPages - 1}
+            className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
             style={{
               backgroundColor: "rgba(113,113,122,0.1)",
-              cursor: canScrollRight ? "pointer" : "default",
-              pointerEvents: canScrollRight ? "auto" : "none",
+              cursor: currentPage < totalPages - 1 ? "pointer" : "default",
             }}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -205,7 +219,26 @@ export default function CallToWorkSection() {
             </svg>
           </motion.button>
         </div>
+
+        {/* Dots */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mt-2">
+            {Array.from({ length: totalPages }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentPage(idx)}
+                className="w-2.5 h-2.5 rounded-full border-none p-0 cursor-pointer transition-colors duration-300"
+                style={{
+                  backgroundColor: currentPage === idx ? "var(--color-primary-black)" : "rgba(113,113,122,0.2)",
+                }}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
       </div>
     </section>
   );
 }
+
