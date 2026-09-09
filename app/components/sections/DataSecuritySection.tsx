@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function DataSecuritySection() {
   return (
-    <section className="w-full px-4 py-16 md:py-24 flex justify-center relative z-20">
+    <section className="w-full px-4 pt-4 pb-16 md:pt-8 md:pb-24 flex justify-center relative z-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
