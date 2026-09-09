@@ -137,7 +137,7 @@ export default function IndustriesSection() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="w-[80vw] sm:w-[60vw] md:w-[349px] h-auto md:h-[316px] shrink-0 flex flex-col gap-3 pt-4 pb-4 px-6 rounded-xl border border-solid"
                 style={{
-                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -4px -4px 15px rgba(255, 255, 255, 1), var(--shadow-industry-card)",
+                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                   backgroundColor: "var(--color-primary-beige)",
                   borderColor: "var(--color-white)",
                 }}

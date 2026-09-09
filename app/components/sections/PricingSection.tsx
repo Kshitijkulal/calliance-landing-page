@@ -52,7 +52,7 @@ export default function PricingSection() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-[555px] px-6 py-8 rounded-xl flex flex-col items-start gap-8 border border-solid mx-auto"
         style={{
-          boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -4px -4px 15px rgba(255, 255, 255, 1), var(--shadow-industry-card)",
+          boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
           backgroundColor: "var(--color-primary-beige)",
           borderColor: "var(--color-white)",
         }}
