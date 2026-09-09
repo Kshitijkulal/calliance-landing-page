@@ -31,7 +31,7 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="flex flex-col items-center pt-20 pb-0 gap-8 w-full"
+      className="flex flex-col items-center pt-20 pb-0 gap-0 w-full"
     >
       {/* Header — responsive wrap layout */}
       <div
@@ -65,13 +65,14 @@ export default function HowItWorksSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full relative min-h-[400px] lg:min-h-[600px] my-8"
+        className="w-full relative -mt-6 lg:-mt-12 -mb-12 lg:-mb-24 z-0"
       >
         <Image
           src="/how_it_works_full.png"
           alt="AICaller Full Interface"
-          fill
-          className="object-cover object-top"
+          width={1440}
+          height={800}
+          className="w-full h-auto object-contain"
           unoptimized
         />
       </motion.div>
