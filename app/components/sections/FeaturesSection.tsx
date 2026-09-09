@@ -225,7 +225,7 @@ export default function FeaturesSection() {
               <div
                 className="w-full p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
                 style={{
-                  backgroundColor: "var(--color-section-alt)",
+                  backgroundColor: "rgba(0, 0, 0, 0.02)",
                 }}
               >
                 <h3
