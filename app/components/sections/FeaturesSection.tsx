@@ -103,7 +103,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="flex flex-col items-center py-20 gap-16 overflow-hidden" 
+      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-[6%]" 
     >
       {/* Header — responsive wrap layout */}
       <div
@@ -120,16 +120,18 @@ export default function FeaturesSection() {
         >
           Built to Make Every Conversation Count
         </h2>
-        <p
-          className="flex-[1_1_500px] font-normal leading-relaxed m-0"
-          style={{
-            fontSize: "clamp(16px, 2vw, 20px)",
-            fontFamily: "var(--font-manrope), sans-serif",
-            color: "var(--color-primary-black)",
-          }}
-        >
-          Powerful voice capabilities engineered to make automated conversations feel natural, personalized, and highly effective.
-        </p>
+        <div className="flex-[1_1_500px] pt-2 md:pt-4">
+          <p
+            className="font-normal leading-relaxed m-0"
+            style={{
+              fontSize: "clamp(16px, 2vw, 20px)",
+              fontFamily: "var(--font-manrope), sans-serif",
+              color: "var(--color-primary-black)",
+            }}
+          >
+            Powerful voice capabilities engineered to make automated conversations feel natural, personalized, and highly effective.
+          </p>
+        </div>
       </div>
 
       {/* Feature List + Content Panel */}
@@ -137,16 +139,15 @@ export default function FeaturesSection() {
         className="w-full flex flex-wrap justify-center items-start gap-12"
       >
         {/* Left Column — Feature List */}
-        <div className="flex-[1_1_400px] flex flex-col gap-4 w-full">
+        <div className="flex-[1_1_616px] flex flex-col gap-2 lg:gap-4 w-full lg:max-w-[616px]">
           {FEATURES.map((feature, index) => (
-            <motion.button
+            <motion.div
               key={feature.title}
               onClick={() => setActiveIndex(index)}
-              whileHover={{ scale: 1.01 }}
-              className="w-full py-5 px-6 rounded-2xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-l-4 border-t-0 border-r-0 border-b-0"
+              className="w-full h-[67px] pt-[20px] pb-[20px] pr-[32px] pl-[24px] rounded-[24px] flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-solid border-t-0 border-r-0 border-b-0 border-l-[9px]"
               style={{
-                boxShadow: "0px 4px 15px rgba(0,0,0,0.08)",
-                backgroundColor: "var(--color-secondary-beige)",
+                backgroundColor: index === activeIndex ? "white" : "transparent",
+                boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
                 borderColor: index === activeIndex ? "var(--color-primary-black)" : "transparent",
               }}
             >
@@ -163,35 +164,21 @@ export default function FeaturesSection() {
               </span>
               {index === activeIndex && (
                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-0">
-                  <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               )}
 
-              {/* Innovative Cyber-Fill Animation (Overlays the base content) */}
+              {/* Fast Dark-Gray Fill Animation (Leads the way) */}
               {index === activeIndex && (
                 <motion.div
                   initial={{ clipPath: "inset(0 100% 0 0)" }}
                   animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{ duration: 2.5, ease: "linear" }}
-                  className="absolute left-0 top-0 w-full h-full z-1 flex justify-between items-center py-5 px-6 box-border"
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="absolute left-0 top-0 w-full h-full z-1 flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[24px] box-border"
                   style={{
-                    backgroundColor: "var(--color-primary-black)",
-                    backgroundImage: "repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px)",
+                    backgroundColor: "#3F3F46", // Dark greyish color
                   }}
                 >
-                  {/* Glowing Laser Edge */}
-                  <motion.div
-                    initial={{ left: "0%" }}
-                    animate={{ left: "100%" }}
-                    transition={{ duration: 2.5, ease: "linear" }}
-                    className="absolute top-0 bottom-0 w-[150px] -translate-x-full"
-                    style={{
-                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.2) 95%, rgba(255,255,255,0.6) 100%)",
-                      boxShadow: "4px 0 15px rgba(255,255,255,0.15)",
-                    }}
-                  />
-                  
-                  {/* Filled State Text (White) */}
                   <span
                     className="relative z-2 font-semibold text-white"
                     style={{
@@ -201,14 +188,38 @@ export default function FeaturesSection() {
                   >
                     {feature.title}
                   </span>
-                  
-                  {/* Filled State Arrow (White) */}
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
-                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="var(--color-secondary-beige)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </motion.div>
               )}
-            </motion.button>
+
+              {/* Slow Black Fill Animation (Follows behind) */}
+              {index === activeIndex && (
+                <motion.div
+                  initial={{ clipPath: "inset(0 100% 0 0)" }}
+                  animate={{ clipPath: "inset(0 0% 0 0)" }}
+                  transition={{ duration: 3.5, ease: "linear" }}
+                  className="absolute left-0 top-0 w-full h-full z-2 flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[24px] box-border"
+                  style={{
+                    backgroundColor: "var(--color-primary-black)",
+                  }}
+                >
+                  <span
+                    className="relative z-3 font-semibold text-white"
+                    style={{
+                      fontSize: "clamp(16px, 2vw, 20px)",
+                      fontFamily: "var(--font-manrope), sans-serif",
+                    }}
+                  >
+                    {feature.title}
+                  </span>
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-3">
+                    <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </motion.div>
+              )}
+            </motion.div>
           ))}
         </div>
 
@@ -224,16 +235,16 @@ export default function FeaturesSection() {
               className="w-full" 
             >
               <div
-                className="w-full p-8 rounded-3xl flex flex-col gap-6"
+                className="w-full p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
                 style={{
-                  backgroundColor: "rgba(212,212,216,0.2)",
+                  backgroundColor: "var(--color-section-alt)",
                 }}
               >
                 <h3
-                  className="font-normal leading-[1.2] m-0"
+                  className="font-normal leading-[1.1] m-0 uppercase"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
-                    fontSize: "clamp(24px, 3vw, 32px)",
+                    fontSize: "clamp(28px, 4vw, 40px)",
                     color: "var(--color-primary-black)",
                   }}
                 >
