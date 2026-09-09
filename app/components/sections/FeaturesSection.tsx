@@ -102,7 +102,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-[6%]" 
+      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20" 
     >
       {/* Header — responsive wrap layout */}
       <div
@@ -213,21 +213,21 @@ export default function FeaturesSection() {
 
         {/* Right Column — Content Panel */}
         <div className="flex-[1_1_500px] flex flex-col items-start w-full">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
-              className="w-full" 
-            >
-              <div
-                className="w-full p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
-                style={{
-                  backgroundColor: "rgba(0, 0, 0, 0.02)",
-                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
-                }}
+          <div
+            className="w-full p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.02)",
+              boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
+            }}
+          >
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-full flex flex-col gap-6"
               >
                 <h3
                   className="font-normal leading-[1.1] m-0 uppercase"
@@ -274,9 +274,9 @@ export default function FeaturesSection() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

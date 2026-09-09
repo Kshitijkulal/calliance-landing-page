@@ -28,7 +28,7 @@ export default function MoreThanDialerSection() {
       className="flex flex-col items-start" 
     >
       {/* Header */}
-      <div className="w-full mx-auto px-20 pt-20 pb-0 flex flex-col items-center gap-12">
+      <div className="w-full mx-auto px-4 lg:px-20 pt-20 pb-0 flex flex-col items-center gap-12">
         <div className="w-full flex flex-col gap-2">
           <h2
             className="w-full text-center font-normal uppercase"
@@ -54,7 +54,7 @@ export default function MoreThanDialerSection() {
       </div>
 
       {/* Cards */}
-      <div className="w-full mx-auto px-20 pt-12 pb-14 flex items-center gap-20">
+      <div className="w-full mx-auto px-4 lg:px-20 pt-12 pb-14 flex items-center gap-20">
         <div className="flex-1 py-8 flex items-start gap-8">
           {CARDS.map((card) => (
             <motion.div
