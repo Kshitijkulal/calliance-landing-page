@@ -12,10 +12,10 @@ export default function HeroSection() {
   };
 
   const wordVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: "50%" },
     visible: {
       opacity: 1,
-      y: 0,
+      y: "0%",
       transition: {
         duration: 0.5,
         ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
@@ -28,13 +28,13 @@ export default function HeroSection() {
       <div className="relative w-full mx-auto min-h-screen flex flex-col items-center pt-24 md:pt-32 z-10">
         {/* Animated Concentric Rings Background */}
         <motion.div
-          initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.8 }}
-          animate={{ opacity: 0.8, x: "-50%", y: "-50%", scale: 1 }}
+          initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
+          animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-70 md:top-120 left-1/2 w-11/12 max-w-3xl aspect-square z-0 pointer-events-none"
+          className="absolute top-48 md:top-56 lg:top-64 left-1/2 w-11/12 max-w-3xl aspect-square z-0 pointer-events-none"
         >
-          {/* Ring 1 (Inner) - 25% */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/4 aspect-square">
+          {/* Ring 1 (Inner) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
@@ -45,8 +45,8 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Ring 2 - 50% */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/4 aspect-square">
+          {/* Ring 2 */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square">
             <motion.div
               initial={{ rotate: 45 }}
               animate={{ rotate: -315 }}
@@ -58,8 +58,8 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Ring 3 - 75% */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square">
+          {/* Ring 3 */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square">
             <motion.div
               initial={{ rotate: 90 }}
               animate={{ rotate: 450 }}
@@ -71,8 +71,8 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Ring 4 (Outer) - 100% */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square">
+          {/* Ring 4 (Outer) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square">
             <motion.div
               initial={{ rotate: 135 }}
               animate={{ rotate: -225 }}
@@ -87,7 +87,7 @@ export default function HeroSection() {
 
         {/* Gradient Blur Overlay extending down from the button's line */}
         <div
-          className="absolute top-72 md:top-140 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-primary-beige/40 mask-hero"
+          className="absolute top-1/3 md:top-1/2 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-2xl bg-primary-beige/40 mask-hero"
         />
 
         {/* Content - Normal Flow */}
@@ -112,8 +112,8 @@ export default function HeroSection() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: "20%" }}
+            animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
           >
@@ -123,8 +123,8 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: "20%" }}
+            animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 1.0 }}
             className="mt-6 md:mt-8"
           >
@@ -169,10 +169,10 @@ export default function HeroSection() {
                 <motion.div
                   key={text}
                   variants={{
-                    hidden: { opacity: 0, y: 20 },
+                    hidden: { opacity: 0, y: "20%" },
                     visible: {
                       opacity: 1,
-                      y: 0,
+                      y: "0%",
                       transition: { duration: 0.6, ease: "easeOut" },
                     },
                   }}
