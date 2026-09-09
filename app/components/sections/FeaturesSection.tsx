@@ -233,7 +233,7 @@ export default function FeaturesSection() {
                   className="font-normal leading-[1.1] m-0 uppercase"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
-                    fontSize: "clamp(28px, 4vw, 40px)",
+                    fontSize: "clamp(24px, 3vw, 32px)",
                     color: "var(--color-primary-black)",
                   }}
                 >
@@ -263,7 +263,7 @@ export default function FeaturesSection() {
                       />
                       {/* The Text */}
                       <p
-                        className="text-lg font-medium leading-relaxed m-0"
+                        className="text-lg font-normal leading-relaxed m-0"
                         style={{
                           fontFamily: "var(--font-manrope), sans-serif",
                           color: "var(--color-primary-black)",
