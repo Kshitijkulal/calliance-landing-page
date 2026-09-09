@@ -70,36 +70,43 @@ export default function HowItWorksSection() {
         {STEPS.map((step) => (
           <motion.div
             key={step.number}
-            whileHover={{ y: -6 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="flex-[1_1_280px] min-w-[280px] p-6 rounded-xl flex flex-col gap-4"
+            whileHover={{ 
+              backgroundColor: "var(--color-primary-black)",
+              borderColor: "var(--color-primary-black)",
+              boxShadow: "none"
+            }}
+            transition={{ duration: 0.3 }}
+            className="group flex-[1_1_280px] min-w-[280px] pt-6 pb-6 px-8 rounded-xl flex flex-col gap-4 border border-solid cursor-pointer"
             style={{
-              boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.18)",
-              backgroundColor: "var(--color-secondary-beige)",
+              boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
+              backgroundColor: "var(--color-primary-beige)",
+              borderColor: "var(--color-white)",
             }}
           >
             {/* Title + Number Badge */}
             <div className="flex justify-between items-start gap-3">
               <h3
-                className="text-2xl font-normal leading-7 m-0 flex-1"
+                className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige transition-all duration-300 flex-1"
                 style={{
                   fontFamily: "var(--font-bebas-neue), sans-serif",
-                  color: "var(--color-primary-black)",
+                  lineHeight: "1.1",
                 }}
               >
                 {step.title}
               </h3>
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+                className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 border border-solid transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden"
                 style={{
-                  backgroundColor: "rgba(212,212,216,0.3)",
+                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 20px 0px rgba(219, 220, 220, 0.4)",
+                  backgroundColor: "var(--color-primary-beige)",
+                  borderColor: "var(--color-white)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: "14px",
+                    fontSize: "18px",
                     fontWeight: 700,
-                    fontFamily: "'Geist', var(--font-manrope), sans-serif",
+                    fontFamily: "var(--font-manrope), sans-serif",
                     color: "var(--color-primary-black)",
                   }}
                 >
@@ -110,10 +117,9 @@ export default function HowItWorksSection() {
 
             {/* Description */}
             <p
-              className="text-base font-normal leading-relaxed m-0"
+              className="text-base group-hover:text-[18px] font-normal leading-relaxed group-hover:leading-snug m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
-                color: "var(--color-primary-black)",
               }}
             >
               {step.description}
