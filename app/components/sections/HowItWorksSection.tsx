@@ -59,6 +59,22 @@ export default function HowItWorksSection() {
           From your first agent to your first full-scale campaign, we handle the technical heavy lifting. We guide you through the entire setup process so your team can focus on driving revenue not figuring out the software.
         </p>
       </div>
+      {/* Full-width Image */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full relative min-h-[400px] lg:min-h-[600px] my-8"
+      >
+        <Image
+          src="/how_it_works_full.png"
+          alt="AICaller Full Interface"
+          fill
+          className="object-cover object-top"
+          unoptimized
+        />
+      </motion.div>
 
       {/* Step Cards */}
       <div
@@ -126,22 +142,6 @@ export default function HowItWorksSection() {
         ))}
       </div>
 
-      {/* Full-width Image */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full relative min-h-[400px] lg:min-h-[600px] mt-8"
-      >
-        <Image
-          src="/how_it_works_full.png"
-          alt="AICaller Full Interface"
-          fill
-          className="object-cover object-top"
-          unoptimized
-        />
-      </motion.div>
     </section>
   );
 }
