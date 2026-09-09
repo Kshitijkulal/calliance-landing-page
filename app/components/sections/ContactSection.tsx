@@ -26,7 +26,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[18%] pb-[8%] md:pt-[24%] md:pb-[6%] overflow-hidden px-4 sm:px-6"
+      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[8%] pb-[8%] md:pt-[12%] md:pb-[6%] overflow-hidden px-4 sm:px-6"
     >
       {/* Giant Background Text */}
       <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden">
