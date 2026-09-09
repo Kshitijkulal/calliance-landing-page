@@ -59,29 +59,33 @@ export default function MoreThanDialerSection() {
           {CARDS.map((card) => (
             <motion.div
               key={card.title}
-              whileHover={{ y: -6, boxShadow: "0px 8px 50px rgba(219,220,220,0.3)" }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="flex-1 self-stretch p-4 rounded-xl flex flex-col items-start gap-3 overflow-hidden"
+              whileHover={{ 
+                backgroundColor: "var(--color-primary-black)",
+                borderColor: "var(--color-primary-black)",
+                boxShadow: "none"
+              }}
+              transition={{ duration: 0.3 }}
+              className="group flex-1 self-stretch flex flex-col gap-3 pt-6 pb-6 px-8 rounded-xl border border-solid cursor-pointer"
               style={{
-                boxShadow: "0px 6px 40px 0px rgba(219,220,220,0.18)",
-                backgroundColor: "var(--color-secondary-beige)",
+                boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
+                backgroundColor: "var(--color-primary-beige)",
+                borderColor: "var(--color-white)",
               }}
             >
-              <div className="w-full flex-1 px-4 pt-4 pb-3 rounded-sm flex flex-col gap-4">
+              <div className="w-full flex-1 flex flex-col gap-4">
                 <h3
-                  className="text-[30px] font-normal leading-[36px]"
+                  className="font-normal m-0 text-[30px] group-hover:text-[44px] text-primary-black group-hover:text-secondary-beige transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
-                    color: "var(--color-primary-black)",
+                    lineHeight: "1.1",
                   }}
                 >
                   {card.title}
                 </h3>
                 <p
-                  className="text-lg font-normal leading-6"
+                  className="text-base group-hover:text-[22px] font-normal leading-relaxed group-hover:leading-snug m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
-                    color: "var(--color-primary-black)",
                   }}
                 >
                   {card.description}
