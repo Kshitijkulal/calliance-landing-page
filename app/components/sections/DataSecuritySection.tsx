@@ -12,8 +12,7 @@ export default function DataSecuritySection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full max-w-7xl rounded-[32px] md:rounded-[48px] flex flex-col lg:flex-row items-center justify-between p-8 md:p-12 lg:p-16 gap-10 lg:gap-16"
-        style={{ backgroundColor: "var(--color-primary-black)" }}
+        className="w-full max-w-7xl rounded-3xl md:rounded-3xl flex flex-col lg:flex-row items-center justify-between p-8 md:p-12 lg:p-16 gap-10 lg:gap-16 bg-primary-black"
       >
         {/* Left: Shield Image */}
         <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
@@ -22,13 +21,13 @@ export default function DataSecuritySection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px]"
+            className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
           >
             <Image
               src="/Section 3 Badge image.png"
               alt="Data Security Shield"
               fill
-              style={{ objectFit: "contain" }}
+              className="object-contain"
               unoptimized
             />
           </motion.div>
@@ -41,11 +40,7 @@ export default function DataSecuritySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase m-0 leading-[1.1]"
-            style={{
-              fontFamily: "var(--font-bebas-neue), sans-serif",
-              color: "var(--color-secondary-beige)",
-            }}
+            className="font-bebas text-secondary-beige text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase m-0 leading-tight"
           >
             YOUR DATA , ONLY YOURS TO UNLOCK
           </motion.h2>
@@ -55,12 +50,7 @@ export default function DataSecuritySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl font-normal m-0 max-w-2xl leading-relaxed"
-            style={{
-              fontFamily: "var(--font-manrope), sans-serif",
-              color: "var(--color-secondary-beige)",
-              opacity: 0.85,
-            }}
+            className="font-manrope text-secondary-beige opacity-80 text-base sm:text-lg md:text-xl font-normal m-0 max-w-2xl leading-relaxed"
           >
             Your sensitive business and customer data is encrypted and remains
             under your control. Access and decryption are restricted to you and
@@ -76,16 +66,9 @@ export default function DataSecuritySection() {
           >
             <a
               href="#features"
-              className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 no-underline transition-transform hover:scale-105 active:scale-95"
-              style={{
-                backgroundColor: "var(--color-secondary-beige)",
-                color: "var(--color-primary-black)",
-              }}
+              className="bg-secondary-beige text-primary-black inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 no-underline transition-transform hover:scale-105 active:scale-95"
             >
-              <span
-                className="text-sm md:text-base font-bold"
-                style={{ fontFamily: "var(--font-manrope), sans-serif" }}
-              >
+              <span className="font-manrope text-sm md:text-base font-bold">
                 See More Features
               </span>
               <svg
@@ -93,7 +76,7 @@ export default function DataSecuritySection() {
                 height="20"
                 viewBox="0 0 24 24"
                 fill="none"
-                style={{ stroke: "var(--color-primary-black)" }}
+                className="stroke-primary-black"
               >
                 <path
                   d="M5 12H19M19 12L13 6M19 12L13 18"

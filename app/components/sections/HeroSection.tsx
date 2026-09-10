@@ -277,13 +277,13 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute -left-12 xl:-left-[4.5%] top-0 w-[95%] h-full pointer-events-none"
+            className="absolute -left-12 xl:-left-[4.5%] top-0 w-[105%] xl:w-[110%] h-[105%] pointer-events-none"
           >
             <Image
               src="/Mockup 1.png"
               alt="AICaller Unified Platform"
               fill
-              className="object-contain object-left-top"
+              className="object-contain object-left-top scale-105 xl:scale-110 origin-left"
               unoptimized
             />
           </motion.div>
@@ -294,12 +294,12 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="absolute flex flex-col items-start gap-6 z-10 right-0 lg:right-12 xl:right-24 top-1/4 w-1/3"
+            className="absolute flex flex-col items-start gap-5 z-10 right-4 lg:right-12 xl:right-24 top-1/4 w-[35%] xl:w-1/3"
           >
-            <h2 className="text-6xl xl:text-7xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
+            <h2 className="text-5xl xl:text-6xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
               CALL INTELLIGENTLY , CONTROL EVERYTHING
             </h2>
-            <p className="text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
+            <p className="text-lg xl:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
               Bring AI callers, campaigns and conversations together in one
               unified platform designed for intelligent outbound operations.
             </p>
@@ -333,12 +333,30 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile/Tablet Fallback (Stacking) */}
-        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-5 relative z-10">
+        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-2 relative z-10">
+          
+          {/* Heading and Paragraph above Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative w-[135%] -left-[5.5%] aspect-[968/672]"
+            className="w-full flex flex-col gap-2 px-4 sm:px-6 mt-0"
+          >
+            <h2 className="text-3xl sm:text-4xl leading-none m-0 uppercase font-bebas text-primary-black">
+              CALL INTELLIGENTLY , CONTROL EVERYTHING
+            </h2>
+            <p className="text-sm sm:text-base m-0 font-manrope text-primary-black">
+              Bring AI callers, campaigns and conversations together in one
+              unified platform designed for intelligent outbound operations.
+            </p>
+          </motion.div>
+
+          {/* Laptop Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative w-[135%] -left-[5.5%] aspect-[968/672] -my-2"
           >
             <Image
               src="/Mockup 1.png"
@@ -349,24 +367,18 @@ export default function HeroSection() {
             />
           </motion.div>
 
+          {/* Button below Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full flex flex-col gap-6 px-4 sm:px-6"
+            className="w-full flex justify-start px-4 sm:px-6 mt-0"
           >
-            <h2 className="text-5xl leading-none m-0 uppercase font-bebas text-primary-black">
-              CALL INTELLIGENTLY , CONTROL EVERYTHING
-            </h2>
-            <p className="text-lg m-0 font-manrope text-primary-black">
-              Bring AI callers, campaigns and conversations together in one
-              unified platform designed for intelligent outbound operations.
-            </p>
             <a
               href="#platform"
-              className="inline-flex items-center justify-center h-14 px-6 rounded-lg gap-3 self-start no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg gap-2 sm:gap-3 no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
             >
-              <span className="text-base font-semibold font-manrope">
+              <span className="text-base sm:text-lg font-semibold font-manrope">
                 Explore the Platform
               </span>
               <svg
@@ -374,7 +386,7 @@ export default function HeroSection() {
                 height="20"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="stroke-secondary-beige"
+                className="stroke-secondary-beige w-5 h-5 sm:w-6 sm:h-6"
               >
                 <path
                   d="M5 12H19M19 12L13 6M19 12L13 18"

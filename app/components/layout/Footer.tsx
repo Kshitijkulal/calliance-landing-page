@@ -12,10 +12,10 @@ const SOCIAL_ICONS = [
 
 export default function Footer() {
   return (
-    <footer className="w-full font-sans bg-[var(--color-primary-beige)]">
-      <div className="w-full max-w-[1440px] mx-auto flex flex-col gap-10" style={{ padding: "5% 6%" }}>
+    <footer className="w-full font-sans bg-primary-beige">
+      <div className="w-full max-w-7xl mx-auto flex flex-col gap-10 py-10 px-6 md:py-16 md:px-10 lg:px-16">
         {/* Top Row — Logo + Social */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center w-full gap-2">
           {/* Logo */}
           <a
             href="#"
@@ -26,19 +26,19 @@ export default function Footer() {
               alt="Callience Logo"
               width={216}
               height={100}
-              className="h-10 md:h-14 lg:h-16 w-auto object-contain object-center"
+              className="h-7 sm:h-10 md:h-14 lg:h-16 w-auto object-contain object-left"
               priority
             />
           </a>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             {SOCIAL_ICONS.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="inline-flex items-center justify-center w-6 h-6 text-[var(--color-primary-black)] transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
+                className="inline-flex items-center justify-center size-5 sm:size-6 text-primary-black transition-colors duration-200 hover:text-dark-grey"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
                   <path d={social.path} />
@@ -49,31 +49,31 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="w-full border-t border-[var(--color-light-grey)]" />
+        <div className="w-full border-t border-light-grey" />
 
         {/* Main Content Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 w-full pt-2 md:pt-4 lg:pt-8">
           
           {/* Contact Us */}
-          <div className="lg:col-span-3 flex flex-col gap-4 pl-4 md:pl-8 lg:pl-12">
-            <h4 className="text-[17px] font-extrabold leading-6 text-[var(--color-primary-black)]">
+          <div className="lg:col-span-3 flex flex-col gap-4 lg:pl-12">
+            <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
               Contact Us
             </h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 stroke-[var(--color-primary-black)] stroke-2">
+                <svg viewBox="0 0 24 24" fill="none" className="size-4 stroke-primary-black stroke-2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <path d="M22 6l-10 7L2 6" />
                 </svg>
-                <span className="text-[15px] font-semibold text-[var(--color-dark-grey)] leading-6 whitespace-nowrap">
+                <span className="text-sm md:text-base font-semibold text-dark-grey leading-6 whitespace-nowrap">
                   info@callience.in
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 stroke-[var(--color-primary-black)] stroke-2">
+                <svg viewBox="0 0 24 24" fill="none" className="size-4 stroke-primary-black stroke-2">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                 </svg>
-                <span className="text-[15px] font-semibold text-[var(--color-dark-grey)] leading-6 whitespace-nowrap">
+                <span className="text-sm md:text-base font-semibold text-dark-grey leading-6 whitespace-nowrap">
                   +91 8448445810
                 </span>
               </div>
@@ -82,15 +82,15 @@ export default function Footer() {
 
           {/* Visit Us */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            <h4 className="text-[17px] font-extrabold leading-6 text-[var(--color-primary-black)]">
+            <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
               Visit Us
             </h4>
             <div className="flex items-start gap-3">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 mt-1 shrink-0 stroke-[var(--color-primary-black)] stroke-2">
+              <svg viewBox="0 0 24 24" fill="none" className="size-4 mt-1 shrink-0 stroke-primary-black stroke-2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span className="w-full max-w-xs text-[15px] font-semibold text-[var(--color-dark-grey)] leading-6">
+              <span className="w-full max-w-xs text-sm md:text-base font-semibold text-dark-grey leading-6">
                 B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14, Gurugram, Haryana 122001
               </span>
             </div>
@@ -98,14 +98,14 @@ export default function Footer() {
 
           {/* Policy */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <h4 className="text-[17px] font-extrabold leading-6 text-[var(--color-primary-black)]">
+            <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
               Policy
             </h4>
             <div className="flex flex-col gap-3">
-              <a href="#" className="text-[15px] font-semibold text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-primary-black)]">
+              <a href="#" className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black">
                 Refund Policy
               </a>
-              <a href="#" className="text-[15px] font-semibold text-[var(--color-dark-grey)] leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-primary-black)]">
+              <a href="#" className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black">
                 Privacy Policy
               </a>
             </div>
@@ -113,29 +113,29 @@ export default function Footer() {
 
           {/* Disclaimer */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <h4 className="text-[17px] font-extrabold leading-6 text-[var(--color-primary-black)]">
+            <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
               Disclaimer
             </h4>
-            <p className="text-[14px] font-medium text-[var(--color-dark-grey)] leading-6">
+            <p className="text-xs md:text-sm font-medium text-dark-grey leading-6">
               The information provided on this website is for general informational purposes only and does not constitute professional, legal, financial, or other specialized advice. Product capabilities, features, availability, and pricing may vary based on your business requirements and deployment. Please contact our team for specific information about your use case.
             </p>
           </div>
         </div>
 
         {/* Bottom Divider */}
-        <div className="w-full border-t border-[var(--color-light-grey)]" />
+        <div className="w-full border-t border-light-grey" />
 
         {/* Bottom Row — Copyright + Nav */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-2">
-          <span className="text-sm text-[var(--color-primary-black)] font-medium leading-5">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-2 text-center md:text-left">
+          <span className="text-xs md:text-sm text-primary-black font-medium leading-5">
             Callience @ 2026. All rights reserved.
           </span>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
             {["How it works", "Pricing", "Use Cases"].map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, "-")}`}
-                className="text-base text-[var(--color-primary-black)] font-bold tracking-tight no-underline transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
+                className="text-sm md:text-base text-primary-black font-bold tracking-tight no-underline transition-colors duration-200 hover:text-dark-grey"
               >
                 {label}
               </a>
