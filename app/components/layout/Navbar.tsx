@@ -71,9 +71,9 @@ export default function Navbar() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center h-10 sm:h-12 lg:h-12 xl:h-12 px-4 lg:px-5 xl:px-6 rounded-xl border-2 border-primary-black no-underline gap-2 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
+            className="flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl border-2 border-primary-black no-underline gap-3 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
           >
-            <span className="text-sm lg:text-base xl:text-base font-bold leading-none tracking-wide font-sans">
+            <span className="text-sm md:text-base font-bold leading-none tracking-wide font-sans">
               Request Demo
             </span>
             <svg
@@ -154,9 +154,9 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center h-12 sm:h-14 px-6 py-3 mt-4 rounded-2xl border-2 border-primary-black no-underline gap-3 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
+                className="flex items-center justify-center h-12 md:h-14 px-6 md:px-8 py-3 mt-4 rounded-xl border-2 border-primary-black no-underline gap-3 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
               >
-                <span className="text-base sm:text-lg md:text-xl font-bold leading-none tracking-wide font-sans">
+                <span className="text-sm md:text-base font-bold leading-none tracking-wide font-sans">
                   Request Demo
                 </span>
                 <svg

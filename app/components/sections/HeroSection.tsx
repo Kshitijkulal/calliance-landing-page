@@ -193,9 +193,9 @@ export default function HeroSection() {
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl no-underline gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
             >
-              <span className="text-base sm:text-lg md:text-xl font-semibold font-manrope">
+              <span className="text-sm md:text-base font-bold font-manrope">
                 Request Demo
               </span>
               <svg
@@ -310,9 +310,9 @@ export default function HeroSection() {
               href="#platform"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
+              className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 mt-2 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
-              <span className="text-base font-semibold font-manrope">
+              <span className="text-sm md:text-base font-bold font-manrope">
                 Explore the Platform
               </span>
               <svg
@@ -379,9 +379,9 @@ export default function HeroSection() {
               href="#platform"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg gap-2 sm:gap-3 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
-              <span className="text-base sm:text-lg font-semibold font-manrope">
+              <span className="text-sm md:text-base font-bold font-manrope">
                 Explore the Platform
               </span>
               <svg

@@ -86,14 +86,14 @@ export default function PricingSection() {
           href="#contact"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="flex items-center justify-center h-14 p-4 mt-2 mx-auto rounded-xl outline-2 outline-[color:var(--color-primary-black)] -outline-offset-2 no-underline"
+          className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 gap-3 mt-2 mx-auto rounded-xl outline-2 outline-[color:var(--color-primary-black)] -outline-offset-2 no-underline"
           style={{
             backgroundColor: "var(--color-primary-black)",
             color: "var(--color-secondary-beige)",
           }}
         >
           <span
-            className="px-4 text-base md:text-[19px] font-semibold tracking-tight"
+            className="text-sm md:text-base font-bold tracking-tight"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
             }}
