@@ -38,19 +38,42 @@ const INDUSTRIES = [
 
 export default function IndustriesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = useState<"left" | "right">("left");
+  const [scrollPosition, setScrollPosition] = useState<"left" | "middle" | "right">("left");
+  const isMobile = () => typeof window !== "undefined" && window.innerWidth < 768;
 
   const handleScrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: "smooth" });
-      setScrollPosition("right");
+      if (isMobile()) {
+        const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
+        scrollRef.current.scrollBy({ left: cardWidth + 16, behavior: "smooth" });
+        setTimeout(() => {
+          if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            setScrollPosition(scrollLeft + clientWidth >= scrollWidth - 10 ? "right" : "middle");
+          }
+        }, 400);
+      } else {
+        scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: "smooth" });
+        setScrollPosition("right");
+      }
     }
   };
 
   const handleScrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      setScrollPosition("left");
+      if (isMobile()) {
+        const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
+        scrollRef.current.scrollBy({ left: -(cardWidth + 16), behavior: "smooth" });
+        setTimeout(() => {
+          if (scrollRef.current) {
+            const { scrollLeft } = scrollRef.current;
+            setScrollPosition(scrollLeft <= 10 ? "left" : "middle");
+          }
+        }, 400);
+      } else {
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        setScrollPosition("left");
+      }
     }
   };
 
@@ -91,7 +114,7 @@ export default function IndustriesSection() {
       <div className="w-full flex items-center gap-3 sm:gap-4 overflow-hidden">
 
         {/* Left Scroll Arrow */}
-        {scrollPosition === "right" && (
+        {scrollPosition !== "left" && (
           <motion.button
             onClick={handleScrollLeft}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -185,7 +208,7 @@ export default function IndustriesSection() {
         </div>
 
         {/* Right Scroll Arrow */}
-        {scrollPosition === "left" && (
+        {scrollPosition !== "right" && (
           <motion.button
             onClick={handleScrollRight}
             initial={{ opacity: 0, scale: 0.8 }}
