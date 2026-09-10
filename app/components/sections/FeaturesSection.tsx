@@ -105,6 +105,7 @@ export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const userScrollingRef = React.useRef(false);
   const scrollTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -138,14 +139,14 @@ export default function FeaturesSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Only auto-cycle when the section is visible
+  // Only auto-cycle when the section is visible and not hovered
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || isHovered) return;
     const timer = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % FEATURES.length);
     }, 2500);
     return () => clearTimeout(timer);
-  }, [activeIndex, isVisible]);
+  }, [activeIndex, isVisible, isHovered]);
 
   // Auto-scroll on mobile when active index changes, only if section is visible and user is not navigating
   useEffect(() => {
@@ -206,7 +207,9 @@ export default function FeaturesSection() {
               <motion.div
                 id={`feature-${index}`}
                 onClick={() => setActiveIndex(index)}
-                className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="group w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
                 style={{
                   backgroundColor:
                     index === activeIndex ? "white" : "transparent",
@@ -256,7 +259,7 @@ export default function FeaturesSection() {
                 {index === activeIndex && (
                   <div className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
                     <div
-                      className="absolute left-0 top-0 w-full h-full overflow-hidden"
+                      className="absolute left-0 top-0 w-full h-full overflow-hidden group-hover:![transform:translateX(0%)] group-hover:![animation:none]"
                       style={{
                         backgroundColor: "var(--color-primary-black)",
                         animation: "pillFillOuter 2.5s linear forwards",
@@ -264,7 +267,7 @@ export default function FeaturesSection() {
                       }}
                     >
                       <div
-                        className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border"
+                        className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border group-hover:![transform:translateX(0%)] group-hover:![animation:none]"
                         style={{
                           animation: "pillFillInner 2.5s linear forwards",
                           willChange: "transform",
