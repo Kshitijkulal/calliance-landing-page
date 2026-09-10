@@ -32,7 +32,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-32 md:top-52 lg:top-56 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
+          className="absolute top-36 sm:top-40 md:top-44 lg:top-48 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
@@ -121,7 +121,7 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 4 (Outer) */}
-          <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
+          <div className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -152,12 +152,12 @@ export default function HeroSection() {
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-[1px] bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center w-full px-4 mt-16 md:mt-24 lg:mt-32 max-w-[1350px]">
+        <div className="relative z-20 flex flex-col items-center w-full px-4 mt-10 md:mt-16 lg:mt-24">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90px] leading-none text-primary-black font-bebas w-full"
+            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-primary-black font-bebas w-full"
           >
             {"AI Voice Agents that Automate Outbound Calling and Scale Your Revenue"
               .split(" ")
@@ -248,7 +248,7 @@ export default function HeroSection() {
                         transition: { duration: 0.6, ease: "easeOut" },
                       },
                     }}
-                    className={`inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full backdrop-blur-[44.34px] bg-off-white/[0.18] border border-white/50 shadow-[0_8px_16px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,0.8),inset_0_-2px_4px_rgba(0,0,0,0.05)] justify-center items-center overflow-hidden ${mobileAlignment}`}
+                    className={`inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full backdrop-blur-xl bg-off-white/20 border border-white/50 shadow-glass-bubble justify-center items-center overflow-hidden ${mobileAlignment}`}
                   >
                     <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                       {text}
@@ -267,66 +267,41 @@ export default function HeroSection() {
         className="w-full flex justify-center relative z-10 -mt-12 md:-mt-16"
       >
         {/* Continuous Blur Overlay for Rings */}
-        <div className="absolute inset-0 z-0 pointer-events-none backdrop-blur-[2px]" />
+        <div className="absolute inset-0 z-0 pointer-events-none backdrop-blur-[1px]" />
 
         {/* Desktop/Large Screen Pixel-Perfect Layout */}
-        <div className="hidden lg:block relative w-full h-[800px] mx-auto z-10">
-          {/* Laptop Image (matches left: 80px, w: 968px) */}
+        <div className="hidden lg:block relative w-full min-h-screen mx-auto z-10">
+          {/* Laptop Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            style={{
-              position: "absolute",
-              left: "5.5%", // ~80px on 1440px
-              top: "0px",
-              width: "80%", // scaled up
-              height: "800px", // scaled up
-              pointerEvents: "none",
-            }}
+            className="absolute -left-12 xl:-left-[4.5%] top-0 w-[95%] h-full pointer-events-none"
           >
             <Image
               src="/Mockup 1.png"
               alt="AICaller Unified Platform"
               fill
-              style={{ objectFit: "contain", objectPosition: "left top" }}
+              className="object-contain object-left-top"
               unoptimized
             />
           </motion.div>
 
-          {/* Text Panel (matches left: 822px, top: 240px, w: 538px) */}
+          {/* Text Panel */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="absolute flex flex-col items-start gap-6 z-10"
-            style={{
-              left: "60%", // shifted slightly right for scaled image
-              top: "140px", // shifted down to center with scaled image
-              width: "35%",
-            }}
+            className="absolute flex flex-col items-start gap-6 z-10 right-0 lg:right-12 xl:right-24 top-1/4 w-1/3"
           >
-            <h2
-              className="text-[64px] leading-[0.95] font-normal uppercase m-0"
-              style={{
-                fontFamily: "var(--font-bebas-neue), sans-serif",
-                color: "var(--color-primary-black)",
-              }}
-            >
-              One Unified Platform , Total Campaign Control
+            <h2 className="text-6xl xl:text-7xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
+              CALL INTELLIGENTLY , CONTROL EVERYTHING
             </h2>
-            <p
-              className="text-xl font-normal leading-relaxed m-0"
-              style={{
-                fontFamily: "var(--font-manrope), sans-serif",
-                color: "var(--color-primary-black)",
-              }}
-            >
-              From customer outreach to call intelligence, every conversation is
-              captured, analyzed and instantly converted into actionable CRM
-              data.
+            <p className="text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
+              Bring AI callers, campaigns and conversations together in one
+              unified platform designed for intelligent outbound operations.
             </p>
 
             {/* CTA */}
@@ -334,22 +309,20 @@ export default function HeroSection() {
               href="#platform"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline"
-              style={{
-                backgroundColor: "var(--color-primary-black)",
-                color: "var(--color-secondary-beige)",
-              }}
+              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
             >
-              <span
-                className="text-base font-semibold"
-                style={{ fontFamily: "var(--font-manrope), sans-serif" }}
-              >
+              <span className="text-base font-semibold font-manrope">
                 Explore the Platform
               </span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="stroke-secondary-beige"
+              >
                 <path
                   d="M5 12H19M19 12L13 6M19 12L13 18"
-                  stroke="var(--color-secondary-beige)"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -360,23 +333,18 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile/Tablet Fallback (Stacking) */}
-        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-12 relative z-10">
+        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-5 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{
-              width: "120%",
-              left: "-10%",
-              position: "relative",
-              aspectRatio: "968/672",
-            }}
+            className="relative w-[135%] -left-[5.5%] aspect-[968/672]"
           >
             <Image
               src="/Mockup 1.png"
               alt="AICaller"
               fill
-              style={{ objectFit: "contain" }}
+              className="object-contain"
               unoptimized
             />
           </motion.div>
@@ -387,44 +355,29 @@ export default function HeroSection() {
             viewport={{ once: true }}
             className="w-full flex flex-col gap-6 px-4 sm:px-6"
           >
-            <h2
-              className="text-5xl leading-none m-0 uppercase"
-              style={{
-                fontFamily: "var(--font-bebas-neue), sans-serif",
-                color: "var(--color-primary-black)",
-              }}
-            >
-              One Unified Platform , Total Campaign Control
+            <h2 className="text-5xl leading-none m-0 uppercase font-bebas text-primary-black">
+              CALL INTELLIGENTLY , CONTROL EVERYTHING
             </h2>
-            <p
-              className="text-lg m-0"
-              style={{
-                fontFamily: "var(--font-manrope), sans-serif",
-                color: "var(--color-primary-black)",
-              }}
-            >
-              From customer outreach to call intelligence, every conversation is
-              captured, analyzed and instantly converted into actionable CRM
-              data.
+            <p className="text-lg m-0 font-manrope text-primary-black">
+              Bring AI callers, campaigns and conversations together in one
+              unified platform designed for intelligent outbound operations.
             </p>
             <a
               href="#platform"
-              className="inline-flex items-center justify-center h-14 px-6 rounded-lg gap-3 self-start no-underline"
-              style={{
-                backgroundColor: "var(--color-primary-black)",
-                color: "var(--color-secondary-beige)",
-              }}
+              className="inline-flex items-center justify-center h-14 px-6 rounded-lg gap-3 self-start no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
             >
-              <span
-                className="text-base font-semibold"
-                style={{ fontFamily: "var(--font-manrope), sans-serif" }}
-              >
+              <span className="text-base font-semibold font-manrope">
                 Explore the Platform
               </span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="stroke-secondary-beige"
+              >
                 <path
                   d="M5 12H19M19 12L13 6M19 12L13 18"
-                  stroke="var(--color-secondary-beige)"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"

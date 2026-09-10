@@ -49,6 +49,7 @@ export default function ContactSection() {
 
       {/* Form Card */}
       <motion.form
+        suppressHydrationWarning
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,6 +90,7 @@ export default function ContactSection() {
               Name
             </label>
             <input
+              suppressHydrationWarning
               type="text"
               name="name"
               value={formData.name}
@@ -112,6 +114,7 @@ export default function ContactSection() {
               Company
             </label>
             <input
+              suppressHydrationWarning
               type="text"
               name="company"
               value={formData.company}
@@ -139,6 +142,7 @@ export default function ContactSection() {
               Job Title
             </label>
             <input
+              suppressHydrationWarning
               type="text"
               name="jobTitle"
               value={formData.jobTitle}
@@ -161,6 +165,7 @@ export default function ContactSection() {
               Email
             </label>
             <input
+              suppressHydrationWarning
               type="email"
               name="email"
               value={formData.email}
@@ -209,6 +214,7 @@ export default function ContactSection() {
             </div>
             <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
               <input
+                suppressHydrationWarning
                 type="tel"
                 name="phone"
                 value={formData.phone}

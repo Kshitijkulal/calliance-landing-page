@@ -45,13 +45,16 @@ export default function CallToWorkSection() {
 
   useEffect(() => {
     const updateCardsPerPage = () => {
+      let newCardsPerPage = 3;
       if (window.innerWidth < 768) {
-        setCardsPerPage(1);
+        newCardsPerPage = 1;
       } else if (window.innerWidth < 1024) {
-        setCardsPerPage(2);
-      } else {
-        setCardsPerPage(3);
+        newCardsPerPage = 2;
       }
+      setCardsPerPage(newCardsPerPage);
+      
+      const newTotalPages = newCardsPerPage === 3 ? 4 : newCardsPerPage === 2 ? 4 : USE_CASES.length;
+      setCurrentPage((prev) => (prev >= newTotalPages ? Math.max(0, newTotalPages - 1) : prev));
     };
     
     updateCardsPerPage();
@@ -75,11 +78,6 @@ export default function CallToWorkSection() {
     }
   };
 
-  useEffect(() => {
-    if (currentPage >= totalPages) {
-      setCurrentPage(Math.max(0, totalPages - 1));
-    }
-  }, [totalPages, currentPage]);
 
   // Auto-play functionality
   useEffect(() => {

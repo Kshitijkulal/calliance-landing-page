@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} h-full antialiased`}>
+    <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} h-full antialiased`} suppressHydrationWarning>
       <body
         style={{
           minHeight: "100vh",
