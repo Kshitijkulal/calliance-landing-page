@@ -9,8 +9,8 @@ const CARDS = [
     description: "We handle the complexity behind setup so your team can get started without a technical learning curve.",
   },
   {
-    title: "Quality Service",
-    description: "Deliver highly personalized, on-brand interactions across thousands of calls without ever sacrificing the quality of your customer experience.",
+    title: "Technology That Keeps Evolving",
+    description: "Deliver highly personalized, on-brand interactions at scale, continuously refined by AI specialists to improve quality as technology evolves.",
   },
   {
     title: "Setup, Training & Guidance",
@@ -46,7 +46,7 @@ export default function MoreThanDialerSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            From getting started to scaling your outreach, we provide the technology and support to make voice automation effortless.
+            <strong>Purus sagittis fringilla arcu neque.</strong> From getting started to scaling your outreach, we provide the technology and support to make voice automation effortless.
           </p>
         </div>
       </div>

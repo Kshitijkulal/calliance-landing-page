@@ -10,35 +10,35 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can I create an AI agent specific to my business?",
-    answer: "Yes. You can build fully customized AI voice agents tailored to your specific business workflows, scripts, and conversation handling protocols.",
+    answer: "Yes. Agents can be customized around your business goals, conversation flows, knowledge, tone and customer interactions. Yes. Every AI agent is fully customized around your specific business goals, knowledge base, conversation flows, and brand tone to ensure highly personalized customer interactions.",
   },
   {
     question: "Can the AI speak multiple languages?",
-    answer: "Absolutely. Our AI agents support multiple languages with natural pronunciation and cultural awareness, enabling you to connect with customers in their preferred language.",
+    answer: "Yes. The platform supports multilingual conversations, allowing you to reach customers in the languages they are most comfortable speaking.",
   },
   {
     question: "Can I make multiple calls at the same time?",
-    answer: "Yes. Our platform supports simultaneous calling at scale, allowing you to run thousands of concurrent calls without any degradation in quality.",
+    answer: "Yes. Run simultaneous outbound calls to reach large customer lists without having to scale your calling team one person at a time. Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, expanding your outreach capacity without adding headcount.",
   },
   {
     question: "Can I integrate it with my existing systems?",
-    answer: "Yes. We offer seamless API and CRM integrations with popular platforms, allowing call data and outcomes to sync automatically with your existing workflows.",
+    answer: "Yes. We architect the platform to integrate directly into your existing CRM, workflows, and business processes so your data stays perfectly synced.",
   },
   {
     question: "How do I know what happened on each call?",
-    answer: "Every call is recorded, transcribed, and analyzed. You get detailed call summaries, sentiment analysis, and outcome tracking through our unified dashboard.",
+    answer: "Every interaction is automatically captured. Your team gets real-time access to call transcripts, intent analysis, conversation outcomes, and clear follow-up steps right in your dashboard.",
   },
   {
     question: "Do I need technical expertise to get started?",
-    answer: "Not at all. We provide guided onboarding and setup assistance. Our team helps you configure, launch, and optimize your voice campaigns from day one.",
+    answer: "Not necessarily. We help you set up your agents and calling workflows, with guidance throughout the onboarding process so you can get started without having to figure everything out yourself. No technical expertise is required. Our team provides white-glove onboarding, handling the configuration, agent setup, and campaign deployment so you can go live effortlessly.",
   },
   {
     question: "Is my customer data secure?",
-    answer: "Yes. We use enterprise-grade encryption, comply with industry regulations, and conduct regular security audits to ensure your data is always protected.",
+    answer: "Security is built into the platform to help protect your business and customer data throughout your calling workflows. Absolutely. Enterprise-grade security is built directly into our infrastructure to ensure your proprietary business information and customer data remain strictly protected at all times.",
   },
   {
     question: "How does pricing work?",
-    answer: "We offer flexible, usage-based calling plans tailored to your volume and requirements. Contact us for a customized quote that fits your business needs.",
+    answer: "Pricing is customized based on your business requirements, calling volume, workflows and deployment needs.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function FAQSection() {
   return (
     <section
       id="faqs"
-      className="w-full mx-auto py-20 flex flex-col items-center gap-16"
+      className="w-full mx-auto pt-12 md:pt-20 pb-12 md:pb-8 flex flex-col items-center gap-16"
     >
       {/* Header */}
       <div className="w-[90%] md:w-[80%] lg:w-[60%] flex flex-col items-center gap-2">
