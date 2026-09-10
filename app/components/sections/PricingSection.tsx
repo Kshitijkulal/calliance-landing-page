@@ -69,7 +69,7 @@ export default function PricingSection() {
                 <path d="M5 13L9 17L19 7" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <span
-                className="text-[19px] font-normal leading-relaxed"
+                className="text-[17px] md:text-[19px] font-normal leading-relaxed"
                 style={{
                   fontFamily: "var(--font-manrope), sans-serif",
                   color: "var(--color-primary-black)",
@@ -93,7 +93,7 @@ export default function PricingSection() {
           }}
         >
           <span
-            className="px-4 text-[19px] font-semibold tracking-tight"
+            className="px-4 text-[17px] md:text-[19px] font-semibold tracking-tight"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
             }}
