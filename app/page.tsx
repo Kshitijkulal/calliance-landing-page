@@ -23,6 +23,7 @@ export default function Home() {
         <DataSecuritySection />
         <CallToWorkSection />
         <HowItWorksSection />
+        <div className="h-12 md:h-24 w-full" />
         <FeaturesSection />
         <MoreThanDialerSection />
         <PricingSection />

@@ -105,7 +105,8 @@ export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const userScrollingRef = React.useRef(false);
   const scrollTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -139,14 +140,14 @@ export default function FeaturesSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Only auto-cycle when the section is visible and not hovered
+  // Only auto-cycle when the section is visible and the active pill is not hovered
   useEffect(() => {
-    if (!isVisible || isHovered) return;
+    if (!isVisible || hoveredIndex === activeIndex || isPaused) return;
     const timer = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % FEATURES.length);
     }, 2500);
     return () => clearTimeout(timer);
-  }, [activeIndex, isVisible, isHovered]);
+  }, [activeIndex, isVisible, hoveredIndex, isPaused]);
 
   // Auto-scroll on mobile when active index changes, only if section is visible and user is not navigating
   useEffect(() => {
@@ -206,9 +207,28 @@ export default function FeaturesSection() {
             <React.Fragment key={feature.title}>
               <motion.div
                 id={`feature-${index}`}
-                onClick={() => setActiveIndex(index)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    const isMobile = window.innerWidth < 1024;
+                    if (isMobile) {
+                      if (activeIndex === index) {
+                        setIsPaused(!isPaused);
+                      } else {
+                        setActiveIndex(index);
+                        setIsPaused(true);
+                      }
+                    } else {
+                      setActiveIndex(index);
+                      setIsPaused(false);
+                    }
+                  }
+                }}
+                onPointerEnter={(e) => {
+                  if (e.pointerType === "mouse") setHoveredIndex(index);
+                }}
+                onPointerLeave={(e) => {
+                  if (e.pointerType === "mouse") setHoveredIndex(null);
+                }}
                 className="group w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
                 style={{
                   backgroundColor:
@@ -257,9 +277,9 @@ export default function FeaturesSection() {
 
                 {/* Pure CSS Fill Animation — runs on GPU, zero JS overhead */}
                 {index === activeIndex && (
-                  <div className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
+                  <div key={isPaused ? "paused" : "playing"} className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
                     <div
-                      className="absolute left-0 top-0 w-full h-full overflow-hidden group-hover:![transform:translateX(0%)] group-hover:![animation:none]"
+                      className={`absolute left-0 top-0 w-full h-full overflow-hidden ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
                       style={{
                         backgroundColor: "var(--color-primary-black)",
                         animation: "pillFillOuter 2.5s linear forwards",
@@ -267,7 +287,7 @@ export default function FeaturesSection() {
                       }}
                     >
                       <div
-                        className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border group-hover:![transform:translateX(0%)] group-hover:![animation:none]"
+                        className={`absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
                         style={{
                           animation: "pillFillInner 2.5s linear forwards",
                           willChange: "transform",
