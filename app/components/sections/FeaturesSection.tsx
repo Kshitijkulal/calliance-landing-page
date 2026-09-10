@@ -137,10 +137,10 @@ export default function FeaturesSection() {
         {/* Left Column — Feature List */}
         <div className="flex-[1_1_100%] lg:flex-[1_1_50%] flex flex-col gap-2 lg:gap-4 w-full">
           {FEATURES.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              onClick={() => setActiveIndex(index)}
-              className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
+            <React.Fragment key={feature.title}>
+              <motion.div
+                onClick={() => setActiveIndex(index)}
+                className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
               style={{
                 backgroundColor: index === activeIndex ? "white" : "transparent",
                 boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
@@ -202,12 +202,78 @@ export default function FeaturesSection() {
                   </div>
                 </div>
               )}
-            </motion.div>
+              </motion.div>
+
+              {/* Mobile Inline Content Panel */}
+              <AnimatePresence>
+                {index === activeIndex && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+                    animate={{ opacity: 1, height: "auto", marginBottom: 16 }}
+                    exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+                    className="w-full lg:hidden overflow-hidden"
+                  >
+                    <div
+                      className="w-full mt-2 p-6 sm:p-8 rounded-3xl flex flex-col gap-6"
+                      style={{
+                        backgroundColor: "rgba(0, 0, 0, 0.02)",
+                        boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
+                      }}
+                    >
+                      <h3
+                        className="font-normal leading-none m-0 uppercase text-3xl sm:text-4xl"
+                        style={{
+                          fontFamily: "var(--font-bebas-neue), sans-serif",
+                          color: "var(--color-primary-black)",
+                        }}
+                      >
+                        {feature.content.heading}
+                      </h3>
+
+                      <div className="flex flex-col gap-5 m-0 pl-1">
+                        {feature.content.bullets.map((bullet, i) => (
+                          <div key={i} className="flex items-stretch gap-4">
+                            {/* The Dot & Line Container */}
+                            <div className="relative flex flex-col items-center shrink-0">
+                              <div
+                                className="w-4 h-4 rounded-full mt-1.5 relative z-10"
+                                style={{
+                                  backgroundColor: "var(--color-primary-black)",
+                                }}
+                              />
+                              {/* Connecting Line Segment */}
+                              {i !== feature.content.bullets.length - 1 && (
+                                <div
+                                  className="absolute w-0.5 z-0 top-[22px] -bottom-[26px]"
+                                  style={{
+                                    backgroundColor: "var(--color-primary-black)",
+                                  }}
+                                />
+                              )}
+                            </div>
+                            {/* The Text */}
+                            <p
+                              className="text-base sm:text-lg font-normal leading-relaxed m-0"
+                              style={{
+                                fontFamily: "var(--font-manrope), sans-serif",
+                                color: "var(--color-primary-black)",
+                              }}
+                            >
+                              {bullet}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </React.Fragment>
           ))}
         </div>
 
-        {/* Right Column — Content Panel */}
-        <div className="flex-[1_1_100%] lg:flex-[1_1_40%] flex flex-col items-start w-full">
+        {/* Right Column — Content Panel (Desktop Only) */}
+        <div className="hidden lg:flex flex-[1_1_40%] flex-col items-start w-full">
           <div
             className="w-full p-6 sm:p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
             style={{
