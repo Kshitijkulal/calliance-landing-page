@@ -46,12 +46,6 @@ export default function IndustriesSection() {
       if (isMobile()) {
         const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
         scrollRef.current.scrollBy({ left: cardWidth + 16, behavior: "smooth" });
-        setTimeout(() => {
-          if (scrollRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-            setScrollPosition(scrollLeft + clientWidth >= scrollWidth - 10 ? "right" : "middle");
-          }
-        }, 400);
       } else {
         scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: "smooth" });
         setScrollPosition("right");
@@ -64,18 +58,31 @@ export default function IndustriesSection() {
       if (isMobile()) {
         const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
         scrollRef.current.scrollBy({ left: -(cardWidth + 16), behavior: "smooth" });
-        setTimeout(() => {
-          if (scrollRef.current) {
-            const { scrollLeft } = scrollRef.current;
-            setScrollPosition(scrollLeft <= 10 ? "left" : "middle");
-          }
-        }, 400);
       } else {
         scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
         setScrollPosition("left");
       }
     }
   };
+
+  // Keep scroll position in sync on mobile via native scroll events
+  React.useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      if (!isMobile()) return;
+      const { scrollLeft, scrollWidth, clientWidth } = el;
+      if (scrollLeft <= 10) {
+        setScrollPosition("left");
+      } else if (scrollLeft + clientWidth >= scrollWidth - 50) {
+        setScrollPosition("right");
+      } else {
+        setScrollPosition("middle");
+      }
+    };
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col gap-12 md:gap-20 overflow-hidden px-[6%]">
@@ -121,10 +128,10 @@ export default function IndustriesSection() {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
+            className="p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
             style={{ backgroundColor: "var(--color-off-white)" }}
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 sm:w-6 sm:h-6">
+            <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
               <path
                 d="M15 19L8 12L15 5"
                 stroke="var(--color-primary-black)"
@@ -215,10 +222,10 @@ export default function IndustriesSection() {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
+            className="p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
             style={{ backgroundColor: "var(--color-off-white)" }}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
               <path
                 d="M9 5L16 12L9 19"
                 stroke="var(--color-primary-black)"
