@@ -29,16 +29,14 @@ export default function ContactSection() {
       className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[8%] pb-[8%] md:pt-[12%] md:pb-[6%] overflow-hidden px-4 sm:px-6"
     >
       {/* Giant Background Text */}
-      <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden">
+      <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden -mt-[2%]">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="font-bold select-none whitespace-nowrap tracking-[-0.02em]"
+          className="font-bold select-none whitespace-nowrap tracking-[-0.02em] text-[15vw] leading-[15vw] md:text-[19.5vw] md:leading-[19.5vw]"
           style={{
-            fontSize: "clamp(60px, 19.5vw, 280px)",
-            lineHeight: "clamp(60px, 19.5vw, 280px)",
             fontFamily: "var(--font-manrope), sans-serif",
             color: "var(--color-primary-black)",
           }}
@@ -51,14 +49,12 @@ export default function ContactSection() {
       <motion.form
         suppressHydrationWarning
         onSubmit={handleSubmit}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: "5%" }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[95%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-[12px]"
+        className="w-[95%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-md p-[5%] -mt-[4%] md:-mt-[6%]"
         style={{
-          padding: "clamp(24px, 5%, 64px)",
-          marginTop: "calc(-0.30 * clamp(60px, 19.5vw, 280px))",
           boxShadow: "var(--shadow-glass)",
           backgroundColor: "var(--glass-bg)",
           borderColor: "var(--glass-border)",
@@ -67,7 +63,7 @@ export default function ContactSection() {
         {/* Form Title */}
         <div className="w-full text-center">
           <h2
-            className="text-3xl sm:text-4xl md:text-[40px] font-normal tracking-[0.02em] uppercase m-0"
+            className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-[0.02em] uppercase m-0"
             style={{
               fontFamily: "var(--font-bebas-neue), sans-serif",
               color: "var(--color-primary-black)",
@@ -197,7 +193,7 @@ export default function ContactSection() {
           </label>
           <div className="flex items-end gap-4 sm:gap-6 w-full">
             <div
-              className="flex items-center justify-between min-w-[72px] sm:min-w-[80px] py-2 border-b-2 cursor-pointer shrink-0"
+              className="flex items-center justify-between w-[20%] sm:w-[15%] py-2 border-b-2 cursor-pointer shrink-0"
               style={{ borderColor: "var(--color-primary-black)" }}
             >
               <span
