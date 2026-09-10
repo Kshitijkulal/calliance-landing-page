@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 
 const CARDS = [
   {
-    title: "Effortless From Day One",
+    title: "Effortless From\nDay One",
     description:
       "We handle the complexity behind setup so your team can get started without a technical learning curve.",
   },
   {
-    title: "Technology That Keeps Evolving",
+    title: "Technology That\nKeeps Evolving",
     description:
       "Deliver highly personalized, on-brand interactions at scale, continuously refined by AI specialists to improve quality as technology evolves.",
   },
   {
-    title: "Setup, Training & Guidance",
+    title: "Setup, Training\nand Guidance",
     description:
       "From initial setup to going live, our team helps you configure, launch, and get the most from your voice campaigns.",
   },
   {
-    title: "Consistent and Error-Reduced",
+    title: "Consistent and\nError-Reduced",
     description:
       "Automate repetitive calling workflows with consistent conversations and accurate capture of call information, reducing the errors that come with manual processes.",
   },
@@ -78,7 +78,7 @@ export default function MoreThanDialerSection() {
             >
               <div className="w-full flex-1 flex flex-col gap-4 group-hover:gap-3 transition-all duration-300">
                 <h3
-                  className="font-normal m-0 text-2xl md:text-3xl group-hover:text-3xl md:group-hover:text-4xl text-primary-black group-hover:text-secondary-beige leading-none transition-all duration-300"
+                  className="font-normal m-0 text-2xl md:text-3xl group-hover:text-3xl md:group-hover:text-4xl text-primary-black group-hover:text-secondary-beige leading-none transition-all duration-300 whitespace-pre-line"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
                   }}
