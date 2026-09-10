@@ -168,7 +168,7 @@ export default function FeaturesSection() {
               <motion.div
                 id={`feature-${index}`}
                 onClick={() => setActiveIndex(index)}
-                className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
+                className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
               style={{
                 backgroundColor: index === activeIndex ? "white" : "transparent",
                 boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
