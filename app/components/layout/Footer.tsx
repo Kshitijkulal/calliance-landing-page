@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="w-full border-t border-[var(--color-light-grey)]" />
 
         {/* Main Content Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 w-full pt-4 md:pt-8 lg:pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 w-full pt-2 md:pt-4 lg:pt-8">
           
           {/* Contact Us */}
           <div className="lg:col-span-3 flex flex-col gap-4 pl-4 md:pl-8 lg:pl-12">
