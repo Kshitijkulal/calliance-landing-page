@@ -56,7 +56,9 @@ export default function Navbar() {
             <motion.a
               key={link.label}
               href={link.href}
-              className="no-underline text-xs sm:text-sm lg:text-base xl:text-lg font-bold leading-none inline-flex items-center justify-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-primary-black font-sans transition-all duration-200 hover:bg-dark-grey/20 hover:shadow-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="no-underline text-xs sm:text-sm lg:text-base xl:text-lg font-bold leading-none inline-flex items-center justify-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-primary-black font-sans transition-all duration-200 hover:shadow-sm"
             >
               {link.label}
             </motion.a>
@@ -69,7 +71,7 @@ export default function Navbar() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center h-10 sm:h-12 lg:h-12 xl:h-12 px-4 lg:px-5 xl:px-6 rounded-xl border-2 border-primary-black no-underline gap-2 bg-primary-black text-secondary-beige hover:bg-primary-black/90 transition-all shadow-glass-bubble"
+            className="flex items-center justify-center h-10 sm:h-12 lg:h-12 xl:h-12 px-4 lg:px-5 xl:px-6 rounded-xl border-2 border-primary-black no-underline gap-2 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
           >
             <span className="text-sm lg:text-base xl:text-base font-bold leading-none tracking-wide font-sans">
               Request Demo
@@ -135,20 +137,24 @@ export default function Navbar() {
             <div className="flex flex-col gap-4 px-4 sm:px-6 py-6 sm:py-8">
               <div className="flex flex-col">
                 {NAV_LINKS.map((link) => (
-                  <a
+                  <motion.a
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="no-underline flex items-center justify-center text-base sm:text-lg md:text-xl font-bold text-primary-black font-sans py-3 sm:py-4 border-b border-dark-grey/10 last:border-none hover:bg-dark-grey/5 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="no-underline flex items-center justify-center text-base sm:text-lg md:text-xl font-bold text-primary-black font-sans py-3 sm:py-4 border-b border-dark-grey/10 last:border-none transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
-              <a
+              <motion.a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center h-12 sm:h-14 px-6 py-3 mt-4 rounded-2xl border-2 border-primary-black no-underline gap-3 bg-primary-black text-secondary-beige hover:bg-primary-black/90 transition-all shadow-glass-bubble"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center h-12 sm:h-14 px-6 py-3 mt-4 rounded-2xl border-2 border-primary-black no-underline gap-3 bg-primary-black text-secondary-beige transition-all shadow-glass-bubble"
               >
                 <span className="text-base sm:text-lg md:text-xl font-bold leading-none tracking-wide font-sans">
                   Request Demo
@@ -166,7 +172,7 @@ export default function Navbar() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </motion.a>
             </div>
           </motion.div>
           </div>
