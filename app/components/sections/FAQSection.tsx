@@ -51,13 +51,11 @@ export default function FAQSection() {
       className="w-full mx-auto py-20 flex flex-col items-center gap-16"
     >
       {/* Header */}
-      <div className="w-[1280px] max-w-full flex flex-col items-center gap-2">
+      <div className="w-[90%] md:w-[80%] lg:w-[60%] flex flex-col items-center gap-2">
         <h2
-          className="w-full text-center uppercase"
+          className="w-full text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
-            fontSize: "clamp(32px, 5vw, 60px)",
-            lineHeight: "1.1",
             fontWeight: 400,
             color: "var(--color-primary-black)",
           }}
@@ -67,7 +65,7 @@ export default function FAQSection() {
       </div>
 
       {/* FAQ List */}
-      <div className="w-[900px] max-w-full flex flex-col gap-4 px-4 md:px-0">
+      <div className="w-[95%] sm:w-[90%] md:w-[80%] lg:w-[60%] flex flex-col gap-4">
         {FAQ_ITEMS.map((item, index) => (
           <div key={item.question}>
             {index === openIndex ? (
@@ -83,9 +81,9 @@ export default function FAQSection() {
                 }}
                 onClick={() => setOpenIndex(-1)}
               >
-                <div className="h-11 flex items-center">
+                <div className="py-2 flex items-center">
                   <h3
-                    className="flex-1 text-[30px] leading-[36px]"
+                    className="flex-1 text-xl sm:text-2xl md:text-3xl leading-tight"
                     style={{
                       fontFamily: "var(--font-bebas-neue), sans-serif",
                       fontWeight: 400,
@@ -96,7 +94,7 @@ export default function FAQSection() {
                   </h3>
                 </div>
                 <p
-                  className="text-lg leading-6"
+                  className="text-base sm:text-lg leading-relaxed"
                   style={{
                     fontWeight: 400,
                     fontFamily: "var(--font-manrope), sans-serif",
@@ -120,7 +118,7 @@ export default function FAQSection() {
               >
                 <div className="flex items-center gap-2">
                   <span
-                    className="flex-1 text-xl font-semibold tracking-tight"
+                    className="flex-1 text-base sm:text-lg md:text-xl font-semibold tracking-tight"
                     style={{
                       fontFamily: "var(--font-manrope), sans-serif",
                       color: "var(--color-primary-black)",
@@ -128,7 +126,7 @@ export default function FAQSection() {
                   >
                     {item.question}
                   </span>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 sm:w-6 sm:h-6 shrink-0">
                     <path d="M12 5V19M5 12H19" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
