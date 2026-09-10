@@ -40,12 +40,30 @@ export default function IndustriesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState<"left" | "middle" | "right">("left");
   const isMobile = () => typeof window !== "undefined" && window.innerWidth < 768;
+  const mobileIndex = useRef(0);
+
+  const scrollToCard = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    // Wait for layout to settle after arrow buttons appear/disappear
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const cards = Array.from(container.children).filter(el => el.tagName !== "STYLE") as HTMLElement[];
+        const card = cards[index];
+        if (!card) return;
+        const containerWidth = container.clientWidth;
+        const cardWidth = card.offsetWidth;
+        const scrollTarget = card.offsetLeft - (containerWidth - cardWidth) / 2;
+        container.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+      });
+    });
+  };
 
   const handleScrollRight = () => {
     if (scrollRef.current) {
       if (isMobile()) {
-        const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
-        scrollRef.current.scrollBy({ left: cardWidth + 16, behavior: "smooth" });
+        mobileIndex.current = Math.min(mobileIndex.current + 1, INDUSTRIES.length - 1);
+        scrollToCard(mobileIndex.current);
       } else {
         scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: "smooth" });
         setScrollPosition("right");
@@ -56,8 +74,8 @@ export default function IndustriesSection() {
   const handleScrollLeft = () => {
     if (scrollRef.current) {
       if (isMobile()) {
-        const cardWidth = scrollRef.current.querySelector("div")?.offsetWidth || 250;
-        scrollRef.current.scrollBy({ left: -(cardWidth + 16), behavior: "smooth" });
+        mobileIndex.current = Math.max(mobileIndex.current - 1, 0);
+        scrollToCard(mobileIndex.current);
       } else {
         scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
         setScrollPosition("left");
@@ -65,7 +83,7 @@ export default function IndustriesSection() {
     }
   };
 
-  // Keep scroll position in sync on mobile via native scroll events
+  // Keep scroll position and mobileIndex in sync on mobile via native scroll events
   React.useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -79,6 +97,21 @@ export default function IndustriesSection() {
       } else {
         setScrollPosition("middle");
       }
+
+      // Sync mobileIndex to the card closest to center
+      const cards = Array.from(el.children).filter(child => child.tagName !== "STYLE") as HTMLElement[];
+      const centerX = scrollLeft + clientWidth / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(cardCenter - centerX);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = i;
+        }
+      });
+      mobileIndex.current = closestIndex;
     };
     el.addEventListener("scroll", handleScroll);
     return () => el.removeEventListener("scroll", handleScroll);
@@ -147,7 +180,7 @@ export default function IndustriesSection() {
         <div className="flex-1 relative overflow-hidden">
           <div
             ref={scrollRef}
-            className="flex items-stretch gap-4 md:gap-6 overflow-x-auto overflow-y-hidden pt-4 pb-12 px-2"
+            className="flex items-stretch gap-4 md:gap-6 overflow-x-auto overflow-y-hidden pt-4 pb-12 px-2 snap-x snap-mandatory md:snap-none"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -166,7 +199,7 @@ export default function IndustriesSection() {
                   boxShadow: "none"
                 }}
                 transition={{ duration: 0.3 }}
-                className="group w-[65vw] sm:w-[45vw] md:w-[350px] h-72 md:h-[320px] shrink-0 flex flex-col gap-3 py-4 sm:py-6 px-5 sm:px-8 rounded-xl border border-solid cursor-pointer"
+                className="group w-[65vw] sm:w-[45vw] md:w-[350px] h-72 md:h-[320px] shrink-0 flex flex-col gap-3 py-4 sm:py-6 px-5 sm:px-8 rounded-xl border border-solid cursor-pointer snap-center md:snap-align-none"
                 style={{
                   boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                   backgroundColor: "var(--color-primary-beige)",
