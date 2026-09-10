@@ -101,27 +101,17 @@ export default function CallToWorkSection() {
   return (
     <section
       id="use-cases"
-      className="py-20 px-[6%]"
+      className="pt-8 md:pt-10 pb-8 md:pb-10 px-4 md:px-8 lg:px-[6%]"
     >
       {/* Header */}
       <div className="flex flex-col items-center gap-1.5 mx-auto max-w-[1008px]">
         <h2
-          className="w-full text-center font-normal uppercase m-0"
-          style={{
-            fontFamily: "var(--font-bebas-neue), sans-serif",
-            fontSize: "clamp(32px, 5vw, 60px)",
-            lineHeight: "1.1",
-            color: "var(--color-primary-black)",
-          }}
+          className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black"
         >
           Put Every Customer Call To Work
         </h2>
         <p
-          className="w-full text-center text-xl font-normal leading-7 m-0 mt-4"
-          style={{
-            fontFamily: "var(--font-manrope), sans-serif",
-            color: "var(--color-primary-black)",
-          }}
+          className="w-full text-center text-lg md:text-xl font-normal leading-7 m-0 mt-4 font-manrope text-primary-black"
         >
           Automate the routine conversations your team handles every day from lead qualification and follow-ups to reminders and service calls.
         </p>
@@ -129,12 +119,12 @@ export default function CallToWorkSection() {
 
       {/* Slideshow Container */}
       <div 
-        className="w-full max-w-[1280px] mx-auto mt-14 flex flex-col items-center gap-8"
+        className="w-full max-w-[1280px] mx-auto mt-10 md:mt-14 flex flex-col items-center gap-6 md:gap-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         
-        <div className="w-full flex items-center justify-between gap-4 md:gap-8">
+        <div className="w-full flex items-center justify-between gap-1 sm:gap-2 md:gap-8">
           {/* Left Arrow */}
           <motion.button
             onClick={handlePrev}
@@ -145,15 +135,10 @@ export default function CallToWorkSection() {
             }}
             whileHover={currentPage > 0 ? { scale: 1.05 } : {}}
             whileTap={currentPage > 0 ? { scale: 0.95 } : {}}
-            className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
-            style={{
-              backgroundColor: "rgba(113,113,122,0.1)",
-              cursor: currentPage > 0 ? "pointer" : "default",
-              pointerEvents: currentPage > 0 ? "auto" : "none",
-            }}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage > 0 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 19L8 12L15 5" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
+              <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </motion.button>
 
@@ -169,24 +154,16 @@ export default function CallToWorkSection() {
                   {getPageCards(pageIndex).map((useCase) => (
                     <div
                       key={useCase.title}
-                      className="flex-1 min-w-[280px] max-w-[400px] px-6 py-10 rounded-[32px] flex flex-col items-center gap-6 border border-solid"
-                      style={{
-                        boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
-                        backgroundColor: "var(--color-primary-beige)",
-                        borderColor: "var(--color-white)",
-                      }}
+                      className="flex-1 w-full md:w-auto md:min-w-[280px] max-w-[400px] px-4 md:px-6 py-8 md:py-10 rounded-[32px] flex flex-col items-center gap-4 md:gap-6 border border-solid border-white bg-primary-beige shadow-[inset_6px_6px_12px_rgba(0,0,0,0.04),inset_-6px_-6px_8px_rgba(255,255,255,1),0px_6px_40px_0px_rgba(219,220,220,0.18)]"
                     >
                       {/* Icon */}
                       <div
-                        className="w-16 h-16 rounded-full flex items-center justify-center shrink-0"
-                        style={{
-                          backgroundColor: "var(--color-primary-black)",
-                        }}
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shrink-0 bg-primary-black text-secondary-beige"
                       >
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="w-6 h-6 md:w-7 md:h-7">
                           <path
                             d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-                            stroke="var(--color-secondary-beige)"
+                            stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -195,25 +172,14 @@ export default function CallToWorkSection() {
                       </div>
 
                       {/* Content */}
-                      <div className="flex flex-col items-center gap-3 text-center">
+                      <div className="flex flex-col items-center gap-2 md:gap-3 text-center">
                         <h3
-                          className="m-0 uppercase"
-                          style={{
-                            fontFamily: "var(--font-bebas-neue), sans-serif",
-                            fontSize: "30px",
-                            lineHeight: "1.1",
-                            color: "var(--color-primary-black)",
-                          }}
+                          className="m-0 uppercase font-bebas text-[24px] md:text-[30px] leading-[1.1] text-primary-black"
                         >
                           {useCase.title}
                         </h3>
                         <p
-                          className="m-0 text-[17px] font-normal"
-                          style={{
-                            fontFamily: "var(--font-manrope), sans-serif",
-                            lineHeight: "1.5",
-                            color: "var(--color-primary-black)",
-                          }}
+                          className="m-0 text-[15px] md:text-[17px] font-normal font-manrope leading-[1.5] text-primary-black"
                         >
                           {useCase.description}
                         </p>
@@ -235,15 +201,10 @@ export default function CallToWorkSection() {
             }}
             whileHover={currentPage < totalPages - 1 ? { scale: 1.05 } : {}}
             whileTap={currentPage < totalPages - 1 ? { scale: 0.95 } : {}}
-            className="w-12 h-12 rounded-3xl border-none flex items-center justify-center shrink-0 z-10 transition-colors"
-            style={{
-              backgroundColor: "rgba(113,113,122,0.1)",
-              cursor: currentPage < totalPages - 1 ? "pointer" : "default",
-              pointerEvents: currentPage < totalPages - 1 ? "auto" : "none",
-            }}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage < totalPages - 1 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 5L16 12L9 19" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </motion.button>
         </div>
@@ -267,10 +228,7 @@ export default function CallToWorkSection() {
                   layout
                   key={dot.id}
                   onClick={() => setCurrentPage(dot.pageIndex)}
-                  className="w-3.5 h-3.5 rounded-full border-none p-0 cursor-pointer"
-                  style={{
-                    backgroundColor: dot.type === "active" ? "var(--color-primary-black)" : "rgba(113,113,122,0.2)",
-                  }}
+                  className={`w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full border-none p-0 cursor-pointer ${dot.type === "active" ? "bg-primary-black" : "bg-[#71717a33]"}`}
                   transition={{ type: "tween", ease: "easeInOut", duration: 1.5 }}
                   aria-label={`Go to slide ${dot.pageIndex + 1}`}
                 />
