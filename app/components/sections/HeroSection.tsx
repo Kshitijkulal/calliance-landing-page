@@ -193,7 +193,7 @@ export default function HeroSection() {
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-base sm:text-lg md:text-xl font-semibold font-manrope">
                 Request Demo
@@ -248,9 +248,10 @@ export default function HeroSection() {
                         transition: { duration: 0.6, ease: "easeOut" },
                       },
                     }}
-                    className={`inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full backdrop-blur-xl bg-off-white/20 border border-white/50 shadow-glass-bubble justify-center items-center overflow-hidden ${mobileAlignment}`}
+                    className={`relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full bg-gradient-to-br from-white/40 to-white/5 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_2px_4px_0_rgba(255,255,255,0.8),inset_0_-2px_4px_0_rgba(0,0,0,0.05)] justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.8),inset_0_-2px_4px_0_rgba(0,0,0,0.05)] ${mobileAlignment}`}
                   >
-                    <span className="text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-semibold font-manrope leading-tight md:leading-6 whitespace-nowrap">
+                    <div className="absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+                    <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                       {text}
                     </span>
                   </motion.div>
@@ -309,7 +310,7 @@ export default function HeroSection() {
               href="#platform"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
+              className="inline-flex items-center justify-center h-14 px-8 rounded-lg gap-3 mt-2 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-base font-semibold font-manrope">
                 Explore the Platform
@@ -374,9 +375,11 @@ export default function HeroSection() {
             viewport={{ once: true }}
             className="w-full flex justify-start px-4 sm:px-6 mt-0"
           >
-            <a
+            <motion.a
               href="#platform"
-              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg gap-2 sm:gap-3 no-underline bg-primary-black text-secondary-beige hover:bg-dark-grey transition-colors duration-300"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center w-full sm:w-auto h-12 sm:h-14 px-6 sm:px-8 rounded-lg gap-2 sm:gap-3 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-base sm:text-lg font-semibold font-manrope">
                 Explore the Platform
@@ -395,7 +398,7 @@ export default function HeroSection() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>
