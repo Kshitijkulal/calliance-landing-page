@@ -32,10 +32,25 @@ const FEATURES = [
     content: {
       heading: "Engineered for business-critical communications.",
       bullets: [
-        <React.Fragment key="sec-1"><strong>Secure customer interactions:</strong> Keep proprietary business data and customer conversations strictly protected.</React.Fragment>,
-        <React.Fragment key="sec-2"><strong>Encrypted data, controlled by you:</strong> Your data remains encrypted and can only be decrypted by you and authorized users you control.</React.Fragment>,
-        <React.Fragment key="sec-3"><strong>Reliable calling infrastructure:</strong> Rely on robust infrastructure built to handle high call volumes without compromising reliability.</React.Fragment>,
-        <React.Fragment key="sec-4"><strong>Built for business use:</strong> Architected to meet the data privacy, security and reliability standards required for modern B2B operations.</React.Fragment>,
+        <React.Fragment key="sec-1">
+          <strong>Secure customer interactions:</strong> Keep proprietary
+          business data and customer conversations strictly protected.
+        </React.Fragment>,
+        <React.Fragment key="sec-2">
+          <strong>Encrypted data, controlled by you:</strong> Your data remains
+          encrypted and can only be decrypted by you and authorized users you
+          control.
+        </React.Fragment>,
+        <React.Fragment key="sec-3">
+          <strong>Reliable calling infrastructure:</strong> Rely on robust
+          infrastructure built to handle high call volumes without compromising
+          reliability.
+        </React.Fragment>,
+        <React.Fragment key="sec-4">
+          <strong>Built for business use:</strong> Architected to meet the data
+          privacy, security and reliability standards required for modern B2B
+          operations.
+        </React.Fragment>,
       ],
     },
   },
@@ -53,7 +68,8 @@ const FEATURES = [
   {
     title: "Simultaneous Calling at Scale",
     content: {
-      heading: "Expand your outreach exponentially without expanding your team.",
+      heading:
+        "Expand your outreach exponentially without expanding your team.",
       bullets: [
         "Run massive outbound campaigns in minutes, not days.",
         "Make simultaneous calls at scale",
@@ -98,7 +114,7 @@ export default function FeaturesSection() {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     observer.observe(section);
     return () => observer.disconnect();
@@ -109,13 +125,17 @@ export default function FeaturesSection() {
     if (!isVisible) return;
     const timer = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % FEATURES.length);
-    }, 2500); 
+    }, 2500);
     return () => clearTimeout(timer);
   }, [activeIndex, isVisible]);
 
   // Auto-scroll on mobile when active index changes, only if section is visible
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 1024 && isVisible) {
+    if (
+      typeof window !== "undefined" &&
+      window.innerWidth < 1024 &&
+      isVisible
+    ) {
       const element = document.getElementById(`feature-${activeIndex}`);
       if (element) {
         setTimeout(() => {
@@ -129,12 +149,10 @@ export default function FeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20" 
+      className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20"
     >
       {/* Header — responsive wrap layout */}
-      <div
-        className="w-full flex flex-wrap justify-between items-start gap-8"
-      >
+      <div className="w-full flex flex-wrap justify-between items-start gap-8">
         <h2
           className="flex-[1_1_400px] font-normal uppercase m-0 text-5xl sm:text-6xl md:text-7xl leading-tight"
           style={{
@@ -142,7 +160,7 @@ export default function FeaturesSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Where Intelligence Meets Human-Like Voice Experiences
+          Built to Make Every Conversation Count
         </h2>
         <div className="flex-[1_1_500px] pt-2 md:pt-4">
           <p
@@ -152,15 +170,14 @@ export default function FeaturesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            Powerful voice capabilities engineered to make automated conversations feel natural, personalized, and highly effective.
+            Powerful voice capabilities engineered to make automated
+            conversations feel natural, personalized, and highly effective.
           </p>
         </div>
       </div>
 
       {/* Feature List + Content Panel */}
-      <div
-        className="w-full flex flex-wrap justify-center items-start gap-12"
-      >
+      <div className="w-full flex flex-wrap justify-center items-start gap-12">
         {/* Left Column — Feature List */}
         <div className="flex-[1_1_100%] lg:flex-[1_1_50%] flex flex-col gap-2 lg:gap-4 w-full">
           {FEATURES.map((feature, index) => (
@@ -169,67 +186,94 @@ export default function FeaturesSection() {
                 id={`feature-${index}`}
                 onClick={() => setActiveIndex(index)}
                 className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
-              style={{
-                backgroundColor: index === activeIndex ? "white" : "transparent",
-                boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
-              }}
-            >
-              {/* Static left border to prevent anti-aliasing gaps */}
-              {index === activeIndex && (
-                <div
-                  className="absolute left-0 top-0 w-2 h-full z-10"
-                  style={{ backgroundColor: "var(--color-primary-black)" }}
-                />
-              )}
-              {/* Base Content (Always visible, behind the fill) */}
-              <span
-                className="relative z-0 font-semibold transition-colors duration-300 ease-in-out text-base sm:text-lg lg:text-xl"
                 style={{
-                  fontFamily: "var(--font-manrope), sans-serif",
-                  color: index === activeIndex ? "var(--color-primary-black)" : "#71717A",
+                  backgroundColor:
+                    index === activeIndex ? "white" : "transparent",
+                  boxShadow:
+                    index === activeIndex
+                      ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)"
+                      : "none",
                 }}
               >
-                {feature.title}
-              </span>
-              {index === activeIndex && (
-                <svg viewBox="0 0 20 16" fill="none" className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-0">
-                  <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-
-              {/* Pure CSS Fill Animation — runs on GPU, zero JS overhead */}
-              {index === activeIndex && (
-                <div className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
+                {/* Static left border to prevent anti-aliasing gaps */}
+                {index === activeIndex && (
                   <div
-                    className="absolute left-0 top-0 w-full h-full overflow-hidden"
-                    style={{
-                      backgroundColor: "var(--color-primary-black)",
-                      animation: "pillFillOuter 2.5s linear forwards",
-                      willChange: "transform",
-                    }}
+                    className="absolute left-0 top-0 w-2 h-full z-10"
+                    style={{ backgroundColor: "var(--color-primary-black)" }}
+                  />
+                )}
+                {/* Base Content (Always visible, behind the fill) */}
+                <span
+                  className="relative z-0 font-semibold transition-colors duration-300 ease-in-out text-base sm:text-lg lg:text-xl"
+                  style={{
+                    fontFamily: "var(--font-manrope), sans-serif",
+                    color:
+                      index === activeIndex
+                        ? "var(--color-primary-black)"
+                        : "#71717A",
+                  }}
+                >
+                  {feature.title}
+                </span>
+                {index === activeIndex && (
+                  <svg
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-0"
                   >
+                    <path
+                      d="M2 8H18M18 8L12 2M18 8L12 14"
+                      stroke="#A1A1AA"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+
+                {/* Pure CSS Fill Animation — runs on GPU, zero JS overhead */}
+                {index === activeIndex && (
+                  <div className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
                     <div
-                      className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border"
+                      className="absolute left-0 top-0 w-full h-full overflow-hidden"
                       style={{
-                        animation: "pillFillInner 2.5s linear forwards",
+                        backgroundColor: "var(--color-primary-black)",
+                        animation: "pillFillOuter 2.5s linear forwards",
                         willChange: "transform",
                       }}
                     >
-                      <span
-                        className="relative z-2 font-semibold text-white text-base sm:text-lg lg:text-xl"
+                      <div
+                        className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border"
                         style={{
-                          fontFamily: "var(--font-manrope), sans-serif",
+                          animation: "pillFillInner 2.5s linear forwards",
+                          willChange: "transform",
                         }}
                       >
-                        {feature.title}
-                      </span>
-                      <svg viewBox="0 0 20 16" fill="none" className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-2">
-                        <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                        <span
+                          className="relative z-2 font-semibold text-white text-base sm:text-lg lg:text-xl"
+                          style={{
+                            fontFamily: "var(--font-manrope), sans-serif",
+                          }}
+                        >
+                          {feature.title}
+                        </span>
+                        <svg
+                          viewBox="0 0 20 16"
+                          fill="none"
+                          className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-2"
+                        >
+                          <path
+                            d="M2 8H18M18 8L12 2M18 8L12 14"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
               </motion.div>
 
               {/* Mobile Inline Content Panel */}
@@ -245,7 +289,8 @@ export default function FeaturesSection() {
                       className="w-full mt-2 p-6 sm:p-8 rounded-3xl flex flex-col gap-6"
                       style={{
                         backgroundColor: "rgba(0, 0, 0, 0.02)",
-                        boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
+                        boxShadow:
+                          "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
                       }}
                     >
                       <h3
@@ -274,7 +319,8 @@ export default function FeaturesSection() {
                                 <div
                                   className="absolute w-0.5 z-0 top-[22px] -bottom-[26px]"
                                   style={{
-                                    backgroundColor: "var(--color-primary-black)",
+                                    backgroundColor:
+                                      "var(--color-primary-black)",
                                   }}
                                 />
                               )}
@@ -306,7 +352,8 @@ export default function FeaturesSection() {
             className="w-full p-6 sm:p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
             style={{
               backgroundColor: "rgba(0, 0, 0, 0.02)",
-              boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
+              boxShadow:
+                "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
             }}
           >
             <AnimatePresence mode="popLayout">
@@ -340,7 +387,8 @@ export default function FeaturesSection() {
                           }}
                         />
                         {/* Connecting Line Segment */}
-                        {i !== FEATURES[activeIndex].content.bullets.length - 1 && (
+                        {i !==
+                          FEATURES[activeIndex].content.bullets.length - 1 && (
                           <div
                             className="absolute w-0.5 z-0 top-[22px] -bottom-[26px]"
                             style={{
