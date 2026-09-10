@@ -118,7 +118,7 @@ export default function IndustriesSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col gap-12 md:gap-20 overflow-hidden px-[6%]">
+    <section className="w-full max-w-screen-2xl mx-auto pt-[4%] pb-[2%] flex flex-col gap-12 md:gap-20 overflow-hidden px-[6%]">
 
       {/* Header — split layout */}
       <div className="flex flex-col md:flex-row items-start gap-6 md:gap-4 w-full">

@@ -26,7 +26,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[10%] pb-[8%] md:pt-[6%] md:pb-[6%] overflow-hidden px-4 sm:px-6"
+      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[10%] pb-[4%] md:pt-[6%] md:pb-[2%] overflow-hidden px-4 sm:px-6"
     >
       {/* Giant Background Text */}
       <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden -mt-[2%]">
@@ -77,7 +77,7 @@ export default function ContactSection() {
         <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-stretch gap-8 md:gap-12">
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
+              className="block text-sm sm:text-base lg:text-base font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -93,7 +93,7 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Your Name"
               required
-              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
+              className="w-full border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -102,7 +102,7 @@ export default function ContactSection() {
           </div>
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
+              className="block text-sm sm:text-base lg:text-base font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -118,7 +118,7 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Your Company Name"
               required
-              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
+              className="w-full border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -131,7 +131,7 @@ export default function ContactSection() {
         <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-stretch gap-8 md:gap-12">
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
+              className="block text-sm sm:text-base lg:text-base font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -146,7 +146,7 @@ export default function ContactSection() {
               value={formData.jobTitle}
               onChange={handleChange}
               placeholder="Enter your job title"
-              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
+              className="w-full border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -155,7 +155,7 @@ export default function ContactSection() {
           </div>
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
+              className="block text-sm sm:text-base lg:text-base font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -171,7 +171,7 @@ export default function ContactSection() {
               onChange={handleChange}
               placeholder="Enter your email"
               required
-              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
+              className="w-full border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -183,7 +183,7 @@ export default function ContactSection() {
         {/* Row 3: Phone */}
         <div className="w-[90%] max-w-full flex flex-col gap-2">
           <label
-            className="block text-base sm:text-lg lg:text-xl font-bold"
+            className="block text-sm sm:text-base lg:text-base font-bold"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
@@ -221,7 +221,7 @@ export default function ContactSection() {
                 onChange={handleChange}
                 placeholder="Enter your contact number"
                 required
-                className="w-full bg-transparent border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base py-2"
+                className="w-full bg-transparent border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm py-2"
                 style={{
                   fontFamily: "var(--font-manrope), sans-serif",
                   color: "var(--color-primary-black)",

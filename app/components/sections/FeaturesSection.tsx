@@ -149,7 +149,7 @@ export default function FeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20"
+      className="w-full max-w-screen-2xl mx-auto pt-[2%] pb-[4%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20"
     >
       {/* Header — responsive wrap layout */}
       <div className="w-full flex flex-wrap justify-between items-start gap-8">

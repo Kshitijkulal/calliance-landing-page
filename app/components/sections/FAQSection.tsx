@@ -48,7 +48,7 @@ export default function FAQSection() {
   return (
     <section
       id="faqs"
-      className="w-full mx-auto pt-12 md:pt-20 pb-12 md:pb-8 flex flex-col items-center gap-16"
+      className="w-full mx-auto pt-4 md:pt-8 pb-12 md:pb-8 flex flex-col items-center gap-16"
     >
       {/* Header */}
       <div className="w-[90%] md:w-[80%] lg:w-[60%] flex flex-col items-center gap-2">

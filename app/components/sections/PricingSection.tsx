@@ -17,7 +17,7 @@ export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 overflow-hidden px-[6%]" 
+      className="w-full max-w-[1440px] mx-auto pt-[4%] pb-[4%] flex flex-col items-center gap-12 overflow-hidden px-[6%]" 
     >
       {/* Header */}
       <div className="w-full max-w-[1280px] flex flex-col gap-2 mx-auto items-center">
