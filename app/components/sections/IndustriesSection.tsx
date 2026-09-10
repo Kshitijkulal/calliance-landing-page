@@ -153,28 +153,26 @@ export default function IndustriesSection() {
       {/* Scrollable Industry Cards Row */}
       <div className="w-full flex items-center gap-3 sm:gap-4 overflow-hidden">
 
-        {/* Left Scroll Arrow */}
-        {scrollPosition !== "left" && (
-          <motion.button
-            onClick={handleScrollLeft}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
-            style={{ backgroundColor: "var(--color-off-white)" }}
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
-              <path
-                d="M15 19L8 12L15 5"
-                stroke="var(--color-primary-black)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.button>
-        )}
+        {/* Left Scroll Arrow — always rendered on mobile for stable width, hidden at left edge */}
+        <motion.button
+          onClick={handleScrollLeft}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: scrollPosition !== "left" ? 1 : 0, scale: scrollPosition !== "left" ? 1 : 0.8 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className={`p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "left" ? "pointer-events-none md:hidden" : "md:flex"}`}
+          style={{ backgroundColor: "var(--color-off-white)" }}
+        >
+          <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
+            <path
+              d="M15 19L8 12L15 5"
+              stroke="var(--color-primary-black)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.button>
 
         {/* Cards Scroll Container */}
         <div className="flex-1 relative overflow-hidden">
@@ -247,28 +245,26 @@ export default function IndustriesSection() {
           </div>
         </div>
 
-        {/* Right Scroll Arrow */}
-        {scrollPosition !== "right" && (
-          <motion.button
-            onClick={handleScrollRight}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0"
-            style={{ backgroundColor: "var(--color-off-white)" }}
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
-              <path
-                d="M9 5L16 12L9 19"
-                stroke="var(--color-primary-black)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.button>
-        )}
+        {/* Right Scroll Arrow — always rendered on mobile for stable width, hidden at right edge */}
+        <motion.button
+          onClick={handleScrollRight}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: scrollPosition !== "right" ? 1 : 0, scale: scrollPosition !== "right" ? 1 : 0.8 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className={`p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "right" ? "pointer-events-none md:hidden" : "md:flex"}`}
+          style={{ backgroundColor: "var(--color-off-white)" }}
+        >
+          <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
+            <path
+              d="M9 5L16 12L9 19"
+              stroke="var(--color-primary-black)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.button>
       </div>
     </section>
   );
