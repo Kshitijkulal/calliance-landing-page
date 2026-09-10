@@ -56,7 +56,7 @@ export default function MoreThanDialerSection() {
 
       {/* Cards */}
       <div className="w-full max-w-screen-2xl mx-auto px-4 lg:px-20 pt-8 pb-8">
-        <div className="w-full py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="w-full py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start gap-6 md:gap-8">
           {CARDS.map((card) => (
             <motion.div
               key={card.title}
@@ -66,17 +66,19 @@ export default function MoreThanDialerSection() {
                 boxShadow: "none",
               }}
               transition={{ duration: 0 }}
-              className="group h-full flex flex-col gap-3 py-6 px-6 sm:px-8 rounded-xl border border-solid cursor-pointer"
+              className="group flex flex-col gap-3 py-8 group-hover:py-5 px-6 sm:px-8 group-hover:px-5 sm:group-hover:px-6 rounded-xl border border-solid cursor-pointer overflow-hidden"
               style={{
+                height: "290px",
+                maxHeight: "290px",
                 boxShadow:
                   "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                 backgroundColor: "var(--color-primary-beige)",
                 borderColor: "var(--color-white)",
               }}
             >
-              <div className="w-full flex-1 flex flex-col gap-4">
+              <div className="w-full flex-1 flex flex-col gap-4 group-hover:gap-3 transition-all duration-300">
                 <h3
-                  className="font-normal m-0 text-2xl md:text-3xl group-hover:text-3xl md:group-hover:text-4xl text-primary-black group-hover:text-secondary-beige pr-4 group-hover:pr-0 leading-none transition-all duration-300"
+                  className="font-normal m-0 text-2xl md:text-3xl group-hover:text-3xl md:group-hover:text-4xl text-primary-black group-hover:text-secondary-beige leading-none transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
                   }}
@@ -84,7 +86,7 @@ export default function MoreThanDialerSection() {
                   {card.title}
                 </h3>
                 <p
-                  className="text-sm md:text-base group-hover:text-base md:group-hover:text-lg font-normal leading-snug m-0 text-primary-black group-hover:text-secondary-beige pr-6 group-hover:pr-0 transition-all duration-300"
+                  className="text-sm md:text-base group-hover:text-base md:group-hover:text-lg font-normal leading-snug group-hover:leading-tight m-0 text-primary-black group-hover:text-secondary-beige transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                   }}

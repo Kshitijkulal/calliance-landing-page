@@ -105,6 +105,24 @@ export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const userScrollingRef = React.useRef(false);
+  const scrollTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Detect when the user is actively scrolling the page
+  useEffect(() => {
+    const handleUserScroll = () => {
+      userScrollingRef.current = true;
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => {
+        userScrollingRef.current = false;
+      }, 1000);
+    };
+    window.addEventListener("scroll", handleUserScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleUserScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
 
   // Track whether the section is visible in the viewport
   useEffect(() => {
@@ -129,17 +147,20 @@ export default function FeaturesSection() {
     return () => clearTimeout(timer);
   }, [activeIndex, isVisible]);
 
-  // Auto-scroll on mobile when active index changes, only if section is visible
+  // Auto-scroll on mobile when active index changes, only if section is visible and user is not navigating
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
       window.innerWidth < 1024 &&
-      isVisible
+      isVisible &&
+      !userScrollingRef.current
     ) {
       const element = document.getElementById(`feature-${activeIndex}`);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "center" });
+          if (!userScrollingRef.current) {
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
         }, 150);
       }
     }
