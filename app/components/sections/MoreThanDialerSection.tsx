@@ -31,18 +31,16 @@ export default function MoreThanDialerSection() {
       <div className="w-full mx-auto px-4 lg:px-20 pt-20 pb-0 flex flex-col items-center gap-12">
         <div className="w-full flex flex-col gap-2">
           <h2
-            className="w-full text-center font-normal uppercase"
+            className="w-full text-center font-normal uppercase text-4xl sm:text-5xl md:text-6xl leading-tight"
             style={{
               fontFamily: "var(--font-bebas-neue), sans-serif",
-              fontSize: "clamp(32px, 5vw, 60px)",
-              lineHeight: "1.1",
               color: "var(--color-primary-black)",
             }}
           >
             More Than Just A Voice AI Tool
           </h2>
           <p
-            className="w-[1008px] max-w-full mx-auto text-center text-xl font-normal leading-7"
+            className="w-[95%] sm:w-[85%] md:w-[70%] max-w-full mx-auto text-center text-base sm:text-lg lg:text-xl font-normal leading-relaxed"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
@@ -54,8 +52,8 @@ export default function MoreThanDialerSection() {
       </div>
 
       {/* Cards */}
-      <div className="w-full mx-auto px-4 lg:px-20 pt-12 pb-14 flex items-center gap-20">
-        <div className="flex-1 py-8 flex items-start gap-8">
+      <div className="w-full max-w-screen-2xl mx-auto px-4 lg:px-20 pt-12 pb-14">
+        <div className="w-full py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {CARDS.map((card) => (
             <motion.div
               key={card.title}
@@ -65,7 +63,7 @@ export default function MoreThanDialerSection() {
                 boxShadow: "none"
               }}
               transition={{ duration: 0 }}
-              className="group flex-1 self-stretch flex flex-col gap-3 pt-6 pb-6 px-8 rounded-xl border border-solid cursor-pointer"
+              className="group h-full flex flex-col gap-3 py-6 px-6 sm:px-8 rounded-xl border border-solid cursor-pointer"
               style={{
                 boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                 backgroundColor: "var(--color-primary-beige)",
@@ -74,7 +72,7 @@ export default function MoreThanDialerSection() {
             >
               <div className="w-full flex-1 flex flex-col gap-4">
                 <h3
-                  className="font-normal m-0 text-[30px] group-hover:text-[34px] text-primary-black group-hover:text-secondary-beige pr-4 group-hover:pr-0 leading-[1.1] group-hover:leading-[1.0]"
+                  className="font-normal m-0 text-2xl md:text-3xl group-hover:text-3xl md:group-hover:text-4xl text-primary-black group-hover:text-secondary-beige pr-4 group-hover:pr-0 leading-none transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
                   }}
@@ -82,7 +80,7 @@ export default function MoreThanDialerSection() {
                   {card.title}
                 </h3>
                 <p
-                  className="text-[16px] group-hover:text-[18px] font-normal leading-[1.4] group-hover:leading-[1.25] m-0 text-primary-black group-hover:text-secondary-beige pr-6 group-hover:pr-0"
+                  className="text-sm md:text-base group-hover:text-base md:group-hover:text-lg font-normal leading-snug m-0 text-primary-black group-hover:text-secondary-beige pr-6 group-hover:pr-0 transition-all duration-300"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                   }}
