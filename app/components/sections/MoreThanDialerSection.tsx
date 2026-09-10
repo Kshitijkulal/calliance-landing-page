@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 
 const CARDS = [
   {
-    title: "Effortless From\nDay One",
+    title: "Effortless From Day One",
     description:
       "We handle the complexity behind setup so your team can get started without a technical learning curve.",
   },
   {
-    title: "Technology That\nKeeps Evolving",
+    title: "Technology That Keeps Evolving",
     description:
       "Deliver highly personalized, on-brand interactions at scale, continuously refined by AI specialists to improve quality as technology evolves.",
   },
   {
-    title: "Setup, Training\nand Guidance",
+    title: "Setup, Training nand Guidance",
     description:
       "From initial setup to going live, our team helps you configure, launch, and get the most from your voice campaigns.",
   },
   {
-    title: "Consistent and\nError-Reduced",
+    title: "Consistent and Error-Reduced",
     description:
       "Automate repetitive calling workflows with consistent conversations and accurate capture of call information, reducing the errors that come with manual processes.",
   },
@@ -66,10 +66,8 @@ export default function MoreThanDialerSection() {
                 boxShadow: "none",
               }}
               transition={{ duration: 0 }}
-              className="group flex flex-col gap-3 py-8 group-hover:py-5 px-6 sm:px-8 group-hover:px-5 sm:group-hover:px-6 rounded-xl border border-solid cursor-pointer overflow-hidden"
+              className="group h-[200px] max-h-[200px] md:h-[290px] md:max-h-[290px] flex flex-col gap-3 py-6 group-hover:py-4 px-6 sm:px-8 sm:py-8 sm:group-hover:py-5 sm:group-hover:px-6 rounded-xl border border-solid cursor-pointer overflow-hidden"
               style={{
-                height: "290px",
-                maxHeight: "290px",
                 boxShadow:
                   "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                 backgroundColor: "var(--color-primary-beige)",
