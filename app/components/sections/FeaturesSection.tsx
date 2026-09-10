@@ -7,7 +7,7 @@ const FEATURES = [
   {
     title: "Customized AI Agents",
     content: {
-      heading: "Create agents built strictly around your business workflows.",
+      heading: "Create agents built strictly around your business workflows",
       bullets: [
         "Customize your agent for specific business goals",
         "Define how it speaks, responds, and handles conversations",
@@ -19,7 +19,7 @@ const FEATURES = [
   {
     title: "Affordable at Scale",
     content: {
-      heading: "Scale your outreach without scaling your costs. Get enterprise-level performance at a fraction of the price.",
+      heading: "Scale your outreach without scaling your costs. Get enterprise-level performance at a fraction of the price",
       bullets: [
         "30–40% more affordable than comparable solutions",
         "Pay only for what you use with flexible pricing",
@@ -31,7 +31,7 @@ const FEATURES = [
   {
     title: "Multilingual Conversations",
     content: {
-      heading: "Connect with customers in their preferred language, automatically.",
+      heading: "Connect with customers in their preferred language, automatically",
       bullets: [
         "Support for multiple regional and global languages",
         "Natural-sounding pronunciation and intonation",
@@ -43,7 +43,7 @@ const FEATURES = [
   {
     title: "Simultaneous Calling at Scale",
     content: {
-      heading: "Run thousands of simultaneous calls without compromising quality.",
+      heading: "Run thousands of simultaneous calls without compromising quality",
       bullets: [
         "Handle massive call volumes effortlessly",
         "Zero queue times for your customers",
@@ -55,7 +55,7 @@ const FEATURES = [
   {
     title: "Effortless Setup & Guided Launch",
     content: {
-      heading: "Go from sign-up to live campaigns in record time with guided onboarding.",
+      heading: "Go from sign-up to live campaigns in record time with guided onboarding",
       bullets: [
         "Step-by-step setup wizard",
         "Dedicated onboarding specialist",
@@ -67,7 +67,7 @@ const FEATURES = [
   {
     title: "Call Intelligence & Tracking",
     content: {
-      heading: "Turn every call into actionable business intelligence.",
+      heading: "Turn every call into actionable business intelligence",
       bullets: [
         "Real-time call transcription and analysis",
         "Sentiment detection and outcome tracking",
@@ -79,7 +79,7 @@ const FEATURES = [
   {
     title: "Secure & Reliable Calling",
     content: {
-      heading: "Enterprise-grade security and uptime for mission-critical communications.",
+      heading: "Enterprise-grade security and uptime for mission-critical communications",
       bullets: [
         "End-to-end encrypted call infrastructure",
         "99.9% uptime guarantee",
@@ -92,6 +92,22 @@ const FEATURES = [
 
 export default function FeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = React.useRef<HTMLElement>(null);
+  const isVisibleRef = React.useRef(false);
+
+  // Track whether the section is visible in the viewport
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -99,8 +115,23 @@ export default function FeaturesSection() {
     }, 2500); 
     return () => clearTimeout(timer);
   }, [activeIndex]);
+
+  // Auto-scroll on mobile when active index changes, only if section is visible
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024 && isVisibleRef.current) {
+      const element = document.getElementById(`feature-${activeIndex}`);
+      if (element) {
+        // Small delay to allow the accordion collapse/expand animation to begin
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 150);
+      }
+    }
+  }, [activeIndex]);
+
   return (
     <section
+      ref={sectionRef}
       id="features"
       className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20" 
     >
@@ -139,6 +170,7 @@ export default function FeaturesSection() {
           {FEATURES.map((feature, index) => (
             <React.Fragment key={feature.title}>
               <motion.div
+                id={`feature-${index}`}
                 onClick={() => setActiveIndex(index)}
                 className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
               style={{
