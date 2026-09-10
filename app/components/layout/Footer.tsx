@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import Image from "next/image";
 const SOCIAL_ICONS = [
   { label: "YouTube", href: "#", path: "M23.5 6.5a3.07 3.07 0 00-2.16-2.16C19.54 4 12 4 12 4s-7.54 0-9.34.34A3.07 3.07 0 00.5 6.5 32.09 32.09 0 000 12a32.09 32.09 0 00.5 5.5 3.07 3.07 0 002.16 2.16C4.46 20 12 20 12 20s7.54 0 9.34-.34a3.07 3.07 0 002.16-2.16A32.09 32.09 0 0024 12a32.09 32.09 0 00-.5-5.5zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" },
   { label: "Facebook", href: "#", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
@@ -12,20 +12,23 @@ const SOCIAL_ICONS = [
 
 export default function Footer() {
   return (
-    <footer className="w-full font-sans">
-      <div className="w-full mx-auto flex flex-col gap-8" style={{ padding: "5% 8%" }}>
+    <footer className="w-full font-sans bg-[var(--color-primary-beige)]">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col gap-10" style={{ padding: "5% 6%" }}>
         {/* Top Row — Logo + Social */}
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-2 no-underline font-bold text-2xl tracking-wide text-[var(--color-primary-black)]"
+            className="flex items-center justify-center no-underline shrink-0"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-[var(--color-primary-black)]">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79 1.41.97 3.09 1.54 4.89 1.54 3.09 0 5.8-1.61 7.27-4.04.4.88.63 1.86.63 2.89 0 4.08-3.05 7.44-7 7.93z" />
-              <path d="M15.5 8.5l-1.08-2.42L12 5l2.42-1.08L15.5 1.5l1.08 2.42L19 5l-2.42 1.08z" />
-            </svg>
-            CALLIENCE
+            <Image
+              src="/ai%20CALLING%20f.svg"
+              alt="Callience Logo"
+              width={216}
+              height={100}
+              className="h-8 md:h-10 lg:h-12 w-auto object-contain object-center"
+              priority
+            />
           </a>
 
           {/* Social Icons */}
@@ -63,7 +66,7 @@ export default function Footer() {
                   <path d="M22 6l-10 7L2 6" />
                 </svg>
                 <span className="text-sm text-[var(--color-dark-grey)] leading-6 whitespace-nowrap">
-                  info@callience.co
+                  info@callience.in
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -123,8 +126,8 @@ export default function Footer() {
         <div className="w-full border-t border-[var(--color-light-grey)]" />
 
         {/* Bottom Row — Copyright + Nav */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <span className="text-sm text-[var(--color-dark-grey)] leading-5">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-2">
+          <span className="text-sm text-[var(--color-primary-black)] font-medium leading-5">
             Callience @ 2026. All rights reserved.
           </span>
           <div className="flex items-center gap-6">
@@ -132,7 +135,7 @@ export default function Footer() {
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, "-")}`}
-                className="text-sm text-[var(--color-primary-black)] font-semibold tracking-tight no-underline transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
+                className="text-sm text-[var(--color-primary-black)] font-medium tracking-tight no-underline transition-colors duration-200 hover:text-[var(--color-dark-grey)]"
               >
                 {label}
               </a>
