@@ -102,18 +102,16 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="w-full max-w-[1440px] mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20" 
+      className="w-full max-w-screen-2xl mx-auto py-[7%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20" 
     >
       {/* Header — responsive wrap layout */}
       <div
         className="w-full flex flex-wrap justify-between items-start gap-8"
       >
         <h2
-          className="flex-[1_1_400px] font-normal uppercase m-0"
+          className="flex-[1_1_400px] font-normal uppercase m-0 text-5xl sm:text-6xl md:text-7xl leading-tight"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
-            fontSize: "clamp(40px, 5vw, 64px)",
-            lineHeight: "1.1",
             color: "var(--color-primary-black)",
           }}
         >
@@ -121,9 +119,8 @@ export default function FeaturesSection() {
         </h2>
         <div className="flex-[1_1_500px] pt-2 md:pt-4">
           <p
-            className="font-normal leading-relaxed m-0"
+            className="font-normal leading-relaxed m-0 text-base sm:text-lg lg:text-xl"
             style={{
-              fontSize: "clamp(16px, 2vw, 20px)",
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
             }}
@@ -138,29 +135,28 @@ export default function FeaturesSection() {
         className="w-full flex flex-wrap justify-center items-start gap-12"
       >
         {/* Left Column — Feature List */}
-        <div className="flex-[1_1_616px] flex flex-col gap-2 lg:gap-4 w-full lg:max-w-[616px]">
+        <div className="flex-[1_1_100%] lg:flex-[1_1_50%] flex flex-col gap-2 lg:gap-4 w-full">
           {FEATURES.map((feature, index) => (
             <motion.div
               key={feature.title}
               onClick={() => setActiveIndex(index)}
-              className="w-full h-[67px] pt-[20px] pb-[20px] pr-[32px] pl-[33px] rounded-[24px] flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
+              className="w-full py-4 sm:py-5 px-6 sm:px-8 rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
               style={{
                 backgroundColor: index === activeIndex ? "white" : "transparent",
                 boxShadow: index === activeIndex ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)" : "none",
               }}
             >
-              {/* Static 9px Left Border to prevent anti-aliasing gaps */}
+              {/* Static left border to prevent anti-aliasing gaps */}
               {index === activeIndex && (
                 <div
-                  className="absolute left-0 top-0 w-[9px] h-full z-10"
+                  className="absolute left-0 top-0 w-2 h-full z-10"
                   style={{ backgroundColor: "var(--color-primary-black)" }}
                 />
               )}
               {/* Base Content (Always visible, behind the fill) */}
               <span
-                className="relative z-0 font-semibold transition-colors duration-300 ease-in-out"
+                className="relative z-0 font-semibold transition-colors duration-300 ease-in-out text-base sm:text-lg lg:text-xl"
                 style={{
-                  fontSize: "clamp(16px, 2vw, 20px)",
                   fontFamily: "var(--font-manrope), sans-serif",
                   color: index === activeIndex ? "var(--color-primary-black)" : "#71717A",
                 }}
@@ -168,7 +164,7 @@ export default function FeaturesSection() {
                 {feature.title}
               </span>
               {index === activeIndex && (
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-0">
+                <svg viewBox="0 0 20 16" fill="none" className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-0">
                   <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="#A1A1AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               )}
@@ -185,22 +181,21 @@ export default function FeaturesSection() {
                     }}
                   >
                     <div
-                      className="absolute left-0 top-0 w-full h-full flex justify-between items-center pt-[20px] pb-[20px] pr-[32px] pl-[33px] box-border"
+                      className="absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border"
                       style={{
                         animation: "pillFillInner 2.5s linear forwards",
                         willChange: "transform",
                       }}
                     >
                       <span
-                        className="relative z-2 font-semibold text-white"
+                        className="relative z-2 font-semibold text-white text-base sm:text-lg lg:text-xl"
                         style={{
-                          fontSize: "clamp(16px, 2vw, 20px)",
                           fontFamily: "var(--font-manrope), sans-serif",
                         }}
                       >
                         {feature.title}
                       </span>
-                      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" className="shrink-0 ml-3 relative z-2">
+                      <svg viewBox="0 0 20 16" fill="none" className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-2">
                         <path d="M2 8H18M18 8L12 2M18 8L12 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
@@ -212,9 +207,9 @@ export default function FeaturesSection() {
         </div>
 
         {/* Right Column — Content Panel */}
-        <div className="flex-[1_1_500px] flex flex-col items-start w-full">
+        <div className="flex-[1_1_100%] lg:flex-[1_1_40%] flex flex-col items-start w-full">
           <div
-            className="w-full p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
+            className="w-full p-6 sm:p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
             style={{
               backgroundColor: "rgba(0, 0, 0, 0.02)",
               boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 20px rgba(255, 255, 255, 1)",
@@ -230,40 +225,39 @@ export default function FeaturesSection() {
                 className="w-full flex flex-col gap-6"
               >
                 <h3
-                  className="font-normal leading-[1.1] m-0 uppercase"
+                  className="font-normal leading-none m-0 uppercase text-3xl sm:text-4xl"
                   style={{
                     fontFamily: "var(--font-bebas-neue), sans-serif",
-                    fontSize: "clamp(24px, 3vw, 32px)",
                     color: "var(--color-primary-black)",
                   }}
                 >
                   {FEATURES[activeIndex].content.heading}
                 </h3>
 
-                <div className="relative flex flex-col gap-5 m-0 pl-1">
-                  {/* Continuous Vertical Line */}
-                  <div
-                    className="absolute w-0.5 z-0"
-                    style={{
-                      left: "11px",
-                      top: "7px",
-                      bottom: "7px",
-                      backgroundColor: "var(--color-primary-black)",
-                    }}
-                  />
-
+                <div className="flex flex-col gap-5 m-0 pl-1">
                   {FEATURES[activeIndex].content.bullets.map((bullet, i) => (
-                    <div key={i} className="flex items-center gap-4 relative z-1">
-                      {/* The Dot */}
-                      <div
-                        className="w-4 h-4 rounded-full shrink-0"
-                        style={{
-                          backgroundColor: "var(--color-primary-black)",
-                        }}
-                      />
+                    <div key={i} className="flex items-stretch gap-4">
+                      {/* The Dot & Line Container */}
+                      <div className="relative flex flex-col items-center shrink-0">
+                        <div
+                          className="w-4 h-4 rounded-full mt-1.5 relative z-10"
+                          style={{
+                            backgroundColor: "var(--color-primary-black)",
+                          }}
+                        />
+                        {/* Connecting Line Segment */}
+                        {i !== FEATURES[activeIndex].content.bullets.length - 1 && (
+                          <div
+                            className="absolute w-0.5 z-0 top-[22px] -bottom-[26px]"
+                            style={{
+                              backgroundColor: "var(--color-primary-black)",
+                            }}
+                          />
+                        )}
+                      </div>
                       {/* The Text */}
                       <p
-                        className="text-lg font-normal leading-relaxed m-0"
+                        className="text-base sm:text-lg font-normal leading-relaxed m-0"
                         style={{
                           fontFamily: "var(--font-manrope), sans-serif",
                           color: "var(--color-primary-black)",
