@@ -7,7 +7,7 @@ const FEATURES = [
   {
     title: "Customized AI Agents",
     content: {
-      heading: "Create agents built strictly around your business workflows",
+      heading: "Create agents built strictly around your business workflows.",
       bullets: [
         "Customize your agent for specific business goals",
         "Define how it speaks, responds, and handles conversations",
@@ -19,72 +19,67 @@ const FEATURES = [
   {
     title: "Affordable at Scale",
     content: {
-      heading: "Scale your outreach without scaling your costs. Get enterprise-level performance at a fraction of the price",
+      heading: "Enterprise-grade calling without enterprise-grade costs",
       bullets: [
-        "30–40% more affordable than comparable solutions",
-        "Pay only for what you use with flexible pricing",
-        "No hidden costs or long-term contracts",
-        "Volume discounts that grow with your business",
-      ],
-    },
-  },
-  {
-    title: "Multilingual Conversations",
-    content: {
-      heading: "Connect with customers in their preferred language, automatically",
-      bullets: [
-        "Support for multiple regional and global languages",
-        "Natural-sounding pronunciation and intonation",
-        "Automatic language detection and switching",
-        "Culturally aware conversation handling",
-      ],
-    },
-  },
-  {
-    title: "Simultaneous Calling at Scale",
-    content: {
-      heading: "Run thousands of simultaneous calls without compromising quality",
-      bullets: [
-        "Handle massive call volumes effortlessly",
-        "Zero queue times for your customers",
-        "Consistent quality across every conversation",
-        "Scale up or down based on demand",
-      ],
-    },
-  },
-  {
-    title: "Effortless Setup & Guided Launch",
-    content: {
-      heading: "Go from sign-up to live campaigns in record time with guided onboarding",
-      bullets: [
-        "Step-by-step setup wizard",
-        "Dedicated onboarding specialist",
-        "Pre-built templates for common workflows",
-        "Test mode before going live",
-      ],
-    },
-  },
-  {
-    title: "Call Intelligence & Tracking",
-    content: {
-      heading: "Turn every call into actionable business intelligence",
-      bullets: [
-        "Real-time call transcription and analysis",
-        "Sentiment detection and outcome tracking",
-        "Automated CRM updates after every call",
-        "Detailed reporting and performance dashboards",
+        "Handle more conversations with fewer resources",
+        "Scale outreach without scaling headcount",
+        "Reduce manual calling effort and operational overhead",
       ],
     },
   },
   {
     title: "Secure & Reliable Calling",
     content: {
-      heading: "Enterprise-grade security and uptime for mission-critical communications",
+      heading: "Engineered for business-critical communications.",
       bullets: [
-        "End-to-end encrypted call infrastructure",
-        "99.9% uptime guarantee",
-        "Compliant with industry regulations",
-        "Regular security audits and monitoring",
+        <React.Fragment key="sec-1"><strong>Secure customer interactions:</strong> Keep proprietary business data and customer conversations strictly protected.</React.Fragment>,
+        <React.Fragment key="sec-2"><strong>Encrypted data, controlled by you:</strong> Your data remains encrypted and can only be decrypted by you and authorized users you control.</React.Fragment>,
+        <React.Fragment key="sec-3"><strong>Reliable calling infrastructure:</strong> Rely on robust infrastructure built to handle high call volumes without compromising reliability.</React.Fragment>,
+        <React.Fragment key="sec-4"><strong>Built for business use:</strong> Architected to meet the data privacy, security and reliability standards required for modern B2B operations.</React.Fragment>,
+      ],
+    },
+  },
+  {
+    title: "Multilingual Conversations",
+    content: {
+      heading: "Reach global customers in their preferred native language.",
+      bullets: [
+        "Support multilingual customer conversations",
+        "Adapt interactions to customer language preferences",
+        "Reach diverse audiences at scale",
+      ],
+    },
+  },
+  {
+    title: "Simultaneous Calling at Scale",
+    content: {
+      heading: "Expand your outreach exponentially without expanding your team.",
+      bullets: [
+        "Run massive outbound campaigns in minutes, not days.",
+        "Make simultaneous calls at scale",
+        "Remove the dependency on slow, error-prone manual dialing queues.",
+      ],
+    },
+  },
+  {
+    title: "Effortless Setup & Guided Launch",
+    content: {
+      heading: "Get started without figuring it all out yourself",
+      bullets: [
+        "Guided onboarding and setup",
+        "Help configuring agents and campaigns",
+        "Support throughout deployment",
+      ],
+    },
+  },
+  {
+    title: "Call Intelligence & Tracking",
+    content: {
+      heading: "Know what happened after every conversation.",
+      bullets: [
+        "Capture intent, objections and interest level",
+        "Review transcripts and call outcomes",
+        "Track callbacks, next steps and follow-ups",
       ],
     },
   },
@@ -147,7 +142,7 @@ export default function FeaturesSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Built to Make Every Conversation Count
+          Where Intelligence Meets Human-Like Voice Experiences
         </h2>
         <div className="flex-[1_1_500px] pt-2 md:pt-4">
           <p

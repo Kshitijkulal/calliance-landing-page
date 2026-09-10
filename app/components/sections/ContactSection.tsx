@@ -35,7 +35,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="font-bold select-none whitespace-nowrap tracking-[-0.02em] text-[15vw] leading-[15vw] md:text-[19.5vw] md:leading-[19.5vw]"
+          className="font-bold select-none whitespace-nowrap tracking-[-0.02em] text-[22vw] leading-[22vw] md:text-[19.5vw] md:leading-[19.5vw]"
           style={{
             fontFamily: "var(--font-manrope), sans-serif",
             color: "var(--color-primary-black)",
@@ -53,7 +53,7 @@ export default function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[95%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-md p-[5%] -mt-[4%] md:-mt-[6%]"
+        className="w-[85%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-md p-[5%] -mt-[4%] md:-mt-[6%]"
         style={{
           boxShadow: "var(--shadow-glass)",
           backgroundColor: "var(--glass-bg)",

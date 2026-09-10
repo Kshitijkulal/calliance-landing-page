@@ -30,7 +30,7 @@ export default function Navbar() {
         duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       }}
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 backdrop-blur-[1px] bg-secondary-beige/40 border-b border-white/30 shadow-glass-bubble ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 backdrop-blur-[4px] lg:backdrop-blur-[1px] bg-secondary-beige/40 border-b border-white/30 shadow-glass-bubble ${
         scrolled ? "py-2 sm:py-3" : "py-3 sm:py-5"
       }`}
     >
@@ -114,7 +114,18 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
+          <div key="mobile-menu-wrapper">
+            {/* Click-away overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden fixed inset-0 w-full h-[100dvh] z-[-1]"
+              onClick={() => setMobileOpen(false)}
+            />
+            
+            <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -158,6 +169,7 @@ export default function Navbar() {
               </a>
             </div>
           </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </motion.header>

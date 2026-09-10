@@ -126,7 +126,7 @@ export default function Footer() {
         <div className="w-full border-t border-light-grey" />
 
         {/* Bottom Row — Copyright + Nav */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-2 text-center md:text-left">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 mt-2 text-center md:text-left">
           <span className="text-xs md:text-sm text-primary-black font-medium leading-5">
             Callience @ 2026. All rights reserved.
           </span>
