@@ -248,9 +248,12 @@ export default function HeroSection() {
                         transition: { duration: 0.6, ease: "easeOut" },
                       },
                     }}
-                    className={`relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full bg-gradient-to-br from-white/40 to-white/5 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_2px_4px_0_rgba(255,255,255,0.8),inset_0_-2px_4px_0_rgba(0,0,0,0.05)] justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.15),inset_0_2px_4px_0_rgba(255,255,255,0.8),inset_0_-2px_4px_0_rgba(0,0,0,0.05)] ${mobileAlignment}`}
+                    className={`relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1 ${mobileAlignment}`}
+                    style={{
+                      backgroundColor: "var(--color-primary-beige)",
+                      boxShadow: "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)"
+                    }}
                   >
-                    <div className="absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
                     <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                       {text}
                     </span>
