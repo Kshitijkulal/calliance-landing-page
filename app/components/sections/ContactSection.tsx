@@ -81,7 +81,7 @@ export default function ContactSection() {
         <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-stretch gap-8 md:gap-12">
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-sm sm:text-base font-semibold mb-1"
+              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -95,8 +95,9 @@ export default function ContactSection() {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Your Name"
               required
-              className="w-full border-none outline-none text-base sm:text-lg bg-transparent py-2"
+              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -105,7 +106,7 @@ export default function ContactSection() {
           </div>
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-sm sm:text-base font-semibold mb-1"
+              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -119,8 +120,9 @@ export default function ContactSection() {
               name="company"
               value={formData.company}
               onChange={handleChange}
+              placeholder="Your Company Name"
               required
-              className="w-full border-none outline-none text-base sm:text-lg bg-transparent py-2"
+              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -133,7 +135,7 @@ export default function ContactSection() {
         <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-stretch gap-8 md:gap-12">
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-sm sm:text-base font-semibold mb-1"
+              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -147,7 +149,8 @@ export default function ContactSection() {
               name="jobTitle"
               value={formData.jobTitle}
               onChange={handleChange}
-              className="w-full border-none outline-none text-base sm:text-lg bg-transparent py-2"
+              placeholder="Enter your job title"
+              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -156,7 +159,7 @@ export default function ContactSection() {
           </div>
           <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
             <label
-              className="block text-sm sm:text-base font-semibold mb-1"
+              className="block text-base sm:text-lg lg:text-xl font-bold mb-1"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -170,8 +173,9 @@ export default function ContactSection() {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Enter your email"
               required
-              className="w-full border-none outline-none text-base sm:text-lg bg-transparent py-2"
+              className="w-full border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base bg-transparent py-2"
               style={{
                 fontFamily: "var(--font-manrope), sans-serif",
                 color: "var(--color-primary-black)",
@@ -183,7 +187,7 @@ export default function ContactSection() {
         {/* Row 3: Phone */}
         <div className="w-[90%] max-w-full flex flex-col gap-2">
           <label
-            className="block text-sm sm:text-base font-semibold"
+            className="block text-base sm:text-lg lg:text-xl font-bold"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
@@ -219,8 +223,9 @@ export default function ContactSection() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                placeholder="Enter your contact number"
                 required
-                className="w-full bg-transparent border-none outline-none text-base sm:text-lg py-2"
+                className="w-full bg-transparent border-none outline-none text-base sm:text-lg lg:text-xl font-medium placeholder:text-[#888888] placeholder:text-sm sm:placeholder:text-base py-2"
                 style={{
                   fontFamily: "var(--font-manrope), sans-serif",
                   color: "var(--color-primary-black)",
