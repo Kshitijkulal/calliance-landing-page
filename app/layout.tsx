@@ -16,7 +16,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "AICaller — AI Voice Agents That Automate Outbound Calling",
+  title: "callience - AI Voice Agents That Automate Outbound Calling",
   description:
     "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
   keywords: [
@@ -28,9 +28,17 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${manrope.variable} ${bebasNeue.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <body
         style={{
           minHeight: "100vh",
