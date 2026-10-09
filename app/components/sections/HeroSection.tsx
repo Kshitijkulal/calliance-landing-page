@@ -287,6 +287,7 @@ export default function HeroSection() {
               src="/Mockup 1.png"
               alt="AICaller Unified Platform"
               fill
+              priority
               className="object-contain object-left-top scale-105 xl:scale-110 origin-left"
               unoptimized
             />
@@ -366,6 +367,7 @@ export default function HeroSection() {
               src="/Mockup 1.png"
               alt="AICaller"
               fill
+              priority
               className="object-contain"
               unoptimized
             />

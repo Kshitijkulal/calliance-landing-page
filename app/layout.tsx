@@ -16,7 +16,8 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "callience - AI Voice Agents That Automate Outbound Calling",
+  metadataBase: new URL("https://callience.in"),
+  title: "Callience | AI Voice Agents That Automate Outbound Calling",
   description:
     "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
   keywords: [
@@ -26,6 +27,26 @@ export const metadata: Metadata = {
     "sales automation",
     "AI dialer",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Callience | AI Voice Agents That Automate Outbound Calling",
+    description:
+      "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
+    url: "https://callience.in",
+    siteName: "Callience",
+    images: [
+      {
+        url: "/Mockup 1.png",
+        width: 1200,
+        height: 630,
+        alt: "Callience AI Voice Agents Platform",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -48,6 +69,32 @@ export default function RootLayout({
         }}
       >
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Callience",
+              url: "https://callience.in",
+              logo: "https://callience.in/logo.png",
+              image: "https://callience.in/Mockup%201.png",
+              description:
+                "AI voice agents that automate outbound calling, qualify leads, and book meetings.",
+              telephone: "+91-8448445810",
+              email: "info@callience.in",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
+                addressLocality: "Gurugram",
+                addressRegion: "Haryana",
+                postalCode: "122001",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
