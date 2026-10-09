@@ -16,7 +16,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://callience.in"),
+  metadataBase: new URL("https://www.callience.in"),
   title: "Callience | AI Voice Agents That Automate Outbound Calling",
   description:
     "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Callience | AI Voice Agents That Automate Outbound Calling",
     description:
       "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
-    url: "https://callience.in",
+    url: "https://www.callience.in",
     siteName: "Callience",
     images: [
       {
@@ -76,9 +76,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Callience",
-              url: "https://callience.in",
-              logo: "https://callience.in/logo.png",
-              image: "https://callience.in/Mockup%201.png",
+              url: "https://www.callience.in",
+              logo: "https://www.callience.in/logo.png",
+              image: "https://www.callience.in/Mockup%201.png",
               description:
                 "AI voice agents that automate outbound calling, qualify leads, and book meetings.",
               telephone: "+91-8448445810",

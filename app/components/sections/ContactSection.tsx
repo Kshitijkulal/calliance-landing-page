@@ -12,15 +12,37 @@ export default function ContactSection() {
     phone: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        // Reset form
+        setFormData({ name: "", company: "", jobTitle: "", email: "", phone: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("There was an issue submitting your request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -255,7 +277,7 @@ export default function ContactSection() {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="h-11 sm:h-12 px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-none cursor-pointer flex items-center justify-center"
+                className="h-11 sm:h-12 px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-none cursor-pointer flex items-center justify-center disabled:opacity-50"
                 style={{
                   backgroundColor: "var(--color-primary-black)",
                 }}
@@ -267,7 +289,7 @@ export default function ContactSection() {
                     color: "var(--color-secondary-beige)",
                   }}
                 >
-                  Request Demo
+                  {submitting ? "Submitting..." : "Request Demo"}
                 </span>
               </motion.button>
             )}

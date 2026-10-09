@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://callience.in/sitemap.xml',
+    sitemap: 'https://www.callience.in/sitemap.xml',
   }
 }
