@@ -12,6 +12,7 @@ const CARDS = [
     image: "/image 826-3.png",
     imageAlt: "A hand placing a target into a voice-agent dashboard",
     imageOnLeft: false,
+    rightInset: false,
   },
   {
     title: "Marketing Consultants On Your Side",
@@ -20,6 +21,7 @@ const CARDS = [
     image: "/image 826-2.png",
     imageAlt: "A marketing consultant planning a campaign with an AI agent",
     imageOnLeft: true,
+    rightInset: false,
   },
   {
     title: "Smarter Spend, Better ROI",
@@ -28,6 +30,7 @@ const CARDS = [
     image: "/image 826-1.png",
     imageAlt: "An AI agent saving coins beside a rising results chart",
     imageOnLeft: false,
+    rightInset: true,
   },
   {
     title: "Every Lead Followed Up",
@@ -36,6 +39,7 @@ const CARDS = [
     image: "/image 826.png",
     imageAlt: "An AI agent qualifying leads through a funnel",
     imageOnLeft: true,
+    rightInset: false,
   },
 ];
 
@@ -70,22 +74,24 @@ export default function CampaignPartnerSection() {
                 borderColor: "var(--color-white)",
               }}
             >
-              <div
-                className={`flex flex-col md:min-h-[188px] md:flex-row md:items-center ${
-                  card.imageOnLeft ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="relative z-10 w-full px-4 py-4 sm:px-5 sm:py-5 md:w-[48%] md:max-w-[460px] md:px-5 md:py-6">
-                  <h3 className="m-0 font-bebas font-normal uppercase text-primary-black text-[26px] sm:text-[30px] md:text-[32px] leading-[0.95]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 md:mt-2.5 m-0 font-manrope font-normal text-primary-black text-sm md:text-[15px] leading-snug">
-                    {card.description}
-                  </p>
+              <div className="flex flex-col md:block md:min-h-[300px]">
+                <div
+                  className={`relative z-10 flex w-full items-center px-6 py-6 sm:px-8 sm:py-7 md:min-h-[300px] md:py-8 ${
+                    card.imageOnLeft ? "md:pl-[53%] md:pr-8" : "md:pl-7 md:pr-8"
+                  }`}
+                >
+                  <div className="w-full max-w-[560px]">
+                    <h3 className="m-0 font-bebas font-normal uppercase text-primary-black text-[32px] sm:text-[40px] md:text-[46px] leading-[0.9]">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3.5 m-0 max-w-[400px] font-manrope font-normal text-primary-black text-[15px] md:text-[18px] leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
 
                 <div
-                  className={`relative h-44 w-full sm:h-48 md:absolute md:inset-y-0 md:h-auto md:w-[52%] ${
+                  className={`relative h-52 w-full sm:h-60 md:absolute md:inset-y-0 md:h-auto md:w-[46%] ${
                     card.imageOnLeft ? "md:left-0" : "md:right-0"
                   }`}
                 >
@@ -95,9 +101,14 @@ export default function CampaignPartnerSection() {
                     fill
                     className={`object-contain ${
                       card.imageOnLeft
-                        ? "origin-bottom-left object-left-bottom scale-[1.18] md:origin-left md:object-left md:scale-[1.38]"
-                        : "origin-bottom-right object-right-bottom scale-[1.18] md:origin-right md:object-right md:scale-[1.38]"
+                        ? "object-left-bottom"
+                        : "object-right"
                     }`}
+                    style={
+                      card.rightInset
+                        ? { objectPosition: "calc(100% - 24px) 50%" }
+                        : undefined
+                    }
                     unoptimized
                   />
                 </div>
