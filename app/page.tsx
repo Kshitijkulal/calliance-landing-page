@@ -4,7 +4,7 @@ import HeroSection from "./components/sections/HeroSection";
 import DataSecuritySection from "./components/sections/DataSecuritySection";
 import HowItWorksSection from "./components/sections/HowItWorksSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
-import MoreThanDialerSection from "./components/sections/MoreThanDialerSection";
+import CampaignPartnerSection from "./components/sections/CampaignPartnerSection";
 import PricingSection from "./components/sections/PricingSection";
 import IndustriesSection from "./components/sections/IndustriesSection";
 import FAQSection from "./components/sections/FAQSection";
@@ -25,7 +25,7 @@ export default function Home() {
         <FasterCallsSection />
         <div className="h-12 md:h-24 w-full" />
         <FeaturesSection />
-        <MoreThanDialerSection />
+        <CampaignPartnerSection />
         <PricingSection />
         <IndustriesSection />
         <FAQSection />
