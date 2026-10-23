@@ -281,13 +281,13 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute -left-12 xl:-left-[4.5%] top-0 w-[105%] xl:w-[110%] h-[105%] pointer-events-none"
+            className="absolute left-0 top-[4%] h-[92%] w-[52%] xl:w-[54%] pointer-events-none"
           >
             <Image
               src="/Mockup 1.png"
               alt="AICaller Unified Platform"
               fill
-              className="object-contain object-left-top scale-105 xl:scale-110 origin-left"
+              className="object-contain object-left"
               unoptimized
             />
           </motion.div>
@@ -301,11 +301,10 @@ export default function HeroSection() {
             className="absolute flex flex-col items-start gap-5 z-10 right-4 lg:right-12 xl:right-24 top-1/4 w-[35%] xl:w-1/3"
           >
             <h2 className="text-5xl xl:text-6xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
-              CALL INTELLIGENTLY , CONTROL EVERYTHING
+              SOFTWARE ALONE DOESN'T DELIVER ROI , STRATEGY DOES
             </h2>
             <p className="text-lg xl:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
-              Bring AI callers, campaigns and conversations together in one
-              unified platform designed for intelligent outbound operations.
+              Our <span className="font-bold">AI specialists and Marketing consultants</span> help you target the right audience, optimize campaigns, and drive better ROI without the guesswork.
             </p>
 
             {/* CTA */}
@@ -338,7 +337,7 @@ export default function HeroSection() {
 
         {/* Mobile/Tablet Fallback (Stacking) */}
         <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-2 relative z-10">
-          
+
           {/* Heading and Paragraph above Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -347,11 +346,10 @@ export default function HeroSection() {
             className="w-full flex flex-col gap-2 px-4 sm:px-6 mt-0"
           >
             <h2 className="text-3xl sm:text-4xl leading-none m-0 uppercase font-bebas text-primary-black">
-              CALL INTELLIGENTLY , CONTROL EVERYTHING
+              SOFTWARE ALONE DOESN'T DELIVER ROI , STRATEGY DOES
             </h2>
             <p className="text-sm sm:text-base m-0 font-manrope text-primary-black">
-              Bring AI callers, campaigns and conversations together in one
-              unified platform designed for intelligent outbound operations.
+              Our <span className="font-bold">AI specialists and Marketing consultants</span> help you target the right audience, optimize campaigns, and drive better ROI without the guesswork.
             </p>
           </motion.div>
 
@@ -360,7 +358,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative w-[135%] -left-[5.5%] aspect-[968/672] -my-2"
+            className="relative w-full aspect-[791/703]"
           >
             <Image
               src="/Mockup 1.png"
