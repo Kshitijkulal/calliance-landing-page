@@ -62,7 +62,7 @@ export default function CampaignPartnerSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.55, delay: index * 0.05, ease: "easeOut" }}
-              className="w-full rounded-2xl border border-solid px-5 py-5 sm:px-7 sm:py-6 md:px-10 md:py-7"
+              className="relative w-full overflow-hidden rounded-2xl border border-solid"
               style={{
                 boxShadow:
                   "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
@@ -71,28 +71,32 @@ export default function CampaignPartnerSection() {
               }}
             >
               <div
-                className={`flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between md:gap-8 ${
+                className={`flex flex-col md:min-h-[188px] md:flex-row md:items-center ${
                   card.imageOnLeft ? "md:flex-row-reverse" : ""
                 }`}
               >
-                <div className="w-full md:max-w-[380px] lg:max-w-[420px] text-left shrink-0">
+                <div className="relative z-10 w-full px-4 py-4 sm:px-5 sm:py-5 md:w-[48%] md:max-w-[460px] md:px-5 md:py-6">
                   <h3 className="m-0 font-bebas font-normal uppercase text-primary-black text-[26px] sm:text-[30px] md:text-[32px] leading-[0.95]">
                     {card.title}
                   </h3>
-                  <p className="mt-2.5 md:mt-3 m-0 font-manrope font-normal text-primary-black text-sm md:text-[15px] leading-snug">
+                  <p className="mt-2 md:mt-2.5 m-0 font-manrope font-normal text-primary-black text-sm md:text-[15px] leading-snug">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="relative w-full h-40 sm:h-44 md:h-[168px] md:w-[42%] lg:w-[46%] shrink-0">
+                <div
+                  className={`relative h-44 w-full sm:h-48 md:absolute md:inset-y-0 md:h-auto md:w-[52%] ${
+                    card.imageOnLeft ? "md:left-0" : "md:right-0"
+                  }`}
+                >
                   <Image
                     src={card.image}
                     alt={card.imageAlt}
                     fill
                     className={`object-contain ${
                       card.imageOnLeft
-                        ? "object-center md:object-left"
-                        : "object-center md:object-right"
+                        ? "origin-bottom-left object-left-bottom scale-[1.18] md:origin-left md:object-left md:scale-[1.38]"
+                        : "origin-bottom-right object-right-bottom scale-[1.18] md:origin-right md:object-right md:scale-[1.38]"
                     }`}
                     unoptimized
                   />
