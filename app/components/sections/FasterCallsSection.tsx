@@ -5,24 +5,12 @@ import { motion } from "framer-motion";
 
 const USE_CASES = [
   {
-    title: "Payment Reminders",
-    description: "Proactively reach customers about pending payments to improve cash flow before accounts become overdue",
-  },
-  {
     title: "Lead Qualification",
     description: "Identify high-intent prospects and move them to the next step automatically.",
   },
   {
     title: "Lead Follow-Ups",
     description: "Ensure consistent outreach so no promising pipeline opportunity goes cold.",
-  },
-  {
-    title: "Appointment Reminders",
-    description: "Confirm bookings and reduce costly no-shows with timely automated calls",
-  },
-  {
-    title: "Customer Re-engagement",
-    description: "Reconnect with inactive customers and automatically bring them back into your sales funnel.",
   },
   {
     title: "Real Estate Outreach",
@@ -33,12 +21,24 @@ const USE_CASES = [
     description: "Reach students and parents for admissions follow-ups, counselling and timely updates.",
   },
   {
+    title: "Payment Reminders",
+    description: "Proactively reach customers about pending payments to improve cash flow before accounts become overdue",
+  },
+  {
+    title: "Appointment Reminders",
+    description: "Confirm bookings and reduce costly no-shows with timely automated calls",
+  },
+  {
+    title: "Customer Re-engagement",
+    description: "Reconnect with inactive customers and automatically bring them back into your sales funnel.",
+  },
+  {
     title: "Renewals & Retention",
     description: "Reach customers before renewals and turn timely conversations into guaranteed retention.",
   },
 ];
 
-export default function CallToWorkSection() {
+export default function FasterCallsSection() {
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
   const [isHovered, setIsHovered] = useState(false);
@@ -108,12 +108,12 @@ export default function CallToWorkSection() {
         <h2
           className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black"
         >
-          Put Every Customer Call To Work
+          Faster Calls That Keep You Ahead
         </h2>
         <p
           className="w-full text-center text-lg md:text-xl font-normal leading-7 m-0 mt-4 font-manrope text-primary-black"
         >
-          Automate the routine conversations your team handles every day from lead qualification and follow-ups to reminders and service calls.
+          From lead qualification to payment reminders, see how Callience makes everyday calls faster and more efficient.
         </p>
       </div>
 

@@ -1,7 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import HeroSection from "./components/sections/HeroSection";
-import CallToWorkSection from "./components/sections/CallToWorkSection";
 import DataSecuritySection from "./components/sections/DataSecuritySection";
 import HowItWorksSection from "./components/sections/HowItWorksSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
@@ -10,6 +9,7 @@ import PricingSection from "./components/sections/PricingSection";
 import IndustriesSection from "./components/sections/IndustriesSection";
 import FAQSection from "./components/sections/FAQSection";
 import ContactSection from "./components/sections/ContactSection";
+import FasterCallsSection from "./components/sections/FasterCallsSection";
 
 export default function Home() {
   return (
@@ -21,8 +21,8 @@ export default function Home() {
       >
         <HeroSection />
         <DataSecuritySection />
-        <CallToWorkSection />
         <HowItWorksSection />
+        <FasterCallsSection />
         <div className="h-12 md:h-24 w-full" />
         <FeaturesSection />
         <MoreThanDialerSection />
