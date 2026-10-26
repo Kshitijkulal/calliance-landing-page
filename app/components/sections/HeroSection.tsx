@@ -152,12 +152,12 @@ export default function HeroSection() {
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-[1px] bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center w-full px-4 mt-10 md:mt-16 lg:mt-24">
+        <div className="relative z-20 flex flex-col items-center w-full px-4 sm:px-6 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-primary-black font-bebas w-full"
+            className="text-center font-normal tracking-wide uppercase m-0 text-[clamp(34px,11.5vw,172px)] leading-[0.88] text-primary-black font-bebas w-full"
           >
             {"CALLING INTELLIGENCE"
               .split(" ")
@@ -165,7 +165,7 @@ export default function HeroSection() {
                 <motion.span
                   key={i}
                   variants={wordVariants}
-                  className="inline-block mr-2 sm:mr-3 lg:mr-4"
+                  className="inline-block mr-[0.18em] last:mr-0"
                 >
                   {word}
                 </motion.span>
@@ -176,7 +176,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-6 md:mt-10 lg:mt-16 text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
+            className="mt-4 sm:mt-5 md:mt-7 lg:mt-9 text-center font-normal leading-snug md:leading-relaxed m-0 text-sm sm:text-base md:text-lg lg:text-xl text-primary-black font-manrope w-full max-w-[40rem] sm:max-w-[46rem] px-1"
           >
             AI calling powered by expert{" "}
             <span className="font-bold">
@@ -193,7 +193,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-8 md:mt-12 lg:mt-16"
+            className="mt-7 sm:mt-9 md:mt-12 lg:mt-16"
           >
             <motion.a
               href="#contact"
@@ -229,7 +229,7 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-6 md:gap-10 lg:gap-16 mt-6 md:mt-8 lg:mt-10 w-full max-w-5xl mx-auto pb-4 px-2 sm:px-4"
+            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-3 sm:gap-6 md:gap-10 lg:gap-16 mt-8 sm:mt-10 md:mt-20 lg:mt-48 w-full max-w-5xl mx-auto pb-2 px-1 sm:px-4"
           >
             {["Strategic", "High ROI", "Natural", "Customized"].map(
               (text, index) => {
