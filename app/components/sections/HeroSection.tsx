@@ -56,14 +56,13 @@ export default function HeroSection() {
                 vectorEffect="non-scaling-stroke"
               />
             </svg>
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+            <div
               className="w-full h-full rounded-full relative"
+              style={{ animation: "ring-spin 10s linear infinite" }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
-            </motion.div>
+            </div>
           </div>
 
           {/* Ring 2 */}
@@ -82,15 +81,13 @@ export default function HeroSection() {
                 vectorEffect="non-scaling-stroke"
               />
             </svg>
-            <motion.div
-              initial={{ rotate: 45 }}
-              animate={{ rotate: -315 }}
-              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+            <div
               className="w-full h-full rounded-full relative"
+              style={{ animation: "ring-spin-rev 15s linear infinite", ["--ring-start" as string]: "45deg" }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
-            </motion.div>
+            </div>
           </div>
 
           {/* Ring 3 */}
@@ -109,15 +106,13 @@ export default function HeroSection() {
                 vectorEffect="non-scaling-stroke"
               />
             </svg>
-            <motion.div
-              initial={{ rotate: 90 }}
-              animate={{ rotate: 450 }}
-              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            <div
               className="w-full h-full rounded-full relative"
+              style={{ animation: "ring-spin 20s linear infinite", ["--ring-start" as string]: "90deg" }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
-            </motion.div>
+            </div>
           </div>
 
           {/* Ring 4 (Outer) */}
@@ -136,20 +131,18 @@ export default function HeroSection() {
                 vectorEffect="non-scaling-stroke"
               />
             </svg>
-            <motion.div
-              initial={{ rotate: 135 }}
-              animate={{ rotate: -225 }}
-              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+            <div
               className="w-full h-full rounded-full relative"
+              style={{ animation: "ring-spin-rev 25s linear infinite", ["--ring-start" as string]: "135deg" }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
         {/* Gradient Blur Overlay extending down from the button's line */}
-        <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none backdrop-blur-[1px] bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
+        <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
         <div className="relative z-20 flex flex-col items-center w-full px-4 sm:px-6 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
@@ -276,9 +269,6 @@ export default function HeroSection() {
         id="platform"
         className="w-full flex justify-center relative z-10 -mt-12 md:-mt-16"
       >
-        {/* Continuous Blur Overlay for Rings */}
-        <div className="absolute inset-0 z-0 pointer-events-none backdrop-blur-[1px]" />
-
         {/* Desktop/Large Screen Pixel-Perfect Layout */}
         <div className="hidden lg:block relative w-full min-h-screen mx-auto z-10">
           {/* Laptop Image */}

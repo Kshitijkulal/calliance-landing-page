@@ -116,9 +116,58 @@ body {
   .shadow-glass-bubble {
     box-shadow: 0px 7px 44px rgba(219, 220, 220, 0.18);
   }
+
+  .nav-glass-sheen {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.22) 5%,
+      rgba(255, 255, 255, 0) 16%
+    );
+  }
+
+  .nav-shell {
+    background-color: rgba(255, 253, 241, 0.4);
+    box-shadow: 0px 7px 44px rgba(219, 220, 220, 0.18);
+  }
+
+  .nav-plate {
+    transition:
+      width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      border-radius 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-move {
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-shell.is-scrolled {
+    background-color: rgba(250, 249, 245, 0.86);
+    box-shadow:
+      0 10px 24px rgba(30, 30, 30, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-pill {
+    background-color: rgba(255, 253, 241, 0.55);
+    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 8px 20px rgba(30, 30, 30, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(30, 30, 30, 0.05);
+  }
 }
 
 /* Feature pill fill animation — pure CSS, runs on GPU compositor */
+@keyframes ring-spin {
+  from { transform: rotate(var(--ring-start, 0deg)); }
+  to { transform: rotate(calc(var(--ring-start, 0deg) + 360deg)); }
+}
+@keyframes ring-spin-rev {
+  from { transform: rotate(var(--ring-start, 0deg)); }
+  to { transform: rotate(calc(var(--ring-start, 0deg) - 360deg)); }
+}
+
 @keyframes pillFillOuter {
   from { transform: translateX(-100%); }
   to { transform: translateX(0%); }
