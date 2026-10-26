@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
@@ -12,12 +12,7 @@ const NAV_LINKS = [
   { label: "Blogs", href: "#blogs" },
 ];
 
-const SPRING = {
-  type: "spring" as const,
-  stiffness: 230,
-  damping: 28,
-  mass: 0.85,
-};
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 function ArrowIcon({ className }: { className: string }) {
   return (
@@ -33,24 +28,81 @@ function ArrowIcon({ className }: { className: string }) {
   );
 }
 
+function paddingFor(width: number) {
+  if (width >= 1280) return { x: 80, y: 20 };
+  if (width >= 1024) return { x: 48, y: 20 };
+  if (width >= 768) return { x: 32, y: 20 };
+  if (width >= 640) return { x: 24, y: 20 };
+  return { x: 16, y: 12 };
+}
+
 export default function Navbar() {
   const reduceMotion = useReducedMotion();
+  const logoRef = useRef<HTMLAnchorElement>(null);
+  const linksRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [frameWidth, setFrameWidth] = useState(0);
+  const [metrics, setMetrics] = useState({
+    full: 0,
+    collapsed: 0,
+    expanded: 0,
+    padX: 80,
+    padY: 20,
+  });
 
-  useEffect(() => {
-    const measure = () => setFrameWidth(document.documentElement.clientWidth);
+  useLayoutEffect(() => {
+    let frame = 0;
+    const measure = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const full = document.documentElement.clientWidth;
+        const pad = paddingFor(full);
+        const logo = logoRef.current?.offsetWidth ?? 0;
+        const links = linksRef.current?.scrollWidth ?? 0;
+        const cta = ctaRef.current?.offsetWidth ?? 0;
+        const burger = burgerRef.current?.offsetWidth ?? 0;
+        const desktop = window.matchMedia("(min-width: 1024px)").matches;
+        const pillX = 16;
+        const gap = 12;
+        const gaps = desktop ? 2 : 1;
+        const border = 2;
+        const collapsed = Math.min(
+          full,
+          logo + cta + burger + pillX * 2 + gap * gaps + border,
+        );
+        const expandedWidth = Math.min(
+          full - 16,
+          collapsed + (desktop && links > 0 ? links + gap : 0),
+        );
+        setMetrics({
+          full,
+          collapsed,
+          expanded: expandedWidth,
+          padX: pad.x,
+          padY: pad.y,
+        });
+      });
+    };
+
     measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(document.documentElement);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
   }, []);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled((prev) => (prev ? y > 8 : y > 40));
+      setScrolled((prev) => (prev ? y > 24 : y > 80));
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -62,8 +114,20 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [scrolled]);
 
-  const showLinks = !scrolled || expanded;
-  const transition = reduceMotion ? { duration: 0 } : SPRING;
+  const ready = metrics.full > 0;
+  const open = !scrolled || expanded;
+  const transition =
+    !ready || reduceMotion
+      ? { duration: 0 }
+      : { duration: 0.6, ease: EASE };
+
+  const width = !ready
+    ? "100%"
+    : scrolled
+      ? expanded
+        ? metrics.expanded
+        : metrics.collapsed
+      : metrics.full;
 
   return (
     <>
@@ -74,106 +138,114 @@ export default function Navbar() {
         />
       )}
 
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={
-          reduceMotion
-            ? { duration: 0 }
-            : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-        }
-        className="fixed top-0 inset-x-0 z-50 flex flex-col items-center"
-      >
+      <header className="fixed top-0 inset-x-0 z-50 flex flex-col items-center pointer-events-none">
         <motion.nav
           initial={false}
           animate={{
-            width: frameWidth === 0 ? "100%" : scrolled ? "fit-content" : frameWidth,
-            marginTop: scrolled ? 14 : 0,
+            width,
+            marginTop: scrolled ? 16 : 0,
+            paddingLeft: scrolled ? 16 : metrics.padX,
+            paddingRight: scrolled ? 16 : metrics.padX,
+            paddingTop: scrolled ? 10 : metrics.padY,
+            paddingBottom: scrolled ? 10 : metrics.padY,
             borderRadius: scrolled ? 999 : 0,
+            gap: 12,
             backgroundColor: scrolled
-              ? "rgba(250, 249, 245, 0.78)"
+              ? "rgba(250, 249, 245, 0.82)"
               : "rgba(255, 253, 241, 0.4)",
-            borderColor: scrolled
-              ? "rgba(255, 255, 255, 0.82)"
-              : "rgba(255, 255, 255, 0.28)",
+            borderTopColor: scrolled
+              ? "rgba(255, 255, 255, 0.85)"
+              : "rgba(255, 255, 255, 0)",
+            borderLeftColor: scrolled
+              ? "rgba(255, 255, 255, 0.85)"
+              : "rgba(255, 255, 255, 0)",
+            borderRightColor: scrolled
+              ? "rgba(255, 255, 255, 0.85)"
+              : "rgba(255, 255, 255, 0)",
+            borderBottomColor: scrolled
+              ? "rgba(255, 255, 255, 0.85)"
+              : "rgba(255, 255, 255, 0.3)",
             boxShadow: scrolled
-              ? "0 14px 36px rgba(30, 30, 30, 0.1), inset 0 1px 0 rgba(255,255,255,0.92)"
-              : "0px 7px 44px rgba(219, 220, 220, 0.18), inset 0 -1px 0 rgba(255,255,255,0.45)",
-            backdropFilter: scrolled
-              ? "blur(20px) saturate(1.5)"
-              : "blur(6px) saturate(1.15)",
+              ? "0 16px 40px rgba(30, 30, 30, 0.1), inset 0 1px 0 rgba(255,255,255,0.95)"
+              : "0px 7px 44px rgba(219, 220, 220, 0.18)",
+            backdropFilter: scrolled ? "blur(18px) saturate(1.4)" : "blur(4px)",
           }}
           transition={transition}
           onMouseEnter={() => scrolled && setExpanded(true)}
           onMouseLeave={() => setExpanded(false)}
           onFocus={() => scrolled && setExpanded(true)}
           onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false);
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setExpanded(false);
+            }
           }}
-          className={`flex items-center overflow-hidden border border-solid backdrop-blur-xl ${
-            scrolled
-              ? "max-w-[calc(100%-1.25rem)] gap-3 px-3 py-2"
-              : "justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-3"
-          }`}
+          className="pointer-events-auto flex items-center overflow-hidden border border-solid max-w-full"
         >
-          <a href="#" className="flex items-center shrink-0 no-underline">
+          <a
+            ref={logoRef}
+            href="#"
+            className="flex items-center shrink-0 no-underline"
+          >
             <Image
               src="/ai%20CALLING%20f.svg"
               alt="Callience"
               width={216}
               height={100}
-              className="h-11 w-auto object-contain object-center"
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain object-center -translate-y-1"
               priority
             />
           </a>
 
-          <motion.div
-            initial={false}
-            animate={{
-              width: showLinks ? "auto" : 0,
-              opacity: showLinks ? 1 : 0,
-              backgroundColor: scrolled
-                ? "rgba(255, 255, 255, 0)"
-                : "rgba(83, 83, 83, 0.16)",
-              borderColor: scrolled
-                ? "rgba(255, 255, 255, 0)"
-                : "rgba(255, 255, 255, 0.5)",
-              paddingLeft: showLinks ? (scrolled ? 4 : 18) : 0,
-              paddingRight: showLinks ? (scrolled ? 4 : 18) : 0,
-            }}
-            transition={transition}
-            className="hidden lg:flex h-12 items-center overflow-hidden rounded-full border border-solid"
-          >
-            <div className="flex items-center gap-1 whitespace-nowrap">
+          <div className="hidden lg:flex flex-1 min-w-0 justify-center overflow-hidden">
+            <motion.div
+              ref={linksRef}
+              initial={false}
+              animate={{
+                opacity: open ? 1 : 0,
+                backgroundColor: scrolled
+                  ? "rgba(83, 83, 83, 0)"
+                  : "rgba(83, 83, 83, 0.2)",
+                borderColor: scrolled
+                  ? "rgba(255, 255, 255, 0)"
+                  : "rgba(255, 255, 255, 0.4)",
+                boxShadow: scrolled
+                  ? "0 0 0 rgba(0,0,0,0)"
+                  : "0 8px 32px rgba(0,0,0,0.08), inset 0 2px 4px rgba(255,255,255,0.7), inset 0 -1px 2px rgba(0,0,0,0.1)",
+              }}
+              transition={transition}
+              className="flex items-center h-12 xl:h-14 px-4 lg:px-8 xl:px-10 rounded-full gap-2 lg:gap-5 xl:gap-7 border border-solid w-max"
+            >
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="no-underline text-base font-bold leading-none inline-flex items-center justify-center px-3.5 py-2 rounded-full text-primary-black font-sans hover:bg-white/55"
+                  className="no-underline text-sm lg:text-base xl:text-lg font-bold leading-none inline-flex items-center justify-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-primary-black font-sans whitespace-nowrap hover:bg-white/50"
                 >
                   {link.label}
                 </a>
               ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           <motion.a
+            ref={ctaRef}
             href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             initial={false}
-            animate={{ borderRadius: scrolled ? 999 : 14 }}
+            animate={{ borderRadius: scrolled ? 999 : 12 }}
             transition={transition}
-            className="hidden lg:flex items-center justify-center h-12 px-6 no-underline gap-2.5 bg-primary-black text-secondary-beige shrink-0"
+            className="hidden lg:flex items-center justify-center h-12 md:h-14 px-6 md:px-8 no-underline gap-3 bg-primary-black text-secondary-beige shrink-0 shadow-glass-bubble"
           >
-            <span className="text-base font-bold leading-none font-sans whitespace-nowrap">
+            <span className="text-sm md:text-base font-bold leading-none tracking-wide font-sans whitespace-nowrap">
               Request Demo
             </span>
-            <ArrowIcon className="w-5 h-5" />
+            <ArrowIcon className="w-5 h-5 xl:w-6 xl:h-6" />
           </motion.a>
 
           <button
-            className="lg:hidden flex flex-col items-center justify-center gap-1.5 size-11 bg-white/45 backdrop-blur-md rounded-full border border-white/60 cursor-pointer shrink-0"
+            ref={burgerRef}
+            className="lg:hidden flex flex-col items-center justify-center gap-1.5 p-3 bg-white/40 backdrop-blur-md rounded-full border border-white/50 shadow-glass-bubble cursor-pointer shrink-0"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
@@ -200,8 +272,8 @@ export default function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className={`lg:hidden overflow-hidden bg-primary-beige/80 backdrop-blur-2xl border border-white/75 shadow-glass-bubble ${
+              transition={{ duration: 0.35, ease: EASE }}
+              className={`pointer-events-auto lg:hidden overflow-hidden bg-primary-beige/80 backdrop-blur-2xl border border-white/75 shadow-glass-bubble ${
                 scrolled
                   ? "mt-2 w-[min(22rem,calc(100vw-1.5rem))] rounded-3xl"
                   : "mt-2 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] rounded-3xl"
@@ -221,16 +293,16 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-3 flex items-center justify-center h-12 rounded-full no-underline gap-2 bg-primary-black text-secondary-beige"
+                  className="mt-3 flex items-center justify-center h-12 rounded-xl no-underline gap-2 bg-primary-black text-secondary-beige"
                 >
-                  <span className="text-base font-bold font-sans">Request Demo</span>
+                  <span className="text-sm font-bold font-sans">Request Demo</span>
                   <ArrowIcon className="w-5 h-5" />
                 </a>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
     </>
   );
 }
