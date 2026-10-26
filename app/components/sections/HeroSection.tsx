@@ -32,7 +32,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-36 sm:top-40 md:top-44 lg:top-48 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
+          className="absolute top-32 sm:top-36 md:top-40 lg:top-44 left-1/2 w-full max-w-5xl aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
@@ -157,7 +157,7 @@ export default function HeroSection() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-wide uppercase m-0 text-[clamp(34px,11.5vw,172px)] leading-[0.88] text-primary-black font-bebas w-full"
+            className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(32px,10.6vw,156px)] leading-[0.9] text-primary-black font-bebas w-full"
           >
             {"CALLING INTELLIGENCE"
               .split(" ")
@@ -165,7 +165,7 @@ export default function HeroSection() {
                 <motion.span
                   key={i}
                   variants={wordVariants}
-                  className="inline-block mr-[0.18em] last:mr-0"
+                  className="inline-block mr-[0.16em] last:mr-0"
                 >
                   {word}
                 </motion.span>
@@ -176,7 +176,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-4 sm:mt-5 md:mt-7 lg:mt-9 text-center font-normal leading-snug md:leading-relaxed m-0 text-sm sm:text-base md:text-lg lg:text-xl text-primary-black font-manrope w-full max-w-[40rem] sm:max-w-[46rem] px-1"
+            className="mt-5 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[22rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem] px-1"
           >
             AI calling powered by expert{" "}
             <span className="font-bold">
