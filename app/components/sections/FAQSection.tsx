@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can I create an AI agent specific to my business?",
-    answer: "Yes. Agents can be customized around your business goals, conversation flows, knowledge, tone and customer interactions. Yes. Every AI agent is fully customized around your specific business goals, knowledge base, conversation flows, and brand tone to ensure highly personalized customer interactions.",
+    answer: "Yes. Every AI agent is fully customized around your specific business goals, knowledge base, conversation flows, and brand tone to ensure highly personalized customer interactions.",
   },
   {
     question: "Can the AI speak multiple languages?",
@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can I make multiple calls at the same time?",
-    answer: "Yes. Run simultaneous outbound calls to reach large customer lists without having to scale your calling team one person at a time. Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, expanding your outreach capacity without adding headcount.",
+    answer: "Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, expanding your outreach capacity without adding headcount.",
   },
   {
     question: "Can I integrate it with my existing systems?",
@@ -30,11 +30,11 @@ const FAQ_ITEMS = [
   },
   {
     question: "Do I need technical expertise to get started?",
-    answer: "Not necessarily. We help you set up your agents and calling workflows, with guidance throughout the onboarding process so you can get started without having to figure everything out yourself. No technical expertise is required. Our team provides white-glove onboarding, handling the configuration, agent setup, and campaign deployment so you can go live effortlessly.",
+    answer: "No technical expertise is required. Our team provides white-glove onboarding, handling the configuration, agent setup, and campaign deployment so you can go live effortlessly.",
   },
   {
     question: "Is my customer data secure?",
-    answer: "Security is built into the platform to help protect your business and customer data throughout your calling workflows. Absolutely. Enterprise-grade security is built directly into our infrastructure to ensure your proprietary business information and customer data remain strictly protected at all times.",
+    answer: "Absolutely. Enterprise-grade security is built directly into our infrastructure to ensure your proprietary business information and customer data remain strictly protected at all times.",
   },
   {
     question: "How does pricing work?",

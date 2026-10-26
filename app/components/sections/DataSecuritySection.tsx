@@ -42,7 +42,7 @@ export default function DataSecuritySection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="font-bebas text-secondary-beige text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal uppercase m-0 leading-tight"
           >
-            YOUR DATA , ONLY YOURS TO UNLOCK
+            YOUR DATA, ONLY YOURS TO UNLOCK
           </motion.h2>
 
           <motion.p

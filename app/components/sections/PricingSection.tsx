@@ -4,13 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const CHECKLIST = [
-  "Customized AI agent setup",
-  "30–40% cost advantage over comparable solutions",
-  "Flexible, Usage-Based Calling Plans",
+  "AI Agents Customized to Your Business",
+  "30–40% Cost Advantage Over Comparable Solutions",
+  "Flexible, Pay-for-What-You-Use Calling Plans",
   "Seamless API & CRM Integrations",
-  "Multilingual voice capabilities",
-  "Guided onboarding and setup",
-  "Dedicated support",
+  "Natural AI Conversations in 65+ Languages",
+  "Guided Onboarding and Setup",
+  "Ongoing Expert Support & Optimization",
 ];
 
 export default function PricingSection() {
@@ -40,7 +40,7 @@ export default function PricingSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Get a plan tailored to your calling volume, workflows, integrations and business requirements.
+          Get a plan tailored to your calling volume, workflows, integrations, and business requirements.
         </p>
       </div>
 

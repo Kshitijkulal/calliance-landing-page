@@ -10,6 +10,7 @@ export default function ContactSection() {
     jobTitle: "",
     email: "",
     phone: "",
+    country: "India",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -228,6 +229,35 @@ export default function ContactSection() {
                 }}
               />
             </div>
+          </div>
+        </div>
+
+        {/* Row 4: Country */}
+        <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-stretch gap-8 md:gap-12">
+          <div className="flex-1 w-full border-b-2" style={{ borderColor: "var(--color-primary-black)" }}>
+            <label
+              className="block text-sm sm:text-base lg:text-base font-bold mb-1"
+              style={{
+                fontFamily: "var(--font-manrope), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            >
+              Country
+            </label>
+            <input
+              suppressHydrationWarning
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              placeholder="Country"
+              required
+              className="w-full border-none outline-none text-sm sm:text-base lg:text-base font-medium placeholder:text-[#888888] placeholder:text-xs sm:placeholder:text-sm bg-transparent py-2"
+              style={{
+                fontFamily: "var(--font-manrope), sans-serif",
+                color: "var(--color-primary-black)",
+              }}
+            />
           </div>
         </div>
 

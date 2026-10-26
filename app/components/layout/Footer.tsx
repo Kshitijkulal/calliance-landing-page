@@ -127,7 +127,7 @@ export default function Footer() {
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <span className="w-full max-w-xs text-sm md:text-base font-semibold text-dark-grey leading-6 group-hover:text-primary-black transition-colors duration-200">
-                B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14,
+                B-36, 37, 38, 2nd Floor, IDC Area, MG Road, Opposite Sector 14,
                 Gurugram, Haryana 122001
               </span>
             </a>
@@ -176,10 +176,10 @@ export default function Footer() {
         {/* Bottom Row — Copyright + Nav */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 mt-2 text-center md:text-left">
           <span className="text-xs md:text-sm text-primary-black font-medium leading-5">
-            Callience @ 2026. All rights reserved.
+            Callience © 2026. All rights reserved.
           </span>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-            {["How it works", "Pricing", "Use Cases"].map((label) => (
+            {["How It Works", "Pricing", "Use Cases"].map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, "-")}`}

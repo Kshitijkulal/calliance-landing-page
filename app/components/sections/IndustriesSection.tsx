@@ -22,7 +22,7 @@ const INDUSTRIES = [
   {
     title: "Healthcare",
     description:
-      "Automate appointment reminders, patient follow-ups and routine customer outreach with personalized voice conversations.",
+      "Automate appointment reminders, patient follow-ups, and routine customer outreach with personalized voice conversations.",
   },
   {
     title: "Retail & D2C",
@@ -131,7 +131,7 @@ export default function IndustriesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            How Leading Businesses Automate Customer Conversations
+            Who&apos;s Getting Ahead With Callience
           </h2>
         </div>
 
@@ -144,8 +144,7 @@ export default function IndustriesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            From real estate to retail, see how custom AI voice agents are solving the biggest
-            communication bottlenecks in every industry
+            From real estate to education, Callience helps forward-thinking businesses reach customers first and pull ahead of the competition.
           </p>
         </div>
       </div>

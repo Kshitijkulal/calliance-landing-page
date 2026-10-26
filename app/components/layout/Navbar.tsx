@@ -5,11 +5,11 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "Use Cases", href: "#use-cases" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQs", href: "#faqs" },
+  { label: "Blogs", href: "#blogs" },
 ];
 
 export default function Navbar() {

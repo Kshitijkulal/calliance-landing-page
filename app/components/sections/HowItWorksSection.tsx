@@ -8,7 +8,7 @@ const STEPS = [
   {
     number: "1",
     title: "Define Your Goal",
-    description: "Give your AI agent the specific knowledge, scripts, and conversation handling protocols to fit your business goals.",
+    description: "Give your AI agent the specific knowledge, scripts, and conversation-handling protocols to fit your business goals.",
   },
   {
     number: "2",
@@ -17,7 +17,7 @@ const STEPS = [
   },
   {
     number: "3",
-    title: "Launch At Scale",
+    title: "Launch at Scale",
     description: "Select your audience, schedule the deployment, and initiate thousands of simultaneous calls instantly.",
   },
   {
@@ -45,7 +45,7 @@ export default function HowItWorksSection() {
         <p
           className="flex-[1_1_100%] lg:flex-[1_1_500px] font-normal leading-relaxed m-0 text-[clamp(16px,2vw,20px)] font-manrope text-primary-black"
         >
-          From your first agent to your first full-scale campaign, we handle the technical heavy lifting. We guide you through the entire setup process so your team can focus on driving revenue not figuring out the software.
+          From your first agent to your first full-scale campaign, we handle the technical heavy lifting. We guide you through the entire setup process so your team can focus on driving revenue, not figuring out the software.
         </p>
       </div>
       {/* Full-width Image */}

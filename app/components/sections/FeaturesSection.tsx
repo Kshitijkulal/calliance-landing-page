@@ -5,97 +5,101 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const FEATURES = [
   {
-    title: "Customized AI Agents",
+    title: "Rapid Launch & Optimize With Experts",
     content: {
-      heading: "Create agents built strictly around your business workflows.",
+      heading: "Expert guidance from campaign planning to continuous optimization",
       bullets: [
-        "Customize your agent for specific business goals",
-        "Define how it speaks, responds, and handles conversations",
-        "Give every agent the knowledge and context it needs",
-        "Create your own conversation scripts and flows",
+        "Get guided onboarding and expert-led setup",
+        "Work with AI specialists and marketing consultants to plan audiences, campaign strategies, and scripts",
+        "Get help configuring AI agents, conversations, and follow-ups",
+        "Receive ongoing consultation to refine campaigns as results come in",
       ],
     },
   },
   {
-    title: "Affordable at Scale",
+    title: "Human-Like Agents Built Around Your Business",
     content: {
-      heading: "Enterprise-grade calling without enterprise-grade costs",
+      heading: "Personalized AI conversations tailored to your business goals",
+      bullets: [
+        "Customize agents for your specific business goals and workflows",
+        "Define how agents speak, respond, and handle conversations",
+        "Equip every agent with the knowledge and context it needs",
+        "Create tailored conversation scripts and flows for your campaigns",
+      ],
+    },
+  },
+  {
+    title: "Native Conversations in 65+ Languages",
+    content: {
+      heading: "Reach customers in the language they know best",
+      bullets: [
+        "Support multilingual customer conversations",
+        "Adapt interactions to customers' language preferences",
+        "Deliver more natural, personalized conversations across diverse audiences",
+        "Expand your reach across markets with multilingual AI calling",
+      ],
+    },
+  },
+  {
+    title: "Scale Outreach Without Scaling Costs",
+    content: {
+      heading: "Reach more customers while making every rupee count",
       bullets: [
         "Handle more conversations with fewer resources",
-        "Scale outreach without scaling headcount",
+        "Scale outreach without proportionately increasing headcount",
         "Reduce manual calling effort and operational overhead",
+        "Plan calling budgets around your business needs and campaign goals",
+        "Reduce wasted spend through smarter targeting and efficient campaign planning",
       ],
     },
   },
   {
-    title: "Secure & Reliable Calling",
+    title: "Track Every Call, Improve Lead Quality",
     content: {
-      heading: "Engineered for business-critical communications.",
+      heading: "Turn call intelligence into better leads and stronger ROI",
+      bullets: [
+        "Capture customer intent, objections, and interest levels",
+        "Review transcripts and call outcomes to understand customer responses",
+        "Track callbacks, next steps, and follow-ups",
+        "Identify better-quality leads through customer intent and qualification signals",
+        "Use campaign insights to improve follow-ups, optimize performance, and increase ROI",
+      ],
+    },
+  },
+  {
+    title: "Constantly Closing Deals, Even While You Sleep",
+    content: {
+      heading: "Keep customer outreach moving around the clock",
+      bullets: [
+        "Run large-scale outbound campaigns in minutes, not days",
+        "Make simultaneous calls at scale",
+        "Reduce reliance on slow, error-prone manual dialing queues",
+        "Automate repetitive outreach so your team can focus on qualified prospects",
+      ],
+    },
+  },
+  {
+    title: "Secure & Encrypted Data You Control",
+    content: {
+      heading: "Protect customer conversations and keep data access under control",
       bullets: [
         <React.Fragment key="sec-1">
           <strong>Secure customer interactions:</strong> Keep proprietary
-          business data and customer conversations strictly protected.
+          business data and customer conversations protected
         </React.Fragment>,
         <React.Fragment key="sec-2">
-          <strong>Encrypted data, controlled by you:</strong> Your data remains
-          encrypted and can only be decrypted by you and authorized users you
-          control.
+          <strong>Encrypted data, controlled by you:</strong> Keep data
+          encrypted and accessible only to authorized users, in line with your
+          security architecture
         </React.Fragment>,
         <React.Fragment key="sec-3">
-          <strong>Reliable calling infrastructure:</strong> Rely on robust
-          infrastructure built to handle high call volumes without compromising
-          reliability.
+          <strong>Reliable calling infrastructure:</strong> Handle high call
+          volumes with dependable calling infrastructure
         </React.Fragment>,
         <React.Fragment key="sec-4">
-          <strong>Built for business use:</strong> Architected to meet the data
-          privacy, security and reliability standards required for modern B2B
-          operations.
+          <strong>Built for business use:</strong> Support the privacy,
+          security, and reliability needs of modern B2B operations
         </React.Fragment>,
-      ],
-    },
-  },
-  {
-    title: "Multilingual Conversations",
-    content: {
-      heading: "Reach global customers in their preferred native language.",
-      bullets: [
-        "Support multilingual customer conversations",
-        "Adapt interactions to customer language preferences",
-        "Reach diverse audiences at scale",
-      ],
-    },
-  },
-  {
-    title: "Simultaneous Calling at Scale",
-    content: {
-      heading:
-        "Expand your outreach exponentially without expanding your team.",
-      bullets: [
-        "Run massive outbound campaigns in minutes, not days.",
-        "Make simultaneous calls at scale",
-        "Remove the dependency on slow, error-prone manual dialing queues.",
-      ],
-    },
-  },
-  {
-    title: "Effortless Setup & Guided Launch",
-    content: {
-      heading: "Get started without figuring it all out yourself",
-      bullets: [
-        "Guided onboarding and setup",
-        "Help configuring agents and campaigns",
-        "Support throughout deployment",
-      ],
-    },
-  },
-  {
-    title: "Call Intelligence & Tracking",
-    content: {
-      heading: "Know what happened after every conversation.",
-      bullets: [
-        "Capture intent, objections and interest level",
-        "Review transcripts and call outcomes",
-        "Track callbacks, next steps and follow-ups",
       ],
     },
   },
@@ -183,7 +187,7 @@ export default function FeaturesSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Built to Make Every Conversation Count
+          Built to Give Your Operations an Edge
         </h2>
         <div className="flex-[1_1_500px] pt-2 md:pt-4">
           <p
@@ -193,8 +197,8 @@ export default function FeaturesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            Powerful voice capabilities engineered to make automated
-            conversations feel natural, personalized, and highly effective.
+            Voice AI backed by specialists, so you launch faster, reach more
+            customers, and stay ahead of competitors.
           </p>
         </div>
       </div>
