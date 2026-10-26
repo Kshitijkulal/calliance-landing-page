@@ -159,7 +159,7 @@ export default function HeroSection() {
             animate="visible"
             className="text-center font-normal tracking-wide uppercase m-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-primary-black font-bebas w-full"
           >
-            {"AI Voice Agents that Automate Outbound Calling and Scale Your Revenue"
+            {"CALLING INTELLIGENCE"
               .split(" ")
               .map((word, i) => (
                 <motion.span
@@ -178,9 +178,15 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-6 md:mt-10 lg:mt-16 text-center font-normal leading-relaxed m-0 text-base sm:text-lg md:text-xl lg:text-2xl text-primary-black font-manrope max-w-3xl"
           >
-            Deploy custom, multilingual AI voice agents that handle thousands of
-            customers conversations simultaneously. Manage every outcome from
-            one unified platform.
+            AI calling powered by expert{" "}
+            <span className="font-bold">
+              AI specialists and Marketing consultants
+            </span>{" "}
+            who design{" "}
+            <span className="font-bold">ROI-focused campaigns</span>, backed by{" "}
+            <span className="font-bold">custom , native language</span> voice AI
+            agents that turn outreach into revenue at{" "}
+            <span className="font-bold">scale</span>.
           </motion.p>
 
           <motion.div
@@ -225,7 +231,7 @@ export default function HeroSection() {
             animate="visible"
             className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-6 md:gap-10 lg:gap-16 mt-6 md:mt-8 lg:mt-10 w-full max-w-5xl mx-auto pb-4 px-2 sm:px-4"
           >
-            {["Intelligence", "Convenience", "Experience", "Science"].map(
+            {["Strategic", "High ROI", "Natural", "Customized"].map(
               (text, index) => {
                 let mobileAlignment = "lg:justify-self-center";
                 if (index === 0)
@@ -315,7 +321,7 @@ export default function HeroSection() {
               className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 mt-2 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-sm md:text-base font-bold font-manrope">
-                Explore the Platform
+                Explore Our Approach
               </span>
               <svg
                 width="20"
