@@ -145,7 +145,7 @@ export default function HeroSection() {
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center w-full px-4 sm:px-6 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
+        <div className="relative z-20 flex flex-col items-center w-full px-4 sm:px-6 mt-14 sm:mt-20 md:mt-28 lg:mt-36">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
