@@ -24,7 +24,7 @@ export default function DataSecuritySection() {
             className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
           >
             <Image
-              src="/Section 3 Badge image.png"
+              src="/Section%203%20Badge%20image.png"
               alt="Data Security Shield"
               fill
               className="object-contain"

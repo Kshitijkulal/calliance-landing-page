@@ -9,7 +9,7 @@ const CARDS = [
     title: "Built Around Your Business",
     description:
       "Agents, scripts and workflows are customized to your targets, then refined as your needs evolve, keeping every conversation on track.",
-    image: "/image 826-3.png",
+    image: "/image%20826-3.png",
     imageAlt: "A hand placing a target into a voice-agent dashboard",
     imageOnLeft: false,
     rightInset: false,
@@ -18,7 +18,7 @@ const CARDS = [
     title: "Marketing Consultants On Your Side",
     description:
       "AI specialists and marketing consultants plan audiences, strategy and follow-ups with you and keep advising you at every stage.",
-    image: "/image 826-2.png",
+    image: "/image%20826-2.png",
     imageAlt: "A marketing consultant planning a campaign with an AI agent",
     imageOnLeft: true,
     rightInset: false,
@@ -27,7 +27,7 @@ const CARDS = [
     title: "Smarter Spend, Better ROI",
     description:
       "We tailor your budget to your needs and help you spend it efficiently, so you skip costly trial and error and improve campaign ROI.",
-    image: "/image 826-1.png",
+    image: "/image%20826-1.png",
     imageAlt: "An AI agent saving coins beside a rising results chart",
     imageOnLeft: false,
     rightInset: true,
@@ -36,7 +36,7 @@ const CARDS = [
     title: "Every Lead Followed Up",
     description:
       "Consistent calls, structured qualification and reliable follow-ups, with call data captured accurately, so fewer prospects fall through.",
-    image: "/image 826.png",
+    image: "/image%20826.png",
     imageAlt: "An AI agent qualifying leads through a funnel",
     imageOnLeft: true,
     rightInset: false,

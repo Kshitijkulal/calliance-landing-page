@@ -4,6 +4,12 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 
+const pillShellStyle: React.CSSProperties = {
+  backgroundColor: "var(--color-primary-beige)",
+  boxShadow:
+    "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)",
+};
+
 export default function HeroSection() {
   const containerVariants: Variants = {
     hidden: {},
@@ -32,7 +38,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-36 sm:top-40 md:top-48 lg:top-56 left-1/2 w-full max-w-[50rem] aspect-square z-0 pointer-events-none"
+          className="absolute top-24 sm:top-28 md:top-40 lg:top-56 left-1/2 w-full max-w-[22rem] sm:max-w-[30rem] md:max-w-[42rem] lg:max-w-[50rem] aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] aspect-square opacity-40">
@@ -142,29 +148,22 @@ export default function HeroSection() {
 
         </motion.div>
 
-        {/* Pills on ring-3 chord, evenly spaced (Figma) */}
+        {/* Desktop pills — chord across rings (lg+) */}
         <div className="hidden lg:block absolute top-36 sm:top-40 md:top-48 lg:top-56 left-1/2 -translate-x-1/2 w-full max-w-[50rem] aspect-square z-20 pointer-events-none overflow-visible">
           {(
             [
-              { text: "Strategic", left: "8.6%" },
-              { text: "High ROI", left: "36.2%" },
-              { text: "Natural", left: "63.8%" },
-              { text: "Customized", left: "91.4%" },
+              { text: "Strategic", left: "2%" },
+              { text: "High ROI", left: "34%" },
+              { text: "Natural", left: "66%" },
+              { text: "Customized", left: "98%" },
             ] as const
           ).map(({ text, left }, index) => (
             <div
               key={text}
               style={{ left, animationDelay: `${1.1 + index * 0.08}s` }}
-              className="hero-pill pointer-events-auto absolute top-[78%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
+              className="hero-pill pointer-events-auto absolute top-[82%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
             >
-              <span
-                className="absolute inset-0 rounded-full"
-                style={{
-                  backgroundColor: "var(--color-primary-beige)",
-                  boxShadow:
-                    "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)",
-                }}
-              />
+              <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
               <span className="relative z-10 text-primary-black text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                 {text}
               </span>
@@ -176,12 +175,12 @@ export default function HeroSection() {
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center w-full px-4 sm:px-6 mt-14 sm:mt-20 md:mt-26 lg:mt-32">
+        <div className="relative z-20 flex flex-col items-center w-full px-5 sm:px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(32px,10.6vw,156px)] leading-[0.9] text-primary-black font-bebas w-full"
+            className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(34px,10.6vw,156px)] leading-[0.9] text-primary-black font-bebas w-full max-w-[22rem] sm:max-w-none"
           >
             {"CALLING INTELLIGENCE"
               .split(" ")
@@ -200,7 +199,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-5 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[22rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem] px-1"
+            className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]"
           >
             AI calling powered by expert{" "}
             <span className="font-bold">
@@ -217,13 +216,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-7 sm:mt-9 md:mt-12 lg:mt-16"
+            className="mt-6 sm:mt-9 md:mt-12 lg:mt-16"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl no-underline gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
+              className="inline-flex items-center justify-center h-11 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 rounded-xl no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-sm md:text-base font-bold font-manrope">
                 Request Demo
@@ -243,53 +242,40 @@ export default function HeroSection() {
             </motion.a>
           </motion.div>
 
-          {/* Spacer so desktop rings/pills clear the next section */}
-          <div className="hidden lg:block w-full h-40 xl:h-48" aria-hidden />
+          {/* Mobile pills — gentle arc under CTA, in document flow */}
+          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-2">
+            <div className="flex justify-between items-end gap-1.5 sm:gap-3 px-0.5">
+              {(
+                [
+                  { text: "Strategic", lift: "-translate-y-3 sm:-translate-y-4" },
+                  { text: "High ROI", lift: "translate-y-2 sm:translate-y-3" },
+                  { text: "Natural", lift: "translate-y-2 sm:translate-y-3" },
+                  { text: "Customized", lift: "-translate-y-3 sm:-translate-y-4" },
+                ] as const
+              ).map(({ text, lift }, index) => (
+                <div
+                  key={text}
+                  style={{ animationDelay: `${0.85 + index * 0.08}s` }}
+                  className={`hero-pill relative inline-flex shrink-0 ${lift} px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-solid border-white justify-center items-center overflow-hidden`}
+                >
+                  <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
+                  <span className="relative z-10 text-primary-black text-[11px] sm:text-sm font-bold font-manrope leading-tight whitespace-nowrap">
+                    {text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          {/* Glass Bubbles — mobile / tablet */}
-          <motion.div
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.15, delayChildren: 1.2 },
-              },
-            }}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap justify-center items-center gap-3 sm:gap-5 md:gap-8 mt-8 sm:mt-10 md:mt-16 w-full max-w-[64.8rem] mx-auto pb-2 lg:hidden"
-          >
-            {["Strategic", "High ROI", "Natural", "Customized"].map(
-              (text) => (
-                  <motion.div
-                    key={text}
-                    variants={{
-                      hidden: { opacity: 0, y: "20%" },
-                      visible: {
-                        opacity: 1,
-                        y: "0%",
-                        transition: { duration: 0.6, ease: "easeOut" },
-                      },
-                    }}
-                    className="relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: "var(--color-primary-beige)",
-                      boxShadow: "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)"
-                    }}
-                  >
-                    <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
-                      {text}
-                    </span>
-                  </motion.div>
-                ),
-            )}
-          </motion.div>
+          {/* Desktop clearance under ring chord */}
+          <div className="hidden lg:block w-full h-40 xl:h-48" aria-hidden />
         </div>
       </div>
 
       {/* Unified Platform Section merged into Hero */}
       <div
         id="platform"
-        className="w-full flex justify-center relative z-10 -mt-12 md:-mt-16"
+        className="w-full flex justify-center relative z-10 mt-6 sm:mt-8 lg:-mt-12 xl:-mt-16"
       >
         {/* Desktop/Large Screen Pixel-Perfect Layout */}
         <div className="hidden lg:block relative w-full min-h-screen mx-auto z-10">
@@ -302,7 +288,7 @@ export default function HeroSection() {
             className="absolute left-0 top-[4%] h-[92%] w-[52%] xl:w-[54%] pointer-events-none"
           >
             <Image
-              src="/Mockup 1.png"
+              src="/Mockup%201.png"
               alt="AICaller Unified Platform"
               fill
               className="object-contain object-left"
@@ -379,7 +365,7 @@ export default function HeroSection() {
             className="relative w-full aspect-[791/703]"
           >
             <Image
-              src="/Mockup 1.png"
+              src="/Mockup%201.png"
               alt="AICaller"
               fill
               className="object-contain"
