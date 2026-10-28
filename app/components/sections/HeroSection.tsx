@@ -139,7 +139,38 @@ export default function HeroSection() {
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
             </div>
           </div>
+
         </motion.div>
+
+        {/* Pills on ring-3 chord, evenly spaced (Figma) */}
+        <div className="hidden lg:block absolute top-36 sm:top-40 md:top-48 lg:top-56 left-1/2 -translate-x-1/2 w-full max-w-[50rem] aspect-square z-20 pointer-events-none overflow-visible">
+          {(
+            [
+              { text: "Strategic", left: "8.6%" },
+              { text: "High ROI", left: "36.2%" },
+              { text: "Natural", left: "63.8%" },
+              { text: "Customized", left: "91.4%" },
+            ] as const
+          ).map(({ text, left }, index) => (
+            <div
+              key={text}
+              style={{ left, animationDelay: `${1.1 + index * 0.08}s` }}
+              className="hero-pill pointer-events-auto absolute top-[78%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
+            >
+              <span
+                className="absolute inset-0 rounded-full"
+                style={{
+                  backgroundColor: "var(--color-primary-beige)",
+                  boxShadow:
+                    "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)",
+                }}
+              />
+              <span className="relative z-10 text-primary-black text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
+                {text}
+              </span>
+            </div>
+          ))}
+        </div>
 
         {/* Gradient Blur Overlay extending down from the button's line */}
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
@@ -212,7 +243,10 @@ export default function HeroSection() {
             </motion.a>
           </motion.div>
 
-          {/* Glass Bubbles */}
+          {/* Spacer so desktop rings/pills clear the next section */}
+          <div className="hidden lg:block w-full h-40 xl:h-48" aria-hidden />
+
+          {/* Glass Bubbles — mobile / tablet */}
           <motion.div
             variants={{
               hidden: {},
@@ -222,7 +256,7 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-3 sm:gap-5 md:gap-8 mt-8 sm:mt-10 md:mt-20 lg:mt-48 w-full max-w-[64.8rem] mx-auto pb-2"
+            className="flex flex-wrap justify-center items-center gap-3 sm:gap-5 md:gap-8 mt-8 sm:mt-10 md:mt-16 w-full max-w-[64.8rem] mx-auto pb-2 lg:hidden"
           >
             {["Strategic", "High ROI", "Natural", "Customized"].map(
               (text) => (
@@ -242,7 +276,7 @@ export default function HeroSection() {
                       boxShadow: "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)"
                     }}
                   >
-                    <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
+                    <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                       {text}
                     </span>
                   </motion.div>
