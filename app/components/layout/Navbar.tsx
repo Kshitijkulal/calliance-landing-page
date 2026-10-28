@@ -21,7 +21,7 @@ function ArrowIcon({ className }: { className: string }) {
       <path
         d="M5 12H19M19 12L13 6M19 12L13 18"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="2.75"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -128,7 +128,7 @@ export default function Navbar() {
             priority
           />
           <span className="flex flex-1 items-center justify-end gap-2.5 sm:gap-3">
-            <span className="text-[15px] font-semibold font-sans whitespace-nowrap leading-none">
+            <span className="text-[15px] font-extrabold font-sans whitespace-nowrap leading-none">
               Request Demo
             </span>
             <ArrowIcon className="w-4 h-4" />
@@ -173,7 +173,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 tabIndex={collapsed ? -1 : 0}
-                className="no-underline text-[15px] xl:text-[16px] font-semibold leading-none inline-flex items-center justify-center px-2 py-1 rounded-lg text-primary-black font-sans whitespace-nowrap hover:text-dark-grey transition-colors"
+                className="no-underline text-[15px] xl:text-[16px] font-bold leading-none inline-flex items-center justify-center px-2 py-1 rounded-lg text-primary-black font-sans whitespace-nowrap hover:text-dark-grey transition-colors"
               >
                 {link.label}
               </a>
@@ -185,7 +185,7 @@ export default function Navbar() {
             tabIndex={collapsed ? -1 : 0}
             className="flex items-center justify-center h-11 px-6 no-underline gap-2.5 sm:gap-3 bg-primary-black text-secondary-beige shrink-0 rounded-xl hover:opacity-90 transition-opacity"
           >
-            <span className="text-[15px] sm:text-base font-semibold leading-none font-sans whitespace-nowrap">
+            <span className="text-[15px] sm:text-base font-extrabold leading-none font-sans whitespace-nowrap">
               Request Demo
             </span>
             <ArrowIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />

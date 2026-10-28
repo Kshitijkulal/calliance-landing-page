@@ -32,13 +32,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-8 md:pb-16 lg:pb-24 z-0">
+      <div className="relative w-full mx-auto flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 md:pb-20 lg:pb-24 z-0">
         {/* Animated Concentric Rings Background */}
         <motion.div
-          initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
-          animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
+          initial={{ opacity: 0, x: "-50%", y: "-50%", scale: 0.8 }}
+          animate={{ opacity: 0.8, x: "-50%", y: "-50%", scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-24 sm:top-28 md:top-40 lg:top-56 left-1/2 w-full max-w-[22rem] sm:max-w-[30rem] md:max-w-[42rem] lg:max-w-[50rem] aspect-square z-0 pointer-events-none"
+          className="absolute top-[48%] sm:top-[46%] md:top-[44%] lg:top-[42%] left-1/2 w-full max-w-[32rem] sm:max-w-[46rem] md:max-w-[62rem] lg:max-w-[76rem] xl:max-w-[84rem] aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] aspect-square opacity-40">
@@ -145,42 +145,18 @@ export default function HeroSection() {
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
             </div>
           </div>
-
         </motion.div>
-
-        {/* Desktop pills — chord across rings (lg+) */}
-        <div className="hidden lg:block absolute top-36 sm:top-40 md:top-48 lg:top-56 left-1/2 -translate-x-1/2 w-full max-w-[50rem] aspect-square z-20 pointer-events-none overflow-visible">
-          {(
-            [
-              { text: "Strategic", left: "2%" },
-              { text: "High ROI", left: "34%" },
-              { text: "Natural", left: "66%" },
-              { text: "Customized", left: "98%" },
-            ] as const
-          ).map(({ text, left }, index) => (
-            <div
-              key={text}
-              style={{ left, animationDelay: `${1.1 + index * 0.08}s` }}
-              className="hero-pill pointer-events-auto absolute top-[82%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
-            >
-              <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
-              <span className="relative z-10 text-primary-black text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
-                {text}
-              </span>
-            </div>
-          ))}
-        </div>
 
         {/* Gradient Blur Overlay extending down from the button's line */}
         <div className="absolute top-1/3 md:top-3/4 inset-x-0 bottom-0 z-10 pointer-events-none bg-gradient-to-b from-primary-beige/10 to-primary-beige/40 mask-hero" />
 
         {/* Content - Normal Flow */}
-        <div className="relative z-20 flex flex-col items-center w-full px-5 sm:px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32">
+        <div className="relative z-20 flex flex-col items-center w-full px-5 sm:px-6 mt-0">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(34px,10.6vw,156px)] leading-[0.9] text-primary-black font-bebas w-full max-w-[22rem] sm:max-w-none"
+            className="text-center font-normal tracking-tight sm:tracking-normal uppercase m-0 text-[clamp(44px,9.5vw,144px)] leading-[0.88] text-primary-black font-bebas w-full max-w-[22rem] sm:max-w-none"
           >
             {"CALLING INTELLIGENCE"
               .split(" ")
@@ -199,7 +175,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]"
+            className="mt-5 sm:mt-6 md:mt-7 text-center font-normal leading-relaxed m-0 text-[15px] sm:text-[17px] md:text-[19px] lg:text-[21px] text-primary-black font-manrope w-full max-w-[21.5rem] sm:max-w-[34rem] md:max-w-[44rem] lg:max-w-[52rem] xl:max-w-[56rem]"
           >
             AI calling powered by expert{" "}
             <span className="font-bold">
@@ -216,15 +192,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: "20%" }}
             animate={{ opacity: 1, y: "0%" }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-6 sm:mt-9 md:mt-12 lg:mt-16"
+            className="mt-7 sm:mt-8 md:mt-9"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-11 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 rounded-xl no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige transition-all duration-300"
+              className="inline-flex items-center justify-center h-12 md:h-14 px-7 md:px-8 rounded-xl no-underline gap-3 bg-primary-black text-secondary-beige transition-all duration-300 hover:opacity-90"
             >
-              <span className="text-sm md:text-base font-bold font-manrope">
+              <span className="text-sm md:text-base font-extrabold font-manrope tracking-wide">
                 Request Demo
               </span>
               <svg
@@ -234,7 +210,7 @@ export default function HeroSection() {
               >
                 <path
                   d="M5 12H19M19 12L13 6M19 12L13 18"
-                  strokeWidth="2"
+                  strokeWidth="2.75"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -242,33 +218,30 @@ export default function HeroSection() {
             </motion.a>
           </motion.div>
 
-          {/* Mobile pills — gentle arc under CTA, in document flow */}
-          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-0">
-            <div className="flex justify-between items-end gap-1.5 sm:gap-3 px-0.5">
+          {/* Pills — evenly spaced across width matching Figma */}
+          <div className="relative z-20 w-full max-w-5xl xl:max-w-6xl mx-auto mt-12 sm:mt-16 md:mt-20 lg:mt-24 px-4">
+            <div className="flex flex-wrap sm:flex-nowrap justify-center items-center gap-3 sm:gap-4 md:gap-7 lg:gap-10 xl:gap-14">
               {(
                 [
-                  { text: "Strategic", lift: "-translate-y-3 sm:-translate-y-4" },
-                  { text: "High ROI", lift: "translate-y-2 sm:translate-y-3" },
-                  { text: "Natural", lift: "translate-y-2 sm:translate-y-3" },
-                  { text: "Customized", lift: "-translate-y-3 sm:-translate-y-4" },
+                  "Strategic",
+                  "High ROI",
+                  "Natural",
+                  "Customized",
                 ] as const
-              ).map(({ text, lift }, index) => (
+              ).map((text, index) => (
                 <div
                   key={text}
-                  style={{ animationDelay: `${0.85 + index * 0.08}s` }}
-                  className={`hero-pill relative inline-flex shrink-0 ${lift} px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-solid border-white justify-center items-center overflow-hidden`}
+                  style={{ animationDelay: `${0.9 + index * 0.08}s` }}
+                  className="hero-pill relative inline-flex px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full border border-solid border-white/80 justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
                 >
                   <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
-                  <span className="relative z-10 text-primary-black text-[11px] sm:text-sm font-bold font-manrope leading-tight whitespace-nowrap">
+                  <span className="relative z-10 text-primary-black text-xs sm:text-sm md:text-base lg:text-[18px] font-extrabold font-manrope leading-tight whitespace-nowrap">
                     {text}
                   </span>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Desktop clearance under ring chord */}
-          <div className="hidden lg:block w-full h-40 xl:h-48" aria-hidden />
         </div>
       </div>
 
