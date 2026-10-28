@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
+import { PILL_NORMAL_MAP } from "./glassNormalMap";
 
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
@@ -29,39 +30,124 @@ function ArrowIcon({ className }: { className: string }) {
   );
 }
 
-/** Soft displacement map — bends the backdrop (Chromium). Kept mild under heavy frost. */
+/**
+ * Physical curved glass optics simulation via SVG filter:
+ *
+ * 1. Curved Glass Lens (Normal Map):
+ *    Uses PILL_NORMAL_MAP (exact 3D cylinder + hemispherical caps profile)
+ *    via feImage to map pixel angles across the curved surface.
+ *
+ * 2. Snell's Law Refraction:
+ *    feDisplacementMap bends light rays passing through the curved boundary,
+ *    magnifying the center and bending edge rays inward.
+ *
+ * 3. Chromatic Dispersion:
+ *    Red, green, and blue wavelengths bend at slightly different angles
+ *    (dispersion n_red < n_blue), producing subtle optical color fringing.
+ *
+ * 4. Light Building / Caustic Specular Lighting:
+ *    feSpecularLighting calculates the 3D highlight of overhead light
+ *    accumulating along the curved glass crest and rounded caps.
+ */
 function NavGlassFilter() {
   return (
     <svg width="0" height="0" aria-hidden style={{ position: "absolute" }}>
       <defs>
         <filter
           id="nav-glass-refract"
-          x="-25%"
-          y="-50%"
-          width="150%"
-          height="200%"
+          x="-15%"
+          y="-30%"
+          width="130%"
+          height="160%"
           colorInterpolationFilters="sRGB"
         >
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.006 0.01"
-            numOctaves="2"
-            seed="9"
-            result="noise"
+          {/* 1. Curved pill normal map (cylindrical body + hemispherical caps) */}
+          <feImage
+            href={PILL_NORMAL_MAP}
+            xlinkHref={PILL_NORMAL_MAP}
+            result="lensMap"
+            preserveAspectRatio="none"
           />
-          <feGaussianBlur in="noise" stdDeviation="2" result="soft" />
+
+          {/* 2. Physical refraction through curved glass */}
           <feDisplacementMap
             in="SourceGraphic"
-            in2="soft"
+            in2="lensMap"
             scale="28"
             xChannelSelector="R"
             yChannelSelector="G"
+            result="refracted"
+          />
+
+          {/* 3. Chromatic dispersion — separate RGB channel displacement */}
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 1 0"
+            result="redOnly"
+          />
+          <feDisplacementMap
+            in="redOnly"
+            in2="lensMap"
+            scale="33"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="redShifted"
+          />
+
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="0 0 0 0 0   0 0 0 0 0   0 0 1 0 0   0 0 0 1 0"
+            result="blueOnly"
+          />
+          <feDisplacementMap
+            in="blueOnly"
+            in2="lensMap"
+            scale="23"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="blueShifted"
+          />
+
+          {/* Recombine channels */}
+          <feBlend in="refracted" in2="redShifted" mode="screen" result="withRed" />
+          <feBlend in="withRed" in2="blueShifted" mode="screen" result="withDispersion" />
+
+          {/* 4. Light building — specular light accumulation on curved 3D surface */}
+          <feSpecularLighting
+            in="lensMap"
+            surfaceScale="3"
+            specularConstant="1.5"
+            specularExponent="26"
+            lightingColor="#ffffff"
+            result="specularCatch"
+          >
+            <fePointLight x="290" y="-80" z="200" />
+          </feSpecularLighting>
+
+          <feComposite
+            in="specularCatch"
+            in2="SourceAlpha"
+            operator="in"
+            result="specularClipped"
+          />
+
+          <feBlend in="withDispersion" in2="specularClipped" mode="screen" result="litGlass" />
+
+          {/* 5. Vibrancy & clarity boost */}
+          <feColorMatrix
+            in="litGlass"
+            type="saturate"
+            values="1.25"
           />
         </filter>
       </defs>
     </svg>
   );
 }
+
+
 
 export default function Navbar() {
   const reduceMotion = useReducedMotion();

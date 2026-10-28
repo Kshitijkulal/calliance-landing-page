@@ -126,73 +126,83 @@ body {
     opacity 0.28s ease,
     padding 0.42s cubic-bezier(0.22, 1, 0.36, 1),
     gap 0.42s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/*
-  Light physics stack (old nav sheen + liquid-glass rim + heavy frost):
-  - Translucent cream/white tint so content reads through
-  - Strong backdrop blur + saturate (milky frosted glass)
-  - Soft SVG displacement refraction (Chromium) so edges bend
-  - Specular top sheen + 4-sided inset rim highlights
+}/*
+  Apple-quality curved glass optics — matched 1:1 to Figma design:
+  - Ultra-clear transparency (8% tint) — frost minimized so content behind is crisp and clear
+  - Minimal backdrop blur (6px) for pure optical glass clarity instead of heavy frost
+  - Crisp specular bevel rim — thin, razor-sharp light reflection along the curved edge
+  - Tight light building: specular catch focused on the outer rim without clouding the interior
 */
 .nav-glass {
   isolation: isolate;
   overflow: hidden;
   border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.82);
+  /* Ultra-clear glass — minimal tint so background text and images remain crystal clear */
+  background-color: rgba(250, 249, 245, 0.08);
+  /* 1px crisp outer boundary */
+  border: 1px solid rgba(255, 255, 255, 0.75);
   box-shadow:
-    0 8px 28px rgba(30, 30, 30, 0.1),
-    0 2px 6px rgba(30, 30, 30, 0.05),
-    /* refractive rim — light catching every edge */
-    inset 0 1px 1px rgba(255, 255, 255, 0.95),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.4),
-    inset 1px 0 1px rgba(255, 255, 255, 0.35),
-    inset -1px 0 1px rgba(255, 255, 255, 0.35),
-    inset 0 -2px 6px rgba(30, 30, 30, 0.06);
-  -webkit-backdrop-filter: blur(36px) saturate(1.7) brightness(1.06);
-  backdrop-filter: blur(36px) saturate(1.7) brightness(1.06);
+    /* Deep ambient shadow — soft natural elevation */
+    0 8px 28px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    /* Crisp top specular rim highlight */
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+    inset 0 1px 2px rgba(255, 255, 255, 0.40),
+    /* Subtle bottom rim reflection */
+    inset 0 -1px 1px rgba(255, 255, 255, 0.20),
+    /* Left and right thin rim highlights */
+    inset 1px 0 1px rgba(255, 255, 255, 0.25),
+    inset -1px 0 1px rgba(255, 255, 255, 0.25);
+  /* Low blur (6px) — eliminates milky frost for clear optical glass */
+  -webkit-backdrop-filter: blur(6px) saturate(1.3) brightness(1.02);
+  backdrop-filter: blur(6px) saturate(1.3) brightness(1.02);
 }
 
-/* Chromium: keep heavy frost, add mild liquid refraction */
+/* Chromium: when SVG curved refraction filter is active, ultra-low blur keeps refraction razor sharp */
 @supports (backdrop-filter: url("#nav-glass-refract")) {
   .nav-glass {
-    -webkit-backdrop-filter: blur(28px) saturate(1.8) brightness(1.08) url("#nav-glass-refract");
-    backdrop-filter: blur(28px) saturate(1.8) brightness(1.08) url("#nav-glass-refract");
+    -webkit-backdrop-filter: blur(3px) saturate(1.3) brightness(1.02) url("#nav-glass-refract");
+    backdrop-filter: blur(3px) saturate(1.3) brightness(1.02) url("#nav-glass-refract");
   }
 }
 
-/* Proven sheen from prior navbar — top specular + side light pipes */
+/* Sheen layer — delicate specular rim reflection without cloudy frost */
 .nav-glass-sheen {
   background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.78) 0%,
-      rgba(255, 255, 255, 0.12) 12%,
-      rgba(255, 255, 255, 0) 36%
+    /* 1. Curved top specular rim — tight to the upper edge */
+    radial-gradient(
+      120% 50% at 50% 0%,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 65%
     ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.32) 0%,
-      rgba(255, 255, 255, 0) 12%,
-      rgba(255, 255, 255, 0) 88%,
-      rgba(255, 255, 255, 0.24) 100%
+    /* 2. Left rounded cap glint */
+    radial-gradient(
+      circle at 12px 50%,
+      rgba(255, 255, 255, 0.25) 0%,
+      transparent 70%
     ),
-    /* soft diagonal gloss */
+    /* 3. Right rounded cap glint */
+    radial-gradient(
+      circle at calc(100% - 12px) 50%,
+      rgba(255, 255, 255, 0.25) 0%,
+      transparent 70%
+    ),
+    /* 4. Subtle diagonal optical glint */
     linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(255, 255, 255, 0.06) 30%,
-      transparent 58%
+      125deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.01) 15%,
+      transparent 35%
     );
   mix-blend-mode: screen;
-  opacity: 0.95;
+  opacity: 0.75;
   pointer-events: none;
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .nav-glass {
-    background-color: rgba(250, 249, 245, 0.92);
+    background-color: rgba(250, 249, 245, 0.96);
   }
 }
 
