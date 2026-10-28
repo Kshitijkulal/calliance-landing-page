@@ -32,7 +32,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-16 md:pb-24 z-0">
+      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-8 md:pb-16 lg:pb-24 z-0">
         {/* Animated Concentric Rings Background */}
         <motion.div
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
@@ -243,7 +243,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Mobile pills — gentle arc under CTA, in document flow */}
-          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-2">
+          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-0">
             <div className="flex justify-between items-end gap-1.5 sm:gap-3 px-0.5">
               {(
                 [
@@ -275,7 +275,7 @@ export default function HeroSection() {
       {/* Unified Platform Section merged into Hero */}
       <div
         id="platform"
-        className="w-full flex justify-center relative z-10 mt-6 sm:mt-8 lg:-mt-12 xl:-mt-16"
+        className="w-full flex justify-center relative z-10 mt-3 sm:mt-4 lg:-mt-12 xl:-mt-16"
       >
         {/* Desktop/Large Screen Pixel-Perfect Layout */}
         <div className="hidden lg:block relative w-full min-h-screen mx-auto z-10">

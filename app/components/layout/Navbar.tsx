@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 
@@ -12,13 +12,8 @@ const NAV_LINKS = [
   { label: "Blogs", href: "#blogs" },
 ];
 
-function sidePad(width: number) {
-  if (width >= 1280) return 80;
-  if (width >= 1024) return 48;
-  if (width >= 768) return 32;
-  if (width >= 640) return 24;
-  return 16;
-}
+const LOGOMARK = "/Callience%20Logomark.svg";
+const WORDMARK = "/Callience%20Wordmark.svg";
 
 function ArrowIcon({ className }: { className: string }) {
   return (
@@ -34,46 +29,44 @@ function ArrowIcon({ className }: { className: string }) {
   );
 }
 
+/** Soft displacement map — bends the backdrop (Chromium). Kept mild under heavy frost. */
+function NavGlassFilter() {
+  return (
+    <svg width="0" height="0" aria-hidden style={{ position: "absolute" }}>
+      <defs>
+        <filter
+          id="nav-glass-refract"
+          x="-25%"
+          y="-50%"
+          width="150%"
+          height="200%"
+          colorInterpolationFilters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.006 0.01"
+            numOctaves="2"
+            seed="9"
+            result="noise"
+          />
+          <feGaussianBlur in="noise" stdDeviation="2" result="soft" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="soft"
+            scale="28"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const reduceMotion = useReducedMotion();
-  const logoRef = useRef<HTMLAnchorElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
-
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [ready, setReady] = useState(false);
-  const [metrics, setMetrics] = useState({ full: 0, collapsed: 0, expanded: 0, pad: 16 });
-
-  useLayoutEffect(() => {
-    const measure = () => {
-      const full = document.documentElement.clientWidth;
-      const logo = logoRef.current?.offsetWidth ?? 0;
-      const links = linksRef.current?.scrollWidth ?? 0;
-      const cta = ctaRef.current?.offsetWidth ?? 0;
-      const desktop = window.matchMedia("(min-width: 1024px)").matches;
-      const gaps = desktop ? 2 : 1;
-      const collapsed = Math.min(full, logo + cta + 16 * 2 + 12 * gaps + 2);
-      const expandedWidth = Math.min(
-        full - 16,
-        collapsed + (desktop && links > 0 ? links + 12 : 0),
-      );
-      const pad = sidePad(full);
-      setMetrics((prev) =>
-        prev.full === full &&
-        prev.collapsed === collapsed &&
-        prev.expanded === expandedWidth &&
-        prev.pad === pad
-          ? prev
-          : { full, collapsed, expanded: expandedWidth, pad },
-      );
-      setReady(true);
-    };
-
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -92,22 +85,12 @@ export default function Navbar() {
     setExpanded(false);
   }, [scrolled]);
 
-  const open = !scrolled || expanded;
-  const plate = !ready
-    ? undefined
-    : scrolled
-      ? expanded
-        ? metrics.expanded
-        : metrics.collapsed
-      : metrics.full;
-  const shift =
-    scrolled && metrics.full > 0
-      ? (metrics.full - (expanded ? metrics.expanded : metrics.collapsed)) / 2 + 16 - metrics.pad
-      : 0;
-  const move = ready && !reduceMotion ? "nav-move" : "";
+  const collapsed = scrolled && !expanded;
+  const motionClass = reduceMotion ? "" : "nav-morph";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 flex flex-col items-center pointer-events-none">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 sm:px-5 md:px-6">
+      <NavGlassFilter />
       <nav
         onMouseEnter={() => scrolled && setExpanded(true)}
         onMouseLeave={() => setExpanded(false)}
@@ -115,87 +98,97 @@ export default function Navbar() {
         onBlur={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false);
         }}
-        className={`pointer-events-none relative w-full ${
-          scrolled ? "mt-3" : "mt-0"
+        className={`pointer-events-auto relative mt-3 w-full ${motionClass} ${
+          collapsed ? "max-w-[18.125rem]" : "max-w-[72rem]"
         }`}
+        aria-label="Primary"
       >
-        <div
-          aria-hidden
-          style={plate === undefined ? undefined : { width: plate }}
-          className={`nav-shell pointer-events-auto absolute top-0 bottom-0 border border-solid ${
-            ready ? "left-1/2 -translate-x-1/2" : "inset-x-0"
-          } ${
-            ready && !reduceMotion ? "nav-plate" : ""
-          } ${
-            scrolled
-              ? "is-scrolled rounded-full border-white/80"
-              : "rounded-none border-transparent border-b-white/30"
-          }`}
-        >
-          <span
-            className={`nav-glass-sheen absolute inset-0 rounded-[inherit] transition-opacity duration-200 ${
-              scrolled ? "opacity-100" : "opacity-0"
-            }`}
-          />
+        {/* Glass plate — both states: 56px tall */}
+        <div aria-hidden className="nav-glass absolute inset-0 rounded-full">
+          <span className="nav-glass-sheen pointer-events-none absolute inset-0 rounded-full" />
         </div>
-        <div className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-3 sm:py-5">
+
+        {/* Collapsed pill — mark + Request Demo → */}
+        <a
+          href="#contact"
+          className={`z-10 flex items-center no-underline text-primary-black ${motionClass} ${
+            collapsed
+              ? "relative h-14 pl-6 pr-8 gap-5 opacity-100"
+              : "pointer-events-none absolute inset-0 h-14 opacity-0"
+          }`}
+          aria-hidden={!collapsed}
+          tabIndex={collapsed ? 0 : -1}
+        >
+          <Image
+            src={LOGOMARK}
+            alt=""
+            width={104}
+            height={69}
+            className="h-6 w-auto object-contain shrink-0"
+            priority
+          />
+          <span className="flex flex-1 items-center justify-end gap-1.5">
+            <span className="text-[15px] font-medium font-sans whitespace-nowrap leading-none tracking-[-0.01em]">
+              Request Demo
+            </span>
+            <ArrowIcon className="w-[15px] h-[15px]" />
+          </span>
+        </a>
+
+        {/* Full bar — same 56px height */}
+        <div
+          className={`z-10 flex items-center justify-between ${motionClass} ${
+            collapsed
+              ? "pointer-events-none absolute inset-0 h-14 px-[22px] opacity-0"
+              : "relative h-14 px-[22px] opacity-100"
+          }`}
+          aria-hidden={collapsed}
+        >
           <a
-            ref={logoRef}
             href="#"
-            style={{ transform: `translate3d(${shift}px, 0, 0)` }}
-            className={`pointer-events-auto flex items-center shrink-0 no-underline ${move}`}
+            className="flex items-center gap-2 shrink-0 no-underline"
+            tabIndex={collapsed ? -1 : 0}
           >
             <Image
-              src="/ai%20CALLING%20f.svg"
+              src={LOGOMARK}
+              alt=""
+              width={104}
+              height={69}
+              className="h-6 w-auto object-contain"
+              priority
+            />
+            <Image
+              src={WORDMARK}
               alt="Callience"
-              width={216}
-              height={100}
-              className="h-10 sm:h-12 lg:h-14 w-auto object-contain object-center -translate-y-1"
+              width={342}
+              height={45}
+              className="h-[14px] w-auto object-contain"
               priority
             />
           </a>
 
-          <div
-            className={`hidden lg:flex flex-1 min-w-0 justify-center transition-opacity duration-200 ${
-              open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-            }`}
-          >
-            <div
-              ref={linksRef}
-              className={`relative flex items-center h-12 xl:h-14 px-4 lg:px-8 xl:px-10 rounded-full gap-2 lg:gap-5 xl:gap-7 border border-solid w-max ${
-                scrolled ? "bg-transparent border-transparent shadow-none" : "nav-pill"
-              }`}
-            >
-              <span
-                aria-hidden
-                className={`nav-glass-sheen pointer-events-none absolute inset-0 rounded-full transition-opacity duration-300 ${
-                  scrolled ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="relative z-10 no-underline text-sm lg:text-base xl:text-lg font-bold leading-none inline-flex items-center justify-center px-3 py-2 lg:px-4 lg:py-2.5 rounded-full text-primary-black font-sans whitespace-nowrap hover:bg-white/40"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-0.5 xl:gap-1">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                tabIndex={collapsed ? -1 : 0}
+                className="no-underline text-[14px] font-medium leading-none inline-flex items-center justify-center px-3.5 xl:px-4 py-2 rounded-full text-primary-black font-sans whitespace-nowrap tracking-[-0.01em] hover:bg-white/45 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <a
-            ref={ctaRef}
             href="#contact"
-            style={{ transform: `translate3d(${-shift}px, 0, 0)` }}
-            className={`pointer-events-auto flex items-center justify-center h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 no-underline gap-2 sm:gap-3 bg-primary-black text-secondary-beige shrink-0 shadow-glass-bubble ${move} ${
-              scrolled ? "rounded-full" : "rounded-xl"
-            }`}
+            tabIndex={collapsed ? -1 : 0}
+            className="flex items-center justify-center h-10 px-5 no-underline gap-1.5 bg-primary-black text-secondary-beige shrink-0 rounded-full"
           >
-            <span className="text-xs sm:text-sm md:text-base font-bold leading-none tracking-wide font-sans whitespace-nowrap">
+            <span className="text-[13px] font-medium leading-none tracking-[-0.01em] font-sans whitespace-nowrap">
               Request Demo
             </span>
-            <ArrowIcon className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6" />
+            <ArrowIcon className="w-3.5 h-3.5" />
           </a>
         </div>
       </nav>

@@ -116,54 +116,84 @@ body {
   .shadow-glass-bubble {
     box-shadow: 0px 7px 44px rgba(219, 220, 220, 0.18);
   }
+}
 
-  .nav-glass-sheen {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.08) 10%, rgba(255, 255, 255, 0) 32%),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0) 86%, rgba(255, 255, 255, 0.2) 100%);
-  }
+/* === Navbar glass (outside @layer so backdrop-filter isn't purged) === */
+.nav-morph {
+  transition:
+    max-width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    padding 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    gap 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-  .nav-shell {
-    background-color: rgba(255, 253, 241, 0.18);
-    box-shadow: 0px 7px 44px rgba(219, 220, 220, 0.18);
-  }
+/*
+  Light physics stack (old nav sheen + liquid-glass rim + heavy frost):
+  - Translucent cream/white tint so content reads through
+  - Strong backdrop blur + saturate (milky frosted glass)
+  - Soft SVG displacement refraction (Chromium) so edges bend
+  - Specular top sheen + 4-sided inset rim highlights
+*/
+.nav-glass {
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 8px 28px rgba(30, 30, 30, 0.1),
+    0 2px 6px rgba(30, 30, 30, 0.05),
+    /* refractive rim — light catching every edge */
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.4),
+    inset 1px 0 1px rgba(255, 255, 255, 0.35),
+    inset -1px 0 1px rgba(255, 255, 255, 0.35),
+    inset 0 -2px 6px rgba(30, 30, 30, 0.06);
+  -webkit-backdrop-filter: blur(36px) saturate(1.7) brightness(1.06);
+  backdrop-filter: blur(36px) saturate(1.7) brightness(1.06);
+}
 
-  .nav-plate {
-    transition:
-      width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-      border-radius 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .nav-move {
-    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .nav-shell.is-scrolled {
-    background-color: rgba(250, 249, 245, 0.45);
-    backdrop-filter: blur(12px) saturate(1.35);
-    -webkit-backdrop-filter: blur(12px) saturate(1.35);
-    box-shadow:
-      0 12px 28px rgba(30, 30, 30, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.95),
-      inset 0 -1px 0 rgba(30, 30, 30, 0.07);
-  }
-
-  .nav-pill {
-    background-color: rgba(255, 253, 241, 0.22);
-    backdrop-filter: blur(12px) saturate(1.35);
-    -webkit-backdrop-filter: blur(12px) saturate(1.35);
-    border-color: rgba(255, 255, 255, 0.72);
-    box-shadow:
-      0 10px 24px rgba(30, 30, 30, 0.07),
-      inset 0 1px 0 rgba(255, 255, 255, 0.95),
-      inset 0 -1px 0 rgba(30, 30, 30, 0.06);
+/* Chromium: keep heavy frost, add mild liquid refraction */
+@supports (backdrop-filter: url("#nav-glass-refract")) {
+  .nav-glass {
+    -webkit-backdrop-filter: blur(28px) saturate(1.8) brightness(1.08) url("#nav-glass-refract");
+    backdrop-filter: blur(28px) saturate(1.8) brightness(1.08) url("#nav-glass-refract");
   }
 }
 
-.nav-pill,
-.nav-shell.is-scrolled {
-  -webkit-backdrop-filter: blur(12px) saturate(1.35);
-  backdrop-filter: blur(12px) saturate(1.35);
+/* Proven sheen from prior navbar — top specular + side light pipes */
+.nav-glass-sheen {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.12) 12%,
+      rgba(255, 255, 255, 0) 36%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.32) 0%,
+      rgba(255, 255, 255, 0) 12%,
+      rgba(255, 255, 255, 0) 88%,
+      rgba(255, 255, 255, 0.24) 100%
+    ),
+    /* soft diagonal gloss */
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.06) 30%,
+      transparent 58%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav-glass {
+    background-color: rgba(250, 249, 245, 0.92);
+  }
 }
 
 /* Feature pill fill animation — pure CSS, runs on GPU compositor */
