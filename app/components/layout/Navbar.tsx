@@ -127,11 +127,11 @@ export default function Navbar() {
             className="h-7 w-auto object-contain shrink-0"
             priority
           />
-          <span className="flex flex-1 items-center justify-end gap-2.5 sm:gap-3">
-            <span className="text-[15px] font-extrabold font-sans whitespace-nowrap leading-none">
+          <span className="flex flex-1 items-center justify-end gap-2.5 sm:gap-3 -translate-x-2 sm:-translate-x-2.5">
+            <span className="text-[16px] font-extrabold font-sans whitespace-nowrap leading-none">
               Request Demo
             </span>
-            <ArrowIcon className="w-4 h-4" />
+            <ArrowIcon className="w-5 h-5" />
           </span>
         </a>
 
@@ -183,12 +183,12 @@ export default function Navbar() {
           <a
             href="#contact"
             tabIndex={collapsed ? -1 : 0}
-            className="flex items-center justify-center h-11 px-6 no-underline gap-2.5 sm:gap-3 bg-primary-black text-secondary-beige shrink-0 rounded-xl hover:opacity-90 transition-opacity"
+            className="flex items-center justify-center h-[41px] sm:h-[42px] px-5 sm:px-5.5 no-underline gap-2.5 bg-primary-black text-secondary-beige shrink-0 rounded-[9px] hover:opacity-90 transition-opacity"
           >
-            <span className="text-[15px] sm:text-base font-extrabold leading-none font-sans whitespace-nowrap">
+            <span className="text-[15px] sm:text-[15.5px] font-extrabold leading-none font-sans whitespace-nowrap">
               Request Demo
             </span>
-            <ArrowIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
+            <ArrowIcon className="w-5 h-5" />
           </a>
         </div>
       </nav>

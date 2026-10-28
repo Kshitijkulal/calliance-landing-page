@@ -198,9 +198,9 @@ export default function HeroSection() {
               href="#contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center h-12 md:h-14 px-7 md:px-8 rounded-xl no-underline gap-3 bg-primary-black text-secondary-beige transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center justify-center h-[46px] md:h-[50px] px-6 md:px-7 rounded-[9px] no-underline gap-2.5 sm:gap-3 bg-primary-black text-secondary-beige transition-all duration-300 hover:opacity-90"
             >
-              <span className="text-sm md:text-base font-extrabold font-manrope tracking-wide">
+              <span className="text-[13.5px] md:text-[15px] font-extrabold font-manrope tracking-wide">
                 Request Demo
               </span>
               <svg
