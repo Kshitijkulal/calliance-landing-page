@@ -32,7 +32,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-32 sm:top-36 md:top-40 lg:top-44 left-1/2 w-full max-w-5xl aspect-square z-0 pointer-events-none"
+          className="absolute top-32 sm:top-36 md:top-40 lg:top-44 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
