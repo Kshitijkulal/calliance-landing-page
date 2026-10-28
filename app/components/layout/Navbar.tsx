@@ -103,7 +103,7 @@ export default function Navbar() {
         }`}
         aria-label="Primary"
       >
-        {/* Glass plate — both states: 56px tall */}
+        {/* Glass plate — both states: 64px tall */}
         <div aria-hidden className="nav-glass absolute inset-0 rounded-full">
           <span className="nav-glass-sheen pointer-events-none absolute inset-0 rounded-full" />
         </div>
@@ -113,8 +113,8 @@ export default function Navbar() {
           href="#contact"
           className={`z-10 flex items-center no-underline text-primary-black ${motionClass} ${
             collapsed
-              ? "relative h-14 pl-6 pr-8 gap-5 opacity-100"
-              : "pointer-events-none absolute inset-0 h-14 opacity-0"
+              ? "relative h-16 pl-6 pr-8 gap-5 opacity-100"
+              : "pointer-events-none absolute inset-0 h-16 opacity-0"
           }`}
           aria-hidden={!collapsed}
           tabIndex={collapsed ? 0 : -1}
@@ -124,23 +124,23 @@ export default function Navbar() {
             alt=""
             width={104}
             height={69}
-            className="h-6 w-auto object-contain shrink-0"
+            className="h-7 w-auto object-contain shrink-0"
             priority
           />
-          <span className="flex flex-1 items-center justify-end gap-1.5">
-            <span className="text-[15px] font-medium font-sans whitespace-nowrap leading-none tracking-[-0.01em]">
+          <span className="flex flex-1 items-center justify-end gap-2.5 sm:gap-3">
+            <span className="text-[15px] font-semibold font-sans whitespace-nowrap leading-none">
               Request Demo
             </span>
-            <ArrowIcon className="w-[15px] h-[15px]" />
+            <ArrowIcon className="w-4 h-4" />
           </span>
         </a>
 
-        {/* Full bar — same 56px height */}
+        {/* Full bar — 64px height */}
         <div
           className={`z-10 flex items-center justify-between ${motionClass} ${
             collapsed
-              ? "pointer-events-none absolute inset-0 h-14 px-[22px] opacity-0"
-              : "relative h-14 px-[22px] opacity-100"
+              ? "pointer-events-none absolute inset-0 h-16 px-6 opacity-0"
+              : "relative h-16 px-6 opacity-100"
           }`}
           aria-hidden={collapsed}
         >
@@ -154,7 +154,7 @@ export default function Navbar() {
               alt=""
               width={104}
               height={69}
-              className="h-6 w-auto object-contain"
+              className="h-7 w-auto object-contain"
               priority
             />
             <Image
@@ -162,18 +162,18 @@ export default function Navbar() {
               alt="Callience"
               width={342}
               height={45}
-              className="h-[14px] w-auto object-contain"
+              className="h-[15px] w-auto object-contain"
               priority
             />
           </a>
 
-          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-0.5 xl:gap-1">
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 xl:gap-9">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 tabIndex={collapsed ? -1 : 0}
-                className="no-underline text-[14px] font-medium leading-none inline-flex items-center justify-center px-3.5 xl:px-4 py-2 rounded-full text-primary-black font-sans whitespace-nowrap tracking-[-0.01em] hover:bg-white/45 transition-colors"
+                className="no-underline text-[15px] xl:text-[16px] font-semibold leading-none inline-flex items-center justify-center px-2 py-1 rounded-lg text-primary-black font-sans whitespace-nowrap hover:text-dark-grey transition-colors"
               >
                 {link.label}
               </a>
@@ -183,12 +183,12 @@ export default function Navbar() {
           <a
             href="#contact"
             tabIndex={collapsed ? -1 : 0}
-            className="flex items-center justify-center h-10 px-5 no-underline gap-1.5 bg-primary-black text-secondary-beige shrink-0 rounded-full"
+            className="flex items-center justify-center h-11 px-6 no-underline gap-2.5 sm:gap-3 bg-primary-black text-secondary-beige shrink-0 rounded-xl hover:opacity-90 transition-opacity"
           >
-            <span className="text-[13px] font-medium leading-none tracking-[-0.01em] font-sans whitespace-nowrap">
+            <span className="text-[15px] sm:text-base font-semibold leading-none font-sans whitespace-nowrap">
               Request Demo
             </span>
-            <ArrowIcon className="w-3.5 h-3.5" />
+            <ArrowIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
           </a>
         </div>
       </nav>
