@@ -32,10 +32,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
           animate={{ opacity: 0.8, x: "-50%", y: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-32 sm:top-36 md:top-40 lg:top-44 left-1/2 w-full max-w-4xl aspect-square z-0 pointer-events-none"
+          className="absolute top-36 sm:top-40 md:top-48 lg:top-56 left-1/2 w-full max-w-[50rem] aspect-square z-0 pointer-events-none"
         >
           {/* Ring 1 (Inner) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-square opacity-40">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] aspect-square opacity-40">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -66,7 +66,7 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 2 */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 aspect-square opacity-60">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] aspect-square opacity-60">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -91,7 +91,7 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 3 */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square opacity-80">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] aspect-square opacity-80">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -116,7 +116,7 @@ export default function HeroSection() {
           </div>
 
           {/* Ring 4 (Outer) */}
-          <div className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125%] aspect-square opacity-100">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] aspect-square opacity-100">
             <svg
               className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
               viewBox="0 0 100 100"
@@ -222,21 +222,10 @@ export default function HeroSection() {
             }}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-3 sm:gap-6 md:gap-10 lg:gap-16 mt-8 sm:mt-10 md:mt-20 lg:mt-48 w-full max-w-5xl mx-auto pb-2 px-1 sm:px-4"
+            className="flex flex-wrap justify-center lg:flex-nowrap lg:justify-between items-center gap-3 sm:gap-5 md:gap-8 mt-8 sm:mt-10 md:mt-20 lg:mt-48 w-full max-w-[64.8rem] mx-auto pb-2"
           >
             {["Strategic", "High ROI", "Natural", "Customized"].map(
-              (text, index) => {
-                let mobileAlignment = "lg:justify-self-center";
-                if (index === 0)
-                  mobileAlignment = "justify-self-start lg:justify-self-center";
-                else if (index === 1)
-                  mobileAlignment = "justify-self-end lg:justify-self-center";
-                else if (index === 2)
-                  mobileAlignment = "justify-self-end lg:justify-self-center";
-                else if (index === 3)
-                  mobileAlignment = "justify-self-start lg:justify-self-center";
-
-                return (
+              (text) => (
                   <motion.div
                     key={text}
                     variants={{
@@ -247,7 +236,7 @@ export default function HeroSection() {
                         transition: { duration: 0.6, ease: "easeOut" },
                       },
                     }}
-                    className={`relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1 ${mobileAlignment}`}
+                    className="relative inline-flex px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-all duration-300 hover:-translate-y-1"
                     style={{
                       backgroundColor: "var(--color-primary-beige)",
                       boxShadow: "inset 6px 6px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1)"
@@ -257,8 +246,7 @@ export default function HeroSection() {
                       {text}
                     </span>
                   </motion.div>
-                );
-              },
+                ),
             )}
           </motion.div>
         </div>
