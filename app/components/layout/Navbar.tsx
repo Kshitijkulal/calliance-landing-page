@@ -129,8 +129,8 @@ export default function Navbar() {
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false);
           }}
-          className={`pointer-events-none relative w-full ${move} ${
-            scrolled ? "translate-y-3" : "translate-y-0"
+          className={`pointer-events-none relative w-full ${
+            scrolled ? "mt-3" : "mt-0"
           }`}
         >
           <div
