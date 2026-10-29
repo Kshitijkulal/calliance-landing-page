@@ -153,6 +153,19 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    if (typeof navigator !== "undefined") {
+      const ua = navigator.userAgent;
+      const isWebKitSafari =
+        /^((?!chrome|android).)*safari/i.test(ua) ||
+        (/iPad|iPhone|iPod/.test(ua) && !(window as unknown as { MSStream?: unknown }).MSStream);
+      if (isWebKitSafari) {
+        setIsSafari(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -190,7 +203,10 @@ export default function Navbar() {
         aria-label="Primary"
       >
         {/* Glass plate — both states: 64px tall */}
-        <div aria-hidden className="nav-glass absolute inset-0 rounded-full">
+        <div
+          aria-hidden
+          className={`nav-glass ${isSafari ? "nav-glass-safari" : ""} absolute inset-0 rounded-full`}
+        >
           <span className="nav-glass-sheen pointer-events-none absolute inset-0 rounded-full" />
         </div>
 
