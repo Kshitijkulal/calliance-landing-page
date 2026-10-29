@@ -361,27 +361,28 @@ export default function Navbar() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 onClick={() => setMobileMenuOpen(false)}
-                className="pointer-events-auto fixed inset-0 z-40 bg-black/20 backdrop-blur-[2px]"
+                className="pointer-events-auto fixed inset-0 z-40 bg-black/15 backdrop-blur-[2px]"
                 aria-hidden="true"
               />
 
-              {/* Floating Menu Drawer */}
+              {/* Floating Menu Drawer — with exact navbar optical glassmorphism */}
               <motion.div
                 initial={{ opacity: 0, y: -10, scale: 0.97 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.97 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                className="pointer-events-auto relative mt-2.5 w-full max-w-[calc(100vw-2rem)] rounded-[24px] overflow-hidden z-50 p-4 sm:p-5 flex flex-col gap-1.5 border border-white/80 shadow-2xl"
-                style={{
-                  backgroundColor: "rgba(251, 251, 250, 0.97)",
-                  backdropFilter: "blur(24px)",
-                  WebkitBackdropFilter: "blur(24px)",
-                  boxShadow:
-                    "0 24px 48px -12px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.06)",
-                }}
+                className="pointer-events-auto relative mt-2.5 w-full max-w-[calc(100vw-2rem)] rounded-[24px] z-50 p-4 sm:p-5 flex flex-col gap-1.5"
               >
+                {/* Glass background plate matching navbar 1:1 */}
+                <div
+                  aria-hidden
+                  className={`nav-dropdown-glass ${isSafari ? "nav-dropdown-glass-safari" : ""} absolute inset-0 rounded-[24px]`}
+                >
+                  <span className="nav-glass-sheen pointer-events-none absolute inset-0 rounded-[24px]" />
+                </div>
+
                 {/* Links */}
-                <div className="flex flex-col gap-1">
+                <div className="relative z-10 flex flex-col gap-1">
                   {NAV_LINKS.map((link, idx) => (
                     <motion.a
                       key={link.label}
@@ -390,7 +391,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.04 + 0.04, duration: 0.18 }}
-                      className="flex items-center justify-between py-3 px-3.5 rounded-xl text-[16px] font-bold text-primary-black font-sans no-underline transition-colors hover:bg-black/5 active:bg-black/10"
+                      className="flex items-center justify-between py-3 px-3.5 rounded-xl text-[16px] font-bold text-primary-black font-sans no-underline transition-colors hover:bg-white/40 active:bg-white/60"
                     >
                       <span>{link.label}</span>
                       <svg
@@ -411,7 +412,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Subtle Hairline Divider */}
-                <div className="w-full h-px bg-black/8 my-1.5" />
+                <div className="relative z-10 w-full h-px bg-black/[0.07] my-1.5" />
 
                 {/* Request Demo Button CTA */}
                 <motion.a
@@ -420,7 +421,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.22, duration: 0.18 }}
-                  className="flex items-center justify-center h-12 px-6 rounded-xl bg-primary-black text-secondary-beige no-underline gap-2.5 font-sans font-extrabold text-[15.5px] shadow-lg active:scale-[0.98] transition-transform"
+                  className="relative z-10 flex items-center justify-center h-12 px-6 rounded-xl bg-primary-black text-secondary-beige no-underline gap-2.5 font-sans font-extrabold text-[15.5px] shadow-lg active:scale-[0.98] transition-transform"
                 >
                   <span>Request Demo</span>
                   <ArrowIcon className="w-5 h-5" />
