@@ -181,9 +181,10 @@ export default function FeaturesSection() {
       {/* Header — responsive wrap layout */}
       <div className="w-full flex flex-wrap justify-between items-start gap-8">
         <h2
-          className="flex-[1_1_400px] font-normal uppercase m-0 text-5xl sm:text-6xl md:text-7xl leading-tight"
+          className="flex-[1_1_400px] font-normal uppercase m-0 text-5xl sm:text-6xl md:text-7xl leading-[0.95]"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
+            lineHeight: "0.95",
             color: "var(--color-primary-black)",
           }}
         >
