@@ -23,7 +23,7 @@ export default function Home() {
         <DataSecuritySection />
         <HowItWorksSection />
         <FasterCallsSection />
-        <div className="h-12 md:h-24 w-full" />
+        <div className="h-2 sm:h-4 md:h-24 w-full" />
         <FeaturesSection />
         <CampaignPartnerSection />
         <PricingSection />

@@ -68,7 +68,7 @@ export default function HowItWorksSection() {
 
       {/* Step Cards */}
       <div
-        className="w-full px-4 lg:px-20 flex flex-wrap justify-center gap-10"
+        className="w-full px-4 lg:px-20 flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10"
       >
         {STEPS.map((step) => (
           <div

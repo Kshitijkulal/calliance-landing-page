@@ -101,17 +101,17 @@ export default function FasterCallsSection() {
   return (
     <section
       id="use-cases"
-      className="pt-8 md:pt-10 pb-8 md:pb-10 px-4 md:px-8 lg:px-[6%]"
+      className="pt-4 sm:pt-6 md:pt-10 pb-6 sm:pb-8 md:pb-10 px-4 md:px-8 lg:px-[6%]"
     >
       {/* Header */}
-      <div className="flex flex-col items-center gap-1.5 mx-auto max-w-[1008px]">
+      <div className="flex flex-col items-center gap-3 md:gap-4 mx-auto max-w-[1008px]">
         <h2
           className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black"
         >
           Faster Calls That Keep You Ahead
         </h2>
         <p
-          className="w-full text-center text-lg md:text-xl font-normal leading-7 m-0 mt-4 font-manrope text-primary-black"
+          className="w-full text-center text-base sm:text-lg md:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black"
         >
           From lead qualification to payment reminders, see how Callience makes everyday calls faster and more efficient.
         </p>
@@ -119,7 +119,7 @@ export default function FasterCallsSection() {
 
       {/* Slideshow Container */}
       <div 
-        className="w-full max-w-[1280px] mx-auto mt-10 md:mt-14 flex flex-col items-center gap-6 md:gap-8"
+        className="w-full max-w-[1280px] mx-auto mt-6 sm:mt-8 md:mt-14 flex flex-col items-center gap-6 md:gap-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

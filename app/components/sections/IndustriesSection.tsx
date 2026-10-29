@@ -118,10 +118,10 @@ export default function IndustriesSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-screen-2xl mx-auto pt-[4%] pb-[2%] flex flex-col gap-12 md:gap-20 overflow-hidden px-[6%]">
+    <section className="w-full max-w-screen-2xl mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[2%] flex flex-col gap-6 sm:gap-8 md:gap-20 overflow-hidden px-[6%]">
 
       {/* Header — split layout */}
-      <div className="flex flex-col md:flex-row items-start gap-6 md:gap-4 w-full">
+      <div className="flex flex-col md:flex-row items-start gap-3 md:gap-4 w-full">
         {/* Heading */}
         <div className="w-full md:w-[60%] lg:w-[55%] shrink-0">
           <h2
@@ -136,7 +136,7 @@ export default function IndustriesSection() {
         </div>
 
         {/* Description */}
-        <div className="w-full md:w-[40%] lg:w-[45%] flex items-center pt-2 md:pl-4">
+        <div className="w-full md:w-[40%] lg:w-[45%] flex items-center pt-0 md:pt-2 md:pl-4">
           <p
             className="text-base sm:text-lg md:text-xl font-normal leading-snug m-0"
             style={{

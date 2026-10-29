@@ -176,7 +176,7 @@ export default function FeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full px-4 lg:px-20 pt-[2%] pb-[4%] flex flex-col items-center gap-5 sm:gap-6 lg:gap-14 overflow-hidden"
+      className="w-full px-4 lg:px-20 pt-4 sm:pt-6 lg:pt-[2%] pb-6 sm:pb-8 lg:pb-[4%] flex flex-col items-center gap-6 sm:gap-8 lg:gap-14 overflow-hidden"
     >
       {/* Header — responsive 2-column grid layout */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-10 xl:gap-12 items-start">
