@@ -176,12 +176,12 @@ export default function FeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full max-w-screen-2xl mx-auto pt-[2%] pb-[4%] flex flex-col items-center gap-12 lg:gap-16 overflow-hidden px-4 lg:px-20"
+      className="w-full px-4 lg:px-20 pt-[2%] pb-[4%] flex flex-col items-center gap-10 lg:gap-14 overflow-hidden"
     >
-      {/* Header — responsive wrap layout */}
-      <div className="w-full flex flex-wrap justify-between items-start gap-8">
+      {/* Header — responsive 2-column grid layout */}
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-start">
         <h2
-          className="flex-[1_1_400px] font-normal uppercase m-0 text-5xl sm:text-6xl md:text-7xl leading-[0.95]"
+          className="font-normal uppercase m-0 text-5xl sm:text-6xl lg:text-[56px] xl:text-[64px] 2xl:text-[70px] leading-[0.95]"
           style={{
             fontFamily: "var(--font-bebas-neue), sans-serif",
             lineHeight: "0.95",
@@ -190,24 +190,24 @@ export default function FeaturesSection() {
         >
           Built to Give Your Operations an Edge
         </h2>
-        <div className="flex-[1_1_500px] pt-2 md:pt-4">
+        <div className="pt-2 md:pt-3 lg:pt-4">
           <p
-            className="font-normal leading-relaxed m-0 text-base sm:text-lg lg:text-xl"
+            className="font-normal leading-relaxed m-0 text-base sm:text-lg lg:text-xl max-w-xl"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
             }}
           >
             Voice AI backed by specialists, so you launch faster, reach more
-            customers, and stay ahead of competitors.
+            customers and stay ahead of competitors.
           </p>
         </div>
       </div>
 
       {/* Feature List + Content Panel */}
-      <div className="w-full flex flex-wrap justify-center items-start gap-12">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-start">
         {/* Left Column — Feature List */}
-        <div className="flex-[1_1_100%] lg:flex-[1_1_50%] flex flex-col gap-2 lg:gap-4 w-full">
+        <div className="flex flex-col gap-2.5 sm:gap-3 w-full">
           {FEATURES.map((feature, index) => (
             <React.Fragment key={feature.title}>
               <motion.div
@@ -234,13 +234,13 @@ export default function FeaturesSection() {
                 onPointerLeave={(e) => {
                   if (e.pointerType === "mouse") setHoveredIndex(null);
                 }}
-                className="group w-full py-4 sm:py-5 px-6 sm:px-8 rounded-2xl md:rounded-3xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
+                className="group w-full py-3.5 sm:py-4 px-6 sm:px-7 rounded-2xl flex justify-between items-center cursor-pointer text-left outline-none relative overflow-hidden border-none"
                 style={{
                   backgroundColor:
                     index === activeIndex ? "white" : "transparent",
                   boxShadow:
                     index === activeIndex
-                      ? "0px 6px 20px 0px rgba(0, 0, 0, 0.15)"
+                      ? "0px 6px 20px 0px rgba(0, 0, 0, 0.08)"
                       : "none",
                 }}
               >
@@ -253,13 +253,13 @@ export default function FeaturesSection() {
                 )}
                 {/* Base Content (Always visible, behind the fill) */}
                 <span
-                  className="relative z-0 font-semibold transition-colors duration-300 ease-in-out text-base sm:text-lg lg:text-xl"
+                  className="relative z-0 font-semibold transition-colors duration-300 ease-in-out text-[15px] sm:text-[16px] lg:text-[17px]"
                   style={{
                     fontFamily: "var(--font-manrope), sans-serif",
                     color:
                       index === activeIndex
                         ? "var(--color-primary-black)"
-                        : "#71717A",
+                        : "#808285",
                   }}
                 >
                   {feature.title}
@@ -268,7 +268,7 @@ export default function FeaturesSection() {
                   <svg
                     viewBox="0 0 20 16"
                     fill="none"
-                    className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-0"
+                    className="w-4 sm:w-4.5 h-auto shrink-0 ml-3 relative z-0"
                   >
                     <path
                       d="M2 8H18M18 8L12 2M18 8L12 14"
@@ -292,14 +292,14 @@ export default function FeaturesSection() {
                       }}
                     >
                       <div
-                        className={`absolute left-0 top-0 w-full h-full flex justify-between items-center py-4 sm:py-5 px-6 sm:px-8 box-border ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
+                        className={`absolute left-0 top-0 w-full h-full flex justify-between items-center py-3.5 sm:py-4 px-6 sm:px-7 box-border ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
                         style={{
                           animation: "pillFillInner 2.5s linear forwards",
                           willChange: "transform",
                         }}
                       >
                         <span
-                          className="relative z-2 font-semibold text-white text-base sm:text-lg lg:text-xl"
+                          className="relative z-2 font-semibold text-white text-[15px] sm:text-[16px] lg:text-[17px]"
                           style={{
                             fontFamily: "var(--font-manrope), sans-serif",
                           }}
@@ -309,7 +309,7 @@ export default function FeaturesSection() {
                         <svg
                           viewBox="0 0 20 16"
                           fill="none"
-                          className="w-4 sm:w-5 h-auto shrink-0 ml-3 relative z-2"
+                          className="w-4 sm:w-4.5 h-auto shrink-0 ml-3 relative z-2"
                         >
                           <path
                             d="M2 8H18M18 8L12 2M18 8L12 14"
@@ -396,9 +396,9 @@ export default function FeaturesSection() {
         </div>
 
         {/* Right Column — Content Panel (Desktop Only) */}
-        <div className="hidden lg:flex flex-[1_1_40%] flex-col items-start w-full">
+        <div className="hidden lg:flex flex-col items-start w-full">
           <div
-            className="w-full p-6 sm:p-8 lg:p-12 rounded-3xl flex flex-col gap-6"
+            className="w-full p-6 sm:p-8 lg:p-10 rounded-3xl flex flex-col gap-6"
             style={{
               backgroundColor: "rgba(0, 0, 0, 0.02)",
               boxShadow:
@@ -430,7 +430,7 @@ export default function FeaturesSection() {
                       {/* The Dot & Line Container */}
                       <div className="relative flex flex-col items-center shrink-0">
                         <div
-                          className="w-4 h-4 rounded-full mt-1.5 relative z-10"
+                          className="w-3.5 h-3.5 rounded-full mt-1.5 relative z-10"
                           style={{
                             backgroundColor: "var(--color-primary-black)",
                           }}
@@ -439,7 +439,7 @@ export default function FeaturesSection() {
                         {i !==
                           FEATURES[activeIndex].content.bullets.length - 1 && (
                           <div
-                            className="absolute w-0.5 z-0 top-[22px] -bottom-[26px]"
+                            className="absolute w-0.5 z-0 top-[20px] -bottom-[24px]"
                             style={{
                               backgroundColor: "var(--color-primary-black)",
                             }}
@@ -448,7 +448,7 @@ export default function FeaturesSection() {
                       </div>
                       {/* The Text */}
                       <p
-                        className="text-base sm:text-lg font-normal leading-relaxed m-0"
+                        className="text-[15px] sm:text-[16px] font-normal leading-relaxed m-0"
                         style={{
                           fontFamily: "var(--font-manrope), sans-serif",
                           color: "var(--color-primary-black)",
