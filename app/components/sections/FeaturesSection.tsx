@@ -176,10 +176,10 @@ export default function FeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full px-4 lg:px-20 pt-[2%] pb-[4%] flex flex-col items-center gap-10 lg:gap-14 overflow-hidden"
+      className="w-full px-4 lg:px-20 pt-[2%] pb-[4%] flex flex-col items-center gap-5 sm:gap-6 lg:gap-14 overflow-hidden"
     >
       {/* Header — responsive 2-column grid layout */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-start">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-10 xl:gap-12 items-start">
         <h2
           className="font-normal uppercase m-0 text-5xl sm:text-6xl lg:text-[58px] xl:text-[66px] 2xl:text-[72px] leading-[0.95]"
           style={{
@@ -190,7 +190,7 @@ export default function FeaturesSection() {
         >
           Built to Give Your Operations an Edge
         </h2>
-        <div className="pt-2 md:pt-3 lg:pt-4">
+        <div className="pt-0 sm:pt-1 md:pt-3 lg:pt-4">
           <p
             className="font-normal leading-relaxed m-0 text-base sm:text-lg lg:text-[22px] max-w-xl"
             style={{

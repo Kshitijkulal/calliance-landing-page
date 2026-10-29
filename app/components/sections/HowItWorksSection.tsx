@@ -31,11 +31,11 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="flex flex-col items-center pt-4 md:pt-8 pb-0 gap-0 w-full"
+      className="flex flex-col items-center pt-2 sm:pt-3 md:pt-8 pb-0 gap-0 w-full"
     >
       {/* Header — responsive wrap layout */}
       <div
-        className="w-full px-4 lg:px-20 flex flex-wrap justify-between items-start gap-8"
+        className="w-full px-4 lg:px-20 flex flex-wrap justify-between items-start gap-2.5 sm:gap-4 md:gap-8"
       >
         <h2
           className="flex-[1_1_100%] lg:flex-[1_1_400px] font-normal uppercase m-0 font-bebas text-[clamp(40px,5vw,64px)] leading-[1.1] text-primary-black"

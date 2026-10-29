@@ -340,7 +340,7 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile/Tablet Fallback (Stacking) */}
-        <div className="flex lg:hidden w-full pt-0 pb-20 flex-col items-center gap-2 relative z-10">
+        <div className="flex lg:hidden w-full pt-0 pb-6 sm:pb-8 lg:pb-0 flex-col items-center gap-2 relative z-10">
 
           {/* Heading and Paragraph above Image */}
           <motion.div
