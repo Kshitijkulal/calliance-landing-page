@@ -137,8 +137,8 @@ body {
   isolation: isolate;
   overflow: hidden;
   border-radius: 9999px;
-  /* Ultra-clear glass — minimal tint so background text and images remain crystal clear */
-  background-color: rgba(250, 249, 245, 0.08);
+  /* Tint layer — hex #535353 at 20% opacity for perfect visibility & contrast across all backgrounds */
+  background-color: rgba(83, 83, 83, 0.20);
   /* 1px crisp outer boundary */
   border: 1px solid rgba(255, 255, 255, 0.75);
   box-shadow:
@@ -169,19 +169,19 @@ body {
 /* Safari / WebKit engines: frosty Apple glassmorphism without altering Chrome */
 @supports (hanging-punctuation: first) and (font: -apple-system-body) {
   .nav-glass {
-    background-color: rgba(250, 249, 245, 0.16);
+    background-color: rgba(83, 83, 83, 0.20);
     -webkit-backdrop-filter: blur(14px) saturate(1.4) brightness(1.02);
     backdrop-filter: blur(14px) saturate(1.4) brightness(1.02);
   }
 }
 
 .nav-glass.nav-glass-safari {
-  background-color: rgba(250, 249, 245, 0.16);
+  background-color: rgba(83, 83, 83, 0.20);
   -webkit-backdrop-filter: blur(14px) saturate(1.4) brightness(1.02);
   backdrop-filter: blur(14px) saturate(1.4) brightness(1.02);
 }
 
-/* Sheen layer — delicate specular rim reflection without cloudy frost */
+/* Sheen layer — delicate specular rim reflection without cloudy frost or one-sided glares */
 .nav-glass-sheen {
   background:
     /* 1. Curved top specular rim — tight to the upper edge */
@@ -191,22 +191,10 @@ body {
       rgba(255, 255, 255, 0.15) 25%,
       transparent 65%
     ),
-    /* 2. Left rounded cap glint */
-    radial-gradient(
-      circle at 12px 50%,
-      rgba(255, 255, 255, 0.25) 0%,
-      transparent 70%
-    ),
-    /* 3. Right rounded cap glint */
-    radial-gradient(
-      circle at calc(100% - 12px) 50%,
-      rgba(255, 255, 255, 0.25) 0%,
-      transparent 70%
-    ),
-    /* 4. Subtle diagonal optical glint */
+    /* 2. Soft diagonal optical glint */
     linear-gradient(
       125deg,
-      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.12) 0%,
       rgba(255, 255, 255, 0.01) 15%,
       transparent 35%
     );

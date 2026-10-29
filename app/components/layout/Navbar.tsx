@@ -69,7 +69,7 @@ function NavGlassFilter() {
             preserveAspectRatio="none"
           />
 
-          {/* 2. Physical refraction through curved glass */}
+          {/* 2. Physical refraction through curved glass — clean, true-color light bending */}
           <feDisplacementMap
             in="SourceGraphic"
             in2="lensMap"
@@ -79,67 +79,11 @@ function NavGlassFilter() {
             result="refracted"
           />
 
-          {/* 3. Chromatic dispersion — separate RGB channel displacement */}
+          {/* 3. Pure clarity and vibrancy boost — true colors with zero pink or chromatic tint */}
           <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="1 0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 1 0"
-            result="redOnly"
-          />
-          <feDisplacementMap
-            in="redOnly"
-            in2="lensMap"
-            scale="33"
-            xChannelSelector="R"
-            yChannelSelector="G"
-            result="redShifted"
-          />
-
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="0 0 0 0 0   0 0 0 0 0   0 0 1 0 0   0 0 0 1 0"
-            result="blueOnly"
-          />
-          <feDisplacementMap
-            in="blueOnly"
-            in2="lensMap"
-            scale="23"
-            xChannelSelector="R"
-            yChannelSelector="G"
-            result="blueShifted"
-          />
-
-          {/* Recombine channels */}
-          <feBlend in="refracted" in2="redShifted" mode="screen" result="withRed" />
-          <feBlend in="withRed" in2="blueShifted" mode="screen" result="withDispersion" />
-
-          {/* 4. Light building — specular light accumulation on curved 3D surface */}
-          <feSpecularLighting
-            in="lensMap"
-            surfaceScale="3"
-            specularConstant="1.5"
-            specularExponent="26"
-            lightingColor="#ffffff"
-            result="specularCatch"
-          >
-            <fePointLight x="290" y="-80" z="200" />
-          </feSpecularLighting>
-
-          <feComposite
-            in="specularCatch"
-            in2="SourceAlpha"
-            operator="in"
-            result="specularClipped"
-          />
-
-          <feBlend in="withDispersion" in2="specularClipped" mode="screen" result="litGlass" />
-
-          {/* 5. Vibrancy & clarity boost */}
-          <feColorMatrix
-            in="litGlass"
+            in="refracted"
             type="saturate"
-            values="1.25"
+            values="1.2"
           />
         </filter>
       </defs>
