@@ -5,28 +5,28 @@ import Image from "next/image";
 const SOCIAL_ICONS = [
   {
     label: "YouTube",
-    href: "#",
+    href: "https://www.youtube.com/@ai.callience",
     path: "M23.5 6.5a3.07 3.07 0 00-2.16-2.16C19.54 4 12 4 12 4s-7.54 0-9.34.34A3.07 3.07 0 00.5 6.5 32.09 32.09 0 000 12a32.09 32.09 0 00.5 5.5 3.07 3.07 0 002.16 2.16C4.46 20 12 20 12 20s7.54 0 9.34-.34a3.07 3.07 0 002.16-2.16A32.09 32.09 0 0024 12a32.09 32.09 0 00-.5-5.5zM9.75 15.02V8.98L15.5 12l-5.75 3.02z",
   },
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/people/Callience/61594899522765/",
     path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z",
   },
   {
     label: "X",
-    href: "#",
+    href: "https://x.com/callience_ai",
     path: "M16.4066 17.6109C16.342 17.7286 16.2471 17.8267 16.1317 17.8951C16.0162 17.9636 15.8846 17.9998 15.7504 18H11.2504C11.1241 18 11 17.9681 10.8893 17.9073C10.7787 17.8465 10.6852 17.7587 10.6176 17.6522L6.82162 11.6869L1.30536 17.7544C1.17089 17.8988 0.984904 17.9845 0.787721 17.9927C0.590538 18.0009 0.398054 17.9311 0.252001 17.7984C0.105948 17.6657 0.0180975 17.4807 0.00749552 17.2836C-0.00310645 17.0866 0.064395 16.8933 0.195365 16.7456L5.9863 10.3706L0.117552 1.15313C0.0452725 1.03973 0.00481053 0.908984 0.000403041 0.774582C-0.00400445 0.64018 0.0278046 0.507066 0.0924997 0.389177C0.157195 0.271288 0.252396 0.172962 0.368134 0.104494C0.483873 0.0360256 0.615891 -6.53095e-05 0.750365 8.87202e-08H5.25036C5.37659 3.91221e-05 5.50077 0.0319361 5.61139 0.0927355C5.722 0.153535 5.81549 0.24127 5.88318 0.347813L9.67912 6.31312L15.1954 0.245625C15.3298 0.101174 15.5158 0.015547 15.713 0.00730857C15.9102 -0.00092985 16.1027 0.0688843 16.2487 0.201615C16.3948 0.334346 16.4826 0.519295 16.4932 0.716365C16.5038 0.913434 16.4363 1.10674 16.3054 1.25438L10.5144 7.62469L16.3832 16.8478C16.4551 16.9613 16.4951 17.0919 16.4993 17.2262C16.5034 17.3604 16.4714 17.4933 16.4066 17.6109Z",
     viewBox: "0 0 17 18",
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/callience.ai?stkn=dWpyY3p4eGRqZXRq&utm_source=qr",
+    href: "https://www.instagram.com/callience.ai",
     path: "M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z",
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/callience",
     path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z",
   },
 ];
@@ -84,7 +84,10 @@ export default function Footer() {
               Contact Us
             </h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:info@callience.in" className="flex items-center gap-3 no-underline group">
+              <a
+                href="mailto:info@callience.in"
+                className="flex items-center gap-3 no-underline group"
+              >
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -97,7 +100,12 @@ export default function Footer() {
                   info@callience.in
                 </span>
               </a>
-              <a href="https://wa.me/918448445810" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 no-underline group">
+              <a
+                href="https://wa.me/918448445810"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 no-underline group"
+              >
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -117,7 +125,12 @@ export default function Footer() {
             <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
               Visit Us
             </h4>
-            <a href="https://maps.app.goo.gl/WDFL1XoTQSEbfJUK6" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 no-underline group">
+            <a
+              href="https://maps.app.goo.gl/WDFL1XoTQSEbfJUK6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 no-underline group"
+            >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"

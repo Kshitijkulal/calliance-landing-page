@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, company, jobTitle, email, phone } = body;
+    const { name, company, jobTitle, email, phone, country } = body;
 
     // Securely retrieve the Google Apps Script Web App URL from environment variables
     const googleScriptUrl = process.env.GOOGLE_SCRIPT_URL;
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, company, jobTitle, email, phone }),
+      body: JSON.stringify({ name, company, jobTitle, email, phone, country }),
       cache: 'no-store', // Prevent Next.js from caching the response (important for 302 redirects from Google)
       redirect: 'follow' // Follow the redirect to googleusercontent.com
     });

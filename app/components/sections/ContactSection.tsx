@@ -13,15 +13,46 @@ export default function ContactSection() {
     country: "India",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        company: "",
+        jobTitle: "",
+        email: "",
+        phone: "",
+        country: "India",
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      setErrorMessage("Something went wrong. Please try again.");
+      setTimeout(() => setErrorMessage(""), 5000);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -262,7 +293,12 @@ export default function ContactSection() {
         </div>
 
         {/* Submit */}
-        <div className="w-[90%] max-w-full flex justify-end">
+        <div className="w-[90%] max-w-full flex flex-col sm:flex-row items-center justify-end gap-4">
+          {errorMessage && (
+            <p className="text-sm font-medium text-red-600 m-0">
+              {errorMessage}
+            </p>
+          )}
           <AnimatePresence mode="wait">
             {submitted ? (
               <motion.div
@@ -283,9 +319,10 @@ export default function ContactSection() {
               <motion.button
                 key="submit"
                 type="submit"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="h-11 sm:h-12 px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-none cursor-pointer flex items-center justify-center"
+                disabled={submitting}
+                whileHover={submitting ? {} : { scale: 1.03 }}
+                whileTap={submitting ? {} : { scale: 0.97 }}
+                className="h-11 sm:h-12 px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-none cursor-pointer flex items-center justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{
                   backgroundColor: "var(--color-primary-black)",
                 }}
@@ -297,7 +334,7 @@ export default function ContactSection() {
                     color: "var(--color-secondary-beige)",
                   }}
                 >
-                  Request Demo
+                  {submitting ? "Submitting..." : "Request Demo"}
                 </span>
               </motion.button>
             )}
