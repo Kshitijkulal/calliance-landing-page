@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Blogs", href: "#blogs" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 const LOGOMARK = "/Callience%20Logomark.svg";
@@ -166,9 +166,8 @@ export default function Navbar() {
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false);
           }}
-          className={`pointer-events-auto relative mt-3 w-full ${motionClass} ${
-            collapsed ? "max-w-[18.125rem]" : "max-w-[72rem]"
-          }`}
+          className={`pointer-events-auto relative mt-3 w-full ${motionClass} ${collapsed ? "max-w-[18.125rem]" : "max-w-[72rem]"
+            }`}
           aria-label="Primary Desktop"
         >
           {/* Glass plate — both states: 64px tall */}
@@ -182,11 +181,10 @@ export default function Navbar() {
           {/* Collapsed pill — mark + Request Demo → */}
           <a
             href="#contact"
-            className={`z-10 flex items-center no-underline text-primary-black ${motionClass} ${
-              collapsed
+            className={`z-10 flex items-center no-underline text-primary-black ${motionClass} ${collapsed
                 ? "relative h-16 pl-6 pr-8 gap-5 opacity-100"
                 : "pointer-events-none absolute inset-0 h-16 opacity-0"
-            }`}
+              }`}
             aria-hidden={!collapsed}
             tabIndex={collapsed ? 0 : -1}
           >
@@ -208,11 +206,10 @@ export default function Navbar() {
 
           {/* Full bar — 64px height */}
           <div
-            className={`z-10 flex items-center justify-between ${motionClass} ${
-              collapsed
+            className={`z-10 flex items-center justify-between ${motionClass} ${collapsed
                 ? "pointer-events-none absolute inset-0 h-16 px-6 opacity-0"
                 : "relative h-16 px-6 opacity-100"
-            }`}
+              }`}
             aria-hidden={collapsed}
           >
             <a
