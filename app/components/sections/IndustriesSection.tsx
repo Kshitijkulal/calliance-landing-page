@@ -155,11 +155,12 @@ export default function IndustriesSection() {
         {/* Left Scroll Arrow — always rendered on mobile for stable width, hidden at left edge */}
         <motion.button
           onClick={handleScrollLeft}
+          aria-label="Previous industry slide"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: scrollPosition !== "left" ? 1 : 0, scale: scrollPosition !== "left" ? 1 : 0.8 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className={`p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "left" ? "pointer-events-none md:hidden" : "md:flex"}`}
+          className={`w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "left" ? "pointer-events-none md:hidden" : "md:flex"}`}
           style={{ backgroundColor: "var(--color-off-white)" }}
         >
           <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
@@ -247,11 +248,12 @@ export default function IndustriesSection() {
         {/* Right Scroll Arrow — always rendered on mobile for stable width, hidden at right edge */}
         <motion.button
           onClick={handleScrollRight}
+          aria-label="Next industry slide"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: scrollPosition !== "right" ? 1 : 0, scale: scrollPosition !== "right" ? 1 : 0.8 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className={`p-2 md:p-3 rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "right" ? "pointer-events-none md:hidden" : "md:flex"}`}
+          className={`w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "right" ? "pointer-events-none md:hidden" : "md:flex"}`}
           style={{ backgroundColor: "var(--color-off-white)" }}
         >
           <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">

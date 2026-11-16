@@ -15,21 +15,51 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+const googleVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  process.env.GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.callience.in"),
-  title: "Callience | AI Voice Agents That Automate Outbound Calling",
+  title: {
+    default: "AI Calling Software & AI Voice Agents | Callience",
+    template: "%s | Callience",
+  },
   description:
-    "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
+    "Deploy enterprise AI calling software and human-like AI voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
   keywords: [
-    "AI calling",
-    "voice agents",
-    "outbound automation",
-    "sales automation",
+    "AI calling software",
+    "AI voice agent",
+    "automated calling software",
+    "AI calling platform",
+    "AI outbound calling",
+    "AI telecalling software",
+    "outbound AI voice agent",
+    "AI lead qualification",
+    "automated outbound calling software",
+    "AI voice agent platform",
+    "AI voice calling software",
+    "bulk AI calling",
+    "AI sales call automation",
+    "AI calling software India",
+    "automated lead follow up calls",
+    "AI lead calling",
+    "Multilingual AI voice agent",
+    "AI calling campaign software",
+    "automated calling campaigns",
     "AI dialer",
+    "Callience",
   ],
   alternates: {
     canonical: "/",
   },
+  ...(googleVerification
+    ? {
+        verification: {
+          google: googleVerification,
+        },
+      }
+    : {}),
   icons: {
     icon: [
       {
@@ -57,22 +87,47 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Callience | AI Voice Agents That Automate Outbound Calling",
+    title: "AI Calling Software & Outbound Voice Agents | Callience",
     description:
-      "Deploy intelligent AI voice agents that handle thousands of outbound calls simultaneously, qualify leads, book meetings, and scale your revenue on autopilot.",
+      "Deploy AI calling software and human-like voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
     url: "https://www.callience.in",
     siteName: "Callience",
     images: [
       {
-        url: "/Mockup 1.png",
+        url: "/Mockup%201.png",
         width: 1200,
         height: 630,
-        alt: "Callience AI Voice Agents Platform",
+        alt: "Callience AI Calling Software & Voice Agents Platform",
       },
     ],
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Calling Software & Outbound Voice Agents | Callience",
+    description:
+      "Deploy AI calling software and human-like voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
+    images: ["/Mockup%201.png"],
+    creator: "@callience_ai",
+    site: "@callience_ai",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "technology",
+  applicationName: "Callience",
+  authors: [{ name: "Callience", url: "https://www.callience.in" }],
+  creator: "Callience",
+  publisher: "Callience",
 };
 
 export default function RootLayout({
@@ -84,6 +139,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${manrope.variable} ${bebasNeue.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body
@@ -98,27 +154,78 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Callience",
-              url: "https://www.callience.in",
-              logo: "https://www.callience.in/logo.png",
-              image: "https://www.callience.in/Mockup%201.png",
-              description:
-                "AI voice agents that automate outbound calling, qualify leads, and book meetings.",
-              telephone: "+91-8448445810",
-              email: "info@callience.in",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress:
-                  "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
-                addressLocality: "Gurugram",
-                addressRegion: "Haryana",
-                postalCode: "122001",
-                addressCountry: "IN",
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Callience",
+                url: "https://www.callience.in",
+                logo: "https://www.callience.in/logo.png",
+                image: "https://www.callience.in/Mockup%201.png",
+                description:
+                  "Enterprise AI calling software and outbound voice agents that automate customer conversations, qualify leads, and scale outreach.",
+                telephone: "+91-8448445810",
+                email: "info@callience.in",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress:
+                    "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
+                  addressLocality: "Gurugram",
+                  addressRegion: "Haryana",
+                  postalCode: "122001",
+                  addressCountry: "IN",
+                },
+                parentOrganization: {
+                  "@type": "Organization",
+                  name: "Career Plan B",
+                  url: "https://www.callience.in",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress:
+                      "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
+                    addressLocality: "Gurugram",
+                    addressRegion: "Haryana",
+                    postalCode: "122001",
+                    addressCountry: "IN",
+                  },
+                },
+                sameAs: [
+                  "https://www.linkedin.com/company/callience",
+                  "https://x.com/callience_ai",
+                  "https://www.instagram.com/callience.ai",
+                  "https://www.youtube.com/@ai.callience",
+                  "https://www.facebook.com/people/Callience/61594899522765/",
+                ],
               },
-            }),
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Callience",
+                url: "https://www.callience.in",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: "https://www.callience.in/blogs?q={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                name: "Callience AI Calling Software",
+                operatingSystem: "All (Cloud-based SaaS)",
+                applicationCategory: "BusinessApplication",
+                applicationSubCategory: "Sales Automation & AI Voice Calling",
+                description:
+                  "AI calling software and outbound voice agents that handle thousands of phone calls simultaneously, qualify sales leads, and book meetings on autopilot.",
+                offers: {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "INR",
+                  description: "Tailored calling plans with pay-for-what-you-use pricing",
+                },
+                url: "https://www.callience.in",
+              },
+            ]),
           }}
         />
       </body>

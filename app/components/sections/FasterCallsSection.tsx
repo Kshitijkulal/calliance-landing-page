@@ -128,6 +128,7 @@ export default function FasterCallsSection() {
           {/* Left Arrow */}
           <motion.button
             onClick={handlePrev}
+            aria-label="Previous use cases"
             initial={false}
             animate={{ 
               opacity: currentPage > 0 ? 1 : 0,
@@ -135,7 +136,7 @@ export default function FasterCallsSection() {
             }}
             whileHover={currentPage > 0 ? { scale: 1.05 } : {}}
             whileTap={currentPage > 0 ? { scale: 0.95 } : {}}
-            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage > 0 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
+            className={`w-11 h-11 sm:w-11 sm:h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage > 0 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
               <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -194,6 +195,7 @@ export default function FasterCallsSection() {
           {/* Right Arrow */}
           <motion.button
             onClick={handleNext}
+            aria-label="Next use cases"
             initial={false}
             animate={{ 
               opacity: currentPage < totalPages - 1 ? 1 : 0,
@@ -201,7 +203,7 @@ export default function FasterCallsSection() {
             }}
             whileHover={currentPage < totalPages - 1 ? { scale: 1.05 } : {}}
             whileTap={currentPage < totalPages - 1 ? { scale: 0.95 } : {}}
-            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage < totalPages - 1 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
+            className={`w-11 h-11 sm:w-11 sm:h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage < totalPages - 1 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
               <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

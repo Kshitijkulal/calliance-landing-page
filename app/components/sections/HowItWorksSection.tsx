@@ -57,12 +57,12 @@ export default function HowItWorksSection() {
         className="w-full relative -mt-6 lg:-mt-12 mb-4 md:-mb-12 lg:-mb-24 z-0"
       >
         <Image
-          src="/how_it_works_full.png"
-          alt="AICaller Full Interface"
-          width={1440}
-          height={800}
+          src="/how_it_works_full.webp"
+          alt="Callience AI Calling Platform Workflow"
+          width={1600}
+          height={1067}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1440px"
           className="w-full h-auto object-contain"
-          unoptimized
         />
       </motion.div>
 

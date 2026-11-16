@@ -176,48 +176,18 @@ export default function HeroSection() {
 
         {/* Content - Normal Flow */}
         <div className="relative z-20 flex flex-col items-center w-full px-5 sm:px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32">
-          <motion.h1
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(34px,10.6vw,156px)] leading-[0.9] text-primary-black font-bebas w-full max-w-[22rem] sm:max-w-none"
-          >
-            {"CALLING INTELLIGENCE"
-              .split(" ")
-              .map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={wordVariants}
-                  className="inline-block mr-[0.16em] last:mr-0"
-                >
-                  {word}
-                </motion.span>
-              ))}
-          </motion.h1>
+          <h1 className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(32px,8vw,120px)] leading-[0.95] text-primary-black font-bebas w-full max-w-[24rem] sm:max-w-5xl">
+            AI Calling Software &amp; AI Voice Agents
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: "20%" }}
-            animate={{ opacity: 1, y: "0%" }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]"
-          >
-            AI calling powered by expert{" "}
-            <span className="font-bold">
-              AI specialists and Marketing consultants
-            </span>{" "}
-            who design{" "}
-            <span className="font-bold">ROI-focused campaigns</span>, backed by{" "}
-            <span className="font-bold">custom , native language</span> voice AI
-            agents that turn outreach into revenue at{" "}
-            <span className="font-bold">scale</span>.
-          </motion.p>
+          <p className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]">
+            Enterprise AI calling software powered by human-like{" "}
+            <span className="font-bold">AI voice agents</span>. Automate outbound
+            conversations, qualify sales leads, and scale outreach campaigns in{" "}
+            <span className="font-bold">65+ native languages</span>.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: "20%" }}
-            animate={{ opacity: 1, y: "0%" }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-6 sm:mt-9 md:mt-12 lg:mt-16"
-          >
+          <div className="mt-6 sm:mt-9 md:mt-12 lg:mt-16">
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.03 }}
@@ -240,7 +210,7 @@ export default function HeroSection() {
                 />
               </svg>
             </motion.a>
-          </motion.div>
+          </div>
 
           {/* Mobile pills — gentle arc under CTA, in document flow */}
           <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-0">
