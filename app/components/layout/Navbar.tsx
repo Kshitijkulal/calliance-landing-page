@@ -2,14 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { PILL_NORMAL_MAP } from "./glassNormalMap";
 
 const NAV_LINKS = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQs", href: "/#faqs" },
   { label: "Blogs", href: "/blogs" },
 ];
 
@@ -179,8 +180,8 @@ export default function Navbar() {
           </div>
 
           {/* Collapsed pill — mark + Request Demo → */}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className={`z-10 flex items-center no-underline text-primary-black ${motionClass} ${collapsed
                 ? "relative h-16 pl-6 pr-8 gap-5 opacity-100"
                 : "pointer-events-none absolute inset-0 h-16 opacity-0"
@@ -202,7 +203,7 @@ export default function Navbar() {
               </span>
               <ArrowIcon className="w-5 h-5" />
             </span>
-          </a>
+          </Link>
 
           {/* Full bar — 64px height */}
           <div
@@ -212,8 +213,8 @@ export default function Navbar() {
               }`}
             aria-hidden={collapsed}
           >
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex items-center gap-2 shrink-0 no-underline"
               tabIndex={collapsed ? -1 : 0}
             >
@@ -233,23 +234,23 @@ export default function Navbar() {
                 className="h-[15px] w-auto object-contain"
                 priority
               />
-            </a>
+            </Link>
 
             <div className="flex absolute left-1/2 -translate-x-1/2 items-center gap-7 xl:gap-9">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   tabIndex={collapsed ? -1 : 0}
                   className="no-underline text-[15px] xl:text-[16px] font-bold leading-none inline-flex items-center justify-center px-2 py-1 rounded-lg text-primary-black font-sans whitespace-nowrap hover:text-dark-grey transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
 
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               tabIndex={collapsed ? -1 : 0}
               className="flex items-center justify-center h-[41px] sm:h-[42px] px-5 sm:px-5.5 no-underline gap-2.5 bg-primary-black text-secondary-beige shrink-0 rounded-[9px] hover:opacity-90 transition-opacity"
             >
@@ -257,7 +258,7 @@ export default function Navbar() {
                 Request Demo
               </span>
               <ArrowIcon className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
@@ -277,8 +278,8 @@ export default function Navbar() {
           </div>
 
           {/* Logo (Mark + Wordmark) */}
-          <a
-            href="#"
+          <Link
+            href="/"
             onClick={() => setMobileMenuOpen(false)}
             className="relative z-10 flex items-center gap-2 no-underline"
           >
@@ -298,7 +299,7 @@ export default function Navbar() {
               className="h-[13px] w-auto object-contain"
               priority
             />
-          </a>
+          </Link>
 
           {/* Animated Hamburger Button */}
           <button
@@ -380,14 +381,11 @@ export default function Navbar() {
 
                 {/* Links */}
                 <div className="relative z-10 flex flex-col gap-1">
-                  {NAV_LINKS.map((link, idx) => (
-                    <motion.a
+                  {NAV_LINKS.map((link) => (
+                    <Link
                       key={link.label}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.04 + 0.04, duration: 0.18 }}
                       className="flex items-center justify-between py-3 px-3.5 rounded-xl text-[16px] font-bold text-primary-black font-sans no-underline transition-colors hover:bg-white/40 active:bg-white/60"
                     >
                       <span>{link.label}</span>
@@ -404,7 +402,7 @@ export default function Navbar() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </motion.a>
+                    </Link>
                   ))}
                 </div>
 
@@ -412,17 +410,14 @@ export default function Navbar() {
                 <div className="relative z-10 w-full h-px bg-black/[0.07] my-1.5" />
 
                 {/* Request Demo Button CTA */}
-                <motion.a
-                  href="#contact"
+                <Link
+                  href="/#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.22, duration: 0.18 }}
                   className="relative z-10 flex items-center justify-center h-12 px-6 rounded-xl bg-primary-black text-secondary-beige no-underline gap-2.5 font-sans font-extrabold text-[15.5px] shadow-lg active:scale-[0.98] transition-transform"
                 >
                   <span>Request Demo</span>
                   <ArrowIcon className="w-5 h-5" />
-                </motion.a>
+                </Link>
               </motion.div>
             </>
           )}

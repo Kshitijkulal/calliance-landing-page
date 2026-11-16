@@ -252,6 +252,7 @@ export default function VoiceAIBlogPage() {
               fill
               sizes="100vw"
               className="object-contain object-center"
+              loading="eager"
               priority
               unoptimized
             />
