@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2026-11-13T00:00:00.000Z",
     modifiedTime: "2026-11-13T00:00:00.000Z",
-    authors: ["Karanvir Singh"],
+    authors: ["Callience Editorial Team"],
     images: [
       {
-        url: "/blog-hero-voice-ai.jpg",
+        url: "/blog-hero-voice-ai-guide.jpg",
         width: 1440,
         height: 515,
-        alt: "How Does Voice AI Work Hero Illustration",
+        alt: "How Voice AI Works: A Beginner's Guide to AI Calls",
       },
     ],
     locale: "en_IN",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
     description:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations.",
-    images: ["/blog-hero-voice-ai.jpg"],
+    images: ["/blog-hero-voice-ai-guide.jpg"],
   },
 };
 
@@ -66,7 +66,7 @@ export default function BlogLayout({
     headline: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
     description:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
-    image: "https://www.callience.in/blog-hero-voice-ai.jpg",
+    image: "https://www.callience.in/blog-hero-voice-ai-guide.jpg",
     datePublished: "2026-11-13T00:00:00.000Z",
     dateModified: "2026-11-13T00:00:00.000Z",
     author: {
@@ -122,15 +122,7 @@ export default function BlogLayout({
         name: "How does voice AI work in simple words?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Voice AI listens to human speech, converts it into text, understands the message using AI and responds through generated speech.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What are ASR, LLM and TTS?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "ASR converts speech into text, LLM understands language and generates responses, and TTS converts written text into spoken audio.",
+          text: "Voice AI listens to what a person says, understands the message and responds using a computer-generated voice.",
         },
       },
       {
@@ -138,7 +130,15 @@ export default function BlogLayout({
         name: "Can AI make phone calls automatically?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. AI calling systems can make outbound calls using contact lists, scheduled campaigns and connected business applications.",
+          text: "Yes. AI calling systems can contact customers for lead follow-ups, appointment reminders and other business activities.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can AI understand different accents?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Many AI systems support different accents and languages, although accuracy depends on the technology and audio quality.",
         },
       },
       {
@@ -146,23 +146,23 @@ export default function BlogLayout({
         name: "Can AI voice agents transfer calls to humans?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. They can transfer calls when customers request human assistance or when an issue requires additional support.",
+          text: "Yes. They can transfer calls when customers request human assistance or need additional support.",
         },
       },
       {
         "@type": "Question",
-        name: "What is latency in AI calling?",
+        name: "What happens after an AI phone call ends?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Latency is the time between a customer finishing their statement and the AI beginning its response.",
+          text: "The system can prepare conversation records, call summaries and customer follow-up information.",
         },
       },
       {
         "@type": "Question",
-        name: "What happens after an AI call ends?",
+        name: "Where is Voice AI used in business?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "The system can generate transcripts, summaries, call outcomes and customer information for connected CRM systems.",
+          text: "Voice AI is commonly used for lead follow-ups, appointment reminders, customer enquiries and feedback collection.",
         },
       },
     ],

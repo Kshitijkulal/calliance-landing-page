@@ -21,8 +21,8 @@ const REAL_BLOGS = [
     slug: "how-voice-ai-works",
     title: "HOW DOES VOICE AI WORK? A BEGINNER'S GUIDE TO AI CALLING",
     excerpt:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations. From outbound lead follow-ups to appointment reminders.",
-    image: "/blog-hero-voice-ai.jpg",
+      "Voice AI is changing how businesses communicate with customers through automated phone conversations. From following up with potential customers to sending appointment reminders, AI-powered calling systems can handle many routine conversations.",
+    image: "/blog-hero-voice-ai-guide.jpg",
     category: "AI Technology",
   },
 ];
@@ -135,14 +135,15 @@ export default function BlogsPage() {
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="block overflow-hidden rounded-2xl md:rounded-3xl bg-[#D6E0D7] aspect-[16/10] relative shadow-xs"
+                    className="block overflow-hidden rounded-2xl md:rounded-3xl bg-[#FAF9F5] border border-[#E5E5E5] aspect-[2/1] relative shadow-xs group"
                   >
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                      className="object-cover object-center hover:scale-[1.02] transition-transform duration-300"
+                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
+                      unoptimized
                     />
                   </Link>
 
