@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
+import ContactSection from "@/app/components/sections/ContactSection";
+import { REAL_BLOGS } from "./blogsData";
 
 const CATEGORIES = [
   "All",
@@ -12,19 +14,6 @@ const CATEGORIES = [
   "AI Technology",
   "Sales & Lead Generation",
   "Inbound calls",
-];
-
-// Only real blogs in your project — using the exact clean image from the blog
-const REAL_BLOGS = [
-  {
-    id: 1,
-    slug: "how-voice-ai-works",
-    title: "HOW DOES VOICE AI WORK? A BEGINNER'S GUIDE TO AI CALLING",
-    excerpt:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations. From following up with potential customers to sending appointment reminders, AI-powered calling systems can handle many routine conversations.",
-    image: "/blog-hero-voice-ai-guide.jpg",
-    category: "AI Technology",
-  },
 ];
 
 
@@ -130,37 +119,38 @@ export default function BlogsPage() {
 
           {/* Blog Cards Grid */}
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-x-10 lg:gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-x-10 lg:gap-y-14">
               {filteredPosts.map((post) => (
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="block overflow-hidden rounded-2xl md:rounded-3xl bg-[#FAF9F5] border border-[#E5E5E5] aspect-[2/1] relative shadow-xs group"
+                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-[#EAE8E1] relative shadow-xs group w-full"
+                    style={{ aspectRatio: "623.45 / 373.65" }}
                   >
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 624px"
                       className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
                       unoptimized
                     />
                   </Link>
 
-                  <div className="pt-4">
+                  <div className="pt-5 sm:pt-6">
                     <h2
-                      className="text-2xl sm:text-3xl lg:text-4xl font-normal uppercase tracking-normal text-[#0D0D0D] leading-[1.05] mb-2"
+                      className="text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-[1.05] mb-3 sm:mb-3.5"
                       style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                     >
                       <Link
                         href={`/blogs/${post.slug}`}
-                        className="hover:opacity-80"
+                        className="hover:opacity-80 transition-opacity"
                       >
                         {post.title}
                       </Link>
                     </h2>
                     <p
-                      className="text-xs sm:text-sm text-[#535353] leading-relaxed"
+                      className="text-sm sm:text-base text-[#535353] leading-[1.4]"
                       style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                     >
                       {post.excerpt}
@@ -176,6 +166,8 @@ export default function BlogsPage() {
           )}
         </div>
       </main>
+
+      <ContactSection />
 
       <Footer />
     </div>

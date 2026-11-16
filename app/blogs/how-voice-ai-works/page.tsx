@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
+import ContactSection from "@/app/components/sections/ContactSection";
+import BlogNavigation from "../BlogNavigation";
 
 const TOC_ITEMS = [
   { id: "how-voice-ai-works", label: "How Does Voice AI Work?" },
@@ -619,7 +621,7 @@ export default function VoiceAIBlogPage() {
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Response</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI prepares a suitable answer</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">AI prepares a suitable answer.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Speaking</td>
@@ -909,7 +911,14 @@ export default function VoiceAIBlogPage() {
             </article>
           </div>
         </div>
+
+        {/* Dynamic Prev / Next Post Navigation */}
+        <BlogNavigation currentSlug="how-voice-ai-works" />
       </main>
+
+      <div className="w-full" style={{ backgroundColor: "var(--color-primary-beige)" }}>
+        <ContactSection />
+      </div>
 
       <Footer />
     </div>
