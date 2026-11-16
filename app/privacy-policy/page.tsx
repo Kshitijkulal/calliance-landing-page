@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/privacy-policy",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -17,10 +21,6 @@ export default function PrivacyPolicyPage() {
     <>
       <Navbar />
       <main className="min-h-screen pt-32 pb-20 px-6 sm:px-8 max-w-4xl mx-auto font-manrope text-primary-black">
-        <div className="mb-8 p-4 rounded-xl border border-dashed border-amber-600/40 bg-amber-50 text-amber-900 text-xs sm:text-sm font-medium">
-          [DRAFT STRUCTURE &mdash; NEEDS FORMAL LEGAL REVIEW BEFORE RELIANCE. DO NOT ASSUME CERTIFICATIONS WITHOUT VALIDATION.]
-        </div>
-
         <h1 className="text-4xl sm:text-5xl font-bebas uppercase tracking-tight mb-4">
           Privacy Policy
         </h1>

@@ -106,6 +106,7 @@ export default function Navbar() {
         /^((?!chrome|android).)*safari/i.test(ua) ||
         (/iPad|iPhone|iPod/.test(ua) && !(window as unknown as { MSStream?: unknown }).MSStream);
       if (isWebKitSafari) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsSafari(true);
       }
     }
@@ -125,6 +126,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setExpanded(false);
   }, [scrolled]);
 

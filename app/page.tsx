@@ -73,6 +73,18 @@ export default function Home() {
     })),
   };
 
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Callience AI Calling Software",
+    operatingSystem: "All (Cloud-based SaaS)",
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: "Sales Automation & AI Voice Calling",
+    description:
+      "Enterprise AI calling software and human-like AI voice agents that automate customer conversations, qualify sales leads, and scale outreach on autopilot.",
+    url: "https://www.callience.in",
+  };
+
   return (
     <>
       <Navbar />
@@ -96,7 +108,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify([faqSchema, softwareSchema]),
         }}
       />
     </>

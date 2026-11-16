@@ -87,14 +87,14 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "AI Calling Software & Outbound Voice Agents | Callience",
+    title: "AI Calling Software & AI Voice Agents | Callience",
     description:
-      "Deploy AI calling software and human-like voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
+      "Deploy enterprise AI calling software and human-like AI voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
     url: "https://www.callience.in",
     siteName: "Callience",
     images: [
       {
-        url: "/Mockup%201.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Callience AI Calling Software & Voice Agents Platform",
@@ -105,10 +105,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Calling Software & Outbound Voice Agents | Callience",
+    title: "AI Calling Software & AI Voice Agents | Callience",
     description:
-      "Deploy AI calling software and human-like voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
-    images: ["/Mockup%201.png"],
+      "Deploy enterprise AI calling software and human-like AI voice agents to automate outbound calls, qualify sales leads, and book meetings at scale. Request a live demo.",
+    images: ["/og-image.png"],
     creator: "@callience_ai",
     site: "@callience_ai",
   },
@@ -161,7 +161,7 @@ export default function RootLayout({
                 name: "Callience",
                 url: "https://www.callience.in",
                 logo: "https://www.callience.in/logo.png",
-                image: "https://www.callience.in/Mockup%201.png",
+                image: "https://www.callience.in/og-image.png",
                 description:
                   "Enterprise AI calling software and outbound voice agents that automate customer conversations, qualify leads, and scale outreach.",
                 telephone: "+91-8448445810",
@@ -169,25 +169,11 @@ export default function RootLayout({
                 address: {
                   "@type": "PostalAddress",
                   streetAddress:
-                    "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
+                    "B-36, 37, 38, 2nd Floor, IDC Area, MG Road, Opposite Sector 14",
                   addressLocality: "Gurugram",
                   addressRegion: "Haryana",
                   postalCode: "122001",
                   addressCountry: "IN",
-                },
-                parentOrganization: {
-                  "@type": "Organization",
-                  name: "Career Plan B",
-                  url: "https://www.callience.in",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress:
-                      "B-36,37,38, 2nd Floor, IDC Area, MG Road Opposite -Sector 14",
-                    addressLocality: "Gurugram",
-                    addressRegion: "Haryana",
-                    postalCode: "122001",
-                    addressCountry: "IN",
-                  },
                 },
                 sameAs: [
                   "https://www.linkedin.com/company/callience",
@@ -207,23 +193,6 @@ export default function RootLayout({
                   target: "https://www.callience.in/blogs?q={search_term_string}",
                   "query-input": "required name=search_term_string",
                 },
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                name: "Callience AI Calling Software",
-                operatingSystem: "All (Cloud-based SaaS)",
-                applicationCategory: "BusinessApplication",
-                applicationSubCategory: "Sales Automation & AI Voice Calling",
-                description:
-                  "AI calling software and outbound voice agents that handle thousands of phone calls simultaneously, qualify sales leads, and book meetings on autopilot.",
-                offers: {
-                  "@type": "Offer",
-                  price: "0",
-                  priceCurrency: "INR",
-                  description: "Tailored calling plans with pay-for-what-you-use pricing",
-                },
-                url: "https://www.callience.in",
               },
             ]),
           }}

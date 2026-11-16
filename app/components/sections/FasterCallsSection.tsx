@@ -6,35 +6,43 @@ import { motion } from "framer-motion";
 const USE_CASES = [
   {
     title: "Lead Qualification",
-    description: "Identify high-intent prospects and move them to the next step automatically.",
+    description:
+      "Identify high-intent prospects and move them to the next step automatically.",
   },
   {
     title: "Lead Follow-Ups",
-    description: "Ensure consistent outreach so no promising pipeline opportunity goes cold.",
+    description:
+      "Ensure consistent outreach so no promising pipeline opportunity goes cold.",
   },
   {
     title: "Real Estate Outreach",
-    description: "Qualify property leads, schedule site visits and keep prospects moving through the pipeline.",
+    description:
+      "Qualify property leads, schedule site visits and keep prospects moving through the pipeline.",
   },
   {
     title: "Admissions Outreach",
-    description: "Reach students and parents for admissions follow-ups, counselling and timely updates.",
+    description:
+      "Reach students and parents for admissions follow-ups, counselling and timely updates.",
   },
   {
     title: "Payment Reminders",
-    description: "Proactively reach customers about pending payments to improve cash flow before accounts become overdue",
+    description:
+      "Proactively reach customers about pending payments to improve cash flow before accounts become overdue",
   },
   {
     title: "Appointment Reminders",
-    description: "Confirm bookings and reduce costly no-shows with timely automated calls",
+    description:
+      "Confirm bookings and reduce costly no-shows with timely automated calls",
   },
   {
     title: "Customer Re-engagement",
-    description: "Reconnect with inactive customers and automatically bring them back into your sales funnel.",
+    description:
+      "Reconnect with inactive customers and automatically bring them back into your sales funnel.",
   },
   {
     title: "Renewals & Retention",
-    description: "Reach customers before renewals and turn timely conversations into guaranteed retention.",
+    description:
+      "Reach customers before renewals and turn timely conversations into guaranteed retention.",
   },
 ];
 
@@ -52,17 +60,25 @@ export default function FasterCallsSection() {
         newCardsPerPage = 2;
       }
       setCardsPerPage(newCardsPerPage);
-      
-      const newTotalPages = newCardsPerPage === 3 ? 4 : newCardsPerPage === 2 ? 4 : USE_CASES.length;
-      setCurrentPage((prev) => (prev >= newTotalPages ? Math.max(0, newTotalPages - 1) : prev));
+
+      const newTotalPages =
+        newCardsPerPage === 3
+          ? 4
+          : newCardsPerPage === 2
+            ? 4
+            : USE_CASES.length;
+      setCurrentPage((prev) =>
+        prev >= newTotalPages ? Math.max(0, newTotalPages - 1) : prev,
+      );
     };
-    
+
     updateCardsPerPage();
     window.addEventListener("resize", updateCardsPerPage);
     return () => window.removeEventListener("resize", updateCardsPerPage);
   }, []);
 
-  const totalPages = cardsPerPage === 3 ? 4 : cardsPerPage === 2 ? 4 : USE_CASES.length;
+  const totalPages =
+    cardsPerPage === 3 ? 4 : cardsPerPage === 2 ? 4 : USE_CASES.length;
 
   const getPageCards = (pageIndex: number) => {
     if (cardsPerPage === 3) {
@@ -77,7 +93,6 @@ export default function FasterCallsSection() {
       return USE_CASES.slice(pageIndex, pageIndex + 1);
     }
   };
-
 
   // Auto-play functionality
   useEffect(() => {
@@ -105,41 +120,47 @@ export default function FasterCallsSection() {
     >
       {/* Header */}
       <div className="flex flex-col items-center gap-3 md:gap-4 mx-auto max-w-[1008px]">
-        <h2
-          className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black"
-        >
+        <h2 className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black">
           Faster Calls That Keep You Ahead
         </h2>
-        <p
-          className="w-full text-center text-base sm:text-lg md:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black"
-        >
-          From lead qualification to payment reminders, see how Callience makes everyday calls faster and more efficient.
+        <p className="w-full text-center text-base sm:text-lg md:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
+          From lead qualification to payment reminders, see how Callience makes
+          everyday calls faster and more efficient.
         </p>
       </div>
 
       {/* Slideshow Container */}
-      <div 
+      <div
         className="w-full max-w-[1280px] mx-auto mt-6 sm:mt-8 md:mt-14 flex flex-col items-center gap-6 md:gap-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        
         <div className="w-full flex items-center justify-between gap-1 sm:gap-2 md:gap-8">
           {/* Left Arrow */}
           <motion.button
             onClick={handlePrev}
             aria-label="Previous use cases"
             initial={false}
-            animate={{ 
+            animate={{
               opacity: currentPage > 0 ? 1 : 0,
-              scale: currentPage > 0 ? 1 : 0.8
+              scale: currentPage > 0 ? 1 : 0.8,
             }}
             whileHover={currentPage > 0 ? { scale: 1.05 } : {}}
             whileTap={currentPage > 0 ? { scale: 0.95 } : {}}
             className={`w-11 h-11 sm:w-11 sm:h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage > 0 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
-              <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="w-5 h-5 md:w-6 md:h-6"
+            >
+              <path
+                d="M15 19L8 12L15 5"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </motion.button>
 
@@ -151,17 +172,24 @@ export default function FasterCallsSection() {
               transition={{ type: "tween", ease: "easeInOut", duration: 1.5 }}
             >
               {Array.from({ length: totalPages }).map((_, pageIndex) => (
-                <div key={pageIndex} className="w-full flex-shrink-0 flex items-stretch justify-center gap-6">
+                <div
+                  key={pageIndex}
+                  className="w-full flex-shrink-0 flex items-stretch justify-center gap-6"
+                >
                   {getPageCards(pageIndex).map((useCase) => (
                     <div
                       key={useCase.title}
                       className="flex-1 w-full md:w-auto md:min-w-[280px] max-w-[400px] px-4 md:px-6 py-8 md:py-10 rounded-[32px] flex flex-col items-center gap-4 md:gap-6 border border-solid border-white bg-primary-beige shadow-[inset_6px_6px_12px_rgba(0,0,0,0.04),inset_-6px_-6px_8px_rgba(255,255,255,1),0px_6px_40px_0px_rgba(219,220,220,0.18)]"
                     >
                       {/* Icon */}
-                      <div
-                        className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shrink-0 bg-primary-black text-secondary-beige"
-                      >
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="w-6 h-6 md:w-7 md:h-7">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shrink-0 bg-primary-black text-secondary-beige">
+                        <svg
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="w-6 h-6 md:w-7 md:h-7"
+                        >
                           <path
                             d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
                             stroke="currentColor"
@@ -174,14 +202,10 @@ export default function FasterCallsSection() {
 
                       {/* Content */}
                       <div className="flex flex-col items-center gap-2 md:gap-3 text-center">
-                        <h3
-                          className="m-0 uppercase font-bebas text-[24px] md:text-[30px] leading-[1.1] text-primary-black"
-                        >
+                        <h3 className="m-0 uppercase font-bebas text-[24px] md:text-[30px] leading-[1.1] text-primary-black">
                           {useCase.title}
                         </h3>
-                        <p
-                          className="m-0 text-[15px] md:text-[17px] font-normal font-manrope leading-[1.5] text-primary-black"
-                        >
+                        <p className="m-0 text-[15px] md:text-[17px] font-normal font-manrope leading-[1.5] text-primary-black">
                           {useCase.description}
                         </p>
                       </div>
@@ -197,16 +221,26 @@ export default function FasterCallsSection() {
             onClick={handleNext}
             aria-label="Next use cases"
             initial={false}
-            animate={{ 
+            animate={{
               opacity: currentPage < totalPages - 1 ? 1 : 0,
-              scale: currentPage < totalPages - 1 ? 1 : 0.8
+              scale: currentPage < totalPages - 1 ? 1 : 0.8,
             }}
             whileHover={currentPage < totalPages - 1 ? { scale: 1.05 } : {}}
             whileTap={currentPage < totalPages - 1 ? { scale: 0.95 } : {}}
             className={`w-11 h-11 sm:w-11 sm:h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-full border-none flex items-center justify-center shrink-0 z-10 transition-colors bg-[#71717a1a] text-primary-black ${currentPage < totalPages - 1 ? "cursor-pointer pointer-events-auto" : "cursor-default pointer-events-none"}`}
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-6 md:h-6">
-              <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="w-5 h-5 md:w-6 md:h-6"
+            >
+              <path
+                d="M9 5L16 12L9 19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </motion.button>
         </div>
@@ -221,7 +255,11 @@ export default function FasterCallsSection() {
                 if (i === currentPage) {
                   dots.push({ id: "black", type: "active", pageIndex: i });
                 } else {
-                  dots.push({ id: `gray-${grayCounter}`, type: "inactive", pageIndex: i });
+                  dots.push({
+                    id: `gray-${grayCounter}`,
+                    type: "inactive",
+                    pageIndex: i,
+                  });
                   grayCounter++;
                 }
               }
@@ -231,16 +269,18 @@ export default function FasterCallsSection() {
                   key={dot.id}
                   onClick={() => setCurrentPage(dot.pageIndex)}
                   className={`w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full border-none p-0 cursor-pointer ${dot.type === "active" ? "bg-primary-black" : "bg-[#71717a33]"}`}
-                  transition={{ type: "tween", ease: "easeInOut", duration: 1.5 }}
+                  transition={{
+                    type: "tween",
+                    ease: "easeInOut",
+                    duration: 1.5,
+                  }}
                   aria-label={`Go to slide ${dot.pageIndex + 1}`}
                 />
               ));
             })()}
           </div>
         )}
-
       </div>
     </section>
   );
 }
-

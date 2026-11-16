@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const pillShellStyle: React.CSSProperties = {
@@ -11,25 +11,6 @@ const pillShellStyle: React.CSSProperties = {
 };
 
 export default function HeroSection() {
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.04, delayChildren: 0.3 },
-    },
-  };
-
-  const wordVariants: Variants = {
-    hidden: { opacity: 0, y: "50%" },
-    visible: {
-      opacity: 1,
-      y: "0%",
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-      },
-    },
-  };
-
   return (
     <section className="relative w-full overflow-hidden">
       <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-8 md:pb-16 lg:pb-24 z-0">
@@ -89,7 +70,10 @@ export default function HeroSection() {
             </svg>
             <div
               className="w-full h-full rounded-full relative"
-              style={{ animation: "ring-spin-rev 15s linear infinite", ["--ring-start" as string]: "45deg" }}
+              style={{
+                animation: "ring-spin-rev 15s linear infinite",
+                ["--ring-start" as string]: "45deg",
+              }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -114,7 +98,10 @@ export default function HeroSection() {
             </svg>
             <div
               className="w-full h-full rounded-full relative"
-              style={{ animation: "ring-spin 20s linear infinite", ["--ring-start" as string]: "90deg" }}
+              style={{
+                animation: "ring-spin 20s linear infinite",
+                ["--ring-start" as string]: "90deg",
+              }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
@@ -139,13 +126,15 @@ export default function HeroSection() {
             </svg>
             <div
               className="w-full h-full rounded-full relative"
-              style={{ animation: "ring-spin-rev 25s linear infinite", ["--ring-start" as string]: "135deg" }}
+              style={{
+                animation: "ring-spin-rev 25s linear infinite",
+                ["--ring-start" as string]: "135deg",
+              }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-4 md:size-5 lg:size-6 rounded-full shadow-lg shadow-primary-black/50 bg-primary-beige" />
             </div>
           </div>
-
         </motion.div>
 
         {/* Desktop pills — chord across rings (lg+) */}
@@ -163,7 +152,10 @@ export default function HeroSection() {
               style={{ left, animationDelay: `${1.1 + index * 0.08}s` }}
               className="hero-pill pointer-events-auto absolute top-[82%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
             >
-              <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
+              <span
+                className="absolute inset-0 rounded-full"
+                style={pillShellStyle}
+              />
               <span className="relative z-10 text-primary-black text-base lg:text-xl font-bold font-manrope leading-tight md:leading-6 whitespace-nowrap">
                 {text}
               </span>
@@ -182,9 +174,10 @@ export default function HeroSection() {
 
           <p className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]">
             Enterprise AI calling software powered by human-like{" "}
-            <span className="font-bold">AI voice agents</span>. Automate outbound
-            conversations, qualify sales leads, and scale outreach campaigns in{" "}
-            <span className="font-bold">65+ native languages</span>.
+            <span className="font-bold">AI voice agents</span>. Automate
+            outbound conversations, qualify sales leads, and scale outreach
+            campaigns in <span className="font-bold">65+ native languages</span>
+            .
           </p>
 
           <div className="mt-6 sm:mt-9 md:mt-12 lg:mt-16">
@@ -217,10 +210,16 @@ export default function HeroSection() {
             <div className="flex justify-between items-end gap-1.5 sm:gap-3 px-0.5">
               {(
                 [
-                  { text: "Strategic", lift: "-translate-y-3 sm:-translate-y-4" },
+                  {
+                    text: "Strategic",
+                    lift: "-translate-y-3 sm:-translate-y-4",
+                  },
                   { text: "High ROI", lift: "translate-y-2 sm:translate-y-3" },
                   { text: "Natural", lift: "translate-y-2 sm:translate-y-3" },
-                  { text: "Customized", lift: "-translate-y-3 sm:-translate-y-4" },
+                  {
+                    text: "Customized",
+                    lift: "-translate-y-3 sm:-translate-y-4",
+                  },
                 ] as const
               ).map(({ text, lift }, index) => (
                 <div
@@ -228,7 +227,10 @@ export default function HeroSection() {
                   style={{ animationDelay: `${0.85 + index * 0.08}s` }}
                   className={`hero-pill relative inline-flex shrink-0 ${lift} px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-solid border-white justify-center items-center overflow-hidden`}
                 >
-                  <span className="absolute inset-0 rounded-full" style={pillShellStyle} />
+                  <span
+                    className="absolute inset-0 rounded-full"
+                    style={pillShellStyle}
+                  />
                   <span className="relative z-10 text-primary-black text-[11px] sm:text-sm font-bold font-manrope leading-tight whitespace-nowrap">
                     {text}
                   </span>
@@ -275,10 +277,15 @@ export default function HeroSection() {
             className="absolute flex flex-col items-start gap-5 z-10 right-4 lg:right-12 xl:right-24 top-1/4 w-[35%] xl:w-1/3"
           >
             <h2 className="text-5xl xl:text-6xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
-              SOFTWARE ALONE DOESN'T DELIVER ROI , STRATEGY DOES
+              SOFTWARE ALONE DOESN&apos;T DELIVER ROI , STRATEGY DOES
             </h2>
             <p className="text-lg xl:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
-              Our <span className="font-bold">AI specialists and Marketing consultants</span> help you target the right audience, optimize campaigns, and drive better ROI without the guesswork.
+              Our{" "}
+              <span className="font-bold">
+                AI specialists and Marketing consultants
+              </span>{" "}
+              help you target the right audience, optimize campaigns, and drive
+              better ROI without the guesswork.
             </p>
 
             {/* CTA */}
@@ -311,7 +318,6 @@ export default function HeroSection() {
 
         {/* Mobile/Tablet Fallback (Stacking) */}
         <div className="flex lg:hidden w-full pt-0 pb-6 sm:pb-8 lg:pb-0 flex-col items-center gap-2 relative z-10">
-
           {/* Heading and Paragraph above Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -320,10 +326,15 @@ export default function HeroSection() {
             className="w-full flex flex-col gap-2 px-4 sm:px-6 mt-0"
           >
             <h2 className="text-3xl sm:text-4xl leading-none m-0 uppercase font-bebas text-primary-black">
-              SOFTWARE ALONE DOESN'T DELIVER ROI , STRATEGY DOES
+              SOFTWARE ALONE DOESN&apos;T DELIVER ROI , STRATEGY DOES
             </h2>
             <p className="text-sm sm:text-base m-0 font-manrope text-primary-black">
-              Our <span className="font-bold">AI specialists and Marketing consultants</span> help you target the right audience, optimize campaigns, and drive better ROI without the guesswork.
+              Our{" "}
+              <span className="font-bold">
+                AI specialists and Marketing consultants
+              </span>{" "}
+              help you target the right audience, optimize campaigns, and drive
+              better ROI without the guesswork.
             </p>
           </motion.div>
 
