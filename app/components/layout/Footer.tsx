@@ -2,7 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-const SOCIAL_ICONS = [
+import Link from "next/link";
+interface SocialIcon {
+  label: string;
+  href: string;
+  path: string;
+  viewBox?: string;
+}
+
+const SOCIAL_ICONS: SocialIcon[] = [
   {
     label: "YouTube",
     href: "https://www.youtube.com/@ai.callience",
@@ -38,19 +46,19 @@ export default function Footer() {
         {/* Top Row — Logo + Social */}
         <div className="flex justify-between items-center w-full gap-2">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="flex items-center justify-center no-underline shrink-0"
           >
             <Image
               src="/ai%20CALLING%20f.svg"
-              alt="Callience Logo"
+              alt="Callience AI Calling Software"
               width={216}
               height={100}
               className="h-7 sm:h-10 md:h-14 lg:h-16 w-auto object-contain object-left"
               priority
             />
-          </a>
+          </Link>
 
           {/* Social Icons */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
@@ -62,7 +70,7 @@ export default function Footer() {
                 className="inline-flex items-center justify-center size-5 sm:size-6 text-primary-black transition-colors duration-200 hover:text-dark-grey"
               >
                 <svg
-                  viewBox={(social as any).viewBox || "0 0 24 24"}
+                  viewBox={social.viewBox || "0 0 24 24"}
                   fill="currentColor"
                   className="w-full h-full"
                 >
@@ -146,24 +154,30 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Policy */}
+          {/* Policy & Legal */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             <h4 className="text-base md:text-lg font-extrabold leading-6 text-primary-black">
-              Policy
+              Legal
             </h4>
             <div className="flex flex-col gap-3">
-              <a
-                href="#"
-                className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black"
-              >
-                Refund Policy
-              </a>
-              <a
-                href="#"
+              <Link
+                href="/privacy-policy"
                 className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black"
               >
                 Privacy Policy
-              </a>
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/refund-policy"
+                className="text-sm md:text-base font-semibold text-dark-grey leading-6 no-underline whitespace-nowrap transition-colors duration-200 hover:text-primary-black"
+              >
+                Refund Policy
+              </Link>
             </div>
           </div>
 
@@ -192,14 +206,19 @@ export default function Footer() {
             Callience © 2026. All rights reserved.
           </span>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-            {["How It Works", "Pricing", "Use Cases"].map((label) => (
-              <a
-                key={label}
-                href={`#${label.toLowerCase().replace(/ /g, "-")}`}
+            {[
+              { label: "How It Works", href: "/#how-it-works" },
+              { label: "Pricing", href: "/#pricing" },
+              { label: "Features", href: "/#features" },
+              { label: "Blogs", href: "/blogs" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-sm md:text-base text-primary-black font-bold tracking-tight no-underline transition-colors duration-200 hover:text-dark-grey"
               >
-                {label}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
         </div>
