@@ -15,7 +15,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "HOW DOES VOICE AI WORK? A BEGINNER'S GUIDE TO AI CALLING",
     excerpt:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations. From following up with potential customers to sending appointment reminders, AI-powered calling systems can handle many routine conversations.",
-    image: "/blog-hero-voice-ai-guide.jpg",
+    image: "/blog-hero-voice-ai-guide.webp",
     category: "AI Technology",
   },
 ];
@@ -41,7 +41,7 @@ export function getAdjacentPosts(currentSlug: string) {
       : { title: "ALL BLOGS & INSIGHTS", href: "/blogs" },
     next: nextPost
       ? { title: nextPost.title, href: `/blogs/${nextPost.slug}` }
-      : { title: "REQUEST A LIVE VOICE AI DEMO", href: "#contact" },
+      : { title: "REQUEST A LIVE VOICE AI DEMO", href: "/#contact" },
     hasRealPrev: !!prevPost,
     hasRealNext: !!nextPost,
     totalPosts: REAL_BLOGS.length,

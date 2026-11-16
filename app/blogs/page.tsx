@@ -80,6 +80,7 @@ export default function BlogsPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Tell Us What You Are Looking For"
+                  aria-label="Search blog articles"
                   className="bg-transparent border-none outline-none text-xs sm:text-[13px] text-[#1E1E1E] placeholder-[#808285] w-full"
                 />
               </div>
@@ -134,7 +135,6 @@ export default function BlogsPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 624px"
                       className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
                       loading={index < 2 ? "eager" : "lazy"}
-                      unoptimized
                     />
                   </Link>
 

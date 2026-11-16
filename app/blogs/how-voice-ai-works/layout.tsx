@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "How Does Voice AI Work? A Beginner's Guide to AI Calling | Callience",
+  title: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
   description:
     "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
   keywords: [
@@ -27,18 +26,18 @@ export const metadata: Metadata = {
     canonical: "/blogs/how-voice-ai-works",
   },
   openGraph: {
-    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
+    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling | Callience",
     description:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how an AI-powered phone conversation works from beginning to end.",
     url: "https://www.callience.in/blogs/how-voice-ai-works",
     siteName: "Callience",
     type: "article",
     publishedTime: "2026-11-13T00:00:00.000Z",
-    modifiedTime: "2026-11-13T00:00:00.000Z",
-    authors: ["Callience Editorial Team"],
+    modifiedTime: "2026-11-16T00:00:00.000Z",
+    authors: ["Karanvir Singh"],
     images: [
       {
-        url: "/blog-hero-voice-ai-guide.jpg",
+        url: "https://www.callience.in/blog-hero-voice-ai-guide.webp",
         width: 1440,
         height: 515,
         alt: "How Voice AI Works: A Beginner's Guide to AI Calls",
@@ -48,10 +47,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
+    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling | Callience",
     description:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations.",
-    images: ["/blog-hero-voice-ai-guide.jpg"],
+    images: ["https://www.callience.in/blog-hero-voice-ai-guide.webp"],
   },
 };
 
@@ -66,9 +65,11 @@ export default function BlogLayout({
     headline: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
     description:
       "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
-    image: "https://www.callience.in/blog-hero-voice-ai-guide.jpg",
+    image: "https://www.callience.in/blog-hero-voice-ai-guide.webp",
     datePublished: "2026-11-13T00:00:00.000Z",
-    dateModified: "2026-11-13T00:00:00.000Z",
+    dateModified: "2026-11-16T00:00:00.000Z",
+    wordCount: 1650,
+    inLanguage: "en-IN",
     author: {
       "@type": "Person",
       name: "Karanvir Singh",
@@ -77,6 +78,7 @@ export default function BlogLayout({
     publisher: {
       "@type": "Organization",
       name: "Callience",
+      url: "https://www.callience.in",
       logo: {
         "@type": "ImageObject",
         url: "https://www.callience.in/logo.png",
