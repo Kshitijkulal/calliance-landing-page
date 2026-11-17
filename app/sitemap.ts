@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogEntries: MetadataRoute.Sitemap = REAL_BLOGS.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.slug}`,
-    lastModified: new Date('2026-11-16'),
+    lastModified: new Date('2026-11-17'),
     changeFrequency: 'weekly',
     priority: 0.9,
   }))
@@ -14,13 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2026-11-16'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blogs`,
-      lastModified: new Date('2026-11-16'),
+      lastModified: new Date('2026-11-17'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },

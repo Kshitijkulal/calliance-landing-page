@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
+  title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
   description:
     "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
   keywords: [

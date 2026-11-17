@@ -121,7 +121,7 @@ export default function BlogsPage() {
           {/* Blog Cards Grid */}
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-x-10 lg:gap-y-14">
-              {filteredPosts.map((post, index) => (
+              {filteredPosts.map((post) => (
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
@@ -134,7 +134,6 @@ export default function BlogsPage() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 624px"
                       className="object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
-                      unoptimized
                     />
                   </Link>
 
