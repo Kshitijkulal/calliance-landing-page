@@ -6,8 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogEntries: MetadataRoute.Sitemap = REAL_BLOGS.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.slug}`,
-    lastModified: new Date('2026-11-13'),
-    changeFrequency: 'monthly',
+    lastModified: new Date('2026-11-16'),
+    changeFrequency: 'weekly',
     priority: 0.9,
   }))
 
