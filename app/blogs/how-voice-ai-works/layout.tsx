@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
+  title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
   description:
-    "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
+    "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
   keywords: [
-    "How Does Voice AI Work",
-    "Beginner's Guide to AI Calling",
+    "How Voice AI Works",
+    "Beginner's Guide to AI Phone Calls",
     "AI Calling",
     "Automatic Speech Recognition",
     "Text-to-Speech",
@@ -26,30 +26,30 @@ export const metadata: Metadata = {
     canonical: "/blogs/how-voice-ai-works",
   },
   openGraph: {
-    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling | Callience",
+    title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
     description:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how an AI-powered phone conversation works from beginning to end.",
+      "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how an AI-powered phone conversation works from beginning to end.",
     url: "https://www.callience.in/blogs/how-voice-ai-works",
     siteName: "Callience",
     type: "article",
     publishedTime: "2026-11-13T00:00:00.000Z",
-    modifiedTime: "2026-11-16T00:00:00.000Z",
+    modifiedTime: "2026-11-17T00:00:00.000Z",
     authors: ["Karanvir Singh"],
     images: [
       {
         url: "https://www.callience.in/blog-hero-voice-ai-guide.webp",
         width: 1440,
         height: 515,
-        alt: "How Voice AI Works: A Beginner's Guide to AI Calls",
+        alt: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
       },
     ],
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Does Voice AI Work? A Beginner's Guide to AI Calling | Callience",
+    title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
     description:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations.",
+      "Voice AI allows businesses to communicate with customers through automated phone conversations.",
     images: ["https://www.callience.in/blog-hero-voice-ai-guide.webp"],
   },
 };
@@ -62,12 +62,12 @@ export default function BlogLayout({
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
+    headline: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
     description:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
+      "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
     image: "https://www.callience.in/blog-hero-voice-ai-guide.webp",
     datePublished: "2026-11-13T00:00:00.000Z",
-    dateModified: "2026-11-16T00:00:00.000Z",
+    dateModified: "2026-11-17T00:00:00.000Z",
     wordCount: 1650,
     inLanguage: "en-IN",
     author: {
@@ -109,7 +109,7 @@ export default function BlogLayout({
       {
         "@type": "ListItem",
         position: 3,
-        name: "How Does Voice AI Work? A Beginner's Guide to AI Calling",
+        name: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
         item: "https://www.callience.in/blogs/how-voice-ai-works",
       },
     ],
@@ -121,50 +121,50 @@ export default function BlogLayout({
     mainEntity: [
       {
         "@type": "Question",
-        name: "How does voice AI work in simple words?",
+        name: "How does Voice AI work in simple words?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Voice AI listens to what a person says, understands the message and responds using a computer-generated voice.",
+          text: "Voice AI listens to a person's speech, understands the message and responds using generated audio.",
         },
       },
       {
         "@type": "Question",
-        name: "Can AI make phone calls automatically?",
+        name: "What technologies are used in Voice AI?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. AI calling systems can contact customers for lead follow-ups, appointment reminders and other business activities.",
+          text: "Common technologies include ASR, LLMs and TTS. Some systems also use direct speech-to-speech models.",
         },
       },
       {
         "@type": "Question",
-        name: "Can AI understand different accents?",
+        name: "What is the difference between ASR and TTS?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many AI systems support different accents and languages, although accuracy depends on the technology and audio quality.",
+          text: "ASR converts speech into text, while TTS converts written text into spoken audio.",
         },
       },
       {
         "@type": "Question",
-        name: "Can AI voice agents transfer calls to humans?",
+        name: "What is Voice AI latency?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. They can transfer calls when customers request human assistance or need additional support.",
+          text: "Voice AI latency is the delay between a customer's speech and the AI's spoken response.",
         },
       },
       {
         "@type": "Question",
-        name: "What happens after an AI phone call ends?",
+        name: "Can AI voice agents handle interruptions?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "The system can prepare conversation records, call summaries and customer follow-up information.",
+          text: "Some platforms support interruptions or barge-in, allowing customers to speak while the AI is responding.",
         },
       },
       {
         "@type": "Question",
-        name: "Where is Voice AI used in business?",
+        name: "What is AI post-call analysis?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Voice AI is commonly used for lead follow-ups, appointment reminders, customer enquiries and feedback collection.",
+          text: "It analyses completed conversations to generate transcripts, summaries and call outcomes.",
         },
       },
     ],

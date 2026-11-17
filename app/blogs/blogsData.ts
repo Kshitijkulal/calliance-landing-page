@@ -12,9 +12,9 @@ export const REAL_BLOGS: BlogPost[] = [
   {
     id: 1,
     slug: "how-voice-ai-works",
-    title: "HOW DOES VOICE AI WORK? A BEGINNER'S GUIDE TO AI CALLING",
+    title: "HOW VOICE AI WORKS: A BEGINNER'S GUIDE TO AI PHONE CALLS",
     excerpt:
-      "Voice AI is changing how businesses communicate with customers through automated phone conversations. From following up with potential customers to sending appointment reminders, AI-powered calling systems can handle many routine conversations.",
+      "Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.",
     image: "/blog-hero-voice-ai-guide.webp",
     category: "AI Technology",
   },
@@ -22,10 +22,13 @@ export const REAL_BLOGS: BlogPost[] = [
 
 /**
  * Returns adjacent (previous and next) posts for a given blog slug.
- * If only 1 post exists or at boundaries, fallback actions (All Blogs / Demo CTA) are provided.
+ * If no adjacent real posts exist, returns null (strictly NO demo data).
  */
 export function getAdjacentPosts(currentSlug: string) {
   const currentIndex = REAL_BLOGS.findIndex((post) => post.slug === currentSlug);
+  if (currentIndex === -1) {
+    return { prev: null, next: null, totalPosts: REAL_BLOGS.length };
+  }
 
   const prevPost =
     currentIndex > 0 ? REAL_BLOGS[currentIndex - 1] : null;
@@ -38,12 +41,10 @@ export function getAdjacentPosts(currentSlug: string) {
   return {
     prev: prevPost
       ? { title: prevPost.title, href: `/blogs/${prevPost.slug}` }
-      : { title: "ALL BLOGS & INSIGHTS", href: "/blogs" },
+      : null,
     next: nextPost
       ? { title: nextPost.title, href: `/blogs/${nextPost.slug}` }
-      : { title: "REQUEST A LIVE VOICE AI DEMO", href: "/#contact" },
-    hasRealPrev: !!prevPost,
-    hasRealNext: !!nextPost,
+      : null,
     totalPosts: REAL_BLOGS.length,
   };
 }

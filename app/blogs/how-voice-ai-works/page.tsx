@@ -9,42 +9,42 @@ import ContactSection from "@/app/components/sections/ContactSection";
 import BlogNavigation from "../BlogNavigation";
 
 const TOC_ITEMS = [
-  { id: "how-voice-ai-works", label: "Core Technologies Powering Voice AI" },
+  { id: "how-voice-ai-works", label: "How Does Voice AI Work?" },
   { id: "step-by-step", label: "How Does an AI Phone Call Work Step by Step?" },
-  { id: "ai-calling-process", label: "Understanding the AI Calling Process" },
+  { id: "call-flow", label: "Understanding the AI Voice Agent Call Flow" },
   { id: "pauses-and-interruptions", label: "How Does Voice AI Handle Pauses and Interruptions?" },
-  { id: "call-transfers", label: "Can AI Transfer Calls to Human Agents?" },
+  { id: "voice-ai-latency", label: "What Is Voice AI Latency?" },
   { id: "after-call-ends", label: "What Happens After an AI Phone Call Ends?" },
-  { id: "business-applications", label: "Practical Business Applications of Voice AI" },
+  { id: "business-applications", label: "Practical Business Applications of AI Calling" },
   { id: "how-callience-helps", label: "How Callience Helps Businesses with AI Calling" },
-  { id: "conclusion", label: "Summary: The Future of AI Phone Calling" },
-  { id: "faqs", label: "Frequently Asked Questions (FAQs)" },
+  { id: "conclusion", label: "Conclusion" },
+  { id: "faqs", label: "Frequently Asked Questions" },
 ];
 
 const FAQS = [
   {
-    q: "1. How does voice AI work in simple words?",
-    a: "Voice AI listens to what a person says, understands the message and responds using a computer-generated voice.",
+    q: "1. How does Voice AI work in simple words?",
+    a: "Voice AI listens to a person's speech, understands the message and responds using generated audio.",
   },
   {
-    q: "2. Can AI make phone calls automatically?",
-    a: "Yes. AI calling systems can contact customers for lead follow-ups, appointment reminders and other business activities.",
+    q: "2. What technologies are used in Voice AI?",
+    a: "Common technologies include ASR, LLMs and TTS. Some systems also use direct speech-to-speech models.",
   },
   {
-    q: "3. Can AI understand different accents?",
-    a: "Many AI systems support different accents and languages, although accuracy depends on the technology and audio quality.",
+    q: "3. What is the difference between ASR and TTS?",
+    a: "ASR converts speech into text, while TTS converts written text into spoken audio.",
   },
   {
-    q: "4. Can AI voice agents transfer calls to humans?",
-    a: "Yes. They can transfer calls when customers request human assistance or need additional support.",
+    q: "4. What is Voice AI latency?",
+    a: "Voice AI latency is the delay between a customer's speech and the AI's spoken response.",
   },
   {
-    q: "5. What happens after an AI phone call ends?",
-    a: "The system can prepare conversation records, call summaries and customer follow-up information.",
+    q: "5. Can AI voice agents handle interruptions?",
+    a: "Some platforms support interruptions or barge-in, allowing customers to speak while the AI is responding.",
   },
   {
-    q: "6. Where is Voice AI used in business?",
-    a: "Voice AI is commonly used for lead follow-ups, appointment reminders, customer enquiries and feedback collection.",
+    q: "6. What is AI post-call analysis?",
+    a: "It analyses completed conversations to generate transcripts, summaries and call outcomes.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function VoiceAIBlogPage() {
       const asideRect = asideRef.current.getBoundingClientRect();
       const articleRect = articleRef.current.getBoundingClientRect();
       const tocHeight = tocBoxRef.current.offsetHeight;
-      const topOffset = 112; // 112px below floating navbar
+      const topOffset = 28; // Sit at the top of the screen without unnecessary gap
 
       let newMode: "normal" | "fixed" | "bottom" = "normal";
       if (articleRect.bottom <= topOffset + tocHeight) {
@@ -180,15 +180,14 @@ export default function VoiceAIBlogPage() {
                 className="font-normal uppercase text-[#0D0D0D] text-[38px] sm:text-[50px] lg:text-[64px] leading-[1.05] tracking-normal mb-3"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
-                HOW DOES VOICE AI WORK?
-                <br className="hidden sm:inline" /> A BEGINNER&apos;S GUIDE TO AI CALLING
+                HOW VOICE AI WORKS:
+                <br className="hidden sm:inline" /> A BEGINNER&apos;S GUIDE TO AI PHONE CALLS
               </h1>
               <p
                 className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
-                Voice AI is changing how businesses communicate with customers
-                <br className="hidden sm:inline" /> through automated phone conversations.
+                Voice AI allows businesses to communicate with customers through automated phone conversations.
               </p>
             </div>
 
@@ -204,7 +203,7 @@ export default function VoiceAIBlogPage() {
                     13th November
                   </p>
                   <p className="font-medium text-base sm:text-[18px] leading-[1.4]">
-                    8 min read
+                    5 min read
                   </p>
                   <p className="font-medium text-base sm:text-[18px] leading-[1.4]">
                     Karanvir Singh
@@ -213,9 +212,16 @@ export default function VoiceAIBlogPage() {
 
                 {/* Contact Us button with exact 27px gap, hugging content (not w-full) */}
                 <div className="mt-[27px]">
-                  <Link
-                    href="/#contact"
-                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group"
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById("contact");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <span>Contact Us</span>
@@ -236,7 +242,7 @@ export default function VoiceAIBlogPage() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -328,7 +334,7 @@ export default function VoiceAIBlogPage() {
                   fixedState.mode === "fixed"
                     ? {
                       position: "fixed",
-                      top: "112px",
+                      top: "28px",
                       left: `${fixedState.left}px`,
                       width: `${fixedState.width}px`,
                     }
@@ -409,31 +415,19 @@ export default function VoiceAIBlogPage() {
                   className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  Voice AI is changing how modern businesses communicate with customers
-                  through automated phone conversations. From following up with
-                  potential leads to sending appointment reminders, intelligent{" "}
-                  <Link
-                    href="/"
-                    className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                  >
-                    AI calling software and voice agents
-                  </Link>{" "}
-                  can handle many routine conversations with natural responsiveness.
+                  Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.
                 </p>
                 <p
                   className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  But how does voice AI actually work under the hood?
+                  But how voice AI works behind the scenes is more than simply generating a voice. A typical AI calling system combines speech recognition, language processing and voice generation to manage conversations. It can also use business information, scripts and configured instructions to provide relevant answers.
                 </p>
                 <p
                   className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  Simply put, Voice AI allows computers to listen to people,
-                  understand their questions and respond with a human-like voice.
-                  Let&apos;s understand how an AI-powered phone conversation
-                  works from beginning to end.
+                  Let&apos;s explore the complete AI calling process, from connecting a call to generating responses and analysing the conversation.
                 </p>
               </div>
 
@@ -443,54 +437,47 @@ export default function VoiceAIBlogPage() {
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  HOW VOICE AI WORKS: THE THREE CORE TECHNOLOGIES
+                  HOW DOES VOICE AI WORK?
                 </h2>
                 <div className="space-y-4">
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Voice AI uses three main technologies to communicate with people:
+                    Many Voice AI systems use three common technologies:
                   </p>
                   <ul className="space-y-2 pl-5 list-disc font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal">
                     <li>
-                      <strong>Speech Recognition (ASR):</strong> Helps AI understand what a person is saying.
+                      <strong>Automatic Speech Recognition (ASR):</strong> Converts spoken words into text so the system can process them.
                     </li>
                     <li>
-                      <strong>Language Model (LLM):</strong> Helps AI understand questions and decide what to say.
+                      <strong>Large Language Model (LLM):</strong> Helps the AI understand customer requests and prepare relevant responses.
                     </li>
                     <li>
-                      <strong>Text-to-Speech (TTS):</strong> Converts the AI&apos;s written response into spoken words.
+                      <strong>Text-to-Speech (TTS):</strong> Converts written responses into spoken audio.
                     </li>
                   </ul>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    For example, when a customer asks about a product&apos;s price, the AI listens to the question, understands what the customer wants and responds with the relevant information.
+                    These technologies are commonly used together, but not every Voice AI system follows exactly the same architecture. Some platforms use direct speech-to-speech models or different combinations of technologies.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    The basic AI calling process looks like this:
+                    For example, when a customer asks about course fees, the AI processes the question, understands the customer&apos;s intent and prepares an answer using the business&apos;s configured information and instructions.
+                  </p>
+                  <p
+                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    The basic process looks like this:
                   </p>
                   <div className="bg-[#FAF9F5] border border-[#E5E5E5] rounded-xl p-4 my-3 text-sm sm:text-base font-semibold text-[#1E1E1E]">
-                    Call Starts → AI Listens → Understands the Question → Prepares a Response → Speaks to the Customer
+                    Call Connection → Listening → Understanding → Response Generation → Speaking → Call Completion
                   </div>
-                  <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    Learn how the{" "}
-                    <Link
-                      href="/#features"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      Callience calling platform
-                    </Link>{" "}
-                    orchestrates this flow to maintain seamless real-time conversations.
-                  </p>
                 </div>
               </section>
 
@@ -504,83 +491,70 @@ export default function VoiceAIBlogPage() {
                 </h2>
 
                 <div className="space-y-8">
-                  {/* Stage 1 */}
+                  {/* Step 1 */}
                   <div>
                     <h3 className="text-xl font-bold text-[#1E1E1E] mb-2">
                       1. Call Initiation
                     </h3>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      The process starts when an AI calling system connects with a customer.
-                    </p>
-                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-2">
-                      It can handle two types of calls:
+                      The process begins when an AI calling system connects with a customer. Depending on the platform, it may support:
                     </p>
                     <ul className="list-disc pl-5 space-y-1 font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
                       <li>
-                        <strong>Inbound Calls:</strong> When a customer calls a business and the AI answers.
+                        <strong>Inbound Calls:</strong> Customers call a business and the AI answers.
                       </li>
                       <li>
-                        <strong>Outbound Calls:</strong> When the AI automatically calls customers for follow-ups, reminders or enquiries.
+                        <strong>Outbound Calls:</strong> The AI automatically contacts customers for reminders, enquiries or follow-ups.
                       </li>
                     </ul>
-                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      For example, an education company can use AI calling to contact students who have shown interest in its courses.
-                    </p>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4]">
-                      Once the call connects, the AI introduces itself and explains the purpose of the call.
+                      For example, an education company may use outbound AI phone calls to contact students who have submitted admission enquiries. Inbound calling availability depends on the platform.
                     </p>
                   </div>
 
-                  {/* Stage 2 */}
+                  {/* Step 2 */}
                   <div>
                     <h3 className="text-xl font-bold text-[#1E1E1E] mb-2">
-                      2. AI Listens to the Customer
+                      2. AI Speech Recognition
                     </h3>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      After connecting the call, the AI listens to what the customer says and converts their speech into text.
+                      Once the call connects, the AI listens to the customer. A common technology used here is Automatic Speech Recognition (ASR), which converts spoken language into text.
                     </p>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-1">
                       For example:
                     </p>
-                    <div className="bg-[#FAF9F5] border border-[#E5E5E5] rounded-lg p-3 my-3 text-sm sm:text-base">
+                    <div className="bg-[#FAF9F5] border border-[#E5E5E5] rounded-lg p-3 my-3 text-sm sm:text-base space-y-1">
                       <p><strong>Customer:</strong> &ldquo;I want to know more about your courses.&rdquo;</p>
+                      <p><strong>Recognised text:</strong> &ldquo;I want to know more about your courses.&rdquo;</p>
                     </div>
-                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      The AI understands the customer&apos;s words and prepares to respond.
-                    </p>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4]">
-                      It can also handle different accents and speaking styles, although its accuracy depends on audio quality and language support.
+                      This speech to text AI process helps the system understand the customer&apos;s words. AI speech recognition accuracy depends on audio quality, language support and background noise.
                     </p>
                   </div>
 
-                  {/* Stage 3 */}
+                  {/* Step 3 */}
                   <div>
                     <h3 className="text-xl font-bold text-[#1E1E1E] mb-2">
-                      3. Understanding Customer Questions
+                      3. Understanding Customer Intent
                     </h3>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      After listening, the AI identifies what the customer wants.
+                      After recognising the words, the AI identifies what the customer wants.
                     </p>
-                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-2">
-                      For example:
+                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
+                      For example, &ldquo;What is the price?&rdquo; indicates a pricing enquiry, while &ldquo;When is my appointment?&rdquo; indicates a request for appointment details.
                     </p>
-                    <ul className="list-disc pl-5 space-y-1 font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      <li>&ldquo;What is the price?&rdquo; – The customer wants pricing information.</li>
-                      <li>&ldquo;Can you explain your plans?&rdquo; – The customer wants more details.</li>
-                      <li>&ldquo;I am not interested.&rdquo; – The customer does not want to continue.</li>
-                    </ul>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4]">
-                      Based on the conversation, the AI decides whether to answer a question, provide information, schedule an appointment or transfer the call to a human representative.
+                      The AI considers the current question, previous conversation and configured business instructions to understand the request.
                     </p>
                   </div>
 
-                  {/* Stage 4 */}
+                  {/* Step 4 */}
                   <div>
                     <h3 className="text-xl font-bold text-[#1E1E1E] mb-2">
                       4. Preparing and Speaking the Response
                     </h3>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      Once the AI understands the customer&apos;s question, it prepares a suitable response using available business information.
+                      The AI prepares an answer using available business knowledge, frequently asked questions, scripts, policies and configured instructions. Some platforms can also retrieve information from connected business systems.
                     </p>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-1">
                       For example:
@@ -589,30 +563,28 @@ export default function VoiceAIBlogPage() {
                       <p><strong>Customer:</strong> &ldquo;Can you tell me about your courses?&rdquo;</p>
                       <p><strong>AI:</strong> &ldquo;Certainly! We offer several professional courses. Are you interested in online or classroom programmes?&rdquo;</p>
                     </div>
-                    <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] mb-3">
-                      The AI then converts its written response into spoken words using voice-generation technology.
-                    </p>
                     <p className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4]">
-                      The customer hears the response through the phone, and the conversation continues.
+                      The response is converted into audio using text to speech AI. This process is also known as AI voice synthesis.
                     </p>
                   </div>
                 </div>
               </section>
 
-              {/* SECTION 3: UNDERSTANDING THE AI CALLING PROCESS */}
-              <section id="ai-calling-process" className="scroll-mt-32 mb-14">
+              {/* SECTION 3: UNDERSTANDING THE AI VOICE AGENT CALL FLOW */}
+              <section id="call-flow" className="scroll-mt-32 mb-14">
                 <h2
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-4"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  UNDERSTANDING THE AI CALLING PROCESS
+                  UNDERSTANDING THE AI VOICE AGENT CALL FLOW
                 </h2>
                 <p
                   className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  The following table summarises how an AI calling system manages a phone conversation.
+                  The AI voice agent call flow describes the different stages involved in handling a phone conversation.
                 </p>
+
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm sm:text-base border-collapse">
                     <thead>
@@ -624,31 +596,31 @@ export default function VoiceAIBlogPage() {
                     <tbody className="font-medium text-[#1E1E1E]">
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Call Initiation</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI connects with the customer.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">The AI connects with the customer.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Listening</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI listens to the customer&apos;s words.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">Speech recognition processes the customer&apos;s words.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Understanding</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI identifies the customer&apos;s question or requirement.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">The AI identifies the customer&apos;s requirement.</td>
                       </tr>
                       <tr>
-                        <td className="py-3.5 pr-4 pl-0 font-bold align-top">Response</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI prepares a suitable answer.</td>
+                        <td className="py-3.5 pr-4 pl-0 font-bold align-top">Response Generation</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">It prepares an answer using business information and instructions.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Speaking</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI responds using a generated voice.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">The response is converted into spoken audio.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Call Management</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI handles pauses, interruptions and call transfers.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">The system manages pauses and interruptions where supported.</td>
                       </tr>
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Post-Call Analysis</td>
-                        <td className="py-3.5 pl-4 pr-0 align-top">AI prepares call summaries and conversation records.</td>
+                        <td className="py-3.5 pl-4 pr-0 align-top">The system may generate summaries and call records.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -668,80 +640,77 @@ export default function VoiceAIBlogPage() {
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    A good phone conversation should feel natural. Customers may pause while speaking, change their questions or interrupt the other speaker.
-                  </p>
-                  <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    AI voice agents manage these situations in different ways:
+                    Natural conversations include pauses, questions and interruptions. Depending on the platform and configuration, an AI voice agent may support:
                   </p>
                   <ul className="space-y-2 pl-5 list-disc font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal">
                     <li>
-                      <strong>Pauses:</strong> AI waits to understand whether the customer has finished speaking.
+                      <strong>Pause Detection:</strong> Identifies when a customer has finished speaking.
                     </li>
                     <li>
-                      <strong>Interruptions:</strong> Customers can interrupt the AI, and it can adjust its response accordingly.
+                      <strong>Barge-In:</strong> Allows a customer to interrupt the AI while it is speaking.
                     </li>
                     <li>
-                      <strong>Response Time:</strong> AI systems aim to respond quickly so customers do not experience long periods of silence.
+                      <strong>AI Voice Agent Turn Taking:</strong> Manages when the customer speaks and when the AI responds.
                     </li>
                   </ul>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    These features help make AI phone conversations smoother and more natural.
+                    Some systems also support an AI voice agent handoff, where conversation context moves between specialised AI agents or workflows. For example, an enquiry workflow may pass relevant customer information to a separate appointment-booking workflow. Availability depends on the platform.
+                  </p>
+                  <p
+                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    These features help make conversations smoother, but their availability and performance vary across systems.
                   </p>
                 </div>
               </section>
 
-              {/* SECTION 5: CALL TRANSFERS */}
-              <section id="call-transfers" className="scroll-mt-32 mb-14">
+              {/* SECTION 5: VOICE AI LATENCY */}
+              <section id="voice-ai-latency" className="scroll-mt-32 mb-14">
                 <h2
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  CAN AI TRANSFER CALLS TO HUMAN AGENTS?
+                  WHAT IS VOICE AI LATENCY?
                 </h2>
                 <div className="space-y-4">
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Yes. Not every customer request can be handled by AI. Some situations require personal attention or additional support.
+                    Voice AI latency is the delay between a customer finishing a question and the AI responding. The AI voice agent response time can be affected by speech recognition, response generation, voice generation, network delays and external data lookups.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    For example, a customer may have a complicated complaint or simply want to speak with a human representative.
-                  </p>
-                  <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    AI calling systems can transfer calls in two ways:
+                    Businesses can improve response time by:
                   </p>
                   <ul className="space-y-2 pl-5 list-disc font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal">
                     <li>
-                      <strong>Cold Transfer:</strong> The AI directly transfers the customer to a human representative.
+                      Using streaming technology to process audio in smaller parts.
                     </li>
                     <li>
-                      <strong>Warm Transfer:</strong> The AI shares important conversation details with the representative before transferring the call.
+                      Optimising access to business information.
+                    </li>
+                    <li>
+                      Selecting suitable speech and language models.
+                    </li>
+                    <li>
+                      Reducing unnecessary processing steps.
+                    </li>
+                    <li>
+                      Monitoring delays at different stages of the conversation.
                     </li>
                   </ul>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    This helps businesses combine automated customer communication with seamless human escalation. Learn more about our{" "}
-                    <Link
-                      href="/#features"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      live call routing and transfer features
-                    </Link>.
+                    The goal is to make responses quick, relevant and natural.
                   </p>
                 </div>
               </section>
@@ -759,7 +728,7 @@ export default function VoiceAIBlogPage() {
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    The work does not always stop when the customer disconnects. AI calling systems can prepare useful information about the conversation.
+                    Many platforms support AI post call analysis, which helps businesses understand the outcome of completed conversations.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
@@ -772,33 +741,26 @@ export default function VoiceAIBlogPage() {
                       <strong>Call Transcripts:</strong> Written records of the conversation.
                     </li>
                     <li>
-                      <strong>Call Summaries:</strong> Short explanations of what happened during the call.
+                      <strong>AI Call Summary:</strong> A short explanation of the discussion and customer requirements.
                     </li>
                     <li>
-                      <strong>Call Outcomes:</strong> Information about whether the customer was interested, declined or requested a follow-up.
+                      <strong>Call Outcomes:</strong> Information about whether a customer was interested, declined or requested a follow-up.
                     </li>
                     <li>
-                      <strong>Customer Updates:</strong> Important details can be shared with connected business management systems.
+                      <strong>Customer Updates:</strong> Relevant information sent to connected CRM or business systems, where supported.
                     </li>
                   </ul>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    For example, after a lead follow-up, the AI may generate a summary stating that the customer is interested and wants another call tomorrow.
+                    For example, an AI call summary might state that a student is interested in an MBA programme and requested another call on Friday.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    This helps sales teams execute{" "}
-                    <Link
-                      href="/#features"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      automated lead qualification
-                    </Link>{" "}
-                    without manually reviewing every recorded conversation.
+                    This helps sales teams manage follow-ups without manually reviewing every conversation.
                   </p>
                 </div>
               </section>
@@ -809,34 +771,40 @@ export default function VoiceAIBlogPage() {
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  PRACTICAL BUSINESS APPLICATIONS OF VOICE AI
+                  PRACTICAL BUSINESS APPLICATIONS OF AI CALLING
                 </h2>
                 <div className="space-y-4">
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Businesses can use AI voice agents for several everyday communication tasks:
+                    Businesses can use AI calling systems for several everyday activities:
                   </p>
-                  <ol className="space-y-2 pl-5 list-decimal font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal">
+                  <ul className="space-y-2 pl-5 list-disc font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal">
                     <li>
-                      <strong>Lead Follow-Ups:</strong> Contact potential customers and understand their requirements.
+                      <strong>Lead Qualification:</strong> Understand potential customers&apos; requirements and identify promising leads.
                     </li>
                     <li>
-                      <strong>Appointment Reminders:</strong> Remind customers about upcoming appointments and confirm their availability.
+                      <strong>Outbound Follow-Ups:</strong> Contact customers who have requested information or shown interest.
                     </li>
                     <li>
-                      <strong>Customer Enquiries:</strong> Answer common questions about pricing, products and services.
+                      <strong>Admissions Outreach:</strong> Contact prospective students and answer common admission-related questions.
                     </li>
                     <li>
-                      <strong>Customer Feedback:</strong> Contact customers to collect feedback after a purchase or service.
+                      <strong>Payment Reminders:</strong> Remind customers about pending payments and due dates.
                     </li>
-                  </ol>
+                    <li>
+                      <strong>Appointment Reminders:</strong> Contact customers about upcoming appointments.
+                    </li>
+                    <li>
+                      <strong>Customer Re-Engagement:</strong> Reach out to previous customers or inactive leads.
+                    </li>
+                  </ul>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    These applications help businesses manage repetitive phone conversations and reduce manual work.
+                    These applications help businesses manage repetitive conversations and maintain consistent customer communication.
                   </p>
                 </div>
               </section>
@@ -854,40 +822,13 @@ export default function VoiceAIBlogPage() {
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Callience is an enterprise{" "}
-                    <Link
-                      href="/"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      AI calling software platform
-                    </Link>{" "}
-                    built to help businesses automate routine voice communications and scale outbound outreach.
+                    Callience focuses on AI-powered voice calling to help businesses automate routine communication. Its use cases include lead qualification, outbound follow-ups, admissions outreach, payment reminders, appointment reminders and customer re-engagement.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Businesses can configure AI voice agents for outbound lead follow-ups, customer service enquiries, and appointment scheduling tailored to their custom CRM workflows.
-                  </p>
-                  <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    By automating repetitive phone calls, teams save hours every week while keeping human representatives focused on complex deals. Explore our{" "}
-                    <Link
-                      href="/#pricing"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      custom pricing plans
-                    </Link>{" "}
-                    or{" "}
-                    <Link
-                      href="/#contact"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      request a live voice AI demo
-                    </Link>{" "}
-                    to evaluate how it works for your use case.
+                    These workflows can help businesses reduce repetitive calling work, maintain consistent follow-ups and give teams more time to focus on other important tasks.
                   </p>
                 </div>
               </section>
@@ -898,32 +839,20 @@ export default function VoiceAIBlogPage() {
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  SUMMARY: THE FUTURE OF AI PHONE CALLING FOR MODERN BUSINESS
+                  CONCLUSION
                 </h2>
                 <div className="space-y-4">
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Voice AI makes automated phone conversations possible by allowing computers to listen, understand and respond naturally to callers in real time.
+                    Understanding how voice AI works involves looking at the complete conversation process, not just the generated voice. Common systems use speech recognition, language models and voice generation to listen, understand and respond to customers.
                   </p>
                   <p
                     className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    From connecting calls and answering questions to managing interruptions and preparing post-call analytics, modern AI calling systems handle high-volume communication reliably.
-                  </p>
-                  <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    To see how voice AI can transform your organization&apos;s phone operations,{" "}
-                    <Link
-                      href="/#contact"
-                      className="underline decoration-[#1E1E1E] underline-offset-4 hover:text-black font-semibold"
-                    >
-                      book a discovery session with Callience today
-                    </Link>.
+                    Features such as interruption handling, response-time optimisation and post-call analysis make AI phone calls useful for different business activities. From lead qualification to customer re-engagement, Voice AI offers businesses more ways to manage routine communication.
                   </p>
                 </div>
               </section>
@@ -934,7 +863,7 @@ export default function VoiceAIBlogPage() {
                   className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
-                  FREQUENTLY ASKED QUESTIONS (FAQS)
+                  FREQUENTLY ASKED QUESTIONS
                 </h2>
                 <div className="space-y-3">
                   {FAQS.map((faq, idx) => (

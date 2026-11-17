@@ -125,7 +125,7 @@ export default function BlogsPage() {
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-[#EAE8E1] relative shadow-xs group w-full"
+                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-white border border-[#E5E5E5] relative shadow-xs group w-full"
                     style={{ aspectRatio: "623.45 / 373.65" }}
                   >
                     <Image
@@ -133,8 +133,8 @@ export default function BlogsPage() {
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 624px"
-                      className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
-                      loading={index < 2 ? "eager" : "lazy"}
+                      className="object-contain p-2 group-hover:scale-[1.02] transition-transform duration-300"
+                      unoptimized
                     />
                   </Link>
 
