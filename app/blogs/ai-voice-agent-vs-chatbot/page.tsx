@@ -251,17 +251,18 @@ export default function AIVoiceAgentVsChatbotPage() {
           </div>
         </div>
 
-        {/* Hero Image Section */}
-        <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16">
-          <div className="relative w-full max-w-[1440px] mx-auto h-[260px] sm:h-[360px] md:h-[460px] lg:h-[515px] overflow-hidden">
+        {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
+        <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16 overflow-hidden">
+          <div className="relative w-full aspect-[1440/515]">
             <Image
               src="/AI Voice Agent vs IVR Which Is Better for Business (1).png"
               alt="AI Voice Agent vs Chatbot: A Business Use-Case Guide"
               fill
-              sizes="(max-width: 1440px) 100vw, 1440px"
-              className="object-contain object-center scale-[1.08]"
+              sizes="100vw"
+              className="object-cover object-center w-full h-full"
               loading="eager"
               priority
+              unoptimized
             />
           </div>
         </div>

@@ -26,7 +26,7 @@ const TOC_ITEMS = [
 const FAQS = [
   {
     q: "1. Is an AI voice agent better than traditional IVR?",
-    a: "An AI voice agent is generally more flexible for conversational enquiries, while traditional IVR is effective for simple menus and structured call routing. The better option depends on the business use case.",
+    a: "An AI voice agent is generally more flexible  for conversational enquiries, while traditional IVR is effective for simple menus and structured call routing. The better option depends on the business use case.",
   },
   {
     q: "2. Can an AI voice agent work with an existing IVR?",
@@ -254,17 +254,18 @@ export default function AIVoiceAgentVsIVRPage() {
           </div>
         </div>
 
-        {/* Hero Image Section — 100% Full Width Seamless Background Fill */}
-        <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16">
-          <div className="relative w-full max-w-[1440px] mx-auto h-[260px] sm:h-[360px] md:h-[460px] lg:h-[515px] overflow-hidden">
+        {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
+        <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16 overflow-hidden">
+          <div className="relative w-full aspect-[1440/515]">
             <Image
               src="/AI Voice Agent vs IVR Which Is Better for Business (1).png"
               alt="AI Voice Agent vs IVR: Which Is Better for Business?"
               fill
-              sizes="(max-width: 1440px) 100vw, 1440px"
-              className="object-contain object-center scale-[1.08]"
+              sizes="100vw"
+              className="object-cover object-center w-full h-full"
               loading="eager"
               priority
+              unoptimized
             />
           </div>
         </div>
@@ -320,11 +321,10 @@ export default function AIVoiceAgentVsIVRPage() {
                           scrollTo(item.id);
                           setTocOpen(false);
                         }}
-                        className={`block w-full text-left py-0.5 text-[14px] transition-colors leading-snug ${
-                          activeSection === item.id
-                            ? "font-bold text-[#1E1E1E]"
-                            : "text-[#535353] hover:text-[#1E1E1E]"
-                        }`}
+                        className={`block w-full text-left py-0.5 text-[14px] transition-colors leading-snug ${activeSection === item.id
+                          ? "font-bold text-[#1E1E1E]"
+                          : "text-[#535353] hover:text-[#1E1E1E]"
+                          }`}
                       >
                         {item.label}
                       </button>
@@ -339,19 +339,19 @@ export default function AIVoiceAgentVsIVRPage() {
                 style={
                   fixedState.mode === "fixed"
                     ? {
-                        position: "fixed",
-                        top: "28px",
-                        left: `${fixedState.left}px`,
-                        width: `${fixedState.width}px`,
-                      }
+                      position: "fixed",
+                      top: "28px",
+                      left: `${fixedState.left}px`,
+                      width: `${fixedState.width}px`,
+                    }
                     : fixedState.mode === "bottom"
-                    ? {
+                      ? {
                         position: "absolute",
                         bottom: "0px",
                         left: "0px",
                         width: "100%",
                       }
-                    : undefined
+                      : undefined
                 }
                 className="hidden lg:block z-20"
               >
@@ -393,18 +393,16 @@ export default function AIVoiceAgentVsIVRPage() {
                           id={`toc-item-${item.id}`}
                           type="button"
                           onClick={() => scrollTo(item.id)}
-                          className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${
-                            isActive
-                              ? "font-bold text-[#1E1E1E]"
-                              : "text-[#535353] hover:text-[#1E1E1E]"
-                          }`}
+                          className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${isActive
+                            ? "font-bold text-[#1E1E1E]"
+                            : "text-[#535353] hover:text-[#1E1E1E]"
+                            }`}
                         >
                           <span
-                            className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${
-                              isActive
-                                ? "bg-[#1E1E1E]"
-                                : "bg-transparent group-hover:bg-[#E5E5E5]"
-                            }`}
+                            className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${isActive
+                              ? "bg-[#1E1E1E]"
+                              : "bg-transparent group-hover:bg-[#E5E5E5]"
+                              }`}
                           />
                           <span className="leading-snug text-[13.5px] xl:text-[14px]">{item.label}</span>
                         </button>
