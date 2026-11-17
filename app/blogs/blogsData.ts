@@ -17,7 +17,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "HOW VOICE AI WORKS: A BEGINNER'S GUIDE TO AI PHONE CALLS",
     excerpt:
       "Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.",
-    image: "/blog-hero-voice-ai-guide.webp",
+    image: "/How Voice AI Works A Beginner's Guide to AI Calls.png",
     category: "AI Technology",
     publishedAt: "2026-11-13",
     lastModified: "2026-11-17",
@@ -28,8 +28,10 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "AI VOICE AGENT VS IVR: WHICH IS BETTER FOR BUSINESS?",
     excerpt:
       "Businesses use phone automation to handle customer enquiries, reduce repetitive calls and improve customer service. Compare traditional IVR systems and AI voice agents on features, costs, resolution rates, and customer experience.",
-    image: "/blog2img.png",
+    image: "/AI Voice Agent vs IVR Which Is Better for Business (1).png",
     category: "AI Technology",
+    publishedAt: "2026-11-17",
+    lastModified: "2026-11-17",
   },
 ];
 

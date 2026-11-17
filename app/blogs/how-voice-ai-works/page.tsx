@@ -260,11 +260,11 @@ export default function VoiceAIBlogPage() {
         <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16">
           <div className="relative w-full max-w-[1440px] mx-auto h-[260px] sm:h-[360px] md:h-[460px] lg:h-[515px] overflow-hidden">
             <Image
-              src="/blog-hero-voice-ai-guide.webp"
+              src="/How Voice AI Works A Beginner's Guide to AI Calls.png"
               alt="How Voice AI Works: A Beginner's Guide to AI Calls"
               fill
               sizes="(max-width: 1440px) 100vw, 1440px"
-              className="object-contain object-center"
+              className="object-contain object-center scale-[1.08]"
               loading="eager"
               priority
             />

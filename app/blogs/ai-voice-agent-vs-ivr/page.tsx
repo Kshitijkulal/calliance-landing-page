@@ -258,11 +258,11 @@ export default function AIVoiceAgentVsIVRPage() {
         <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16">
           <div className="relative w-full max-w-[1440px] mx-auto h-[260px] sm:h-[360px] md:h-[460px] lg:h-[515px] overflow-hidden">
             <Image
-              src="/blog2img.png"
+              src="/AI Voice Agent vs IVR Which Is Better for Business (1).png"
               alt="AI Voice Agent vs IVR: Which Is Better for Business?"
               fill
               sizes="(max-width: 1440px) 100vw, 1440px"
-              className="object-contain object-center"
+              className="object-contain object-center scale-[1.08]"
               loading="eager"
               priority
             />
