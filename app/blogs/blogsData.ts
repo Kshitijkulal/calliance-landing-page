@@ -5,6 +5,8 @@ export interface BlogPost {
   excerpt: string;
   image: string;
   category: string;
+  publishedAt?: string;
+  lastModified?: string;
 }
 
 // Single source of truth for all real, published blogs
@@ -17,6 +19,8 @@ export const REAL_BLOGS: BlogPost[] = [
       "Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.",
     image: "/blog-hero-voice-ai-guide.webp",
     category: "AI Technology",
+    publishedAt: "2026-11-13",
+    lastModified: "2026-11-17",
   },
   {
     id: 2,

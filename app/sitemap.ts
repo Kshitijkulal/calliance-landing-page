@@ -3,25 +3,26 @@ import { REAL_BLOGS } from './blogs/blogsData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.callience.in'
+  const now = new Date()
 
   const blogEntries: MetadataRoute.Sitemap = REAL_BLOGS.map((blog) => ({
     url: `${baseUrl}/blogs/${blog.slug}`,
-    lastModified: new Date('2026-11-13'),
-    changeFrequency: 'monthly',
+    lastModified: blog.lastModified ? new Date(blog.lastModified) : now,
+    changeFrequency: 'daily',
     priority: 0.9,
   }))
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2026-11-16'),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blogs`,
-      lastModified: new Date('2026-11-16'),
-      changeFrequency: 'weekly',
+      lastModified: now,
+      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
