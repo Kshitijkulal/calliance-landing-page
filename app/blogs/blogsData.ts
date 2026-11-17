@@ -33,6 +33,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",
   },
+  {
+    id: 3,
+    slug: "ai-voice-agent-vs-chatbot",
+    title: "AI VOICE AGENT VS CHATBOT: A BUSINESS USE-CASE GUIDE",
+    excerpt:
+      "Businesses use AI-powered communication tools to answer customer questions, manage enquiries and provide support. Compare AI voice agents and chatbots for business, including use cases, customer experience, costs and integration options.",
+    image: "/AI Voice Agent vs IVR Which Is Better for Business (1).png",
+    category: "AI Technology",
+    publishedAt: "2026-11-17",
+    lastModified: "2026-11-17",
+  },
 ];
 
 /**
