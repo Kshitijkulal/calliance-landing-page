@@ -128,6 +128,13 @@ export default function VoiceAIBlogPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const activeEl = document.getElementById(`toc-item-${activeSection}`);
+    if (activeEl) {
+      activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }, [activeSection]);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -304,7 +311,7 @@ export default function VoiceAIBlogPage() {
                 </button>
                 {tocOpen && (
                   <nav
-                    className="mt-4 space-y-2.5 text-sm border-l border-[#E5E5E5] pl-4"
+                    className="mt-4 space-y-2.5 text-sm"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     {TOC_ITEMS.map((item) => (
@@ -377,7 +384,7 @@ export default function VoiceAIBlogPage() {
 
                 {tocOpen && (
                   <nav
-                    className="space-y-2 text-sm max-h-[calc(100vh-10rem)] overflow-y-auto pr-2"
+                    className="space-y-1.5 text-sm"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     {TOC_ITEMS.map((item) => {
@@ -385,20 +392,23 @@ export default function VoiceAIBlogPage() {
                       return (
                         <button
                           key={item.id}
+                          id={`toc-item-${item.id}`}
                           type="button"
                           onClick={() => scrollTo(item.id)}
-                          className={`group flex items-start gap-2.5 w-full text-left transition-all py-1 cursor-pointer ${isActive
-                            ? "font-bold text-[#1E1E1E]"
-                            : "text-[#535353] hover:text-[#1E1E1E]"
-                            }`}
+                          className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${
+                            isActive
+                              ? "font-bold text-[#1E1E1E]"
+                              : "text-[#535353] hover:text-[#1E1E1E]"
+                          }`}
                         >
                           <span
-                            className={`w-1 h-3.5 rounded-full mt-1 transition-all shrink-0 ${isActive
-                              ? "bg-[#1E1E1E]"
-                              : "bg-transparent group-hover:bg-[#E5E5E5]"
-                              }`}
+                            className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${
+                              isActive
+                                ? "bg-[#1E1E1E]"
+                                : "bg-transparent group-hover:bg-[#E5E5E5]"
+                            }`}
                           />
-                          <span className="leading-snug text-[15px]">{item.label}</span>
+                          <span className="leading-snug text-[13.5px] xl:text-[14px]">{item.label}</span>
                         </button>
                       );
                     })}

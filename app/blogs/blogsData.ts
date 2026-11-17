@@ -18,6 +18,15 @@ export const REAL_BLOGS: BlogPost[] = [
     image: "/blog-hero-voice-ai-guide.webp",
     category: "AI Technology",
   },
+  {
+    id: 2,
+    slug: "ai-voice-agent-vs-ivr",
+    title: "AI VOICE AGENT VS IVR: WHICH IS BETTER FOR BUSINESS?",
+    excerpt:
+      "Businesses use phone automation to handle customer enquiries, reduce repetitive calls and improve customer service. Compare traditional IVR systems and AI voice agents on features, costs, resolution rates, and customer experience.",
+    image: "/blog2img.png",
+    category: "AI Technology",
+  },
 ];
 
 /**
