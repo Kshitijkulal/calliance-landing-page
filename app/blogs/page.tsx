@@ -10,10 +10,7 @@ import { REAL_BLOGS } from "./blogsData";
 
 const CATEGORIES = [
   "All",
-  "Market Trends",
-  "AI Technology",
-  "Sales & Lead Generation",
-  "Inbound calls",
+  ...Array.from(new Set(REAL_BLOGS.map((post) => post.category).filter(Boolean))),
 ];
 
 

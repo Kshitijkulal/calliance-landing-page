@@ -132,11 +132,8 @@ export default function AICallingVsTraditionalTelecallingPage() {
   }, []);
 
   useEffect(() => {
-    const activeEl = document.getElementById(`toc-item-${activeSection}`);
-    if (activeEl) {
-      activeEl.scrollIntoView({ block: "nearest", behavior: "smooth" });
-    }
-  }, [activeSection]);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
