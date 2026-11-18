@@ -44,6 +44,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",
   },
+  {
+    id: 4,
+    slug: "ai-calling-vs-traditional-telecalling",
+    title: "AI CALLING VS TRADITIONAL TELECALLING: COST, SCALE & TRUST",
+    excerpt:
+      "Compare AI calling and traditional telecalling on cost, scalability, customer trust and business applications. Discover which approach works best for growing businesses.",
+    image: "/ai-calling-vs-traditional-telecalling.png",
+    category: "AI Technology",
+    publishedAt: "2026-11-17",
+    lastModified: "2026-11-17",
+  },
 ];
 
 /**
