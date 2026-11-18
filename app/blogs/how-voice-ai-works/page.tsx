@@ -260,7 +260,7 @@ export default function VoiceAIBlogPage() {
         <div className="w-full bg-white mb-8 md:mb-16 overflow-hidden">
           <div className="relative w-full aspect-[1440/515] min-h-[160px]">
             <Image
-              src="/What Is an AI Voice Agent_ How It Works for Business.png"
+              src="/How Voice AI Works_ A Beginner's Guide to AI Calls.png"
               alt="How Voice AI Works: A Beginner's Guide to AI Calls"
               fill
               sizes="100vw"
@@ -430,12 +430,6 @@ export default function VoiceAIBlogPage() {
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   But how voice AI works behind the scenes is more than simply generating a voice. A typical AI calling system combines speech recognition, language processing and voice generation to manage conversations. It can also use business information, scripts and configured instructions to provide relevant answers.
-                </p>
-                <p
-                  className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
-                  style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                >
-                  Let&apos;s explore the complete AI calling process, from connecting a call to generating responses and analysing the conversation.
                 </p>
               </div>
 

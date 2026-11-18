@@ -17,7 +17,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "HOW VOICE AI WORKS: A BEGINNER'S GUIDE TO AI PHONE CALLS",
     excerpt:
       "Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.",
-    image: "/What Is an AI Voice Agent_ How It Works for Business.png",
+    image: "/How Voice AI Works_ A Beginner's Guide to AI Calls.png",
     category: "AI Technology",
     publishedAt: "2026-11-13",
     lastModified: "2026-11-17",
@@ -28,7 +28,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "AI VOICE AGENT VS IVR: WHICH IS BETTER FOR BUSINESS?",
     excerpt:
       "Businesses use phone automation to handle customer enquiries, reduce repetitive calls and improve customer service. Compare traditional IVR systems and AI voice agents on features, costs, resolution rates, and customer experience.",
-    image: "/AI Voice Agent vs IVR_ Which Is Better for Business_ (1).png",
+    image: "/AI Voice Agent vs IVR_ Which Is Better for Business.png",
     category: "AI Technology",
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",
@@ -54,6 +54,17 @@ export const REAL_BLOGS: BlogPost[] = [
     category: "AI Technology",
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",
+  },
+  {
+    id: 5,
+    slug: "ai-voice-calling-for-msmes",
+    title: "HOW MSMES CAN USE AI VOICE CALLING TO MANAGE CUSTOMER OUTREACH",
+    excerpt:
+      "AI voice calling helps MSMEs automate outreach, qualify leads, send reminders, and manage follow-ups.",
+    image: "/How MSMEs Can Use AI Voice Calling to Manage Customer Outreach.png",
+    category: "Sales & Lead Generation",
+    publishedAt: "2026-11-18",
+    lastModified: "2026-11-18",
   },
 ];
 

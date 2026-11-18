@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     authors: ["Karanvir Singh"],
     images: [
       {
-        url: "https://www.callience.in/What%20Is%20an%20AI%20Voice%20Agent_%20How%20It%20Works%20for%20Business.png",
+        url: "https://www.callience.in/How%20Voice%20AI%20Works_%20A%20Beginner%27s%20Guide%20to%20AI%20Calls.png",
         width: 1440,
         height: 515,
         alt: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
     description:
       "Voice AI allows businesses to communicate with customers through automated phone conversations.",
-    images: ["https://www.callience.in/What%20Is%20an%20AI%20Voice%20Agent_%20How%20It%20Works%20for%20Business.png"],
+    images: ["https://www.callience.in/How%20Voice%20AI%20Works_%20A%20Beginner%27s%20Guide%20to%20AI%20Calls.png"],
   },
 };
 
@@ -65,7 +65,7 @@ export default function BlogLayout({
     headline: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
     description:
       "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
-    image: "https://www.callience.in/What%20Is%20an%20AI%20Voice%20Agent_%20How%20It%20Works%20for%20Business.png",
+    image: "https://www.callience.in/How%20Voice%20AI%20Works_%20A%20Beginner%27s%20Guide%20to%20AI%20Calls.png",
     datePublished: "2026-11-13T00:00:00.000Z",
     dateModified: "2026-11-17T00:00:00.000Z",
     wordCount: 1650,

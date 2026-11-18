@@ -258,7 +258,7 @@ export default function AIVoiceAgentVsIVRPage() {
         <div className="w-full bg-white mb-8 md:mb-16 overflow-hidden">
           <div className="relative w-full aspect-[1440/515] min-h-[160px]">
             <Image
-              src="/AI Voice Agent vs IVR_ Which Is Better for Business_ (1).png"
+              src="/AI Voice Agent vs IVR_ Which Is Better for Business.png"
               alt="AI Voice Agent vs IVR: Which Is Better for Business?"
               fill
               sizes="100vw"
@@ -425,9 +425,6 @@ export default function AIVoiceAgentVsIVRPage() {
                 </p>
                 <p>
                   Choosing between an AI voice agent vs IVR depends on your business requirements, call volume, customer expectations and automation budget. Traditional IVR works well for structured menus and simple requests, while AI voice agents can manage more flexible, conversational interactions.
-                </p>
-                <p>
-                  This guide compares their features, costs, benefits and limitations to help businesses decide which solution is more suitable.
                 </p>
               </div>
 
