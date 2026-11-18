@@ -33,7 +33,7 @@ export default function BlogsPage() {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
+    <div className="min-h-screen bg-primary-beige flex flex-col font-sans text-primary-black">
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-36 pb-16 md:pb-20">
@@ -42,13 +42,13 @@ export default function BlogsPage() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 pb-6 md:pb-8 pt-2 md:pt-4">
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-10 lg:gap-12">
               <h1
-                className="text-[72px] sm:text-7xl md:text-8xl lg:text-[128px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-none shrink-0"
+                className="text-[72px] sm:text-7xl md:text-8xl lg:text-[128px] font-normal uppercase tracking-normal text-primary-black leading-none shrink-0"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 BLOGS
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[440px]"
+                className="font-medium text-primary-black text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[440px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 Explore the latest trends, insights, and innovations shaping the
@@ -59,11 +59,11 @@ export default function BlogsPage() {
             {/* Search Pill */}
             <div className="relative w-full md:w-72 shrink-0">
               <div
-                className="flex items-center gap-2.5 bg-[#F6F6F6] border border-[#E5E5E5] rounded-full px-4 py-2.5 text-xs sm:text-[13px] text-[#808285]"
+                className="flex items-center gap-2.5 bg-white border border-card-border rounded-full px-4 py-2.5 text-xs sm:text-[13px] text-light-grey shadow-xs"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 <svg
-                  className="w-4 h-4 text-[#808285] shrink-0"
+                  className="w-4 h-4 text-light-grey shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export default function BlogsPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Tell Us What You Are Looking For"
                   aria-label="Search blog articles"
-                  className="bg-transparent border-none outline-none text-xs sm:text-[13px] text-[#1E1E1E] placeholder-[#808285] w-full"
+                  className="bg-transparent border-none outline-none text-xs sm:text-[13px] text-primary-black placeholder:text-light-grey w-full"
                 />
               </div>
             </div>
@@ -103,14 +103,14 @@ export default function BlogsPage() {
                 >
                   <span
                     className={`text-[13px] sm:text-sm md:text-base transition-colors whitespace-nowrap ${isActive
-                      ? "font-bold text-[#1E1E1E]"
-                      : "text-[#535353] hover:text-[#1E1E1E]"
+                      ? "font-bold text-primary-black"
+                      : "text-dark-grey hover:text-primary-black"
                       }`}
                   >
                     {cat}
                   </span>
                   <span
-                    className={`w-1.5 h-1.5 rounded-full ${isActive ? "bg-[#1E1E1E]" : "bg-transparent"
+                    className={`w-1.5 h-1.5 rounded-full ${isActive ? "bg-primary-black" : "bg-transparent"
                       }`}
                   />
                 </button>
@@ -125,7 +125,7 @@ export default function BlogsPage() {
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-white border border-[#E5E5E5] relative shadow-xs group w-full"
+                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-white border border-card-border relative shadow-xs group w-full"
                     style={{ aspectRatio: "623.45 / 373.65" }}
                   >
                     <Image
@@ -140,7 +140,7 @@ export default function BlogsPage() {
 
                   <div className="pt-4 sm:pt-5 md:pt-6">
                     <h2
-                      className="text-[26px] sm:text-3xl md:text-[34px] lg:text-[40px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-[1.05] mb-2 sm:mb-3 md:mb-3.5"
+                      className="text-[26px] sm:text-3xl md:text-[34px] lg:text-[40px] font-normal uppercase tracking-normal text-primary-black leading-[1.05] mb-2 sm:mb-3 md:mb-3.5"
                       style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                     >
                       <Link
@@ -151,7 +151,7 @@ export default function BlogsPage() {
                       </Link>
                     </h2>
                     <p
-                      className="text-[13px] sm:text-sm md:text-base text-[#535353] leading-[1.5]"
+                      className="text-[13px] sm:text-sm md:text-base text-dark-grey leading-[1.5]"
                       style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                     >
                       {post.excerpt}
@@ -161,7 +161,7 @@ export default function BlogsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 text-[#808285] text-sm">
+            <div className="text-center py-20 text-light-grey text-sm">
               No articles found matching &quot;{searchQuery || selectedCategory}&quot;.
             </div>
           )}

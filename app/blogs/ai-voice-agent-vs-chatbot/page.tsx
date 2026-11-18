@@ -142,7 +142,7 @@ export default function AIVoiceAgentVsChatbotPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
+    <div className="min-h-screen bg-primary-beige flex flex-col font-sans text-primary-black">
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-36">
@@ -152,7 +152,7 @@ export default function AIVoiceAgentVsChatbotPage() {
           <div className="mb-3 sm:mb-3.5 sm:mb-4">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-[#1E1E1E] hover:text-black transition-colors group"
+              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-primary-black hover:text-black transition-colors group"
               style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
             >
               <svg
@@ -181,14 +181,14 @@ export default function AIVoiceAgentVsChatbotPage() {
             {/* Left Block: Title & Subtitle */}
             <div className="flex-1 max-w-[802px]">
               <h1
-                className="font-normal uppercase text-[#0D0D0D] text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
+                className="font-normal uppercase text-primary-black text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 AI VOICE AGENT VS CHATBOT:
                 <br className="hidden sm:inline" /> A BUSINESS USE-CASE GUIDE
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
+                className="font-medium text-primary-black text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 Businesses use AI-powered communication tools to answer customer questions, manage enquiries and provide support.
@@ -196,10 +196,10 @@ export default function AIVoiceAgentVsChatbotPage() {
             </div>
 
             {/* Right Block: Metadata Sidebar */}
-            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-[#1E1E1E] pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
+            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-primary-black pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
               <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-0">
                 <div
-                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-[#1E1E1E]"
+                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-primary-black"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
@@ -223,7 +223,7 @@ export default function AIVoiceAgentVsChatbotPage() {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
+                    className="inline-flex items-center gap-2 bg-primary-black text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <span>Contact Us</span>
@@ -282,7 +282,7 @@ export default function AIVoiceAgentVsChatbotPage() {
                   onClick={() => setTocOpen(!tocOpen)}
                   aria-expanded={tocOpen}
                   aria-label="Toggle table of contents"
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] cursor-pointer"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black cursor-pointer"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -319,8 +319,8 @@ export default function AIVoiceAgentVsChatbotPage() {
                         }}
                         className={`block w-full text-left py-0.5 text-[14px] transition-colors leading-snug ${
                           activeSection === item.id
-                            ? "font-bold text-[#1E1E1E]"
-                            : "text-[#535353] hover:text-[#1E1E1E]"
+                            ? "font-bold text-primary-black"
+                            : "text-dark-grey hover:text-primary-black"
                         }`}
                       >
                         {item.label}
@@ -355,7 +355,7 @@ export default function AIVoiceAgentVsChatbotPage() {
                 <button
                   type="button"
                   onClick={() => setTocOpen(!tocOpen)}
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] hover:opacity-80 transition-opacity cursor-pointer mb-4"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black hover:opacity-80 transition-opacity cursor-pointer mb-4"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -392,15 +392,15 @@ export default function AIVoiceAgentVsChatbotPage() {
                           onClick={() => scrollTo(item.id)}
                           className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${
                             isActive
-                              ? "font-bold text-[#1E1E1E]"
-                              : "text-[#535353] hover:text-[#1E1E1E]"
+                              ? "font-bold text-primary-black"
+                              : "text-dark-grey hover:text-primary-black"
                           }`}
                         >
                           <span
                             className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${
                               isActive
-                                ? "bg-[#1E1E1E]"
-                                : "bg-transparent group-hover:bg-[#E5E5E5]"
+                                ? "bg-primary-black"
+                                : "bg-transparent group-hover:bg-card-border"
                             }`}
                           />
                           <span className="leading-snug text-[13.5px] xl:text-[14px]">{item.label}</span>
@@ -415,7 +415,7 @@ export default function AIVoiceAgentVsChatbotPage() {
             {/* Right Column: Article Content */}
             <article
               ref={articleRef}
-              className="lg:col-span-9 max-w-[820px] font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.6]"
+              className="lg:col-span-9 max-w-[820px] font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.6]"
               style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
             >
               {/* Introduction Paragraphs */}
@@ -434,7 +434,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 1: WHAT IS AN AI VOICE AGENT */}
               <section id="what-is-voice-agent" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS AN AI VOICE AGENT?
@@ -458,7 +458,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 2: WHAT IS AN AI CHATBOT */}
               <section id="what-is-chatbot" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS AN AI CHATBOT?
@@ -482,7 +482,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 3: KEY DIFFERENCES TABLE */}
               <section id="key-differences" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENTS VS CHATBOTS: KEY DIFFERENCES
@@ -491,13 +491,13 @@ export default function AIVoiceAgentVsChatbotPage() {
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full text-left text-sm sm:text-base border-collapse">
                     <thead>
-                      <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                      <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                         <th className="py-3.5 pr-4 pl-0 w-1/4 align-top">Comparison Factor</th>
                         <th className="py-3.5 px-4 w-3/8 align-top">AI Voice Agent</th>
                         <th className="py-3.5 pl-4 pr-0 w-3/8 align-top">AI Chatbot</th>
                       </tr>
                     </thead>
-                    <tbody className="font-medium text-[#1E1E1E]">
+                    <tbody className="font-medium text-primary-black">
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Communication</td>
                         <td className="py-3.5 px-4 align-top">Spoken conversations</td>
@@ -550,7 +550,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 4: WHICH IS BETTER */}
               <section id="which-is-better" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT VS CHATBOT FOR BUSINESS: WHICH IS BETTER?
@@ -561,8 +561,8 @@ export default function AIVoiceAgentVsChatbotPage() {
                   </p>
 
                   <div className="pt-2">
-                    <p className="font-bold text-[#1E1E1E] mb-2">An AI voice agent may be better when:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">An AI voice agent may be better when:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Businesses need to make outbound calls for lead qualification and follow-ups.</li>
                       <li>Customers prefer speaking instead of typing.</li>
                       <li>Conversations require several questions and spoken responses.</li>
@@ -572,8 +572,8 @@ export default function AIVoiceAgentVsChatbotPage() {
                   </div>
 
                   <div className="pt-4">
-                    <p className="font-bold text-[#1E1E1E] mb-2">An AI chatbot may be better when:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">An AI chatbot may be better when:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Customers visit a website and need quick answers.</li>
                       <li>Businesses receive repetitive text-based enquiries.</li>
                       <li>Customers prefer messaging rather than phone calls.</li>
@@ -591,7 +591,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 5: UNDERSTANDING DIFFERENT TECHNOLOGIES */}
               <section id="understanding-technologies" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   VOICE AI VS CHATBOT: UNDERSTANDING THE DIFFERENT TECHNOLOGIES
@@ -600,7 +600,7 @@ export default function AIVoiceAgentVsChatbotPage() {
                   <p>
                     The terms AI voice agent, voicebot, chatbot and voice assistant are sometimes used interchangeably, but they do not always describe the same experience.
                   </p>
-                  <ul className="space-y-2.5 pl-5 list-disc text-[#1E1E1E]">
+                  <ul className="space-y-2.5 pl-5 list-disc text-primary-black">
                     <li>
                       <strong>Voice AI:</strong> Technology that enables computers to understand and generate spoken communication.
                     </li>
@@ -629,7 +629,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 6: CUSTOMER EXPERIENCE */}
               <section id="customer-experience" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT VS TEXT CHATBOT: WHICH OFFERS A BETTER CUSTOMER EXPERIENCE?
@@ -653,7 +653,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 7: COST CONSIDERATIONS */}
               <section id="cost-considerations" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT VS CHATBOT COST: WHAT SHOULD BUSINESSES CONSIDER?
@@ -664,8 +664,8 @@ export default function AIVoiceAgentVsChatbotPage() {
                   </p>
 
                   <div className="pt-2">
-                    <p className="font-bold text-[#1E1E1E] mb-2">AI voice agent costs may include:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">AI voice agent costs may include:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Phone numbers and telephony charges.</li>
                       <li>Speech recognition and voice generation.</li>
                       <li>AI model usage and call duration.</li>
@@ -675,8 +675,8 @@ export default function AIVoiceAgentVsChatbotPage() {
                   </div>
 
                   <div className="pt-4">
-                    <p className="font-bold text-[#1E1E1E] mb-2">AI chatbot costs may include:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">AI chatbot costs may include:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Chatbot platform or software subscription.</li>
                       <li>AI model usage and message volume.</li>
                       <li>Website or messaging platform integrations.</li>
@@ -697,7 +697,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 8: INTEGRATION / CAN BUSINESSES USE BOTH */}
               <section id="integration" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT AND CHATBOT INTEGRATION: CAN BUSINESSES USE BOTH?
@@ -706,9 +706,9 @@ export default function AIVoiceAgentVsChatbotPage() {
                   <p>
                     Yes. Businesses can combine an AI voice agent and chatbot to communicate with customers across different channels.
                   </p>
-                  <p className="font-semibold text-[#1E1E1E]">For example:</p>
+                  <p className="font-semibold text-primary-black">For example:</p>
 
-                  <ol className="space-y-2.5 pl-6 list-decimal text-[#1E1E1E]">
+                  <ol className="space-y-2.5 pl-6 list-decimal text-primary-black">
                     <li>A visitor asks questions through the company&apos;s website chatbot.</li>
                     <li>The chatbot collects the customer&apos;s name, contact details and requirements.</li>
                     <li>The business identifies that the customer needs a detailed conversation.</li>
@@ -728,7 +728,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 9: WHEN TO USE TABLE */}
               <section id="when-to-use" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHEN TO USE VOICE AI VS CHATBOT?
@@ -737,12 +737,12 @@ export default function AIVoiceAgentVsChatbotPage() {
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full text-left text-sm sm:text-base border-collapse">
                     <thead>
-                      <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                      <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                         <th className="py-3.5 pr-4 pl-0 w-1/2 align-top">Business Requirement</th>
                         <th className="py-3.5 pl-4 pr-0 w-1/2 align-top">Recommended Solution</th>
                       </tr>
                     </thead>
-                    <tbody className="font-medium text-[#1E1E1E]">
+                    <tbody className="font-medium text-primary-black">
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Website FAQs</td>
                         <td className="py-3.5 pl-4 pr-0 align-top">AI Chatbot</td>
@@ -783,7 +783,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 10: CONCLUSION */}
               <section id="conclusion" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   CONCLUSION
@@ -804,7 +804,7 @@ export default function AIVoiceAgentVsChatbotPage() {
               {/* SECTION 11: FAQS */}
               <section id="faqs" className="scroll-mt-32 mb-16">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   FREQUENTLY ASKED QUESTIONS
@@ -813,7 +813,7 @@ export default function AIVoiceAgentVsChatbotPage() {
                   {FAQS.map((faq, idx) => (
                     <div
                       key={faq.q}
-                      className="bg-white rounded-xl border border-[#E5E5E5] overflow-hidden transition-all"
+                      className="bg-white rounded-xl border border-card-border overflow-hidden transition-all"
                     >
                       <button
                         type="button"
@@ -822,17 +822,17 @@ export default function AIVoiceAgentVsChatbotPage() {
                         }
                         aria-expanded={openFaq === idx}
                         aria-controls={`faq-answer-${idx}`}
-                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-[#1E1E1E] flex items-center justify-between gap-4 cursor-pointer"
+                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-primary-black flex items-center justify-between gap-4 cursor-pointer"
                       >
                         <span>{faq.q}</span>
-                        <span className="text-sm font-mono text-[#808285]">
+                        <span className="text-sm font-mono text-light-grey">
                           {openFaq === idx ? "—" : "+"}
                         </span>
                       </button>
                       {openFaq === idx && (
                         <div
                           id={`faq-answer-${idx}`}
-                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-[#535353] leading-relaxed border-t border-[#FAF9F5]"
+                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-dark-grey leading-relaxed border-t border-primary-beige"
                         >
                           {faq.a}
                         </div>

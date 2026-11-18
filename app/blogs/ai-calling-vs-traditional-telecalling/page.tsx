@@ -148,7 +148,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
+    <div className="min-h-screen bg-primary-beige flex flex-col font-sans text-primary-black">
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-36">
@@ -158,7 +158,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
           <div className="mb-3.5 sm:mb-4">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-[#1E1E1E] hover:text-black transition-colors group"
+              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-primary-black hover:text-black transition-colors group"
               style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
             >
               <svg
@@ -187,14 +187,14 @@ export default function AICallingVsTraditionalTelecallingPage() {
             {/* Left Block: Title & Subtitle */}
             <div className="flex-1 max-w-[802px]">
               <h1
-                className="font-normal uppercase text-[#0D0D0D] text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
+                className="font-normal uppercase text-primary-black text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 AI CALLING VS TRADITIONAL
                 <br className="hidden sm:inline" /> TELECALLING: COST, SCALE & TRUST
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[580px]"
+                className="font-medium text-primary-black text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[580px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 AI calling vs traditional telecalling is an important comparison for businesses seeking efficient communication, differing in cost, scalability and customer experience.
@@ -202,10 +202,10 @@ export default function AICallingVsTraditionalTelecallingPage() {
             </div>
 
             {/* Right Block: Metadata Sidebar */}
-            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-[#1E1E1E] pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
+            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-primary-black pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
               <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start">
                 <div
-                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-[#1E1E1E]"
+                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-primary-black"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
@@ -229,7 +229,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
+                    className="inline-flex items-center gap-2 bg-primary-black text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <span>Contact Us</span>
@@ -258,7 +258,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
         </div>
 
         {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
-        <div className="w-full bg-[#FFFDFB] mb-8 md:mb-16 overflow-hidden min-h-[160px]">
+        <div className="w-full bg-white mb-8 md:mb-16 overflow-hidden min-h-[160px]">
           <div className="relative w-full aspect-[1440/515]">
             <Image
               src="/ai-calling-vs-traditional-telecalling.png"
@@ -288,7 +288,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   onClick={() => setTocOpen(!tocOpen)}
                   aria-expanded={tocOpen}
                   aria-label="Toggle table of contents"
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] cursor-pointer"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black cursor-pointer"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -325,8 +325,8 @@ export default function AICallingVsTraditionalTelecallingPage() {
                         }}
                         className={`block w-full text-left py-1 text-[15px] transition-colors ${
                           activeSection === item.id
-                            ? "font-bold text-[#1E1E1E]"
-                            : "text-[#535353] hover:text-[#1E1E1E]"
+                            ? "font-bold text-primary-black"
+                            : "text-dark-grey hover:text-primary-black"
                         }`}
                       >
                         {item.label}
@@ -361,7 +361,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                 <button
                   type="button"
                   onClick={() => setTocOpen(!tocOpen)}
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] hover:opacity-80 transition-opacity cursor-pointer mb-5"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black hover:opacity-80 transition-opacity cursor-pointer mb-5"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -399,15 +399,15 @@ export default function AICallingVsTraditionalTelecallingPage() {
                           onClick={() => scrollTo(item.id)}
                           className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${
                             isActive
-                              ? "font-bold text-[#1E1E1E]"
-                              : "text-[#535353] hover:text-[#1E1E1E]"
+                              ? "font-bold text-primary-black"
+                              : "text-dark-grey hover:text-primary-black"
                           }`}
                         >
                           <span
                             className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${
                               isActive
-                                ? "bg-[#1E1E1E]"
-                                : "bg-transparent group-hover:bg-[#E5E5E5]"
+                                ? "bg-primary-black"
+                                : "bg-transparent group-hover:bg-card-border"
                             }`}
                           />
                           <span className="leading-snug text-[13.5px] xl:text-[14px]">
@@ -426,13 +426,13 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* Introduction Text */}
               <div className="space-y-4 mb-14">
                 <p
-                  className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                  className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   Traditional telecalling relies on human agents to handle conversations, while AI calling uses automated voice agents to communicate with customers. AI agents can understand spoken responses, answer common questions and perform repetitive calling tasks using configured business information.
                 </p>
                 <p
-                  className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                  className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   Let&apos;s compare AI calling and traditional telecalling based on cost, scalability, customer trust and practical business applications to understand which approach works best for growing businesses.
@@ -442,26 +442,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 1: WHAT IS AI CALLING? */}
               <section id="what-is-ai-calling" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS AI CALLING?
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling uses artificial intelligence to make or receive phone calls and communicate with customers through automated voice conversations. AI voice agents can listen to customer responses, understand basic requirements and provide relevant answers.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Businesses commonly use AI calling for:
                   </p>
                   <ul
-                    className="list-disc pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-disc pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>
@@ -481,7 +481,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     </li>
                   </ul>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, an education consultancy can use an AI telecaller for lead generation to contact students, understand their course preferences and schedule counselling sessions.
@@ -492,26 +492,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 2: WHAT IS TRADITIONAL TELECALLING? */}
               <section id="what-is-traditional-telecalling" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS TRADITIONAL TELECALLING?
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Traditional telecalling involves human agents making or receiving phone calls to communicate with customers. Telecallers handle enquiries, explain products, follow up with leads and provide customer support.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, a real estate company may hire telecallers to contact potential buyers, discuss property requirements and arrange site visits.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Human telecallers can adapt conversations, understand emotional situations and handle complex questions. However, businesses must manage recruitment, training, salaries and employee availability.
@@ -522,14 +522,14 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 3: KEY DIFFERENCES */}
               <section id="key-differences" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI CALLING VS TRADITIONAL TELECALLING: KEY DIFFERENCES
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     The main difference between AI calling and manual calling is how customer conversations are handled. AI calling uses automated systems, while traditional telecalling depends on human employees.
@@ -539,44 +539,44 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   <div className="overflow-x-auto my-6">
                     <table className="w-full text-left text-sm sm:text-base border-collapse">
                       <thead>
-                        <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                           <th className="py-3.5 pr-4 pl-0 w-1/4 align-top">Feature</th>
                           <th className="py-3.5 px-4 w-3/8 align-top">AI Calling</th>
                           <th className="py-3.5 pl-4 pr-0 w-3/8 align-top">Traditional Telecalling</th>
                         </tr>
                       </thead>
-                      <tbody className="font-medium text-[#1E1E1E]">
-                        <tr className="border-b border-[#F0F0F0]">
+                      <tbody className="font-medium text-primary-black">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Communication</td>
                           <td className="py-3.5 px-4 align-top">AI-generated voice conversations</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Human conversations</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Availability</td>
                           <td className="py-3.5 px-4 align-top">Can operate 24/7</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on working shifts</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Calling Capacity</td>
                           <td className="py-3.5 px-4 align-top">Multiple simultaneous calls</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Limited by available agents</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Cost Structure</td>
                           <td className="py-3.5 px-4 align-top">Usage-based or subscription-based</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Salaries and operational expenses</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Scalability</td>
                           <td className="py-3.5 px-4 align-top">Can expand through system capacity</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Usually requires more employees</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Consistency</td>
                           <td className="py-3.5 px-4 align-top">Follows configured instructions</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on individual agents</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Customer Trust</td>
                           <td className="py-3.5 px-4 align-top">Depends on transparency and call quality</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Supports direct human interaction</td>
@@ -591,7 +591,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   </div>
 
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Both approaches have advantages. The right choice depends on calling volume, customer requirements, available budget and the complexity of conversations.
@@ -602,33 +602,33 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 4: COST COMPARISON */}
               <section id="cost-comparison" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI CALLING COST VS TELECALLER COST IN INDIA
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Cost is a major factor when businesses compare AI calling with traditional telecalling. Both approaches involve different types of expenses.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     1. Traditional Telecalling Costs
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     The telecaller cost in India depends on employee experience, location, industry and company requirements. Businesses generally need to consider:
                   </p>
                   <ul
-                    className="list-disc pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-disc pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>
@@ -645,26 +645,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     </li>
                   </ul>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     As calling requirements increase, businesses may need to hire additional employees, which increases recurring expenses.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-4"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-4"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     2. AI Calling Costs
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling platforms commonly follow usage-based, subscription-based or customized pricing models. Expenses may include:
                   </p>
                   <ul
-                    className="list-disc pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-disc pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>
@@ -681,7 +681,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     </li>
                   </ul>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, an MSME managing hundreds of routine follow-up calls may find AI calling more cost-efficient than expanding its telecalling team. However, actual savings depend on usage, pricing and implementation requirements.
@@ -692,38 +692,38 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 5: SCALABILITY */}
               <section id="scalability" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   SCALABILITY: AI CALLING VS HUMAN TELECALLERS
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Scalability refers to how easily a business can increase its calling capacity when customer demand grows.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Traditional telecalling usually requires additional employees to handle more conversations. Hiring, training and managing larger teams can take time and increase operational costs.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling systems can manage multiple simultaneous conversations, depending on platform capacity, telephony infrastructure and configured concurrency limits.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, a startup launching a new service may receive hundreds of enquiries in one day. An AI calling agent can contact interested customers, ask qualifying questions and identify leads that require human assistance.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     This makes automated calling useful for businesses with changing call volumes, seasonal campaigns or growing customer databases.
@@ -734,52 +734,52 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 6: CUSTOMER TRUST */}
               <section id="customer-trust" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   CUSTOMER TRUST: AI CALLING AGENT VS HUMAN TELECALLER
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Customer trust plays an important role in successful business communication. Both AI agents and human telecallers can provide useful customer experiences, but they have different strengths.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     1. Trust in Human Telecalling
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Human telecallers can recognise emotional concerns, adjust their communication style and handle sensitive discussions. Customers may prefer human assistance when making important decisions or resolving complicated problems.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-4"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-4"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     2. Trust in AI Calling
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI voice agents can provide consistent information, respond to common questions and maintain structured conversations. However, customer confidence depends on response accuracy, transparency and the ability to reach human support when needed.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, an AI agent can remind a customer about an upcoming payment. If the customer raises a billing dispute, transferring the conversation to a human representative may be more appropriate.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Businesses should also disclose AI involvement where required, respect customer calling preferences and protect personal information.
@@ -790,32 +790,32 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 7: PRODUCTIVITY AND EFFICIENCY */}
               <section id="productivity-efficiency" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI CALLING VS MANUAL CALLING: PRODUCTIVITY AND EFFICIENCY
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Manual telecalling often involves repetitive activities such as introducing services, confirming customer details and making follow-up calls. These tasks can consume significant employee time.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling can automate structured conversations and help employees focus on activities that require personal attention.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, an educational institute can use AI calling to:
                   </p>
                   <ul
-                    className="list-disc pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-disc pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>Contact students who submit admission enquiries.</li>
@@ -825,7 +825,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     <li>Identify students requiring human assistance.</li>
                   </ul>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Human counsellors can then focus on detailed guidance and admission-related discussions instead of handling every initial enquiry manually.
@@ -836,79 +836,79 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 8: PRACTICAL BUSINESS APPLICATIONS */}
               <section id="practical-applications" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   PRACTICAL BUSINESS APPLICATIONS OF AI CALLING
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling can support repetitive communication across different industries and business sizes.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     1. Lead Qualification
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     An AI telecaller for lead generation can contact potential customers, ask relevant questions and identify interested prospects. Real estate companies, education consultancies and service providers can use this approach to organise leads.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     2. Customer Follow-Ups
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Businesses can use AI agents to contact customers who previously requested information or showed interest in a product. This helps maintain consistent follow-up communication.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     3. Appointment Reminders
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Clinics, salons and consulting businesses can automate appointment reminder calls. AI agents can share appointment details and collect confirmation responses where supported.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     4. Payment Reminders
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling can remind customers about upcoming payment deadlines, subscription renewals and pending invoices. Complex payment disputes should be handled by authorised human representatives.
                   </p>
 
                   <h3
-                    className="font-normal uppercase text-[#1E1E1E] text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
+                    className="font-normal uppercase text-primary-black text-[22px] sm:text-[26px] leading-[1.2] tracking-normal pt-2"
                     style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                   >
                     5. Customer Re-Engagement
                   </h3>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Businesses can reconnect with inactive customers or previous leads through automated calling campaigns. For example, a fitness centre may contact former members about available membership programmes.
@@ -919,26 +919,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 9: WHAT IS AI HUMAN HYBRID CALLING? */}
               <section id="hybrid-calling" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS AI HUMAN HYBRID CALLING?
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI human hybrid calling combines automated voice agents with human telecallers. Instead of replacing the entire calling team, businesses use AI for repetitive conversations and human agents for complex customer requirements.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     A typical hybrid calling process includes:
                   </p>
                   <ol
-                    className="list-decimal pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-decimal pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>
@@ -958,13 +958,13 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     </li>
                   </ol>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For example, a real estate business can use AI calling to identify interested property buyers while sales executives manage negotiations and site visits.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     This approach helps businesses combine automation efficiency with meaningful human interaction.
@@ -975,14 +975,14 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 10: BENEFITS AND LIMITATIONS */}
               <section id="benefits-and-limitations" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   BENEFITS AND LIMITATIONS OF AI CALLING
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling offers several practical advantages, but businesses should also understand its limitations before implementation.
@@ -992,29 +992,29 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   <div className="overflow-x-auto my-6">
                     <table className="w-full text-left text-sm sm:text-base border-collapse">
                       <thead>
-                        <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                           <th className="py-3.5 pr-4 pl-0 w-1/2 align-top">Benefits</th>
                           <th className="py-3.5 pl-4 pr-0 w-1/2 align-top">Practical Limitations</th>
                         </tr>
                       </thead>
-                      <tbody className="font-medium text-[#1E1E1E]">
-                        <tr className="border-b border-[#F0F0F0]">
+                      <tbody className="font-medium text-primary-black">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 align-top">Automates repetitive calling tasks</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">May struggle with complex questions</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 align-top">Supports multiple simultaneous calls</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on system capacity</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 align-top">Maintains consistent communication</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Requires accurate business information</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 align-top">Can operate outside normal office hours</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Must follow calling regulations</td>
                         </tr>
-                        <tr className="border-b border-[#F0F0F0]">
+                        <tr className="border-b border-card-border">
                           <td className="py-3.5 pr-4 pl-0 align-top">Provides campaign and call insights</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Needs proper setup and monitoring</td>
                         </tr>
@@ -1027,7 +1027,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   </div>
 
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling works best when businesses select suitable workflows, monitor conversation quality and provide human assistance when necessary.
@@ -1038,26 +1038,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 11: HOW CALLIENCE HELPS */}
               <section id="how-callience-helps" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   HOW CALLIENCE HELPS BUSINESSES WITH AI CALLING
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Callience provides customized AI voice agents designed to help businesses automate routine customer communication. Its solutions support activities such as lead qualification, outbound follow-ups, admissions outreach, payment reminders, appointment reminders and customer re-engagement.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Callience offers several business-focused capabilities:
                   </p>
                   <ul
-                    className="list-disc pl-5 space-y-2 text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] font-medium"
+                    className="list-disc pl-5 space-y-2 text-primary-black text-[16px] sm:text-[18px] leading-[1.4] font-medium"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <li>
@@ -1077,7 +1077,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     </li>
                   </ul>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     These capabilities can help MSMEs, startups and growing businesses manage customer communication while allowing human teams to focus on more complex conversations.
@@ -1088,26 +1088,26 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 12: CONCLUSION */}
               <section id="conclusion" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   CONCLUSION
                 </h2>
                 <div className="space-y-4">
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling vs traditional telecalling is not simply a comparison between automation and human employees. Both approaches offer advantages depending on business requirements, customer expectations and calling volume.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     AI calling can help businesses automate repetitive conversations, manage larger calling campaigns and maintain consistent communication. Traditional telecalling remains valuable for complex discussions, customer relationships and situations requiring human judgment.
                   </p>
                   <p
-                    className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For many businesses, AI human hybrid calling offers a practical balance between operational efficiency and personal customer interaction.
@@ -1118,7 +1118,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
               {/* SECTION 13: FAQS */}
               <section id="faqs" className="scroll-mt-32 mb-16">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   FREQUENTLY ASKED QUESTIONS
@@ -1127,7 +1127,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                   {FAQS.map((faq, idx) => (
                     <div
                       key={faq.q}
-                      className="bg-white rounded-xl border border-[#E5E5E5] overflow-hidden transition-all"
+                      className="bg-white rounded-xl border border-card-border overflow-hidden transition-all"
                     >
                       <button
                         type="button"
@@ -1136,17 +1136,17 @@ export default function AICallingVsTraditionalTelecallingPage() {
                         }
                         aria-expanded={openFaq === idx}
                         aria-controls={`faq-answer-${idx}`}
-                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-[#1E1E1E] flex items-center justify-between gap-4 cursor-pointer"
+                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-primary-black flex items-center justify-between gap-4 cursor-pointer"
                       >
                         <span>{faq.q}</span>
-                        <span className="text-sm font-mono text-[#808285]">
+                        <span className="text-sm font-mono text-light-grey">
                           {openFaq === idx ? "—" : "+"}
                         </span>
                       </button>
                       {openFaq === idx && (
                         <div
                           id={`faq-answer-${idx}`}
-                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-[#535353] leading-relaxed border-t border-[#FAF9F5]"
+                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-dark-grey leading-relaxed border-t border-primary-beige"
                         >
                           {faq.a}
                         </div>

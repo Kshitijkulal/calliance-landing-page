@@ -143,7 +143,7 @@ export default function AIVoiceAgentVsIVRPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
+    <div className="min-h-screen bg-primary-beige flex flex-col font-sans text-primary-black">
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-36">
@@ -153,7 +153,7 @@ export default function AIVoiceAgentVsIVRPage() {
           <div className="mb-3 sm:mb-3.5 sm:mb-4">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-[#1E1E1E] hover:text-black transition-colors group"
+              className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-primary-black hover:text-black transition-colors group"
               style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
             >
               <svg
@@ -182,14 +182,14 @@ export default function AIVoiceAgentVsIVRPage() {
             {/* Left Block: Title & Subtitle */}
             <div className="flex-1 max-w-[802px]">
               <h1
-                className="font-normal uppercase text-[#0D0D0D] text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
+                className="font-normal uppercase text-primary-black text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 AI VOICE AGENT VS IVR:
                 <br className="hidden sm:inline" /> WHICH IS BETTER FOR BUSINESS?
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
+                className="font-medium text-primary-black text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 Businesses use phone automation to handle customer enquiries, reduce repetitive calls and improve customer service.
@@ -197,11 +197,11 @@ export default function AIVoiceAgentVsIVRPage() {
             </div>
 
             {/* Right Block: Metadata Sidebar */}
-            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-[#1E1E1E] pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
+            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-primary-black pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
               <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-0">
                 {/* Text lines */}
                 <div
-                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-[#1E1E1E]"
+                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-primary-black"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
@@ -226,7 +226,7 @@ export default function AIVoiceAgentVsIVRPage() {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
+                    className="inline-flex items-center gap-2 bg-primary-black text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <span>Contact Us</span>
@@ -285,7 +285,7 @@ export default function AIVoiceAgentVsIVRPage() {
                   onClick={() => setTocOpen(!tocOpen)}
                   aria-expanded={tocOpen}
                   aria-label="Toggle table of contents"
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] cursor-pointer"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black cursor-pointer"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -321,8 +321,8 @@ export default function AIVoiceAgentVsIVRPage() {
                           setTocOpen(false);
                         }}
                         className={`block w-full text-left py-0.5 text-[14px] transition-colors leading-snug ${activeSection === item.id
-                          ? "font-bold text-[#1E1E1E]"
-                          : "text-[#535353] hover:text-[#1E1E1E]"
+                          ? "font-bold text-primary-black"
+                          : "text-dark-grey hover:text-primary-black"
                           }`}
                       >
                         {item.label}
@@ -357,7 +357,7 @@ export default function AIVoiceAgentVsIVRPage() {
                 <button
                   type="button"
                   onClick={() => setTocOpen(!tocOpen)}
-                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-[#1E1E1E] hover:opacity-80 transition-opacity cursor-pointer mb-4"
+                  className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black hover:opacity-80 transition-opacity cursor-pointer mb-4"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <span>Contents</span>
@@ -393,14 +393,14 @@ export default function AIVoiceAgentVsIVRPage() {
                           type="button"
                           onClick={() => scrollTo(item.id)}
                           className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${isActive
-                            ? "font-bold text-[#1E1E1E]"
-                            : "text-[#535353] hover:text-[#1E1E1E]"
+                            ? "font-bold text-primary-black"
+                            : "text-dark-grey hover:text-primary-black"
                             }`}
                         >
                           <span
                             className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${isActive
-                              ? "bg-[#1E1E1E]"
-                              : "bg-transparent group-hover:bg-[#E5E5E5]"
+                              ? "bg-primary-black"
+                              : "bg-transparent group-hover:bg-card-border"
                               }`}
                           />
                           <span className="leading-snug text-[13.5px] xl:text-[14px]">{item.label}</span>
@@ -415,7 +415,7 @@ export default function AIVoiceAgentVsIVRPage() {
             {/* Right Column: Article Content */}
             <article
               ref={articleRef}
-              className="lg:col-span-9 max-w-[820px] font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.6]"
+              className="lg:col-span-9 max-w-[820px] font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.6]"
               style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
             >
               {/* Introduction Paragraphs */}
@@ -434,7 +434,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 1: WHAT IS THE DIFFERENCE */}
               <section id="difference" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHAT IS THE DIFFERENCE BETWEEN AN AI VOICE AGENT AND IVR?
@@ -443,15 +443,15 @@ export default function AIVoiceAgentVsIVRPage() {
                   <p>
                     A traditional IVR system allows callers to navigate a phone menu using keypad inputs or, in some systems, basic voice commands.
                   </p>
-                  <p className="font-semibold text-[#1E1E1E]">For example:</p>
-                  <div className="bg-[#FAF9F5] border border-[#E5E5E5] rounded-xl p-4 my-2 text-sm sm:text-base font-mono text-[#1E1E1E]">
+                  <p className="font-semibold text-primary-black">For example:</p>
+                  <div className="bg-primary-beige border border-card-border rounded-xl p-4 my-2 text-sm sm:text-base font-mono text-primary-black">
                     &ldquo;Press 1 for Sales, press 2 for Support, or press 3 for Billing.&rdquo;
                   </div>
                   <p className="pt-2">
                     An AI voice agent uses artificial intelligence to understand spoken questions, interpret customer intent and generate relevant responses. Instead of following only fixed menu options, customers can explain what they need in their own words.
                   </p>
-                  <p className="font-semibold text-[#1E1E1E]">For example:</p>
-                  <div className="bg-[#FAF9F5] border border-[#E5E5E5] rounded-xl p-4 my-2 text-sm sm:text-base space-y-2">
+                  <p className="font-semibold text-primary-black">For example:</p>
+                  <div className="bg-primary-beige border border-card-border rounded-xl p-4 my-2 text-sm sm:text-base space-y-2">
                     <p>
                       <strong>Customer:</strong> &ldquo;I want to know the status of my payment.&rdquo;
                     </p>
@@ -468,7 +468,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 2: KEY DIFFERENCES TABLE */}
               <section id="key-differences" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT VS TRADITIONAL IVR: KEY DIFFERENCES
@@ -477,13 +477,13 @@ export default function AIVoiceAgentVsIVRPage() {
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full text-left text-sm sm:text-base border-collapse">
                     <thead>
-                      <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                      <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                         <th className="py-3.5 pr-4 pl-0 w-1/4 align-top">Comparison Factor</th>
                         <th className="py-3.5 px-4 w-3/8 align-top">Traditional IVR</th>
                         <th className="py-3.5 pl-4 pr-0 w-3/8 align-top">AI Voice Agent</th>
                       </tr>
                     </thead>
-                    <tbody className="font-medium text-[#1E1E1E]">
+                    <tbody className="font-medium text-primary-black">
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Interaction</td>
                         <td className="py-3.5 px-4 align-top">Menu-based navigation</td>
@@ -536,7 +536,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 3: HOW DO THEY HANDLE CONVERSATIONS */}
               <section id="customer-conversations" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICEBOT VS IVR: HOW DO THEY HANDLE CUSTOMER CONVERSATIONS?
@@ -560,7 +560,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 4: CUSTOMER EXPERIENCE */}
               <section id="customer-experience" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   VOICE AI VS IVR: WHICH OFFERS A BETTER CUSTOMER EXPERIENCE?
@@ -569,8 +569,8 @@ export default function AIVoiceAgentVsIVRPage() {
                   <p>The customer experience depends on the type of interaction.</p>
 
                   <div className="pt-2">
-                    <p className="font-bold text-[#1E1E1E] mb-2">Traditional IVR may be better when:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">Traditional IVR may be better when:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Customers need to select from a small number of clear options.</li>
                       <li>Calls involve simple and repetitive requests.</li>
                       <li>Businesses want predictable menu-based routing.</li>
@@ -579,8 +579,8 @@ export default function AIVoiceAgentVsIVRPage() {
                   </div>
 
                   <div className="pt-4">
-                    <p className="font-bold text-[#1E1E1E] mb-2">AI voice agents may be better when:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">AI voice agents may be better when:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Customers ask questions in their own words.</li>
                       <li>Enquiries require multiple conversational steps.</li>
                       <li>Customers need information from connected business systems.</li>
@@ -597,7 +597,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 5: HYBRID SYSTEMS */}
               <section id="hybrid-systems" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   CONVERSATIONAL AI VS IVR: CAN BUSINESSES USE BOTH?
@@ -624,7 +624,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 6: IVA VS IVR */}
               <section id="iva-vs-ivr" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   IVA VS IVR: ARE THEY THE SAME?
@@ -645,7 +645,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 7: COST COMPARISON */}
               <section id="cost-comparison" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT VS IVR COST: WHICH IS MORE AFFORDABLE?
@@ -656,8 +656,8 @@ export default function AIVoiceAgentVsIVRPage() {
                   </p>
 
                   <div className="pt-2">
-                    <p className="font-bold text-[#1E1E1E] mb-2">Traditional IVR costs may include:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">Traditional IVR costs may include:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Telephony and call charges.</li>
                       <li>IVR platform or software fees.</li>
                       <li>Initial setup and menu configuration.</li>
@@ -666,8 +666,8 @@ export default function AIVoiceAgentVsIVRPage() {
                   </div>
 
                   <div className="pt-4">
-                    <p className="font-bold text-[#1E1E1E] mb-2">AI voice agent costs may include:</p>
-                    <ul className="space-y-2 pl-5 list-disc text-[#1E1E1E]">
+                    <p className="font-bold text-primary-black mb-2">AI voice agent costs may include:</p>
+                    <ul className="space-y-2 pl-5 list-disc text-primary-black">
                       <li>Telephony charges.</li>
                       <li>Speech recognition and voice generation.</li>
                       <li>AI model usage.</li>
@@ -677,7 +677,7 @@ export default function AIVoiceAgentVsIVRPage() {
                   </div>
 
                   <div className="pt-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#1E1E1E] mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-primary-black mb-3">
                       IVR vs AI Voice Agent Cost Per Call
                     </h3>
                     <p className="mb-4">
@@ -699,7 +699,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 8: RESOLUTION RATE VS CONTAINMENT RATE */}
               <section id="resolution-vs-containment" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   AI VOICE AGENT RESOLUTION RATE VS IVR CALL CONTAINMENT RATE
@@ -708,7 +708,7 @@ export default function AIVoiceAgentVsIVRPage() {
                   <p>
                     Businesses should measure performance rather than compare systems only by their technology costs.
                   </p>
-                  <ul className="space-y-3 pl-5 list-disc text-[#1E1E1E]">
+                  <ul className="space-y-3 pl-5 list-disc text-primary-black">
                     <li>
                       <strong>AI Voice Agent Resolution Rate:</strong> Measures the percentage of eligible customer enquiries successfully resolved by the AI agent.
                     </li>
@@ -728,7 +728,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 9: WHEN TO USE TABLE */}
               <section id="when-to-use" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHEN TO USE AI VOICE AGENT VS IVR
@@ -740,12 +740,12 @@ export default function AIVoiceAgentVsIVRPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm sm:text-base border-collapse">
                     <thead>
-                      <tr className="border-b border-[#E5E5E5] text-xs sm:text-sm uppercase tracking-wider font-bold text-[#1E1E1E]">
+                      <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
                         <th className="py-3.5 pr-4 pl-0 w-1/2 align-top">Business Requirement</th>
                         <th className="py-3.5 pl-4 pr-0 w-1/2 align-top">Recommended Option</th>
                       </tr>
                     </thead>
-                    <tbody className="font-medium text-[#1E1E1E]">
+                    <tbody className="font-medium text-primary-black">
                       <tr>
                         <td className="py-3.5 pr-4 pl-0 font-bold align-top">Simple department selection</td>
                         <td className="py-3.5 pl-4 pr-0 align-top">Traditional IVR</td>
@@ -782,7 +782,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 10: WHEN SHOULD YOU REPLACE */}
               <section id="when-to-replace" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   WHEN SHOULD YOU REPLACE TRADITIONAL IVR?
@@ -800,7 +800,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 11: CONCLUSION */}
               <section id="conclusion" className="scroll-mt-32 mb-14">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   CONCLUSION
@@ -821,7 +821,7 @@ export default function AIVoiceAgentVsIVRPage() {
               {/* SECTION 12: FAQS */}
               <section id="faqs" className="scroll-mt-32 mb-16">
                 <h2
-                  className="font-normal uppercase text-[#1E1E1E] text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
+                  className="font-normal uppercase text-primary-black text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.1] tracking-normal mb-6"
                   style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                 >
                   FREQUENTLY ASKED QUESTIONS
@@ -830,7 +830,7 @@ export default function AIVoiceAgentVsIVRPage() {
                   {FAQS.map((faq, idx) => (
                     <div
                       key={faq.q}
-                      className="bg-white rounded-xl border border-[#E5E5E5] overflow-hidden transition-all"
+                      className="bg-white rounded-xl border border-card-border overflow-hidden transition-all"
                     >
                       <button
                         type="button"
@@ -839,17 +839,17 @@ export default function AIVoiceAgentVsIVRPage() {
                         }
                         aria-expanded={openFaq === idx}
                         aria-controls={`faq-answer-${idx}`}
-                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-[#1E1E1E] flex items-center justify-between gap-4 cursor-pointer"
+                        className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-primary-black flex items-center justify-between gap-4 cursor-pointer"
                       >
                         <span>{faq.q}</span>
-                        <span className="text-sm font-mono text-[#808285]">
+                        <span className="text-sm font-mono text-light-grey">
                           {openFaq === idx ? "—" : "+"}
                         </span>
                       </button>
                       {openFaq === idx && (
                         <div
                           id={`faq-answer-${idx}`}
-                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-[#535353] leading-relaxed border-t border-[#FAF9F5]"
+                          className="px-5 pb-5 pt-1 text-sm sm:text-base text-dark-grey leading-relaxed border-t border-primary-beige"
                         >
                           {faq.a}
                         </div>
