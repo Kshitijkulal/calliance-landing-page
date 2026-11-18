@@ -148,11 +148,11 @@ export default function VoiceAIBlogPage() {
     <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
       <Navbar />
 
-      <main className="flex-1 pt-28 md:pt-36">
+      <main className="flex-1 pt-24 md:pt-36">
         {/* Article Header Container (1270px x Hug) */}
-        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 md:pb-12">
+        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-6 md:pb-12">
           {/* Back link above the header row with exact ~15px gap to title */}
-          <div className="mb-3.5 sm:mb-4">
+          <div className="mb-3 sm:mb-3.5 sm:mb-4">
             <Link
               href="/blogs"
               className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-[#1E1E1E] hover:text-black transition-colors group"
@@ -179,46 +179,46 @@ export default function VoiceAIBlogPage() {
             </Link>
           </div>
 
-          {/* Header Row: Title on Left, Metadata Sidebar on Right (exact 182px gap, Title level-aligned with 21st October & Vertical Line) */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-[182px]">
+          {/* Header Row: Title on Left, Metadata Sidebar on Right */}
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-5 lg:gap-[182px]">
             {/* Left Block: Title & Subtitle */}
             <div className="flex-1 max-w-[802px]">
               <h1
-                className="font-normal uppercase text-[#0D0D0D] text-[38px] sm:text-[50px] lg:text-[64px] leading-[1.05] tracking-normal mb-3"
+                className="font-normal uppercase text-[#0D0D0D] text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.05] tracking-normal mb-2 sm:mb-3"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 HOW VOICE AI WORKS:
                 <br className="hidden sm:inline" /> A BEGINNER&apos;S GUIDE TO AI PHONE CALLS
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
+                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[640px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 Voice AI allows businesses to communicate with customers through automated phone conversations.
               </p>
             </div>
 
-            {/* Right Block: Metadata Sidebar (197 x 192 Hug, vertical line starts level with Title) */}
-            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-[#1E1E1E] pt-6 lg:pt-0 lg:pl-8">
-              <div className="w-full lg:w-[197px] flex flex-col items-start">
-                {/* Text lines with exact 24px gap */}
+            {/* Right Block: Metadata Sidebar */}
+            <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-[#1E1E1E] pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
+              <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-0">
+                {/* Text lines */}
                 <div
-                  className="flex flex-col gap-6 text-[#1E1E1E]"
+                  className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-[#1E1E1E]"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  <p className="font-medium text-base sm:text-[18px] leading-[1.4]">
+                  <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
                     13th November
                   </p>
-                  <p className="font-medium text-base sm:text-[18px] leading-[1.4]">
+                  <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
                     5 min read
                   </p>
-                  <p className="font-medium text-base sm:text-[18px] leading-[1.4]">
+                  <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
                     Karanvir Singh
                   </p>
                 </div>
 
-                {/* Contact Us button with exact 27px gap, hugging content (not w-full) */}
-                <div className="mt-[27px]">
+                {/* Contact Us button */}
+                <div className="lg:mt-[27px]">
                   <a
                     href="#contact"
                     onClick={(e) => {
@@ -228,7 +228,7 @@ export default function VoiceAIBlogPage() {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-[#1E1E1E] text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     <span>Contact Us</span>
@@ -257,8 +257,8 @@ export default function VoiceAIBlogPage() {
         </div>
 
         {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
-        <div className="w-full bg-white mb-12 md:mb-16 overflow-hidden">
-          <div className="relative w-full aspect-[1440/515]">
+        <div className="w-full bg-white mb-8 md:mb-16 overflow-hidden">
+          <div className="relative w-full aspect-[1440/515] min-h-[160px]">
             <Image
               src="/What Is an AI Voice Agent_ How It Works for Business.png"
               alt="How Voice AI Works: A Beginner's Guide to AI Calls"
@@ -273,16 +273,15 @@ export default function VoiceAIBlogPage() {
         </div>
 
         {/* Content Section with Sticky Sidebar */}
-        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14">
             {/* Left Column: Table of Contents */}
             <aside
               ref={asideRef}
-              className="lg:col-span-3 relative"
-              style={{ minHeight: "500px" }}
+              className="lg:col-span-3 relative lg:min-h-[500px]"
             >
               {/* Mobile TOC Accordion Header */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden">
                 <button
                   type="button"
                   onClick={() => setTocOpen(!tocOpen)}

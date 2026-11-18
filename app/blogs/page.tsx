@@ -36,19 +36,19 @@ export default function BlogsPage() {
     <div className="min-h-screen bg-white flex flex-col font-sans text-[#1E1E1E]">
       <Navbar />
 
-      <main className="flex-1 pt-28 md:pt-36 pb-20">
+      <main className="flex-1 pt-24 md:pt-36 pb-16 md:pb-20">
         <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Row */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 pt-4">
-            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 lg:gap-12">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 pb-6 md:pb-8 pt-2 md:pt-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-10 lg:gap-12">
               <h1
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-[128px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-none shrink-0"
+                className="text-[72px] sm:text-7xl md:text-8xl lg:text-[128px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-none shrink-0"
                 style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
               >
                 BLOGS
               </h1>
               <p
-                className="font-medium text-[#1E1E1E] text-[16px] sm:text-[18px] leading-[1.4] tracking-normal max-w-[440px]"
+                className="font-medium text-[#1E1E1E] text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[440px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
                 Explore the latest trends, insights, and innovations shaping the
@@ -89,7 +89,7 @@ export default function BlogsPage() {
 
           {/* Categories Nav */}
           <div
-            className="flex items-center gap-8 overflow-x-auto pb-4 pt-2 mb-10 scrollbar-none"
+            className="flex items-center gap-5 sm:gap-8 overflow-x-auto pb-3 pt-1 mb-7 md:mb-10 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0"
             style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
           >
             {CATEGORIES.map((cat) => {
@@ -102,7 +102,7 @@ export default function BlogsPage() {
                   className="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer"
                 >
                   <span
-                    className={`text-sm md:text-base transition-colors ${isActive
+                    className={`text-[13px] sm:text-sm md:text-base transition-colors whitespace-nowrap ${isActive
                       ? "font-bold text-[#1E1E1E]"
                       : "text-[#535353] hover:text-[#1E1E1E]"
                       }`}
@@ -120,7 +120,7 @@ export default function BlogsPage() {
 
           {/* Blog Cards Grid */}
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-x-10 lg:gap-y-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-x-10 lg:gap-y-14">
               {filteredPosts.map((post) => (
                 <article key={post.id} className="flex flex-col">
                   <Link
@@ -138,9 +138,9 @@ export default function BlogsPage() {
                     />
                   </Link>
 
-                  <div className="pt-5 sm:pt-6">
+                  <div className="pt-4 sm:pt-5 md:pt-6">
                     <h2
-                      className="text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-[1.05] mb-3 sm:mb-3.5"
+                      className="text-[26px] sm:text-3xl md:text-[34px] lg:text-[40px] font-normal uppercase tracking-normal text-[#1E1E1E] leading-[1.05] mb-2 sm:mb-3 md:mb-3.5"
                       style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
                     >
                       <Link
@@ -151,7 +151,7 @@ export default function BlogsPage() {
                       </Link>
                     </h2>
                     <p
-                      className="text-sm sm:text-base text-[#535353] leading-[1.4]"
+                      className="text-[13px] sm:text-sm md:text-base text-[#535353] leading-[1.5]"
                       style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                     >
                       {post.excerpt}
