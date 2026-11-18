@@ -255,10 +255,10 @@ export default function AIVoiceAgentVsIVRPage() {
         </div>
 
         {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
-        <div className="w-full bg-[#FAF9F5] mb-12 md:mb-16 overflow-hidden">
+        <div className="w-full bg-white mb-12 md:mb-16 overflow-hidden">
           <div className="relative w-full aspect-[1440/515]">
             <Image
-              src="/AI Voice Agent vs IVR Which Is Better for Business (1).png"
+              src="/AI Voice Agent vs IVR_ Which Is Better for Business_ (1).png"
               alt="AI Voice Agent vs IVR: Which Is Better for Business?"
               fill
               sizes="100vw"

@@ -125,7 +125,7 @@ export default function BlogsPage() {
                 <article key={post.id} className="flex flex-col">
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-[#FAF9F5] border border-[#E5E5E5] relative shadow-xs group w-full"
+                    className="block overflow-hidden rounded-2xl md:rounded-[28px] bg-white border border-[#E5E5E5] relative shadow-xs group w-full"
                     style={{ aspectRatio: "623.45 / 373.65" }}
                   >
                     <Image

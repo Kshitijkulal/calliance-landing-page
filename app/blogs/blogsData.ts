@@ -17,7 +17,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "HOW VOICE AI WORKS: A BEGINNER'S GUIDE TO AI PHONE CALLS",
     excerpt:
       "Voice AI allows businesses to communicate with customers through automated phone conversations. It can listen to people, understand their questions and respond using a computer-generated voice. Businesses use AI phone calls for lead qualification, admissions outreach, appointment reminders, payment follow-ups and customer re-engagement.",
-    image: "/How Voice AI Works A Beginner's Guide to AI Calls.png",
+    image: "/What Is an AI Voice Agent_ How It Works for Business.png",
     category: "AI Technology",
     publishedAt: "2026-11-13",
     lastModified: "2026-11-17",
@@ -28,7 +28,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "AI VOICE AGENT VS IVR: WHICH IS BETTER FOR BUSINESS?",
     excerpt:
       "Businesses use phone automation to handle customer enquiries, reduce repetitive calls and improve customer service. Compare traditional IVR systems and AI voice agents on features, costs, resolution rates, and customer experience.",
-    image: "/AI Voice Agent vs IVR Which Is Better for Business (1).png",
+    image: "/AI Voice Agent vs IVR_ Which Is Better for Business_ (1).png",
     category: "AI Technology",
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",
@@ -39,7 +39,7 @@ export const REAL_BLOGS: BlogPost[] = [
     title: "AI VOICE AGENT VS CHATBOT: A BUSINESS USE-CASE GUIDE",
     excerpt:
       "Businesses use AI-powered communication tools to answer customer questions, manage enquiries and provide support. Compare AI voice agents and chatbots for business, including use cases, customer experience, costs and integration options.",
-    image: "/AI Voice Agent vs IVR Which Is Better for Business (1).png",
+    image: "/AI Voice Agent vs Chatbot_ A Business Use-Case Guide.png",
     category: "AI Technology",
     publishedAt: "2026-11-17",
     lastModified: "2026-11-17",

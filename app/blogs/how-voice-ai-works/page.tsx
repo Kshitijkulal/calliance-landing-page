@@ -257,10 +257,10 @@ export default function VoiceAIBlogPage() {
         </div>
 
         {/* Hero Image Section — 1440x515 Full-Width Display matching Figma reference */}
-        <div className="w-full bg-[#FFFDFB] mb-12 md:mb-16 overflow-hidden">
+        <div className="w-full bg-white mb-12 md:mb-16 overflow-hidden">
           <div className="relative w-full aspect-[1440/515]">
             <Image
-              src="/How Voice AI Works A Beginner's Guide to AI Calls.png"
+              src="/What Is an AI Voice Agent_ How It Works for Business.png"
               alt="How Voice AI Works: A Beginner's Guide to AI Calls"
               fill
               sizes="100vw"

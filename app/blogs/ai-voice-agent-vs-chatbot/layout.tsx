@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     authors: ["Karanvir Singh"],
     images: [
       {
-        url: "https://www.callience.in/AI%20Voice%20Agent%20vs%20IVR%20Which%20Is%20Better%20for%20Business%20(1).png",
+        url: "https://www.callience.in/AI%20Voice%20Agent%20vs%20Chatbot_%20A%20Business%20Use-Case%20Guide.png",
         width: 1440,
         height: 515,
         alt: "AI Voice Agent vs Chatbot: A Business Use-Case Guide",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "AI Voice Agent vs Chatbot: A Business Use-Case Guide | Callience",
     description:
       "Compare AI voice agents and chatbots for business, including use cases, customer experience, costs and integration options.",
-    images: ["https://www.callience.in/AI%20Voice%20Agent%20vs%20IVR%20Which%20Is%20Better%20for%20Business%20(1).png"],
+    images: ["https://www.callience.in/AI%20Voice%20Agent%20vs%20Chatbot_%20A%20Business%20Use-Case%20Guide.png"],
   },
 };
 
@@ -68,7 +68,7 @@ export default function BlogLayout({
     headline: "AI Voice Agent vs Chatbot: A Business Use-Case Guide",
     description:
       "Compare AI voice agents and chatbots for business, including use cases, customer experience, costs and integration options.",
-    image: "https://www.callience.in/AI%20Voice%20Agent%20vs%20IVR%20Which%20Is%20Better%20for%20Business%20(1).png",
+    image: "https://www.callience.in/AI%20Voice%20Agent%20vs%20Chatbot_%20A%20Business%20Use-Case%20Guide.png",
     datePublished: "2026-11-17T00:00:00.000Z",
     dateModified: "2026-11-17T00:00:00.000Z",
     wordCount: 1400,
