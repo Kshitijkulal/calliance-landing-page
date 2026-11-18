@@ -53,7 +53,7 @@
   --color-section-alt: var(--color-section-alt);
 
   /* Font Family */
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-manrope);
   --font-bebas: var(--font-bebas-neue);
   --font-manrope: var(--font-manrope);
 }
