@@ -1,9 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { REAL_BLOGS } from "@/app/blogs/blogsData";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  source?: string;
+}
+
+export default function ContactSection({ source }: ContactSectionProps = {}) {
+  const pathname = usePathname();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -16,6 +23,24 @@ export default function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const getPageIndication = () => {
+    if (source) return source;
+    if (!pathname || pathname === "/") return "Landing Page";
+    if (pathname === "/blogs" || pathname === "/blogs/") return "Blog Page";
+    if (pathname.startsWith("/blogs/")) {
+      const slug = pathname.replace(/^\/blogs\//, "").replace(/\/$/, "");
+      const matched = REAL_BLOGS.find((b) => b.slug === slug);
+      if (matched) {
+        return matched.title;
+      }
+      return `Blog: ${slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ")}`;
+    }
+    return pathname;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -25,11 +50,22 @@ export default function ContactSection() {
     setSubmitting(true);
     setErrorMessage("");
 
+    const pageIndication = getPageIndication();
+    const payload = {
+      ...formData,
+      source: pageIndication,
+      page: pageIndication,
+      pageTitle: pageIndication,
+      sourcePage: pageIndication,
+      pageUrl: typeof window !== "undefined" ? window.location.href : pathname,
+      blogName: pathname?.startsWith("/blogs/") ? pageIndication : "",
+    };
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {

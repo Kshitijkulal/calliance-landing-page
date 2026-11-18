@@ -3,7 +3,20 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, company, jobTitle, email, phone, country } = body;
+    const {
+      name,
+      company,
+      jobTitle,
+      email,
+      phone,
+      country,
+      source,
+      page,
+      pageTitle,
+      sourcePage,
+      pageUrl,
+      blogName,
+    } = body;
 
     // Securely retrieve the Google Apps Script Web App URL from environment variables
     const googleScriptUrl = process.env.GOOGLE_SCRIPT_URL;
@@ -13,6 +26,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Server Configuration Error" }, { status: 500 });
     }
 
+    // Determine the page indication (Landing Page, Blog Page, or specific blog name)
+    const pageIndication = source || page || sourcePage || pageTitle || "Landing Page";
+
     // Forward the data to Google Sheets via the Apps Script Web App
     // This is executed server-side, completely hiding the URL from the client
     const response = await fetch(googleScriptUrl, {
@@ -21,7 +37,22 @@ export async function POST(request: Request) {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, company, jobTitle, email, phone, country }),
+      body: JSON.stringify({
+        name,
+        company,
+        jobTitle,
+        email,
+        phone,
+        country,
+        source: pageIndication,
+        page: pageIndication,
+        pageTitle: pageIndication,
+        sourcePage: pageIndication,
+        pageUrl: pageUrl || "",
+        blogName: blogName || (pageIndication !== "Landing Page" && pageIndication !== "Blog Page" ? pageIndication : ""),
+        timestamp: new Date().toISOString(),
+        ...body,
+      }),
       cache: 'no-store', // Prevent Next.js from caching the response (important for 302 redirects from Google)
       redirect: 'follow' // Follow the redirect to googleusercontent.com
     });
