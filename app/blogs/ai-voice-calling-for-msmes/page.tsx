@@ -637,30 +637,30 @@ export default function AIVoiceCallingForMSMEsPage() {
                   <h3 className="text-xl sm:text-2xl font-bold text-primary-black pt-4 mb-2">
                     Sample AI Calling Scripts
                   </h3>
-                  <div className="overflow-x-auto my-4 border border-card-border rounded-xl">
+                  <div className="overflow-x-auto my-6">
                     <table className="w-full text-left text-sm sm:text-base border-collapse">
                       <thead>
-                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black bg-white">
-                          <th className="py-3.5 px-4 w-1/3 align-top">Campaign</th>
-                          <th className="py-3.5 px-4 w-2/3 align-top">Sample Message</th>
+                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
+                          <th className="py-3.5 pr-4 pl-0 w-1/3 align-top">Campaign</th>
+                          <th className="py-3.5 pl-4 pr-0 w-2/3 align-top">Sample Message</th>
                         </tr>
                       </thead>
-                      <tbody className="font-medium text-primary-black bg-white">
+                      <tbody className="font-medium text-primary-black">
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Lead Follow-Up</td>
-                          <td className="py-3.5 px-4 align-top">&quot;Hello, this is ABC Furniture. You recently enquired about our products. Are you still interested?&quot;</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Lead Follow-Up</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">&quot;Hello, this is ABC Furniture. You recently enquired about our products. Are you still interested?&quot;</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Appointment Reminder</td>
-                          <td className="py-3.5 px-4 align-top">&quot;Hello, this is ABC Clinic. Your appointment is scheduled for tomorrow at 11 AM. Would you like to confirm or reschedule?&quot;</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Appointment Reminder</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">&quot;Hello, this is ABC Clinic. Your appointment is scheduled for tomorrow at 11 AM. Would you like to confirm or reschedule?&quot;</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Payment Reminder</td>
-                          <td className="py-3.5 px-4 align-top">&quot;Hello, this is ABC Services. We are calling regarding your pending invoice. Would you like assistance from our accounts team?&quot;</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Payment Reminder</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">&quot;Hello, this is ABC Services. We are calling regarding your pending invoice. Would you like assistance from our accounts team?&quot;</td>
                         </tr>
                         <tr>
-                          <td className="py-3.5 px-4 font-bold align-top">Inbound Enquiry</td>
-                          <td className="py-3.5 px-4 align-top">&quot;Hello, welcome to ABC Services. How can I help you today? I can assist with general enquiries or connect you with our team.&quot;</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Inbound Enquiry</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">&quot;Hello, welcome to ABC Services. How can I help you today? I can assist with general enquiries or connect you with our team.&quot;</td>
                         </tr>
                       </tbody>
                     </table>
@@ -681,42 +681,42 @@ export default function AIVoiceCallingForMSMEsPage() {
                     Businesses should measure more than the number of calls made. AI telecaller ROI depends on customer responses, qualified leads, successful follow-ups, and conversions.
                   </p>
 
-                  <div className="overflow-x-auto my-4 border border-card-border rounded-xl">
+                  <div className="overflow-x-auto my-6">
                     <table className="w-full text-left text-sm sm:text-base border-collapse">
                       <thead>
-                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black bg-white">
-                          <th className="py-3.5 px-4 w-1/2 align-top">Metric</th>
-                          <th className="py-3.5 px-4 w-1/2 align-top">What It Measures</th>
+                        <tr className="border-b border-card-border text-xs sm:text-sm uppercase tracking-wider font-bold text-primary-black">
+                          <th className="py-3.5 pr-4 pl-0 w-1/2 align-top">Metric</th>
+                          <th className="py-3.5 pl-4 pr-0 w-1/2 align-top">What It Measures</th>
                         </tr>
                       </thead>
-                      <tbody className="font-medium text-primary-black bg-white">
+                      <tbody className="font-medium text-primary-black">
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Calls Attempted</td>
-                          <td className="py-3.5 px-4 align-top">Total outbound calls initiated</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Calls Attempted</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Total outbound calls initiated</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Connection Rate</td>
-                          <td className="py-3.5 px-4 align-top">Percentage of calls answered</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Connection Rate</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Percentage of calls answered</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Call Completion Rate</td>
-                          <td className="py-3.5 px-4 align-top">Percentage of connected calls completed</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Call Completion Rate</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Percentage of connected calls completed</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Qualified Leads</td>
-                          <td className="py-3.5 px-4 align-top">Customers showing genuine interest</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Qualified Leads</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Customers showing genuine interest</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Follow-Up Status</td>
-                          <td className="py-3.5 px-4 align-top">Customers requiring additional contact</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Follow-Up Status</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Customers requiring additional contact</td>
                         </tr>
                         <tr className="border-b border-card-border">
-                          <td className="py-3.5 px-4 font-bold align-top">Conversion Rate</td>
-                          <td className="py-3.5 px-4 align-top">Percentage of leads becoming customers</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Conversion Rate</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Percentage of leads becoming customers</td>
                         </tr>
                         <tr>
-                          <td className="py-3.5 px-4 font-bold align-top">Cost Per Qualified Lead</td>
-                          <td className="py-3.5 px-4 align-top">Campaign cost divided by qualified leads</td>
+                          <td className="py-3.5 pr-4 pl-0 font-bold align-top">Cost Per Qualified Lead</td>
+                          <td className="py-3.5 pl-4 pr-0 align-top">Campaign cost divided by qualified leads</td>
                         </tr>
                       </tbody>
                     </table>

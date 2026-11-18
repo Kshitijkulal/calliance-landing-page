@@ -66,6 +66,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-18",
     lastModified: "2026-11-18",
   },
+  {
+    id: 6,
+    slug: "ai-calling-for-lead-follow-ups",
+    title: "AI CALLING FOR LEAD FOLLOW-UPS: HOW SMALL BUSINESSES CAN AUTOMATE THEM",
+    excerpt:
+      "Learn how AI calling helps small businesses automate lead follow-ups, qualify prospects and schedule callbacks more efficiently.",
+    image: "/AI Calling for Lead Follow-Ups_ How Small Businesses Can Automate Them.png",
+    category: "Sales & Lead Generation",
+    publishedAt: "2026-11-18",
+    lastModified: "2026-11-18",
+  },
 ];
 
 /**
