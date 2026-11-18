@@ -77,6 +77,28 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-18",
     lastModified: "2026-11-18",
   },
+  {
+    id: 7,
+    slug: "what-is-an-ai-voice-agent",
+    title: "WHAT IS AN AI VOICE AGENT? HOW IT WORKS FOR BUSINESS",
+    excerpt:
+      "An AI voice agent is an artificial intelligence-powered system that communicates with customers through natural, human-like phone conversations. Learn how it works, applications, and benefits.",
+    image: "/what-is-an-ai-voice-agent-how-it-works-for-business.png",
+    category: "AI Technology",
+    publishedAt: "2026-11-18",
+    lastModified: "2026-11-18",
+  },
+  {
+    id: 8,
+    slug: "inbound-vs-outbound-ai-calling",
+    title: "INBOUND VS OUTBOUND AI CALLING: CHOOSE WHAT TO AUTOMATE",
+    excerpt:
+      "Compare inbound vs outbound AI calling for modern businesses. Discover differences in architecture, use cases, costs, and regulatory compliance to choose the right phone automation strategy.",
+    image: "/inbound-vs-outbound-ai-calling.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-18",
+    lastModified: "2026-11-18",
+  },
 ];
 
 /**

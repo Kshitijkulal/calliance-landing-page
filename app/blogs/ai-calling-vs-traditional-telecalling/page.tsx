@@ -543,37 +543,37 @@ export default function AICallingVsTraditionalTelecallingPage() {
                         </tr>
                       </thead>
                       <tbody className="font-medium text-primary-black">
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Communication</td>
                           <td className="py-3.5 px-4 align-top">AI-generated voice conversations</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Human conversations</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Availability</td>
                           <td className="py-3.5 px-4 align-top">Can operate 24/7</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on working shifts</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Calling Capacity</td>
                           <td className="py-3.5 px-4 align-top">Multiple simultaneous calls</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Limited by available agents</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Cost Structure</td>
                           <td className="py-3.5 px-4 align-top">Usage-based or subscription-based</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Salaries and operational expenses</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Scalability</td>
                           <td className="py-3.5 px-4 align-top">Can expand through system capacity</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Usually requires more employees</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Consistency</td>
                           <td className="py-3.5 px-4 align-top">Follows configured instructions</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on individual agents</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 font-bold align-top">Customer Trust</td>
                           <td className="py-3.5 px-4 align-top">Depends on transparency and call quality</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Supports direct human interaction</td>
@@ -995,23 +995,23 @@ export default function AICallingVsTraditionalTelecallingPage() {
                         </tr>
                       </thead>
                       <tbody className="font-medium text-primary-black">
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 align-top">Automates repetitive calling tasks</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">May struggle with complex questions</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 align-top">Supports multiple simultaneous calls</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Depends on system capacity</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 align-top">Maintains consistent communication</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Requires accurate business information</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 align-top">Can operate outside normal office hours</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Must follow calling regulations</td>
                         </tr>
-                        <tr className="border-b border-card-border">
+                        <tr>
                           <td className="py-3.5 pr-4 pl-0 align-top">Provides campaign and call insights</td>
                           <td className="py-3.5 pl-4 pr-0 align-top">Needs proper setup and monitoring</td>
                         </tr>
