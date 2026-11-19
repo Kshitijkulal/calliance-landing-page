@@ -112,12 +112,21 @@ export const REAL_BLOGS: BlogPost[] = [
   },
   {
     id: 10,
+<<<<<<< HEAD
     slug: "ai-voice-agents-different-languages-accents",
     title: "CAN AI VOICE AGENTS UNDERSTAND DIFFERENT LANGUAGES AND ACCENTS?",
     excerpt:
       "Learn how AI voice agents understand different languages, Indian accents and Hinglish, and what affects speech recognition accuracy.",
     image: "/Can AI Voice Agents Understand Different Languages and Accents.png",
     category: "AI Technology",
+=======
+    slug: "multilingual-voice-ai-reach-more-customers",
+    title: "HOW MULTILINGUAL VOICE AI HELPS BUSINESSES REACH MORE CUSTOMERS",
+    excerpt:
+      "Learn how multilingual Voice AI helps businesses cover new regions, language markets and customer segments in India without adding a team for every language.",
+    image: "/multilingual-voice-ai-reach-more-customers.png",
+    category: "AI Calling",
+>>>>>>> f51d93bf2886856e731c66895dc56082532cfb0b
     publishedAt: "2026-11-19",
     lastModified: "2026-11-19",
   },
