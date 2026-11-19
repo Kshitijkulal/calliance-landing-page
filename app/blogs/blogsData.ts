@@ -99,6 +99,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-18",
     lastModified: "2026-11-18",
   },
+  {
+    id: 9,
+    slug: "native-language-ai-calling-indian-businesses",
+    title: "WHY NATIVE-LANGUAGE AI CALLING MATTERS FOR INDIAN BUSINESSES",
+    excerpt:
+      "Learn how native-language AI calling helps Indian businesses build trust, reduce language barriers and improve customer communication.",
+    image: "/Why Native-Language AI Calling Matters for Indian Businesses.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-19",
+    lastModified: "2026-11-19",
+  },
 ];
 
 /**
