@@ -110,6 +110,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-19",
     lastModified: "2026-11-19",
   },
+  {
+    id: 10,
+    slug: "ai-voice-agents-different-languages-accents",
+    title: "CAN AI VOICE AGENTS UNDERSTAND DIFFERENT LANGUAGES AND ACCENTS?",
+    excerpt:
+      "Learn how AI voice agents understand different languages, Indian accents and Hinglish, and what affects speech recognition accuracy.",
+    image: "/Can AI Voice Agents Understand Different Languages and Accents.png",
+    category: "AI Technology",
+    publishedAt: "2026-11-19",
+    lastModified: "2026-11-19",
+  },
 ];
 
 /**
