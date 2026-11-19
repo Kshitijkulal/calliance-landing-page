@@ -110,6 +110,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-19",
     lastModified: "2026-11-19",
   },
+  {
+    id: 10,
+    slug: "multilingual-voice-ai-reach-more-customers",
+    title: "HOW MULTILINGUAL VOICE AI HELPS BUSINESSES REACH MORE CUSTOMERS",
+    excerpt:
+      "Learn how multilingual Voice AI helps businesses cover new regions, language markets and customer segments in India without adding a team for every language.",
+    image: "/multilingual-voice-ai-reach-more-customers.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-19",
+    lastModified: "2026-11-19",
+  },
 ];
 
 /**
