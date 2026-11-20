@@ -201,6 +201,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-20",
     lastModified: "2026-11-20",
   },
+  {
+    id: 18,
+    slug: "ai-calling-payment-reminders",
+    title: "HOW BUSINESSES CAN USE AI CALLING FOR PAYMENT REMINDERS AND COLLECTIONS",
+    excerpt:
+      "Discover how AI calling for payment reminders helps businesses automate EMI reminders, follow up on overdue payments, and track collections.",
+    image: "/How Businesses Can Use AI Calling for Payment Reminders and Collections.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
+  },
 ];
 
 /**
