@@ -48,6 +48,7 @@ export default function IsAICallingRightPage() {
   const [activeSection, setActiveSection] = useState("what-ai-calling-can-do");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [tocOpen, setTocOpen] = useState(true);
+  const [mobileTocOpen, setMobileTocOpen] = useState(false);
 
   const asideRef = useRef<HTMLElement | null>(null);
   const articleRef = useRef<HTMLElement | null>(null);
@@ -271,11 +272,11 @@ export default function IsAICallingRightPage() {
               className="lg:col-span-3 relative lg:min-h-[500px]"
             >
               {/* Mobile TOC Accordion Header */}
-              <div className="lg:hidden">
+              <div className="lg:hidden mb-6">
                 <button
                   type="button"
-                  onClick={() => setTocOpen(!tocOpen)}
-                  aria-expanded={tocOpen}
+                  onClick={() => setMobileTocOpen(!mobileTocOpen)}
+                  aria-expanded={mobileTocOpen}
                   aria-label="Toggle table of contents"
                   className="flex items-center gap-2 text-left font-bold text-[18px] leading-[1.4] text-primary-black cursor-pointer"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
@@ -287,7 +288,7 @@ export default function IsAICallingRightPage() {
                     viewBox="0 0 10 6"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`transition-transform duration-200 shrink-0 ${tocOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 shrink-0 ${mobileTocOpen ? "rotate-180" : ""}`}
                     aria-hidden="true"
                   >
                     <path
@@ -299,7 +300,7 @@ export default function IsAICallingRightPage() {
                     />
                   </svg>
                 </button>
-                {tocOpen && (
+                {mobileTocOpen && (
                   <nav
                     className="mt-4 space-y-2.5 text-sm"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
@@ -310,7 +311,7 @@ export default function IsAICallingRightPage() {
                         type="button"
                         onClick={() => {
                           scrollTo(item.id);
-                          setTocOpen(false);
+                          setMobileTocOpen(false);
                         }}
                         className={`block w-full text-left py-1 text-[15px] transition-colors ${
                           activeSection === item.id
