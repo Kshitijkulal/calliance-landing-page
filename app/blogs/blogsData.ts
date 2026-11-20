@@ -157,6 +157,17 @@ export const REAL_BLOGS: BlogPost[] = [
   },
   {
     id: 14,
+    slug: "set-up-outbound-calling-campaign-with-ai",
+    title: "HOW TO SET UP AN OUTBOUND CALLING CAMPAIGN WITH AI",
+    excerpt:
+      "Learn how to set up an outbound calling campaign with AI, automate follow-ups, manage leads, and track campaign performance.",
+    image: "/How to Set Up an Outbound Calling Campaign with AI.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
+  },
+  {
+    id: 15,
     slug: "is-ai-calling-right-for-growing-businesses",
     title: "IS AI CALLING SUITABLE FOR SMALL AND GROWING BUSINESSES?",
     excerpt:
@@ -167,13 +178,25 @@ export const REAL_BLOGS: BlogPost[] = [
     lastModified: "2026-11-20",
   },
   {
-    id: 15,
+    id: 16,
     slug: "automated-outbound-calling-guide",
     title: "WHAT IS AUTOMATED OUTBOUND CALLING AND HOW DOES IT HELP BUSINESSES?",
     excerpt:
       "Automated outbound calling uses software or AI voice agents to place calls at scale. Learn how it works, where it helps, and how it differs from dialers.",
     image: "/automated-outbound-calling-guide.png",
     category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
+  },
+  {
+    id: 17,
+    slug: "automated-follow-ups-manage-sales-enquiries",
+    title: "HOW AUTOMATED FOLLOW-UPS HELP BUSINESSES MANAGE SALES ENQUIRIES",
+    excerpt:
+      "Learn how automated enquiry follow-ups help businesses manage sales enquiries, qualify leads, schedule callbacks, and improve conversions.",
+    image: "/How Automated Follow-Ups Help Businesses Manage Sales Enquiries.png",
+    category: "Sales & Lead Generation",
     categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
     publishedAt: "2026-11-20",
     lastModified: "2026-11-20",
