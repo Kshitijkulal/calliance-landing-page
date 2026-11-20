@@ -195,7 +195,7 @@ export default function InboundVsOutboundAICallingPage() {
                 className="font-medium text-primary-black text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-normal max-w-[620px]"
                 style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
               >
-                A comprehensive comparison of inbound vs outbound AI calling for Indian enterprises, MSMEs, and fast-growing startups. Learn differences in architecture, operational workflows, customer intent, cost-efficiency, and regulatory compliance to identify exactly what calls your business should automate first.
+                Compare inbound vs outbound AI calling for Indian enterprises and MSMEs across Delhi NCR, Mumbai, and Bengaluru. Learn differences in workflows, TRAI compliance, and ROI to automate the right calls first.
               </p>
             </div>
 

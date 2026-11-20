@@ -132,6 +132,17 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-19",
     lastModified: "2026-11-19",
   },
+  {
+    id: 12,
+    slug: "ai-inbound-call-handling-high-volume-enquiries",
+    title: "AI INBOUND CALL HANDLING FOR HIGH-VOLUME CUSTOMER ENQUIRIES",
+    excerpt:
+      "AI inbound call handling answers enquiries around the clock, absorbs peak-hour surges, resolves repetitive questions and takes pressure off support teams.",
+    image: "/ai-inbound-call-handling-high-volume-enquiries.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-19",
+    lastModified: "2026-11-19",
+  },
 ];
 
 /**
