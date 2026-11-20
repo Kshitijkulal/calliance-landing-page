@@ -220,9 +220,27 @@ export default function AutomatedOutboundCallingPage() {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-primary-black text-white hover:bg-neutral-800 text-xs sm:text-sm font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 bg-primary-black text-white hover:bg-black px-4 py-2 rounded-[8px] text-sm font-semibold transition-all shadow-xs group cursor-pointer whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Book a Call
+                    <span>Contact Us</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="group-hover:translate-x-0.5 transition-transform shrink-0"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -230,16 +248,18 @@ export default function AutomatedOutboundCallingPage() {
           </div>
         </div>
 
-        {/* Hero Image Container */}
-        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative w-full aspect-[1440/515] max-h-[515px] rounded-2xl overflow-hidden mb-8 sm:mb-12 border border-card-border shadow-xs">
+        {/* Hero Image Section — 1440x515 Full-Width Display */}
+        <div className="w-full bg-[#FFFDFB] mb-8 sm:mb-12 md:mb-16 overflow-hidden min-h-[160px]">
+          <div className="relative w-full aspect-[1440/515]">
             <Image
               src="/automated-outbound-calling-guide.png"
               alt="What Is Automated Outbound Calling and How Does It Help Businesses?"
               fill
+              sizes="100vw"
+              className="object-cover object-center w-full h-full"
+              loading="eager"
               priority
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              unoptimized
             />
           </div>
         </div>
