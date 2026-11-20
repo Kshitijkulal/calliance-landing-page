@@ -201,7 +201,7 @@ export default function InboundVsOutboundAICallingPage() {
 
             {/* Right Block: Metadata Sidebar */}
             <div className="w-full lg:w-auto shrink-0 border-t-2 lg:border-t-0 lg:border-l-2 border-primary-black pt-4 sm:pt-6 lg:pt-0 lg:pl-8">
-              <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start">
+              <div className="w-full lg:w-[197px] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-0">
                 <div
                   className="flex flex-row lg:flex-col gap-4 lg:gap-6 text-primary-black"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
@@ -210,7 +210,7 @@ export default function InboundVsOutboundAICallingPage() {
                     18th November
                   </p>
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
-                    11 min read
+                    5 min read
                   </p>
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
                     Divyanshu Singh
@@ -256,7 +256,7 @@ export default function InboundVsOutboundAICallingPage() {
         </div>
 
         {/* Hero Image Section — 1440x515 Full-Width Display */}
-        <div className="w-full bg-[#FFFDFB] mb-8 sm:mb-12 md:mb-16 overflow-hidden">
+        <div className="w-full bg-[#FFFDFB] mb-8 sm:mb-12 md:mb-16 overflow-hidden min-h-[160px]">
           <div className="relative w-full aspect-[1440/515]">
             <Image
               src="/inbound-vs-outbound-ai-calling.png"
@@ -272,16 +272,15 @@ export default function InboundVsOutboundAICallingPage() {
         </div>
 
         {/* Content Section with Sticky Sidebar */}
-        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+        <div className="w-full max-w-[1270px] mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14">
             {/* Left Column: Table of Contents */}
             <aside
               ref={asideRef}
-              className="lg:col-span-3 relative"
-              style={{ minHeight: "500px" }}
+              className="lg:col-span-3 relative lg:min-h-[500px]"
             >
               {/* Mobile TOC Accordion Header */}
-              <div className="lg:hidden mb-8">
+              <div className="lg:hidden">
                 <button
                   type="button"
                   onClick={() => setTocOpen(!tocOpen)}

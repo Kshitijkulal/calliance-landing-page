@@ -12,7 +12,15 @@ const POSTS_PER_PAGE = 6;
 
 const CATEGORIES = [
   "All",
-  ...Array.from(new Set(REAL_BLOGS.map((post) => post.category).filter(Boolean))),
+  ...Array.from(
+    new Set(
+      REAL_BLOGS.flatMap((post) =>
+        post.categories && post.categories.length > 0
+          ? post.categories
+          : [post.category]
+      ).filter(Boolean)
+    )
+  ),
 ];
 
 export default function BlogsPage() {
@@ -33,7 +41,9 @@ export default function BlogsPage() {
 
     return sorted.filter((post) => {
       const matchesCategory =
-        selectedCategory === "All" || post.category === selectedCategory;
+        selectedCategory === "All" ||
+        post.category === selectedCategory ||
+        (Array.isArray(post.categories) && post.categories.includes(selectedCategory));
       const matchesSearch =
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
@@ -77,11 +87,11 @@ export default function BlogsPage() {
     }
     const pages: (number | string)[] = [];
     if (currentPage <= 3) {
-      pages.push(1, 2, 3, 4, "...", totalPages);
+      pages.push(1, 2, 3, "...", totalPages);
     } else if (currentPage >= totalPages - 2) {
-      pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+      pages.push(1, "...", totalPages - 2, totalPages - 1, totalPages);
     } else {
-      pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages);
+      pages.push(1, "...", currentPage, "...", totalPages);
     }
     return pages;
   };
@@ -219,47 +229,28 @@ export default function BlogsPage() {
                 ))}
               </div>
 
-              {/* Pagination Bar */}
-              {totalPages >= 1 && (
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-12 md:pt-16 mt-8 sm:mt-12 border-t border-card-border/70">
-                  <p
-                    className="text-xs sm:text-sm text-dark-grey font-medium order-2 sm:order-1"
-                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
-                  >
-                    Showing{" "}
-                    <span className="font-bold text-primary-black">
-                      {(currentPage - 1) * POSTS_PER_PAGE + 1}
-                    </span>{" "}
-                    to{" "}
-                    <span className="font-bold text-primary-black">
-                      {Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)}
-                    </span>{" "}
-                    of{" "}
-                    <span className="font-bold text-primary-black">
-                      {filteredPosts.length}
-                    </span>{" "}
-                    articles
-                  </p>
-
+              {/* Pagination Bar (Matching Figma Design) */}
+              {filteredPosts.length > 0 && (
+                <div className="mt-12 sm:mt-16 flex justify-center items-center">
                   <nav
                     aria-label="Blog pagination"
-                    className="flex items-center gap-2 order-1 sm:order-2"
+                    className="flex items-center gap-1.5 sm:gap-2.5"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    {/* Previous Page Button */}
+                    {/* Previous Page Chevron Button */}
                     <button
                       type="button"
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}
                       aria-label="Previous page"
-                      className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                      className={`p-1.5 sm:p-2 flex items-center justify-center transition-opacity ${
                         currentPage === 1
-                          ? "opacity-35 cursor-not-allowed bg-transparent text-light-grey"
-                          : "bg-white border border-card-border text-primary-black hover:border-primary-black hover:shadow-xs cursor-pointer"
+                          ? "opacity-25 cursor-not-allowed text-primary-black"
+                          : "text-primary-black hover:opacity-60 cursor-pointer"
                       }`}
                     >
                       <svg
-                        className="w-4 h-4"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -267,62 +258,72 @@ export default function BlogsPage() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="2"
+                          strokeWidth="2.5"
                           d="M15 19l-7-7 7-7"
                         />
                       </svg>
-                      <span className="hidden sm:inline">Previous</span>
                     </button>
 
                     {/* Page Numbers */}
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1 sm:gap-1.5">
                       {getPageNumbers().map((page, index) => {
                         if (page === "...") {
                           return (
-                            <span
+                            <div
                               key={`ellipsis-${index}`}
-                              className="px-2 text-light-grey text-sm font-bold select-none"
+                              className="flex flex-col items-center justify-center"
                             >
-                              &hellip;
-                            </span>
+                              <span className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm text-primary-black font-semibold select-none">
+                                &hellip;
+                              </span>
+                              <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-transparent mt-1" />
+                            </div>
                           );
                         }
                         const pageNum = Number(page);
                         const isActive = currentPage === pageNum;
                         return (
-                          <button
+                          <div
                             key={`page-${pageNum}`}
-                            type="button"
-                            onClick={() => handlePageChange(pageNum)}
-                            aria-current={isActive ? "page" : undefined}
-                            aria-label={`Page ${pageNum}`}
-                            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                              isActive
-                                ? "bg-primary-black text-white shadow-xs"
-                                : "bg-white border border-card-border text-primary-black hover:border-primary-black hover:bg-neutral-50"
-                            }`}
+                            className="flex flex-col items-center justify-center"
                           >
-                            {pageNum}
-                          </button>
+                            <button
+                              type="button"
+                              onClick={() => handlePageChange(pageNum)}
+                              aria-current={isActive ? "page" : undefined}
+                              aria-label={`Page ${pageNum}`}
+                              className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                                isActive
+                                  ? "rounded-full bg-primary-black text-white"
+                                  : "text-primary-black hover:opacity-60"
+                              }`}
+                            >
+                              {pageNum}
+                            </button>
+                            <span
+                              className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full mt-1 transition-colors ${
+                                isActive ? "bg-primary-black" : "bg-transparent"
+                              }`}
+                            />
+                          </div>
                         );
                       })}
                     </div>
 
-                    {/* Next Page Button */}
+                    {/* Next Page Chevron Button */}
                     <button
                       type="button"
                       onClick={() => handlePageChange(currentPage + 1)}
                       disabled={currentPage === totalPages}
                       aria-label="Next page"
-                      className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                      className={`p-1.5 sm:p-2 flex items-center justify-center transition-opacity ${
                         currentPage === totalPages
-                          ? "opacity-35 cursor-not-allowed bg-transparent text-light-grey"
-                          : "bg-white border border-card-border text-primary-black hover:border-primary-black hover:shadow-xs cursor-pointer"
+                          ? "opacity-25 cursor-not-allowed text-primary-black"
+                          : "text-primary-black hover:opacity-60 cursor-pointer"
                       }`}
                     >
-                      <span className="hidden sm:inline">Next</span>
                       <svg
-                        className="w-4 h-4"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -330,7 +331,7 @@ export default function BlogsPage() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="2"
+                          strokeWidth="2.5"
                           d="M9 5l7 7-7 7"
                         />
                       </svg>

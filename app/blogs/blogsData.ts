@@ -5,6 +5,7 @@ export interface BlogPost {
   excerpt: string;
   image: string;
   category: string;
+  categories?: string[];
   publishedAt?: string;
   lastModified?: string;
 }
@@ -142,6 +143,40 @@ export const REAL_BLOGS: BlogPost[] = [
     category: "AI Calling",
     publishedAt: "2026-11-19",
     lastModified: "2026-11-19",
+  },
+  {
+    id: 13,
+    slug: "ai-human-collaboration-in-call-centers",
+    title: "AI HUMAN COLLABORATION IN CALL CENTERS: CAN AI VOICE AGENTS WORK ALONGSIDE HUMAN TEAMS?",
+    excerpt:
+      "Learn how AI voice agents and human teams share calls, manage escalations and improve customer support in hybrid call centers.",
+    image: "/ai-human-collaboration-in-call-centers.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
+  },
+  {
+    id: 14,
+    slug: "is-ai-calling-right-for-growing-businesses",
+    title: "IS AI CALLING SUITABLE FOR SMALL AND GROWING BUSINESSES?",
+    excerpt:
+      "Is AI calling right for growing businesses? See what it does, what it costs, when to adopt it, when to stay with human telecallers, and what to check first.",
+    image: "/is-ai-calling-right-for-growing-businesses.png",
+    category: "AI Calling",
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
+  },
+  {
+    id: 15,
+    slug: "automated-outbound-calling-guide",
+    title: "WHAT IS AUTOMATED OUTBOUND CALLING AND HOW DOES IT HELP BUSINESSES?",
+    excerpt:
+      "Automated outbound calling uses software or AI voice agents to place calls at scale. Learn how it works, where it helps, and how it differs from dialers.",
+    image: "/automated-outbound-calling-guide.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-20",
+    lastModified: "2026-11-20",
   },
 ];
 
