@@ -237,6 +237,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-21",
     lastModified: "2026-11-21",
   },
+  {
+    id: 21,
+    slug: "ai-voice-agent-lead-qualification",
+    title: "HOW AI VOICE AGENTS HELP BUSINESSES QUALIFY LEADS",
+    excerpt:
+      "An AI voice agent for lead qualification calls leads, asks set questions, scores interest and passes sales-ready prospects to your team. See how it works.",
+    image: "/ai-voice-agent-lead-qualification.png",
+    category: "Sales & Lead Generation",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-21",
+    lastModified: "2026-11-21",
+  },
 ];
 
 /**
