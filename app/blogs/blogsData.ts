@@ -213,6 +213,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-20",
     lastModified: "2026-11-20",
   },
+  {
+    id: 19,
+    slug: "measure-ai-calling-campaign-roi",
+    title: "HOW TO MEASURE ROI FROM AI VOICE CALLING CAMPAIGNS",
+    excerpt:
+      "Learn how to measure AI calling campaign ROI using conversion rates, cost per lead, customer acquisition cost, and revenue metrics.",
+    image: "/How to Measure ROI from AI Voice Calling Campaigns.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-21",
+    lastModified: "2026-11-21",
+  },
 ];
 
 /**
