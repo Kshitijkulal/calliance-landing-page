@@ -225,6 +225,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-21",
     lastModified: "2026-11-21",
   },
+  {
+    id: 20,
+    slug: "ai-call-analytics-campaign-performance",
+    title: "HOW AI CALL ANALYTICS AND CONVERSATION INSIGHTS IMPROVE CAMPAIGN PERFORMANCE",
+    excerpt:
+      "Discover how AI call analytics uses conversation insights, call transcripts, and sentiment analysis to improve calling campaign performance.",
+    image: "/How AI Call Analytics and Conversation Insights Improve Campaign Performance.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-21",
+    lastModified: "2026-11-21",
+  },
 ];
 
 /**

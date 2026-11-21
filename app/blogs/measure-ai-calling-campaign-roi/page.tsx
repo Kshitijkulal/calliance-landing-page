@@ -208,7 +208,7 @@ export default function MeasureAICallingCampaignROIPage() {
                     21st November
                   </p>
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
-                    9 min read
+                    7 min read
                   </p>
                   <p className="font-medium text-[13px] sm:text-base lg:text-[18px] leading-[1.4]">
                     Karanvir Singh
@@ -320,11 +320,10 @@ export default function MeasureAICallingCampaignROIPage() {
                           scrollTo(item.id);
                           setMobileTocOpen(false);
                         }}
-                        className={`block w-full text-left py-1 text-[15px] transition-colors ${
-                          activeSection === item.id
-                            ? "font-bold text-primary-black"
-                            : "text-dark-grey hover:text-primary-black"
-                        }`}
+                        className={`block w-full text-left py-1 text-[15px] transition-colors ${activeSection === item.id
+                          ? "font-bold text-primary-black"
+                          : "text-dark-grey hover:text-primary-black"
+                          }`}
                       >
                         {item.label}
                       </button>
@@ -339,19 +338,19 @@ export default function MeasureAICallingCampaignROIPage() {
                 style={
                   fixedState.mode === "fixed"
                     ? {
-                        position: "fixed",
-                        top: "28px",
-                        left: `${fixedState.left}px`,
-                        width: `${fixedState.width}px`,
-                      }
+                      position: "fixed",
+                      top: "28px",
+                      left: `${fixedState.left}px`,
+                      width: `${fixedState.width}px`,
+                    }
                     : fixedState.mode === "bottom"
-                    ? {
+                      ? {
                         position: "absolute",
                         bottom: "0px",
                         left: "0px",
                         width: "100%",
                       }
-                    : undefined
+                      : undefined
                 }
                 className="hidden lg:block z-20"
               >
@@ -394,18 +393,16 @@ export default function MeasureAICallingCampaignROIPage() {
                           id={`toc-item-${item.id}`}
                           type="button"
                           onClick={() => scrollTo(item.id)}
-                          className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${
-                            isActive
-                              ? "font-bold text-primary-black"
-                              : "text-dark-grey hover:text-primary-black"
-                          }`}
+                          className={`group flex items-start gap-2 w-full text-left transition-all py-0.5 cursor-pointer ${isActive
+                            ? "font-bold text-primary-black"
+                            : "text-dark-grey hover:text-primary-black"
+                            }`}
                         >
                           <span
-                            className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${
-                              isActive
-                                ? "bg-primary-black"
-                                : "bg-transparent group-hover:bg-card-border"
-                            }`}
+                            className={`w-1 h-3 rounded-full mt-1 transition-all shrink-0 ${isActive
+                              ? "bg-primary-black"
+                              : "bg-transparent group-hover:bg-card-border"
+                              }`}
                           />
                           <span className="leading-snug text-[13.5px] xl:text-[14px]">{item.label}</span>
                         </button>
