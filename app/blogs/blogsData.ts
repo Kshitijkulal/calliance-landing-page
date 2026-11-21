@@ -250,7 +250,7 @@ export const REAL_BLOGS: BlogPost[] = [
     lastModified: "2026-11-21",
   },
   {
-    id: 20,
+    id: 22,
     slug: "ai-calling-for-appointment-reminders",
     title: "HOW AI VOICE CALLING CAN IMPROVE APPOINTMENT CONFIRMATIONS AND REMINDERS",
     excerpt:
@@ -262,7 +262,7 @@ export const REAL_BLOGS: BlogPost[] = [
     lastModified: "2026-11-21",
   },
   {
-    id: 21,
+    id: 23,
     slug: "ai-customer-reactivation-voice-agents",
     title: "AI CUSTOMER REACTIVATION: HOW VOICE AGENTS RE-ENGAGE INACTIVE CUSTOMERS",
     excerpt:
