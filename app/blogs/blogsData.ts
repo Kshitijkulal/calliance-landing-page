@@ -249,6 +249,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-21",
     lastModified: "2026-11-21",
   },
+  {
+    id: 20,
+    slug: "ai-calling-for-appointment-reminders",
+    title: "HOW AI VOICE CALLING CAN IMPROVE APPOINTMENT CONFIRMATIONS AND REMINDERS",
+    excerpt:
+      "AI calling for appointment reminders confirms attendance, handles reschedules and cuts no-shows. See how it works across clinics, schools and salons.",
+    image: "/ai-calling-for-appointment-reminders.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-21",
+    lastModified: "2026-11-21",
+  },
 ];
 
 /**
