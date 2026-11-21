@@ -261,6 +261,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-21",
     lastModified: "2026-11-21",
   },
+  {
+    id: 21,
+    slug: "ai-customer-reactivation-voice-agents",
+    title: "AI CUSTOMER REACTIVATION: HOW VOICE AGENTS RE-ENGAGE INACTIVE CUSTOMERS",
+    excerpt:
+      "AI customer reactivation uses voice agents to call lapsed customers, learn why they left and bring them back. See how win-back calls work and what to measure.",
+    image: "/ai-customer-reactivation-voice-agents.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-21",
+    lastModified: "2026-11-21",
+  },
 ];
 
 /**
