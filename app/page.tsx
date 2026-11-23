@@ -13,49 +13,29 @@ import FasterCallsSection from "./components/sections/FasterCallsSection";
 
 const HOME_FAQS = [
   {
-    question: "What can I use the platform for?",
+    question: "What can I use Callience platform for?",
     answer:
-      "Automate outbound conversations such as lead qualification, customer follow-ups, appointment reminders, payment collections, targeted re-engagement, surveys and other high-volume calling workflows.",
+      "Callience AI voice agents handle inbound calls, such as customer enquiries and lead capture, and outbound calls, such as lead qualification, follow-ups, appointment reminders, payment reminders, re-engagement and surveys, for enterprises and MSMEs.",
   },
   {
-    question: "Can I create an AI agent specific to my business?",
+    question: "Can the AI handle inbound calls?",
     answer:
-      "Yes. Every AI agent is fully customized around your specific business goals, knowledge base, conversation flows, and brand tone to ensure highly personalized customer interactions.",
+      "Yes. Callience AI voice agents answer inbound calls 24/7, including after hours, and handle multiple inbound calls at the same time, so customers never wait in a queue.",
   },
   {
-    question: "Can the AI speak multiple languages?",
+    question: "Can the AI handle multiple calls at the same time?",
     answer:
-      "Yes. The platform supports multilingual conversations, allowing you to reach customers in the languages they are most comfortable speaking.",
+      "Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, and the AI handles multiple inbound calls at the same time, expanding your capacity without adding headcount.",
   },
   {
-    question: "Can I make multiple calls at the same time?",
+    question: "Do I need technical expertise to set up an AI voice agent?",
     answer:
-      "Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, expanding your outreach capacity without adding headcount.",
+      "No technical expertise is required. Our team provides white-glove onboarding, handling configuration, AI voice agent setup, and campaign deployment so you can go live effortlessly.",
   },
   {
-    question: "Can I integrate it with my existing systems?",
+    question: "Is my customer data secure with an AI voice agent?",
     answer:
-      "Yes. We architect the platform to integrate directly into your existing CRM, workflows, and business processes so your data stays perfectly synced.",
-  },
-  {
-    question: "How do I know what happened on each call?",
-    answer:
-      "Every interaction is automatically captured. Your team gets real-time access to call transcripts, intent analysis, conversation outcomes, and clear follow-up steps right in your dashboard.",
-  },
-  {
-    question: "Do I need technical expertise to get started?",
-    answer:
-      "No technical expertise is required. Our team provides white-glove onboarding, handling the configuration, agent setup, and campaign deployment so you can go live effortlessly.",
-  },
-  {
-    question: "Is my customer data secure?",
-    answer:
-      "Absolutely. Enterprise-grade security is built directly into our infrastructure to ensure your proprietary business information and customer data remain strictly protected at all times.",
-  },
-  {
-    question: "How does pricing work?",
-    answer:
-      "Pricing is customized based on your business requirements, calling volume, workflows and deployment needs.",
+      "Yes. Your business and customer data is encrypted and stays under your control, protecting your data privacy. Access and decryption are restricted to you and the authorized identities you choose.",
   },
 ];
 
@@ -76,13 +56,59 @@ export default function Home() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Callience AI Calling Software",
+    name: "Callience - Voice AI Platform & AI Calling Software",
     operatingSystem: "All (Cloud-based SaaS)",
     applicationCategory: "BusinessApplication",
-    applicationSubCategory: "Sales Automation & AI Voice Calling",
+    applicationSubCategory: "Voice AI Platform & Conversational AI Agent Software",
     description:
-      "Enterprise AI calling software and human-like AI voice agents that automate customer conversations, qualify sales leads, and scale outreach on autopilot.",
+      "Enterprise AI calling software with human-like AI calling agents and AI receptionists. Automate inbound and outbound calls, qualify sales leads, and scale outreach 24/7 in 22+ native languages.",
     url: "https://www.callience.in",
+    keywords: [
+      "AI calling agent",
+      "AI customer service",
+      "AI voice agent",
+      "AI receptionist",
+      "inbound calling",
+      "voice AI platform",
+      "AI lead generation",
+      "lead conversion",
+      "lead qualification",
+      "call tracking software",
+      "automated calling system",
+      "auto dialer software",
+      "conversation intelligence",
+      "customer support automation",
+      "lead follow up",
+      "conversational AI agent",
+      "AI voice agent for real estate",
+      "AI calling software",
+      "bulk calling software",
+      "AI lead scoring",
+      "call center cost reduction",
+      "outbound sales automation",
+      "real-time call transcription",
+      "renewal reminders",
+      "customer re-engagement",
+      "revive dead leads",
+      "custom AI voice",
+      "AI call analytics",
+      "AI sales outreach",
+    ],
+    featureList: [
+      "Human-Like AI Calling Agents Built Around Your Business",
+      "24/7 Inbound Calling With an AI Receptionist",
+      "Outbound Sales Automation at Scale with Auto Dialer Software",
+      "Multilingual AI Calling in 22+ Native Languages",
+      "Track Every Call with Conversation Intelligence & Call Tracking Software",
+      "Automated Lead Follow Up & AI Lead Qualification",
+      "Industry Solutions for Real Estate, Education, FinTech, Healthcare, Retail & Logistics",
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "INR",
+      description: "Flexible, pay-for-what-you-use AI calling plans for inbound and outbound calls",
+    },
   };
 
   return (

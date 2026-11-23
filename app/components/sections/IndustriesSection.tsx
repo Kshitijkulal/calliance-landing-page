@@ -5,41 +5,44 @@ import { motion } from "framer-motion";
 
 const INDUSTRIES = [
   {
-    title: "Education",
+    title: "AI Voice Agent for Education",
     description:
-      "Automate admissions follow-ups, fee reminders, and counselling calls across the education ecosystem to drive higher enrollment.",
+      "Automate admission follow-up calls, fee reminder calls, and counselling calls, and answer inbound student enquiries 24/7 to drive higher enrollment.",
   },
   {
-    title: "Real Estate",
+    title: "AI Voice Agent for Real Estate",
     description:
-      "Instantly qualify leads, schedule callbacks, and follow up with prospects to keep your sales pipeline moving automatically.",
+      "Answer property enquiries instantly, qualify leads, schedule callbacks, and follow up with prospects to keep your sales pipeline moving automatically.",
   },
   {
-    title: "FinTech",
+    title: "AI Calling for FinTech",
     description:
       "Accelerate collections and handle high-volume payment reminders or service updates with secure AI calling.",
   },
   {
-    title: "Healthcare",
+    title: "AI Voice Agent for Healthcare",
     description:
-      "Automate appointment reminders, patient follow-ups, and routine customer outreach with personalized voice conversations.",
+      "Automate appointment reminders, patient follow-up calls, and routine outreach, with an AI receptionist taking inbound calls 24/7 in personalized voice conversations.",
   },
   {
-    title: "Retail & D2C",
+    title: "AI Voice Agent for Retail & D2C",
     description:
-      "Drive repeat purchases by managing order confirmations, feedback calls, and customer re-engagement at scale.",
+      "Drive repeat purchases by managing order and COD confirmation calls, customer feedback calls, re-engagement, and inbound order queries at scale.",
   },
   {
-    title: "Logistics",
+    title: "AI Voice Agent for Logistics",
     description:
-      "Eliminate delivery bottlenecks by automating confirmations, real-time customer updates, and instant rescheduling calls.",
+      "Eliminate delivery bottlenecks by automating delivery confirmation calls, real-time customer updates, instant delivery rescheduling, and answering inbound status calls 24/7.",
   },
 ];
 
 export default function IndustriesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = useState<"left" | "middle" | "right">("left");
-  const isMobile = () => typeof window !== "undefined" && window.innerWidth < 768;
+  const [scrollPosition, setScrollPosition] = useState<
+    "left" | "middle" | "right"
+  >("left");
+  const isMobile = () =>
+    typeof window !== "undefined" && window.innerWidth < 768;
   const mobileIndex = useRef(0);
 
   const scrollToCard = (index: number) => {
@@ -48,13 +51,18 @@ export default function IndustriesSection() {
     // Wait for layout to settle after arrow buttons appear/disappear
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const cards = Array.from(container.children).filter(el => el.tagName !== "STYLE") as HTMLElement[];
+        const cards = Array.from(container.children).filter(
+          (el) => el.tagName !== "STYLE",
+        ) as HTMLElement[];
         const card = cards[index];
         if (!card) return;
         const containerWidth = container.clientWidth;
         const cardWidth = card.offsetWidth;
         const scrollTarget = card.offsetLeft - (containerWidth - cardWidth) / 2;
-        container.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+        container.scrollTo({
+          left: Math.max(0, scrollTarget),
+          behavior: "smooth",
+        });
       });
     });
   };
@@ -62,10 +70,16 @@ export default function IndustriesSection() {
   const handleScrollRight = () => {
     if (scrollRef.current) {
       if (isMobile()) {
-        mobileIndex.current = Math.min(mobileIndex.current + 1, INDUSTRIES.length - 1);
+        mobileIndex.current = Math.min(
+          mobileIndex.current + 1,
+          INDUSTRIES.length - 1,
+        );
         scrollToCard(mobileIndex.current);
       } else {
-        scrollRef.current.scrollTo({ left: scrollRef.current.scrollWidth, behavior: "smooth" });
+        scrollRef.current.scrollTo({
+          left: scrollRef.current.scrollWidth,
+          behavior: "smooth",
+        });
         setScrollPosition("right");
       }
     }
@@ -99,7 +113,9 @@ export default function IndustriesSection() {
       }
 
       // Sync mobileIndex to the card closest to center
-      const cards = Array.from(el.children).filter(child => child.tagName !== "STYLE") as HTMLElement[];
+      const cards = Array.from(el.children).filter(
+        (child) => child.tagName !== "STYLE",
+      ) as HTMLElement[];
       const centerX = scrollLeft + clientWidth / 2;
       let closestIndex = 0;
       let closestDistance = Infinity;
@@ -118,20 +134,34 @@ export default function IndustriesSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-screen-2xl mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[2%] flex flex-col gap-6 sm:gap-8 md:gap-20 overflow-hidden px-[6%]">
-
+    <section
+      id="industries"
+      className="w-full max-w-screen-2xl mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[2%] flex flex-col gap-6 sm:gap-8 md:gap-20 overflow-hidden px-[6%]"
+    >
       {/* Header — split layout */}
       <div className="flex flex-col md:flex-row items-start gap-3 md:gap-4 w-full">
         {/* Heading */}
         <div className="w-full md:w-[60%] lg:w-[55%] shrink-0">
           <h2
-            className="font-normal uppercase m-0 text-4xl sm:text-5xl md:text-6xl leading-none tracking-tight"
+            className="font-normal m-0 text-4xl sm:text-5xl md:text-6xl leading-none tracking-tight"
             style={{
               fontFamily: "var(--font-bebas-neue), sans-serif",
               color: "var(--color-primary-black)",
             }}
           >
-            Who&apos;s Getting Ahead With Callience
+            AI Calling Solutions for Enterprises and MSME
+            <span
+              style={{
+                fontFamily: "var(--font-bebas-neue), sans-serif",
+                fontSize: "0.7em",
+                fontWeight: 700,
+                textTransform: "none",
+                display: "inline-block",
+              }}
+            >
+              s
+            </span>{" "}
+            Across Industries
           </h2>
         </div>
 
@@ -144,26 +174,34 @@ export default function IndustriesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            From real estate to education, Callience helps forward-thinking businesses reach customers first and pull ahead of the competition.
+            From real estate to education, Callience AI calling helps
+            forward-thinking businesses handle inbound and outbound calls, reach
+            customers first and pull ahead of the competition.
           </p>
         </div>
       </div>
 
       {/* Scrollable Industry Cards Row */}
       <div className="w-full flex items-center gap-3 sm:gap-4 overflow-hidden">
-
         {/* Left Scroll Arrow — always rendered on mobile for stable width, hidden at left edge */}
         <motion.button
           onClick={handleScrollLeft}
           aria-label="Previous industry slide"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: scrollPosition !== "left" ? 1 : 0, scale: scrollPosition !== "left" ? 1 : 0.8 }}
+          animate={{
+            opacity: scrollPosition !== "left" ? 1 : 0,
+            scale: scrollPosition !== "left" ? 1 : 0.8,
+          }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className={`w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "left" ? "pointer-events-none md:hidden" : "md:flex"}`}
           style={{ backgroundColor: "var(--color-off-white)" }}
         >
-          <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            className="w-4 h-4 md:w-6 md:h-6"
+          >
             <path
               d="M15 19L8 12L15 5"
               stroke="var(--color-primary-black)"
@@ -191,15 +229,16 @@ export default function IndustriesSection() {
             {INDUSTRIES.map((industry) => (
               <motion.div
                 key={industry.title}
-                whileHover={{ 
+                whileHover={{
                   backgroundColor: "var(--color-primary-black)",
                   borderColor: "var(--color-primary-black)",
-                  boxShadow: "none"
+                  boxShadow: "none",
                 }}
                 transition={{ duration: 0.3 }}
                 className="group w-[65vw] sm:w-[45vw] md:w-[350px] h-72 md:h-[320px] shrink-0 flex flex-col gap-3 py-4 sm:py-6 px-5 sm:px-8 rounded-xl border border-solid cursor-pointer snap-center md:snap-align-none"
                 style={{
-                  boxShadow: "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
+                  boxShadow:
+                    "inset 4px 4px 15px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
                   backgroundColor: "var(--color-primary-beige)",
                   borderColor: "var(--color-white)",
                 }}
@@ -208,7 +247,11 @@ export default function IndustriesSection() {
                 <div className="flex flex-col gap-2">
                   {/* Icon */}
                   <div className="p-3 rounded-full inline-flex items-center justify-center self-start bg-primary-black transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden">
-                    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 sm:w-6 sm:h-6">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                    >
                       <path
                         d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
                         stroke="var(--color-secondary-beige)"
@@ -250,13 +293,20 @@ export default function IndustriesSection() {
           onClick={handleScrollRight}
           aria-label="Next industry slide"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: scrollPosition !== "right" ? 1 : 0, scale: scrollPosition !== "right" ? 1 : 0.8 }}
+          animate={{
+            opacity: scrollPosition !== "right" ? 1 : 0,
+            scale: scrollPosition !== "right" ? 1 : 0.8,
+          }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className={`w-11 h-11 md:w-12 md:h-12 min-w-[44px] min-h-[44px] rounded-3xl border-none cursor-pointer flex items-center justify-center shrink-0 ${scrollPosition === "right" ? "pointer-events-none md:hidden" : "md:flex"}`}
           style={{ backgroundColor: "var(--color-off-white)" }}
         >
-          <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 md:w-6 md:h-6">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            className="w-4 h-4 md:w-6 md:h-6"
+          >
             <path
               d="M9 5L16 12L9 19"
               stroke="var(--color-primary-black)"

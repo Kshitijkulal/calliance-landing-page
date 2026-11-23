@@ -1253,10 +1253,10 @@ export default function WhatIsAnAIVoiceAgentPage() {
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
                   <p>
-                    Callience helps businesses automate routine communication through customised AI voice agents designed around their calling requirements.
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> helps businesses automate routine communication through customised AI voice agents designed around their calling requirements.
                   </p>
                   <p>
-                    Its solutions support workflows such as lead qualification, customer follow-ups, appointment reminders, payment reminders and customer re-engagement.
+                    Its solutions support workflows such as <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">customer follow-ups</Link>, appointment reminders, <Link href="/blogs/ai-calling-payment-reminders" className="font-semibold underline hover:text-black transition-colors">payment reminders</Link> and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p>Key capabilities include:</p>
                   <ul className="list-disc pl-5 space-y-2">
@@ -1299,6 +1299,9 @@ export default function WhatIsAnAIVoiceAgentPage() {
                   </p>
                   <p>
                     For MSMEs, startups and growing businesses, AI voice automation offers a practical way to manage repetitive calling activities and improve customer communication. However, successful implementation requires accurate business information, suitable use cases and human support for conversations that need personal attention.
+                  </p>
+                  <p>
+                    Explore <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how Callience voice AI works step by step</Link>, compare approaches in our <Link href="/blogs/inbound-vs-outbound-ai-calling" className="font-semibold underline hover:text-black transition-colors">inbound vs outbound AI calling guide</Link>, or see our comparison of <Link href="/blogs/ai-voice-agent-vs-ivr" className="font-semibold underline hover:text-black transition-colors">AI voice agents vs traditional IVR systems</Link>.
                   </p>
                 </div>
               </section>

@@ -5,44 +5,44 @@ import { motion } from "framer-motion";
 
 const USE_CASES = [
   {
-    title: "Lead Qualification",
+    title: "AI Lead Qualification",
     description:
-      "Identify high-intent prospects and move them to the next step automatically.",
+      "Automate lead qualification and AI lead generation to identify high-intent prospects and move them to the next step.",
   },
   {
-    title: "Lead Follow-Ups",
+    title: "Lead Follow-Up Automation",
     description:
-      "Ensure consistent outreach so no promising pipeline opportunity goes cold.",
+      "Ensure consistent sales follow-up, schedule callbacks and visits, and keep prospects moving through the pipeline so no promising opportunity goes cold.",
   },
   {
-    title: "Real Estate Outreach",
+    title: "AI Inbound Calling",
     description:
-      "Qualify property leads, schedule site visits and keep prospects moving through the pipeline.",
+      "Answer every inbound call 24/7 with an AI receptionist for AI customer service that handles customer enquiries and captures leads.",
   },
   {
-    title: "Admissions Outreach",
+    title: "Updates & Follow-Up Calls",
     description:
-      "Reach students and parents for admissions follow-ups, counselling and timely updates.",
+      "Reach customers and prospects for enquiries, follow-ups, counselling and timely updates.",
   },
   {
-    title: "Payment Reminders",
+    title: "Automated Payment Reminder Calls",
     description:
-      "Proactively reach customers about pending payments to improve cash flow before accounts become overdue",
+      "Proactively remind customers about pending payments to improve cash flow before accounts become overdue.",
   },
   {
-    title: "Appointment Reminders",
+    title: "Appointment Reminder Calls",
     description:
-      "Confirm bookings and reduce costly no-shows with timely automated calls",
+      "Confirm bookings and reduce costly no-shows with timely automated appointment reminders.",
   },
   {
     title: "Customer Re-engagement",
     description:
-      "Reconnect with inactive customers and automatically bring them back into your sales funnel.",
+      "Reconnect with inactive customers and revive dead leads, then answer their inbound callbacks instantly, automatically bringing them back into your sales funnel.",
   },
   {
-    title: "Renewals & Retention",
+    title: "Renewals & Customer Retention",
     description:
-      "Reach customers before renewals and turn timely conversations into guaranteed retention.",
+      "Automate renewal reminders to reach customers before renewals and turn timely conversations into better customer retention and stronger client relationships.",
   },
 ];
 
@@ -121,11 +121,11 @@ export default function FasterCallsSection() {
       {/* Header */}
       <div className="flex flex-col items-center gap-3 md:gap-4 mx-auto max-w-[1008px]">
         <h2 className="w-full text-center font-normal uppercase m-0 font-bebas text-[clamp(32px,5vw,60px)] leading-[1.1] text-primary-black">
-          Faster Calls That Keep You Ahead
+          AI Calling Use Cases That Keep You Ahead
         </h2>
         <p className="w-full text-center text-base sm:text-lg md:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
           From lead qualification to payment reminders, see how Callience makes
-          everyday calls faster and more efficient.
+          every day inbound and outbound calls faster and more efficient.
         </p>
       </div>
 

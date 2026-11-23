@@ -73,16 +73,20 @@ export default function AutomatedOutboundCallingLayout({
     image: ["https://www.callience.in/automated-outbound-calling-guide.png"],
     datePublished: "2026-11-20T00:00:00.000Z",
     dateModified: "2026-11-20T00:00:00.000Z",
+    inLanguage: "en-IN",
+    keywords: Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : (metadata.keywords || ""),
     author: {
       "@type": "Person",
       name: "Divyanshu Singh",
+      url: "https://www.callience.in",
     },
     publisher: {
       "@type": "Organization",
       name: "Callience",
+      url: "https://www.callience.in",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.callience.in/logo.svg",
+        url: "https://www.callience.in/logo.png",
       },
     },
     mainEntityOfPage: {

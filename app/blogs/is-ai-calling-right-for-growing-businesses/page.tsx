@@ -970,6 +970,12 @@ export default function IsAICallingRightPage() {
                   >
                     AI calling is a practical investment for small and growing businesses that receive many repetitive calls, miss calls they cannot afford to miss, or are about to hire mainly to keep up with the phone. It is a weaker fit for businesses with very low volume, highly consultative sales or undocumented processes. For most, the sensible path is a hybrid: let AI handle routine and first-contact calls, keep people on complex conversations, start with one or two use cases and measure the results before expanding. That is the clearest answer to whether AI calling is right for growing businesses.
                   </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    Explore our transparent <Link href="/#pricing" className="font-semibold underline hover:text-black transition-colors">pay-as-you-go pricing</Link>, read how <Link href="/blogs/ai-voice-calling-for-msmes" className="font-semibold underline hover:text-black transition-colors">MSMEs use AI voice calling</Link>, compare <Link href="/blogs/ai-calling-vs-traditional-telecalling" className="font-semibold underline hover:text-black transition-colors">AI calling vs traditional telecalling</Link>, or <Link href="/#contact" className="font-semibold underline hover:text-black transition-colors">request a pilot consultation</Link>.
+                  </p>
                 </div>
               </section>
 

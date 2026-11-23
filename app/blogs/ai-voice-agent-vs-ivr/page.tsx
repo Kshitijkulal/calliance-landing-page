@@ -784,7 +784,7 @@ export default function AIVoiceAgentVsIVRPage() {
                 </h2>
                 <div className="space-y-4">
                   <p>
-                    Consider replacing traditional IVR with an AI voice agent when customers frequently struggle with menu navigation, enquiries require flexible conversations or existing menus cannot handle the variety of customer requests.
+                    Consider replacing traditional IVR with an <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">AI voice agent</Link> when customers frequently struggle with menu navigation, enquiries require flexible conversations or existing menus cannot handle the variety of customer requests.
                   </p>
                   <p>
                     However, completely replacing an IVR system may not be necessary. Businesses should first identify which call types benefit from conversational automation and which are already handled efficiently by existing menus.
@@ -809,6 +809,9 @@ export default function AIVoiceAgentVsIVRPage() {
                   </p>
                   <p>
                     For businesses with existing IVR infrastructure, a hybrid approach can provide a practical transition. Rather than replacing everything immediately, organisations can introduce AI where it offers clear improvements and measure the results before expanding automation.
+                  </p>
+                  <p>
+                    Explore how the <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> delivers intelligent <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">inbound call handling</Link> with zero wait times, see our guide on <Link href="/blogs/how-voice-ai-works" className="font-semibold underline hover:text-black transition-colors">how voice AI technology works</Link>, or compare <Link href="/blogs/ai-voice-agent-vs-chatbot" className="font-semibold underline hover:text-black transition-colors">AI voice agents vs chatbots</Link>.
                   </p>
                 </div>
               </section>

@@ -1,5 +1,54 @@
+# Robots.txt for Callience (https://www.callience.in)
+
+# Search Engine Crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
 
+# Generative AI & LLM Search Crawlers (OpenAI, Perplexity, Anthropic, Google, Apple)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Googleother
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+
+# Sitemap & LLM Knowledge standard
 Sitemap: https://www.callience.in/sitemap.xml
+
+# Generative AI Knowledge Manifests
+# llms-txt: https://www.callience.in/llms.txt
+# llms-full-txt: https://www.callience.in/llms-full.txt

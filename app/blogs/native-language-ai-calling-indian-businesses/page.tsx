@@ -710,7 +710,7 @@ export default function NativeLanguageAICallingPage() {
                 </h2>
                 <div className="space-y-4">
                   <p>
-                    Callience helps businesses manage inbound and outbound customer communication through AI-powered voice agents. Businesses can use these workflows for lead qualification, admission enquiries, follow-ups, appointment reminders, and customer re-engagement.
+                    <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience</Link> helps businesses manage inbound and outbound customer communication through <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">AI-powered voice agents</Link>. Businesses can use these workflows for <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, admission enquiries, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">lead follow-ups</Link>, appointment reminders, and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p>
                     For businesses serving customers across different regions, choosing suitable language options and creating clear calling scripts can help make conversations more accessible. Callience workflows can also help handle incoming enquiries, collect customer information, and direct callers to the appropriate team.
@@ -732,6 +732,9 @@ export default function NativeLanguageAICallingPage() {
                   </p>
                   <p>
                     Whether it is a coaching institute following up on admission enquiries or a service provider managing customer requests, regional language AI calling can support everyday business communication. The key is to choose suitable language options, test conversation quality, and keep human assistance available when customers need it.
+                  </p>
+                  <p>
+                    Learn how Callience supports <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">22+ native Indian languages and custom AI voices</Link>, read about <Link href="/blogs/multilingual-voice-ai-reach-more-customers" className="font-semibold underline hover:text-black transition-colors">multilingual voice AI for customer reach</Link>, and see how models handle <Link href="/blogs/ai-voice-agents-different-languages-accents" className="font-semibold underline hover:text-black transition-colors">regional accents and Hinglish</Link>.
                   </p>
                 </div>
               </section>

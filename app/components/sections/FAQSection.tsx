@@ -5,40 +5,29 @@ import { motion } from "framer-motion";
 
 const FAQ_ITEMS = [
   {
-    question: "What can I use the platform for?",
-    answer: "Automate outbound conversations such as lead qualification, customer follow-ups, appointment reminders, payment collections, targeted re-engagement, surveys and other high-volume calling workflows.",
+    question: "What can I use Callience platform for?",
+    answer:
+      "Callience AI voice agents handle inbound calls, such as customer enquiries and lead capture, and outbound calls, such as lead qualification, follow-ups, appointment reminders, payment reminders, re-engagement and surveys, for enterprises and MSMEs.",
   },
   {
-    question: "Can I create an AI agent specific to my business?",
-    answer: "Yes. Every AI agent is fully customized around your specific business goals, knowledge base, conversation flows, and brand tone to ensure highly personalized customer interactions.",
+    question: "Can the AI handle inbound calls?",
+    answer:
+      "Yes. Callience AI voice agents answer inbound calls 24/7, including after hours, and handle multiple inbound calls at the same time, so customers never wait in a queue.",
   },
   {
-    question: "Can the AI speak multiple languages?",
-    answer: "Yes. The platform supports multilingual conversations, allowing you to reach customers in the languages they are most comfortable speaking.",
+    question: "Can the AI handle multiple calls at the same time?",
+    answer:
+      "Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, and the AI handles multiple inbound calls at the same time, expanding your capacity without adding headcount.",
   },
   {
-    question: "Can I make multiple calls at the same time?",
-    answer: "Yes. You can launch thousands of simultaneous outbound calls to reach large customer lists instantly, expanding your outreach capacity without adding headcount.",
+    question: "Do I need technical expertise to set up an AI voice agent?",
+    answer:
+      "No technical expertise is required. Our team provides white-glove onboarding, handling configuration, AI voice agent setup, and campaign deployment so you can go live effortlessly.",
   },
   {
-    question: "Can I integrate it with my existing systems?",
-    answer: "Yes. We architect the platform to integrate directly into your existing CRM, workflows, and business processes so your data stays perfectly synced.",
-  },
-  {
-    question: "How do I know what happened on each call?",
-    answer: "Every interaction is automatically captured. Your team gets real-time access to call transcripts, intent analysis, conversation outcomes, and clear follow-up steps right in your dashboard.",
-  },
-  {
-    question: "Do I need technical expertise to get started?",
-    answer: "No technical expertise is required. Our team provides white-glove onboarding, handling the configuration, agent setup, and campaign deployment so you can go live effortlessly.",
-  },
-  {
-    question: "Is my customer data secure?",
-    answer: "Absolutely. Enterprise-grade security is built directly into our infrastructure to ensure your proprietary business information and customer data remain strictly protected at all times.",
-  },
-  {
-    question: "How does pricing work?",
-    answer: "Pricing is customized based on your business requirements, calling volume, workflows and deployment needs.",
+    question: "Is my customer data secure with an AI voice agent?",
+    answer:
+      "Yes. Your business and customer data is encrypted and stays under your control, protecting your data privacy. Access and decryption are restricted to you and the authorized identities you choose.",
   },
 ];
 

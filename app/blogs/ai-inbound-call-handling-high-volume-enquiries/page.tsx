@@ -453,7 +453,7 @@ export default function AIInboundCallHandlingPage() {
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    An AI voice agent for customer service combines speech recognition, language understanding and a natural-sounding voice, and connects to business systems such as a CRM, booking tool or billing platform. It listens to the caller, identifies the intent, finds or updates the right information and replies in speech.
+                    An <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">AI customer service</Link> voice agent delivers complete <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">customer support automation</Link> by combining speech recognition, language understanding and a natural-sounding voice, and connects to business systems such as a CRM, booking tool or billing platform. It listens to the caller, identifies the intent, finds or updates the right information and replies in speech.
                   </p>
                   <p
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
@@ -914,13 +914,13 @@ export default function AIInboundCallHandlingPage() {
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Callience provides enterprise-grade AI calling for both inbound customer support and outbound communication. For high-volume customer enquiries, the inbound voice platform answers calls on the first ring, resolves routine questions via deep CRM and ERP integrations, and seamlessly escalates complex conversations to human agents with full context.
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> provides enterprise-grade AI calling for both <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">inbound customer support</Link> and <Link href="/blogs/automated-outbound-calling-guide" className="font-semibold underline hover:text-black transition-colors">outbound communication</Link>. For high-volume customer enquiries, the inbound voice platform answers calls on the first ring, resolves routine questions via deep CRM and ERP integrations, and seamlessly escalates complex conversations to human agents with full context. Compare strategies in our guide to <Link href="/blogs/inbound-vs-outbound-ai-calling" className="font-semibold underline hover:text-black transition-colors">inbound vs outbound AI calling</Link>.
                   </p>
                   <p
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    With support for 65+ regional languages and dialects, native interruptions, and sub-second voice latency, Callience ensures your business delivers professional customer service around the clock.
+                    With support for 65+ regional languages and dialects, native interruptions, and sub-second voice latency, Callience ensures your business delivers professional customer service around the clock, paired with deep <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">AI call analytics</Link> to track resolution rates and caller sentiment.
                   </p>
                 </div>
               </section>
@@ -945,6 +945,12 @@ export default function AIInboundCallHandlingPage() {
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     The strongest results come from starting with a few high-volume call types, keeping the knowledge base accurate, connecting the right systems and measuring outcomes. Used this way, it protects customer experience while easing the load on support and reception teams.
+                  </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    See how Callience deploys 24/7 <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">AI receptionists and conversation intelligence</Link>, read about <Link href="/blogs/ai-human-collaboration-in-call-centers" className="font-semibold underline hover:text-black transition-colors">AI human collaboration in call centers</Link>, or <Link href="/#contact" className="font-semibold underline hover:text-black transition-colors">schedule a consultation</Link>.
                   </p>
                 </div>
               </section>

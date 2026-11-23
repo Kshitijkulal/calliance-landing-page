@@ -806,10 +806,10 @@ export default function AIVoiceCallingForMSMEsPage() {
                 </h2>
                 <div className="space-y-4">
                   <p>
-                    Callience helps businesses automate outbound calling activities such as lead qualification, admission enquiries, follow-ups, payment reminders, appointment reminders, and customer re-engagement through AI voice agents.
+                    <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience</Link> helps businesses automate outbound calling activities such as <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, admission enquiries, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">lead follow-ups</Link>, <Link href="/blogs/ai-calling-payment-reminders" className="font-semibold underline hover:text-black transition-colors">payment reminders</Link>, appointment reminders, and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link> through AI voice agents.
                   </p>
                   <p>
-                    It also supports inbound calls by handling customer enquiries, answering common questions, collecting lead information, and directing callers to the appropriate team. These workflows help businesses reduce repetitive calling tasks, maintain consistent communication, and save time.
+                    It also supports <Link href="/blogs/inbound-vs-outbound-ai-calling" className="font-semibold underline hover:text-black transition-colors">inbound calls</Link> by handling customer enquiries, answering common questions, collecting lead information, and directing callers to the appropriate team. These workflows help businesses reduce repetitive calling tasks, maintain consistent communication, and save time.
                   </p>
                 </div>
               </section>
@@ -852,6 +852,9 @@ export default function AIVoiceCallingForMSMEsPage() {
                   </p>
                   <p>
                     Understanding how AI voice agents help small businesses manage repetitive calling activities can help companies choose suitable automation workflows.
+                  </p>
+                  <p>
+                    Explore how small businesses can start with affordable <Link href="/#pricing" className="font-semibold underline hover:text-black transition-colors">pay-as-you-go voice AI pricing</Link>, evaluate whether <Link href="/blogs/is-ai-calling-right-for-growing-businesses" className="font-semibold underline hover:text-black transition-colors">AI calling is suitable for your business</Link>, or see <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how our automated calling workflows operate</Link>.
                   </p>
                 </div>
               </section>

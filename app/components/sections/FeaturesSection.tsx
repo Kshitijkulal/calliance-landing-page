@@ -5,49 +5,75 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const FEATURES = [
   {
-    title: "Rapid Launch & Optimize With Experts",
+    title: "Rapid AI Voice Agent Implementation With Experts",
     content: {
-      heading: "Expert guidance from campaign planning to continuous optimization",
+      heading:
+        "Expert guidance for AI calling campaign management, from planning to continuous optimization",
       bullets: [
         "Get guided onboarding and expert-led setup",
         "Work with AI specialists and marketing consultants to plan audiences, campaign strategies, and scripts",
-        "Get help configuring AI agents, conversations, and follow-ups",
-        "Receive ongoing consultation to refine campaigns as results come in",
+        "Get help configuring AI agents, inbound and outbound call flows, conversations, and follow-ups",
+        "Receive ongoing consultation to refine inbound and outbound campaigns as results come in",
       ],
     },
   },
   {
-    title: "Human-Like Agents Built Around Your Business",
+    title: "Human-Like AI Calling Agents Built Around Your Business",
     content: {
-      heading: "Personalized AI conversations tailored to your business goals",
+      heading:
+        "Personalized, human-like AI conversations tailored to your business goals",
       bullets: [
-        "Customize agents for your specific business goals and workflows",
-        "Define how agents speak, respond, and handle conversations",
-        "Equip every agent with the knowledge and context it needs",
+        "Create a customizable AI voice agent around your specific business goals and workflows",
+        "Define how agents speak, respond, and handle inbound and outbound conversations",
+        "Equip every agent with the knowledge and context it needs to answer customer enquiries",
         "Create tailored conversation scripts and flows for your campaigns",
       ],
     },
   },
   {
-    title: "Native Conversations in 65+ Languages",
+    title: "24/7 Inbound Calling With an AI Receptionist",
     content: {
-      heading: "Reach customers in the language they know best",
+      heading: "Answer every customer call, day or night",
       bullets: [
-        "Support multilingual customer conversations",
-        "Adapt interactions to customers' language preferences",
-        "Deliver more natural, personalized conversations across diverse audiences",
-        "Expand your reach across markets with multilingual AI calling",
+        "Answer inbound calls instantly, including after hours, so no customer waits and no call is missed",
+        "Handle multiple inbound calls at the same time, without hold queues",
+        "Answer customer questions with customer support automation built around your business knowledge",
+        "Capture and qualify inbound enquiries as leads",
       ],
     },
   },
   {
-    title: "Scale Outreach Without Scaling Costs",
+    title: "Outbound Sales Automation at Scale",
+    content: {
+      heading: "Reach more customers with automated calling campaigns",
+      bullets: [
+        "Run large-scale outbound campaigns in minutes, not days",
+        "Make thousands of simultaneous calls with auto dialer software",
+        "Replace slow, error-prone manual dialing queues with automated follow-ups",
+        "Automate repetitive outreach so your team can focus on qualified prospects",
+      ],
+    },
+  },
+  {
+    title: "Multilingual AI Calling in 65+ Native Languages",
+    content: {
+      heading: "Reach customers in the language they know best",
+      bullets: [
+        "Support multilingual customer conversations",
+        "Adapt interactions to customers’ language preferences on both inbound and outbound calls",
+        "Deliver more natural, personalized conversations across diverse audiences",
+        "Expand your reach across markets with a multilingual voice bot",
+      ],
+    },
+  },
+  {
+    title: "Scale AI Calls Without Scaling Costs",
     content: {
       heading: "Reach more customers while making every rupee count",
       bullets: [
-        "Handle more conversations with fewer resources",
-        "Scale outreach without proportionately increasing headcount",
-        "Reduce manual calling effort and operational overhead",
+        "Handle more inbound and outbound conversations with fewer resources",
+        "Scale AI sales outreach without proportionately increasing headcount",
+        "Support call center cost reduction by cutting manual calling effort and operational overhead",
         "Plan calling budgets around your business needs and campaign goals",
         "Reduce wasted spend through smarter targeting and efficient campaign planning",
       ],
@@ -56,50 +82,28 @@ const FEATURES = [
   {
     title: "Track Every Call, Improve Lead Quality",
     content: {
-      heading: "Turn call intelligence into better leads and stronger ROI",
+      heading:
+        "Turn conversation intelligence into better leads and stronger ROI",
       bullets: [
-        "Capture customer intent, objections, and interest levels",
+        "Capture customer intent, objections, and interest levels on every inbound and outbound call",
         "Review transcripts and call outcomes to understand customer responses",
-        "Track callbacks, next steps, and follow-ups",
-        "Identify better-quality leads through customer intent and qualification signals",
-        "Use campaign insights to improve follow-ups, optimize performance, and increase ROI",
+        "Monitor callbacks, next steps, and follow-ups with call tracking software",
+        "Use AI lead scoring to identify better-quality leads through customer intent and qualification signals",
+        "Use campaign insights to improve follow-ups, optimize performance, and increase lead conversion and ROI",
       ],
     },
   },
   {
-    title: "Constantly Closing Deals, Even While You Sleep",
+    title: "Your 24/7 AI Sales Agent, Closing Deals Even While You Sleep",
     content: {
-      heading: "Keep customer outreach moving around the clock",
+      heading:
+        "Keep inbound and outbound customer conversations moving around the clock",
       bullets: [
-        "Run large-scale outbound campaigns in minutes, not days",
+        "Answer every inbound call 24/7 with an AI receptionist, so clients can always reach you",
+        "Run large-scale outbound call automation campaigns in minutes, not days",
         "Make simultaneous calls at scale",
-        "Reduce reliance on slow, error-prone manual dialing queues",
+        "Replace slow, error-prone manual dialing queues with auto dialer software",
         "Automate repetitive outreach so your team can focus on qualified prospects",
-      ],
-    },
-  },
-  {
-    title: "Secure & Encrypted Data You Control",
-    content: {
-      heading: "Protect customer conversations and keep data access under control",
-      bullets: [
-        <React.Fragment key="sec-1">
-          <strong>Secure customer interactions:</strong> Keep proprietary
-          business data and customer conversations protected
-        </React.Fragment>,
-        <React.Fragment key="sec-2">
-          <strong>Encrypted data, controlled by you:</strong> Keep data
-          encrypted and accessible only to authorized users, in line with your
-          security architecture
-        </React.Fragment>,
-        <React.Fragment key="sec-3">
-          <strong>Reliable calling infrastructure:</strong> Handle high call
-          volumes with dependable calling infrastructure
-        </React.Fragment>,
-        <React.Fragment key="sec-4">
-          <strong>Built for business use:</strong> Support the privacy,
-          security, and reliability needs of modern B2B operations
-        </React.Fragment>,
       ],
     },
   },
@@ -188,7 +192,7 @@ export default function FeaturesSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Built to Give Your Operations an Edge
+          A Voice AI Platform Built to Give Your Operations an Edge
         </h2>
         <div className="pt-0 sm:pt-1 md:pt-3 lg:pt-4">
           <p
@@ -198,8 +202,9 @@ export default function FeaturesSection() {
               color: "var(--color-primary-black)",
             }}
           >
-            Voice AI backed by specialists, so you launch faster, reach more
-            customers and stay ahead of competitors.
+            Voice AI for inbound and outbound calls, backed by specialists, so
+            you launch faster, reach more customers, and stay ahead of
+            competitors.
           </p>
         </div>
       </div>
@@ -282,9 +287,12 @@ export default function FeaturesSection() {
 
                 {/* Pure CSS Fill Animation — runs on GPU, zero JS overhead */}
                 {index === activeIndex && (
-                  <div key={isPaused ? "paused" : "playing"} className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden">
+                  <div
+                    key={isPaused ? "paused" : "playing"}
+                    className="absolute left-0 top-0 w-full h-full z-1 overflow-hidden"
+                  >
                     <div
-                      className={`absolute left-0 top-0 w-full h-full overflow-hidden ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
+                      className={`absolute left-0 top-0 w-full h-full overflow-hidden ${hoveredIndex === activeIndex || isPaused ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
                       style={{
                         backgroundColor: "var(--color-primary-black)",
                         animation: "pillFillOuter 2.5s linear forwards",
@@ -292,7 +300,7 @@ export default function FeaturesSection() {
                       }}
                     >
                       <div
-                        className={`absolute left-0 top-0 w-full h-full flex justify-between items-center py-3.5 sm:py-4 lg:py-5 px-6 sm:px-7 lg:px-8 box-border ${(hoveredIndex === activeIndex || isPaused) ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
+                        className={`absolute left-0 top-0 w-full h-full flex justify-between items-center py-3.5 sm:py-4 lg:py-5 px-6 sm:px-7 lg:px-8 box-border ${hoveredIndex === activeIndex || isPaused ? "![transform:translateX(0%)] ![animation:none]" : ""}`}
                         style={{
                           animation: "pillFillInner 2.5s linear forwards",
                           willChange: "transform",

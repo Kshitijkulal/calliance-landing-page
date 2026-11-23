@@ -96,8 +96,67 @@ export default function BlogsPage() {
     return pages;
   };
 
+  const blogCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Callience Voice AI & Calling Automation Insights",
+    description:
+      "Explore the latest insights, technical guides, and business strategies on Voice AI, automated calling software, and AI voice agents.",
+    url: "https://www.callience.in/blogs",
+    publisher: {
+      "@type": "Organization",
+      name: "Callience",
+      url: "https://www.callience.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.callience.in/logo.png",
+      },
+    },
+    blogPost: REAL_BLOGS.map((blog) => ({
+      "@type": "BlogPosting",
+      headline: blog.title,
+      description: blog.excerpt,
+      url: `https://www.callience.in/blogs/${blog.slug}`,
+      image: `https://www.callience.in${blog.image}`,
+      datePublished: `${blog.publishedAt}T00:00:00.000Z`,
+      dateModified: `${blog.lastModified || blog.publishedAt}T00:00:00.000Z`,
+      author: {
+        "@type": "Person",
+        name: "Callience Research Team",
+        url: "https://www.callience.in",
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.callience.in",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blogs",
+        item: "https://www.callience.in/blogs",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-primary-beige flex flex-col font-sans text-primary-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogCollectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-36 pb-16 md:pb-20">

@@ -466,13 +466,13 @@ export default function SetUpOutboundCallingCampaignPage() {
                   </p>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>
-                      <strong>Save time:</strong> Automate repetitive calls and reduce manual calling work.
+                      <strong>Scale outbound sales automation:</strong> Automate repetitive calls and reduce manual calling work across your sales funnel.
                     </li>
                     <li>
-                      <strong>Manage more enquiries:</strong> Contact potential customers according to planned campaign schedules.
+                      <strong>Accelerate AI sales outreach:</strong> Contact potential customers according to planned campaign schedules for faster speed-to-lead.
                     </li>
                     <li>
-                      <strong>Improve follow-ups:</strong> Record customer responses and schedule callbacks.
+                      <strong>Power proactive AI lead generation:</strong> Record customer responses, qualify high-intent prospects, and schedule callbacks instantly.
                     </li>
                     <li>
                       <strong>Organize customer information:</strong> Store call outcomes and lead details in connected CRM systems.
@@ -780,7 +780,7 @@ export default function SetUpOutboundCallingCampaignPage() {
                 </h2>
                 <div className="space-y-4">
                   <p>
-                    Callience helps businesses automate outbound customer communication using AI-powered voice agents. Businesses can use these calling workflows for lead qualification, admission enquiries, follow-ups, payment reminders, appointment reminders, and customer re-engagement.
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> helps businesses automate outbound customer communication using AI-powered voice agents. Businesses can use these calling workflows for <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, admission enquiries, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">sales follow-ups</Link>, <Link href="/blogs/ai-calling-payment-reminders" className="font-semibold underline hover:text-black transition-colors">payment reminders</Link>, appointment reminders, and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p>
                     By using AI voice agents to handle repetitive calling activities, businesses can reduce manual calling work and maintain more consistent customer communication. This allows sales teams to focus on qualified leads, detailed discussions, and important customer interactions.
@@ -808,6 +808,9 @@ export default function SetUpOutboundCallingCampaignPage() {
                   </p>
                   <p>
                     In conclusion, taking a structured approach to your AI outbound calling campaign delivers consistent results and scalable business growth.
+                  </p>
+                  <p>
+                    Explore Callience's high-speed <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">auto dialer software and voice AI platform</Link>, read our comprehensive <Link href="/blogs/automated-outbound-calling-guide" className="font-semibold underline hover:text-black transition-colors">automated outbound calling guide</Link>, or review our flexible <Link href="/#pricing" className="font-semibold underline hover:text-black transition-colors">outbound campaign pricing</Link>.
                   </p>
                 </div>
               </section>

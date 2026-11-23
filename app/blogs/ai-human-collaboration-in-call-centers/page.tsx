@@ -1298,14 +1298,26 @@ export default function AIHumanCollaborationPage() {
                   >
                     Explore{" "}
                     <Link
-                      href="https://calling-ai.vercel.app/"
+                      href="/#features"
                       className="font-semibold underline hover:text-black transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
-                      Callience
+                      Callience voice AI platform
                     </Link>{" "}
-                    to learn more about AI-powered calling workflows.
+                    to learn more about{" "}
+                    <Link
+                      href="/#how-it-works"
+                      className="font-semibold underline hover:text-black transition-colors"
+                    >
+                      AI-powered calling workflows
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/blogs/ai-calling-vs-traditional-telecalling"
+                      className="font-semibold underline hover:text-black transition-colors"
+                    >
+                      hybrid call center automation
+                    </Link>
+                    .
                   </p>
                 </div>
               </section>

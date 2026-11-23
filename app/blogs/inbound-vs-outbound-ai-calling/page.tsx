@@ -972,23 +972,17 @@ export default function InboundVsOutboundAICallingPage() {
                     Implementing voice AI requires more than generic speech models. It demands robust conversational orchestration, low latency, seamless CRM synchronization, and enterprise telephony integration built specifically for real-world business conversations.
                   </p>
                   <p>
-                    <Link
-                      href="/"
-                      className="font-semibold underline hover:text-black transition-colors"
-                    >
-                      Callience
-                    </Link>{" "}
-                    provides end-to-end, customized conversational AI voice agent solutions tailored to both inbound support and outbound outreach campaigns:
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience enterprise voice AI platform</Link> provides end-to-end, customized conversational AI voice agent solutions tailored to both inbound support and outbound outreach campaigns:
                   </p>
                   <ul className="list-disc pl-5 space-y-3">
                     <li>
                       <strong>Ultra-Low Latency Conversational Voice Engine:</strong> Sub-600ms voice response times that deliver natural, interruptible, human-like dialogue without awkward conversational pauses.
                     </li>
                     <li>
-                      <strong>Custom Inbound AI Voice Agents:</strong> Engineered to answer inquiries, access dynamic backend data, book appointments, and route calls with context-rich warm handoffs.
+                      <strong>Custom Inbound AI Voice Agents:</strong> Engineered for <Link href="/blogs/ai-inbound-call-handling-high-volume-enquiries" className="font-semibold underline hover:text-black transition-colors">AI inbound call handling</Link> to answer enquiries, access dynamic backend data, book appointments, and route calls with context-rich warm handoffs.
                     </li>
                     <li>
-                      <strong>High-Converting Outbound Calling Workflows:</strong> Automated speed-to-lead dialing, smart qualification sequences, attendance reminders, and payment notifications that integrate directly with your sales pipeline.
+                      <strong>High-Converting Outbound Calling Workflows:</strong> Powered by <Link href="/blogs/automated-outbound-calling-guide" className="font-semibold underline hover:text-black transition-colors">automated outbound calling</Link> speed-to-lead dialing, smart qualification sequences, attendance reminders, and payment notifications that integrate directly with your sales pipeline.
                     </li>
                     <li>
                       <strong>Multilingual Support Across 65+ Languages:</strong> Connect with diverse regional demographics across India using authentic accents, natural idioms, and effortless language switching.
@@ -1004,14 +998,7 @@ export default function InboundVsOutboundAICallingPage() {
                     </li>
                   </ul>
                   <p className="pt-2">
-                    Explore how Callience can transform your business communication. Visit{" "}
-                    <Link
-                      href="/"
-                      className="font-semibold underline hover:text-black transition-colors"
-                    >
-                      Callience
-                    </Link>{" "}
-                    to listen to real audio demos or schedule a tailored consultation for your business.
+                    Explore how Callience can transform your business communication. Explore our <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">AI calling process</Link>, view our <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">industry use cases</Link>, or <Link href="/#contact" className="font-semibold underline hover:text-black transition-colors">book a live demo</Link> to schedule a tailored consultation for your business.
                   </p>
                 </div>
               </section>

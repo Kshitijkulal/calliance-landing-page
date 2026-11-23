@@ -892,7 +892,7 @@ export default function AICallingPaymentRemindersPage() {
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Callience helps businesses automate inbound and outbound customer communication through AI-powered voice agents. Businesses can use these workflows for payment reminders, follow-ups, lead qualification, appointment reminders, and customer re-engagement.
+                    <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience</Link> helps businesses automate inbound and outbound customer communication through <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">AI-powered voice agents</Link>. Businesses can use these workflows for <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">payment and renewal reminders</Link>, follow-ups, <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, appointment reminders, and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
@@ -923,6 +923,12 @@ export default function AICallingPaymentRemindersPage() {
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     By combining automated calling with accurate payment records and proper customer handling, businesses can make their payment follow-up process more organized while keeping human employees available for sensitive or complicated discussions.
+                  </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    Discover how Callience automates collections and reminders with <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">real-time call transcription and CRM sync</Link>, read our <Link href="/blogs/automated-outbound-calling-guide" className="font-semibold underline hover:text-black transition-colors">automated outbound calling guide</Link>, or view our transparent <Link href="/#pricing" className="font-semibold underline hover:text-black transition-colors">per-minute calling plans</Link>.
                   </p>
                 </div>
               </section>

@@ -446,7 +446,7 @@ export default function AutomatedFollowUpsManageSalesEnquiriesPage() {
                     When someone submits an enquiry through a website, advertisement, phone call, or landing page, the system can record their details and initiate a follow-up based on the business&apos;s communication process.
                   </p>
                   <p>
-                    For example, a real estate agency can automatically contact someone who has enquired about a property, ask about their preferred location and budget, and arrange a callback with a sales representative.
+                    For example, deploying an <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">AI voice agent for real estate</Link> enables agencies to automatically contact property buyers, conduct automated <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">AI lead scoring</Link>, ask about preferred locations and budgets, and execute full <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">outbound sales automation</Link> before arranging a callback with a sales representative.
                   </p>
                   <p>
                     An automated enquiry follow-up process helps businesses maintain regular communication and reduces the chances of overlooking potential customers.
@@ -869,7 +869,7 @@ export default function AutomatedFollowUpsManageSalesEnquiriesPage() {
                 </h2>
                 <div className="space-y-4">
                   <p>
-                    Callience helps businesses manage customer communication through AI-powered inbound and outbound voice calling. Businesses can use AI voice agents for lead qualification, admission enquiries, automated follow-ups, appointment reminders, and customer re-engagement.
+                    <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience</Link> helps businesses manage customer communication through AI-powered inbound and outbound voice calling. Businesses can use <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">AI voice agents</Link> for <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">AI lead qualification</Link>, admission enquiries, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">automated follow-ups</Link>, appointment reminders, and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p>
                     For incoming enquiries, AI agents can answer common questions, collect customer information, and direct callers to the appropriate team. These workflows help businesses reduce repetitive calling tasks, maintain consistent follow-ups, and give sales teams more time to focus on qualified leads and important customer conversations.
@@ -894,6 +894,9 @@ export default function AutomatedFollowUpsManageSalesEnquiriesPage() {
                   </p>
                   <p>
                     By combining suitable sales tools, AI voice agents, and proper enquiry tracking, businesses can create a more organized sales process and improve how they manage potential customers.
+                  </p>
+                  <p>
+                    Learn how Callience helps businesses <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">revive dead leads and maximize lead conversion</Link>, integrate with your CRM through <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">call tracking software and analytics</Link>, or explore <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how automated calling systems work</Link>.
                   </p>
                 </div>
               </section>

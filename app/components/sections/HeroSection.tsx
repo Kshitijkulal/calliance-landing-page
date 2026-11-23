@@ -173,11 +173,11 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]">
-            Enterprise AI calling software powered by human-like{" "}
-            <span className="font-bold">AI voice agents</span>. Automate
-            outbound conversations, qualify sales leads, and scale outreach
-            campaigns in <span className="font-bold">65+ native languages</span>
-            .
+            Enterprise AI calling software with human-like{" "}
+            <span className="font-bold">AI calling agents</span>. Automate
+            inbound and outbound calls, qualify sales leads, and scale{" "}
+            <span className="font-bold">AI sales outreach</span> 24/7 in 65+
+            native languages.
           </p>
 
           <div className="mt-6 sm:mt-9 md:mt-12 lg:mt-16">
@@ -277,20 +277,19 @@ export default function HeroSection() {
             className="absolute flex flex-col items-start gap-5 z-10 right-4 lg:right-12 xl:right-24 top-1/4 w-[35%] xl:w-1/3"
           >
             <h2 className="text-5xl xl:text-6xl leading-none font-normal uppercase m-0 font-bebas text-primary-black">
-              SOFTWARE ALONE DOESN&apos;T DELIVER ROI , STRATEGY DOES
+              AI VOICE AGENTS ALONE DON&apos;T DELIVER ROI, STRATEGY DOES
             </h2>
             <p className="text-lg xl:text-xl font-normal leading-relaxed m-0 font-manrope text-primary-black">
-              Our{" "}
-              <span className="font-bold">
-                AI specialists and Marketing consultants
-              </span>{" "}
-              help you target the right audience, optimize campaigns, and drive
-              better ROI without the guesswork.
+              Our <span className="font-bold">AI specialists</span> set up
+              inbound call handling and customer support automation, while our{" "}
+              <span className="font-bold">marketing consultants</span> help you
+              target the right audience and optimize outbound campaigns, for
+              better lead conversion and ROI without the guesswork.
             </p>
 
             {/* CTA */}
             <motion.a
-              href="#platform"
+              href="#how-it-works"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 mt-2 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
@@ -326,15 +325,14 @@ export default function HeroSection() {
             className="w-full flex flex-col gap-2 px-4 sm:px-6 mt-0"
           >
             <h2 className="text-3xl sm:text-4xl leading-none m-0 uppercase font-bebas text-primary-black">
-              SOFTWARE ALONE DOESN&apos;T DELIVER ROI , STRATEGY DOES
+              AI VOICE AGENTS ALONE DON&apos;T DELIVER ROI, STRATEGY DOES
             </h2>
             <p className="text-sm sm:text-base m-0 font-manrope text-primary-black">
-              Our{" "}
-              <span className="font-bold">
-                AI specialists and Marketing consultants
-              </span>{" "}
-              help you target the right audience, optimize campaigns, and drive
-              better ROI without the guesswork.
+              Our <span className="font-bold">AI specialists</span> set up
+              inbound call handling and customer support automation, while our{" "}
+              <span className="font-bold">marketing consultants</span> help you
+              target the right audience and optimize outbound campaigns, for
+              better lead conversion and ROI without the guesswork.
             </p>
           </motion.div>
 
@@ -362,13 +360,13 @@ export default function HeroSection() {
             className="w-full flex justify-start px-4 sm:px-6 mt-0"
           >
             <motion.a
-              href="#platform"
+              href="#how-it-works"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl gap-3 no-underline bg-primary-black text-secondary-beige transition-all duration-300"
             >
               <span className="text-sm md:text-base font-bold font-manrope">
-                Explore the Platform
+                Explore Our Approach
               </span>
               <svg
                 width="20"

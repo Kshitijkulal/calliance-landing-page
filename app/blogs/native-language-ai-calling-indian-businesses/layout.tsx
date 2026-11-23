@@ -68,6 +68,7 @@ export default function NativeLanguageAICallingLayout({
     dateModified: "2026-11-19T00:00:00.000Z",
     wordCount: 1400,
     inLanguage: "en-IN",
+    keywords: Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : (metadata.keywords || ""),
     author: {
       "@type": "Person",
       name: "Karanvir Singh",

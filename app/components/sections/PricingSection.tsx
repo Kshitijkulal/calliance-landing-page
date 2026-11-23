@@ -4,20 +4,20 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const CHECKLIST = [
-  "AI Agents Customized to Your Business",
-  "30–40% Cost Advantage Over Comparable Solutions",
-  "Flexible, Pay-for-What-You-Use Calling Plans",
-  "Seamless API & CRM Integrations",
-  "Natural AI Conversations in 65+ Languages",
+  "Custom AI Voice Agents for Your Business, Available 24/7 for Inbound and Outbound Calls",
+  "30–40% Cost Advantage Over Comparable AI Calling Solutions",
+  "Flexible, Pay-for-What-You-Use AI Calling Plans for Inbound and Outbound Calls",
+  "Seamless AI Voice Agent API & CRM Integrations",
+  "Natural Multilingual AI Conversations in 65+ Native Languages",
   "Guided Onboarding and Setup",
-  "Ongoing Expert Support & Optimization",
+  "Ongoing Expert Support & Campaign Optimization",
 ];
 
 export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="w-full max-w-[1440px] mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[4%] flex flex-col items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden px-[6%]" 
+      className="w-full max-w-[1440px] mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[4%] flex flex-col items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden px-[6%]"
     >
       {/* Header */}
       <div className="w-full max-w-[1280px] flex flex-col gap-3 md:gap-4 mx-auto items-center">
@@ -30,7 +30,7 @@ export default function PricingSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Pricing Built Around Your Needs
+          AI Calling Software Pricing Built Around Your Needs
         </h2>
         <p
           className="w-full text-center text-base sm:text-lg md:text-[20px] font-normal m-0"
@@ -40,7 +40,8 @@ export default function PricingSection() {
             color: "var(--color-primary-black)",
           }}
         >
-          Get a plan tailored to your calling volume, workflows, integrations, and business requirements.
+          Get an AI calling plan tailored to your inbound and outbound calling
+          volume, workflows, integrations, and business requirements.
         </p>
       </div>
 
@@ -52,7 +53,8 @@ export default function PricingSection() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-[555px] px-6 py-8 rounded-xl flex flex-col items-start gap-8 border border-solid mx-auto"
         style={{
-          boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
+          boxShadow:
+            "inset 6px 6px 12px rgba(0, 0, 0, 0.04), inset -6px -6px 8px rgba(255, 255, 255, 1), 0px 6px 40px 0px rgba(219, 220, 220, 0.18)",
           backgroundColor: "var(--color-primary-beige)",
           borderColor: "var(--color-white)",
         }}
@@ -60,13 +62,22 @@ export default function PricingSection() {
         {/* Checklist */}
         <div className="flex flex-col gap-4 w-full">
           {CHECKLIST.map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-4" 
-            >
+            <div key={item} className="flex items-center gap-4">
               {/* Checkmark icon */}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                <path d="M5 13L9 17L19 7" stroke="var(--color-primary-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="shrink-0"
+              >
+                <path
+                  d="M5 13L9 17L19 7"
+                  stroke="var(--color-primary-black)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
               <span
                 className="text-base md:text-[19px] font-normal leading-relaxed"
@@ -98,10 +109,22 @@ export default function PricingSection() {
               fontFamily: "var(--font-manrope), sans-serif",
             }}
           >
-            Request Demo
+            Request an AI Calling Demo
           </span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ overflow: "hidden" }}>
-            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="var(--color-secondary-beige)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            style={{ overflow: "hidden" }}
+          >
+            <path
+              d="M5 12H19M19 12L13 6M19 12L13 18"
+              stroke="var(--color-secondary-beige)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </motion.a>
       </motion.div>

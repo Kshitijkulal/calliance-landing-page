@@ -1046,7 +1046,7 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Callience provides customized AI voice agents designed to help businesses automate routine customer communication. Its solutions support activities such as lead qualification, outbound follow-ups, admissions outreach, payment reminders, appointment reminders and customer re-engagement.
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> provides customized <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">AI voice agents</Link> designed to help businesses automate routine customer communication. Its solutions support activities such as <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">outbound follow-ups</Link>, admissions outreach, <Link href="/blogs/ai-calling-payment-reminders" className="font-semibold underline hover:text-black transition-colors">payment reminders</Link>, appointment reminders and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
@@ -1109,6 +1109,12 @@ export default function AICallingVsTraditionalTelecallingPage() {
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     For many businesses, AI human hybrid calling offers a practical balance between operational efficiency and personal customer interaction.
+                  </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    Discover how Callience achieves significant <Link href="/#pricing" className="font-semibold underline hover:text-black transition-colors">call center cost reduction</Link>, explore <Link href="/blogs/ai-human-collaboration-in-call-centers" className="font-semibold underline hover:text-black transition-colors">AI human collaboration in call centers</Link>, or see <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how automated calling systems work</Link>.
                   </p>
                 </div>
               </section>

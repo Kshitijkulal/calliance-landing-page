@@ -66,6 +66,7 @@ export default function BlogLayout({
     dateModified: "2026-11-17T00:00:00.000Z",
     wordCount: 1650,
     inLanguage: "en-IN",
+    keywords: Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : (metadata.keywords || ""),
     author: {
       "@type": "Person",
       name: "Divyanshu Singh",

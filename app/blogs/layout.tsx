@@ -38,54 +38,5 @@ export default function BlogsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const blogCollectionSchema = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    name: "Callience Voice AI & Calling Automation Insights",
-    description:
-      "Explore the latest insights, technical guides, and business strategies on Voice AI, automated calling software, and AI voice agents.",
-    url: "https://www.callience.in/blogs",
-    publisher: {
-      "@type": "Organization",
-      name: "Callience",
-      url: "https://www.callience.in",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.callience.in/logo.png",
-      },
-    },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.callience.in",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blogs",
-        item: "https://www.callience.in/blogs",
-      },
-    ],
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogCollectionSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

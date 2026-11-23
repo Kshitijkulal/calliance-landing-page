@@ -883,7 +883,7 @@ export default function MultilingualVoiceAIPage() {
                       className="font-bold text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                       style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                     >
-                      Talk to our team at Callience to see how multilingual AI voice agents can help you reach customers in the languages your market speaks.
+                      Explore the <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> to see <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how our multilingual calling workflows work</Link>, discover <Link href="/blogs/native-language-ai-calling-indian-businesses" className="font-semibold underline hover:text-black transition-colors">why native-language calling matters for Indian businesses</Link>, or read about <Link href="/blogs/ai-voice-agents-different-languages-accents" className="font-semibold underline hover:text-black transition-colors">handling diverse languages and accents</Link>. You can also <Link href="/#contact" className="font-semibold underline hover:text-black transition-colors">book a live demo</Link> to test Indic voice agents in real time.
                     </p>
                   </div>
                 </div>

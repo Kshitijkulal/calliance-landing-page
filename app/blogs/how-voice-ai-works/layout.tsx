@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls",
+  title: "How Voice AI Works: A Beginner's Guide to AI Phone Calls | Callience",
   description:
     "Voice AI allows businesses to communicate with customers through automated phone conversations. Learn how speech recognition, language models, and text-to-speech work together.",
   keywords: [
@@ -70,6 +70,7 @@ export default function BlogLayout({
     dateModified: "2026-11-17T00:00:00.000Z",
     wordCount: 1650,
     inLanguage: "en-IN",
+    keywords: Array.isArray(metadata.keywords) ? metadata.keywords.join(", ") : (metadata.keywords || ""),
     author: {
       "@type": "Person",
       name: "Karanvir Singh",

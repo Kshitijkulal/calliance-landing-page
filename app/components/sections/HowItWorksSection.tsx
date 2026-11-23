@@ -7,23 +7,39 @@ import Image from "next/image";
 const STEPS = [
   {
     number: "1",
-    title: "Define Your Goal",
-    description: "Give your AI agent the specific knowledge, scripts, and conversation-handling protocols to fit your business goals.",
+    title: "Define Your AI Agent’s Goal",
+    description:
+      "Give your conversational AI agent the specific knowledge, calling scripts, and conversation-handling protocols to fit your business goals.",
   },
   {
     number: "2",
-    title: "Customize the Voice",
-    description: "Choose the tone, language, and personality that perfectly aligns with your brand identity.",
+    title: "Customize the AI Voice",
+    description:
+      "Choose the tone, language (including Hindi), and personality of your custom AI voice to align with your brand identity.",
   },
   {
     number: "3",
-    title: "Launch at Scale",
-    description: "Select your audience, schedule the deployment, and initiate thousands of simultaneous calls instantly.",
+    title: "Answer Inbound Calls 24/7",
+    description:
+      "Your AI receptionist answers every inbound call instantly, day or night, so no customer waits and no call goes unanswered.",
   },
   {
     number: "4",
-    title: "Track and Optimize",
-    description: "Monitor real-time transcripts, analyze call outcomes, and use performance insights to continually optimize your ROI.",
+    title: "Handle Multiple Calls at Once",
+    description:
+      "The AI handles multiple inbound calls at the same time, so customers get an answer without waiting in a queue.",
+  },
+  {
+    number: "5",
+    title: "Launch Outbound Calls at Scale",
+    description:
+      "Select your audience, schedule the deployment, and initiate thousands of simultaneous calls instantly with bulk calling software.",
+  },
+  {
+    number: "6",
+    title: "Track Calls and Optimize",
+    description:
+      "Monitor real-time call transcription, analyze call outcomes, and use AI call analytics to continually optimize your ROI.",
   },
 ];
 
@@ -40,12 +56,12 @@ export default function HowItWorksSection() {
         <h2
           className="flex-[1_1_100%] lg:flex-[1_1_400px] font-normal uppercase m-0 font-bebas text-[clamp(40px,5vw,64px)] leading-[1.1] text-primary-black"
         >
-          How It Works
+          How AI Voice Agents Work
         </h2>
         <p
           className="flex-[1_1_100%] lg:flex-[1_1_500px] font-normal leading-relaxed m-0 text-[clamp(16px,2vw,20px)] font-manrope text-primary-black"
         >
-          From your first agent to your first full-scale campaign, we handle the technical heavy lifting. We guide you through the entire setup process so your team can focus on driving revenue, not figuring out the software.
+          From your first AI voice agent to your first full-scale campaign, we handle the technical heavy lifting. We guide you through setting up your automated calling system so your team can focus on driving revenue, not figuring out the software.
         </p>
       </div>
       {/* Full-width Image */}

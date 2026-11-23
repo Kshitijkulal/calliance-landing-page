@@ -190,9 +190,15 @@ export default function Footer() {
               The information provided on this website is for general
               informational purposes only and does not constitute professional,
               legal, financial, or other specialized advice. Product
-              capabilities, features, availability, and pricing may vary based
-              on your business requirements and deployment. Please contact our
-              team for specific information about your use case.
+              capabilities, features, availability, supported languages, and
+              pricing may vary based on your business requirements and deployment.
+              Performance, cost savings, and ROI depend on your use case and are
+              not guaranteed. Customers are responsible for ensuring that their
+              use of Callience for inbound and outbound calling, including
+              consent, Do Not Disturb (DND) preferences, calling hours, call
+              recording, and data protection, complies with all applicable laws
+              and regulations. Please contact our team for specific information
+              about your use case.
             </p>
           </div>
         </div>
@@ -209,6 +215,7 @@ export default function Footer() {
             {[
               { label: "How It Works", href: "/#how-it-works" },
               { label: "Pricing", href: "/#pricing" },
+              { label: "Use Cases", href: "/#use-cases" },
               { label: "Features", href: "/#features" },
               { label: "Blogs", href: "/blogs" },
             ].map((item) => (

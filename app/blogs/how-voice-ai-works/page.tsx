@@ -822,7 +822,7 @@ export default function VoiceAIBlogPage() {
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
-                    Callience focuses on AI-powered voice calling to help businesses automate routine communication. Its use cases include lead qualification, outbound follow-ups, admissions outreach, payment reminders, appointment reminders and customer re-engagement.
+                    The <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">Callience voice AI platform</Link> focuses on AI-powered voice calling to help businesses automate routine communication. Its use cases include <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">lead qualification</Link>, <Link href="/blogs/ai-calling-for-lead-follow-ups" className="font-semibold underline hover:text-black transition-colors">outbound follow-ups</Link>, admissions outreach, <Link href="/blogs/ai-calling-payment-reminders" className="font-semibold underline hover:text-black transition-colors">payment reminders</Link>, appointment reminders and <Link href="/#use-cases" className="font-semibold underline hover:text-black transition-colors">customer re-engagement</Link>.
                   </p>
                   <p
                     className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
@@ -853,6 +853,12 @@ export default function VoiceAIBlogPage() {
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Features such as interruption handling, response-time optimisation and post-call analysis make AI phone calls useful for different business activities. From lead qualification to customer re-engagement, Voice AI offers businesses more ways to manage routine communication.
+                  </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    Explore how our <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">conversational AI agent workflows</Link> operate, discover <Link href="/blogs/what-is-an-ai-voice-agent" className="font-semibold underline hover:text-black transition-colors">what an AI voice agent can do for business</Link>, or compare <Link href="/blogs/ai-voice-agent-vs-ivr" className="font-semibold underline hover:text-black transition-colors">AI voice agents vs traditional IVR</Link>.
                   </p>
                 </div>
               </section>

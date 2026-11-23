@@ -407,7 +407,7 @@ export default function AutomatedOutboundCallingPage() {
                   className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
                   style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                 >
-                  Automated outbound calling is the use of software to place phone calls to customers or prospects automatically, without a person dialling each number. Modern systems range from basic automated calling software that plays a recorded message to AI voice agents that hold a two-way conversation, understand responses and update business systems. Businesses use automated outbound calls for tasks such as appointment reminders, payment nudges, feedback surveys and lead qualification.
+                  Automated outbound calling is the use of software to place phone calls to customers or prospects automatically, without a person dialling each number. Modern systems range from basic <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">AI calling software</Link> and high-throughput <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">bulk calling software</Link> to autonomous AI voice agents that hold a two-way conversation, understand responses and update business systems. Businesses use automated outbound calls for tasks such as appointment reminders, payment nudges, feedback surveys and lead qualification.
                 </p>
 
                 <p
@@ -904,6 +904,12 @@ export default function AutomatedOutboundCallingPage() {
                     style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
                   >
                     Automated outbound calling lets a business place calls at scale without a person dialling and, with AI outbound calling, without a person holding every routine conversation. It works best for structured, repeatable calls such as reminders, confirmations, surveys and first-touch qualification. Its value depends on consent, good scripts, accurate data and a clean path to human agents. Businesses that start small, follow calling rules and measure outcomes can use outbound call automation to reach more people with less manual effort.
+                  </p>
+                  <p
+                    className="font-medium text-primary-black text-[16px] sm:text-[18px] leading-[1.4] tracking-normal"
+                    style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
+                  >
+                    Explore how Callience powers high-capacity <Link href="/#features" className="font-semibold underline hover:text-black transition-colors">auto dialer software and voice AI agents</Link>, see <Link href="/#how-it-works" className="font-semibold underline hover:text-black transition-colors">how our automated calling system works</Link>, learn <Link href="/blogs/set-up-outbound-calling-campaign-with-ai" className="font-semibold underline hover:text-black transition-colors">how to set up an outbound calling campaign</Link>, or compare <Link href="/blogs/inbound-vs-outbound-ai-calling" className="font-semibold underline hover:text-black transition-colors">inbound vs outbound AI calling</Link>.
                   </p>
                 </div>
               </section>
