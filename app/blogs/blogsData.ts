@@ -273,6 +273,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-21",
     lastModified: "2026-11-21",
   },
+  {
+    id: 24,
+    slug: "ai-voice-agents-for-student-admissions",
+    title: "HOW AI VOICE AGENTS CAN SIMPLIFY STUDENT ADMISSIONS AND EDUCATION FOLLOW-UPS",
+    excerpt:
+      "AI voice agents for admissions help schools, colleges, and educational institutions manage student enquiries, automate admission follow-ups, and improve communication with prospective students.",
+    image: "/How AI Voice Agents Can Simplify Student Admissions and Education Follow-Ups.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-23",
+    lastModified: "2026-11-23",
+  },
 ];
 
 /**
