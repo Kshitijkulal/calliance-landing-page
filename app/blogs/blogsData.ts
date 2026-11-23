@@ -285,6 +285,18 @@ export const REAL_BLOGS: BlogPost[] = [
     publishedAt: "2026-11-23",
     lastModified: "2026-11-23",
   },
+  {
+    id: 25,
+    slug: "ai-patient-appointment-management",
+    title: "HOW AI VOICE AGENTS CAN IMPROVE APPOINTMENT MANAGEMENT IN HEALTHCARE",
+    excerpt:
+      "AI voice agents help healthcare providers automate appointment reminders, confirmations, cancellations, and rescheduling.",
+    image: "/How AI Voice Agents Can Improve Appointment Management in Healthcare.png",
+    category: "AI Calling",
+    categories: ["AI Technology", "Sales & Lead Generation", "AI Calling"],
+    publishedAt: "2026-11-23",
+    lastModified: "2026-11-23",
+  },
 ];
 
 /**
