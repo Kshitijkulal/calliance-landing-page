@@ -94,16 +94,16 @@ export default function ContactSection({ source }: ContactSectionProps = {}) {
   return (
     <section
       id="contact"
-      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center pt-[10%] pb-[4%] md:pt-[6%] md:pb-[2%] overflow-hidden px-4 sm:px-6"
+      className="w-full max-w-[1440px] mx-auto relative flex flex-col items-center py-8 sm:py-12 md:py-16 overflow-hidden px-4 sm:px-6"
     >
       {/* Giant Background Text */}
-      <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden -mt-[2%]">
+      <div className="w-full flex justify-center items-center z-0 pointer-events-none overflow-hidden -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="font-bold select-none whitespace-nowrap tracking-[-0.02em] text-[22vw] leading-[22vw] md:text-[19.5vw] md:leading-[19.5vw]"
+          className="font-bold select-none whitespace-nowrap tracking-[-0.02em] text-[20vw] leading-none md:text-[18vw] md:leading-none"
           style={{
             fontFamily: "var(--font-manrope), sans-serif",
             color: "var(--color-primary-black)",
@@ -121,7 +121,7 @@ export default function ContactSection({ source }: ContactSectionProps = {}) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[85%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-md p-[5%] -mt-[4%] md:-mt-[6%]"
+        className="w-[85%] sm:w-[85%] md:w-[75%] lg:w-[60%] rounded-2xl flex flex-col items-center gap-8 md:gap-12 relative z-10 border border-solid backdrop-blur-md p-[5%] -mt-[7vw] md:-mt-[6vw]"
         style={{
           boxShadow: "var(--shadow-glass)",
           backgroundColor: "var(--glass-bg)",

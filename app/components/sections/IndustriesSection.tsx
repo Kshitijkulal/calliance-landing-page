@@ -136,7 +136,7 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="w-full max-w-screen-2xl mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[2%] flex flex-col gap-6 sm:gap-8 md:gap-20 overflow-hidden px-[6%]"
+      className="w-full max-w-screen-2xl mx-auto py-8 sm:py-12 md:py-16 flex flex-col gap-6 sm:gap-8 md:gap-20 overflow-hidden px-[6%]"
     >
       {/* Header — split layout */}
       <div className="flex flex-col md:flex-row items-start gap-3 md:gap-4 w-full">
@@ -168,15 +168,16 @@ export default function IndustriesSection() {
         {/* Description */}
         <div className="w-full md:w-[40%] lg:w-[45%] flex items-center pt-0 md:pt-2 md:pl-4">
           <p
-            className="text-base sm:text-lg md:text-xl font-normal leading-snug m-0"
+            className="text-base sm:text-lg md:text-xl font-normal leading-snug m-0 text-pretty"
             style={{
               fontFamily: "var(--font-manrope), sans-serif",
               color: "var(--color-primary-black)",
+              textWrap: "pretty",
             }}
           >
             From real estate to education, Callience AI calling helps
             forward-thinking businesses handle inbound and outbound calls, reach
-            customers first and pull ahead of the competition.
+            customers first and pull ahead of the&nbsp;competition.
           </p>
         </div>
       </div>

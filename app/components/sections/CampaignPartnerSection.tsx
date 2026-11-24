@@ -47,17 +47,20 @@ export default function CampaignPartnerSection() {
   return (
     <section
       id="approach"
-      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-[6%] pt-4 pb-8 md:pb-12"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-[6%] py-8 sm:py-12 md:py-16"
     >
       <div className="w-full flex flex-col items-center">
         <div className="w-full flex flex-col items-center gap-3 md:gap-4 text-center">
           <h2 className="m-0 font-bebas font-normal uppercase text-primary-black text-[clamp(34px,6vw,56px)] leading-[0.95] tracking-wide">
             A Campaign Partner, Not Just an AI Voice Agent Company
           </h2>
-          <p className="m-0 max-w-3xl font-manrope font-normal text-primary-black text-sm sm:text-base md:text-lg leading-relaxed">
+          <p
+            className="m-0 max-w-4xl font-manrope font-normal text-primary-black text-sm sm:text-base md:text-lg leading-relaxed text-balance"
+            style={{ textWrap: "balance" }}
+          >
             We combine voice AI, expert marketing consultation and continuous
             optimization to help you plan, run and improve inbound and outbound
-            AI calling campaigns that deliver better outcomes.
+            AI calling campaigns that deliver better&nbsp;outcomes.
           </p>
         </div>
 

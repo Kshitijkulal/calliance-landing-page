@@ -12,8 +12,8 @@ const pillShellStyle: React.CSSProperties = {
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-8 md:pb-16 lg:pb-24 z-0">
+    <section className="relative w-full overflow-hidden pb-8 sm:pb-12 md:pb-16">
+      <div className="relative w-full mx-auto flex flex-col items-center pt-20 md:pt-28 pb-8 sm:pb-12 md:pb-16 z-0">
         {/* Animated Concentric Rings Background */}
         <motion.div
           initial={{ opacity: 0, x: "-50%", y: 0, scale: 0.8 }}
@@ -150,7 +150,7 @@ export default function HeroSection() {
             <div
               key={text}
               style={{ left, animationDelay: `${1.1 + index * 0.08}s` }}
-              className="hero-pill pointer-events-auto absolute top-[82%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
+              className="hero-pill pointer-events-auto absolute top-[70%] -translate-x-1/2 -translate-y-1/2 inline-flex px-6 py-3 md:px-7 md:py-3.5 rounded-full border border-solid border-white justify-center items-center overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
             >
               <span
                 className="absolute inset-0 rounded-full"
@@ -169,13 +169,14 @@ export default function HeroSection() {
         {/* Content - Normal Flow */}
         <div className="relative z-20 flex flex-col items-center w-full px-5 sm:px-6 mt-10 sm:mt-16 md:mt-24 lg:mt-32">
           <h1 className="text-center font-normal tracking-normal uppercase m-0 text-[clamp(32px,8vw,120px)] leading-[0.95] text-primary-black font-bebas w-full max-w-[24rem] sm:max-w-5xl">
-            AI Calling Software &amp; AI Voice Agents
+            AI Calling Software &amp; <br />
+            AI Voice Agents
           </h1>
 
           <p className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 text-center font-normal leading-snug lg:leading-normal m-0 text-[15px] sm:text-lg md:text-xl lg:text-2xl xl:text-[26px] text-primary-black font-manrope w-full max-w-[20.5rem] sm:max-w-[34rem] md:max-w-[42rem] lg:max-w-[50rem] xl:max-w-[54rem]">
             Enterprise AI calling software with human-like{" "}
             <span className="font-bold">AI calling agents</span>. Automate
-            inbound and outbound calls, qualify sales leads, and scale{" "}
+            inbound and outbound calls, qualify sales leads, and scale <br />
             <span className="font-bold">AI sales outreach</span> 24/7 in 65+
             native languages.
           </p>
@@ -206,7 +207,7 @@ export default function HeroSection() {
           </div>
 
           {/* Mobile pills — gentle arc under CTA, in document flow */}
-          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-10 sm:mt-12 mb-0">
+          <div className="lg:hidden relative z-20 w-full max-w-[21rem] sm:max-w-[28rem] mx-auto mt-7 sm:mt-8 mb-0">
             <div className="flex justify-between items-end gap-1.5 sm:gap-3 px-0.5">
               {(
                 [
@@ -240,14 +241,14 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop clearance under ring chord */}
-          <div className="hidden lg:block w-full h-40 xl:h-48" aria-hidden />
+          <div className="hidden lg:block w-full h-28 xl:h-32" aria-hidden />
         </div>
       </div>
 
       {/* Unified Platform Section merged into Hero */}
       <div
         id="platform"
-        className="w-full flex justify-center relative z-10 mt-3 sm:mt-4 lg:-mt-12 xl:-mt-16"
+        className="w-full flex justify-center relative z-10 mt-6 sm:mt-8 lg:-mt-12 xl:-mt-16"
       >
         {/* Desktop/Large Screen Pixel-Perfect Layout */}
         <div className="hidden lg:block relative w-full min-h-screen mx-auto z-10">
@@ -316,7 +317,7 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile/Tablet Fallback (Stacking) */}
-        <div className="flex lg:hidden w-full pt-0 pb-6 sm:pb-8 lg:pb-0 flex-col items-center gap-2 relative z-10">
+        <div className="flex lg:hidden w-full pt-0 pb-0 flex-col items-center gap-2 relative z-10">
           {/* Heading and Paragraph above Image */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}

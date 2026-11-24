@@ -4,20 +4,57 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const CHECKLIST = [
-  "Custom AI Voice Agents for Your Business, Available 24/7 for Inbound and Outbound Calls",
-  "30–40% Cost Advantage Over Comparable AI Calling Solutions",
-  "Flexible, Pay-for-What-You-Use AI Calling Plans for Inbound and Outbound Calls",
-  "Seamless AI Voice Agent API & CRM Integrations",
-  "Natural Multilingual AI Conversations in 65+ Native Languages",
-  "Guided Onboarding and Setup",
-  "Ongoing Expert Support & Campaign Optimization",
+  {
+    id: "agents-24-7",
+    content: (
+      <>
+        Custom AI Voice Agents for Your Business, Available{" "}
+        <span className="font-bold">24/7</span> for Inbound and Outbound Calls
+      </>
+    ),
+  },
+  {
+    id: "cost-advantage",
+    content: (
+      <>
+        <span className="font-bold">30–40%</span> Cost Advantage Over
+        Comparable AI Calling Solutions
+      </>
+    ),
+  },
+  {
+    id: "flexible-plans",
+    content:
+      "Flexible, Pay-for-What-You-Use AI Calling Plans for Inbound and Outbound Calls",
+  },
+  {
+    id: "integrations",
+    content: "Seamless AI Voice Agent API & CRM Integrations",
+  },
+  {
+    id: "languages",
+    content: (
+      <>
+        Natural Multilingual AI Conversations in{" "}
+        <span className="font-bold">65+</span> Native Languages
+      </>
+    ),
+  },
+  {
+    id: "onboarding",
+    content: "Guided Onboarding and Setup",
+  },
+  {
+    id: "support",
+    content: "Ongoing Expert Support & Campaign Optimization",
+  },
 ];
 
 export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="w-full max-w-[1440px] mx-auto pt-4 sm:pt-6 md:pt-[4%] pb-6 sm:pb-8 md:pb-[4%] flex flex-col items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden px-[6%]"
+      className="w-full max-w-[1440px] mx-auto py-8 sm:py-12 md:py-16 flex flex-col items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden px-[6%]"
     >
       {/* Header */}
       <div className="w-full max-w-[1280px] flex flex-col gap-3 md:gap-4 mx-auto items-center">
@@ -33,11 +70,12 @@ export default function PricingSection() {
           AI Calling Software Pricing Built Around Your Needs
         </h2>
         <p
-          className="w-full text-center text-base sm:text-lg md:text-[20px] font-normal m-0"
+          className="w-full max-w-2xl text-center text-base sm:text-lg md:text-[20px] font-normal m-0 text-balance"
           style={{
             fontFamily: "var(--font-manrope), sans-serif",
             lineHeight: "1.4",
             color: "var(--color-primary-black)",
+            textWrap: "balance",
           }}
         >
           Get an AI calling plan tailored to your inbound and outbound calling
@@ -62,7 +100,7 @@ export default function PricingSection() {
         {/* Checklist */}
         <div className="flex flex-col gap-4 w-full">
           {CHECKLIST.map((item) => (
-            <div key={item} className="flex items-center gap-4">
+            <div key={item.id} className="flex items-center gap-4">
               {/* Checkmark icon */}
               <svg
                 width="24"
@@ -86,7 +124,7 @@ export default function PricingSection() {
                   color: "var(--color-primary-black)",
                 }}
               >
-                {item}
+                {item.content}
               </span>
             </div>
           ))}
@@ -109,7 +147,7 @@ export default function PricingSection() {
               fontFamily: "var(--font-manrope), sans-serif",
             }}
           >
-            Request an AI Calling Demo
+            Request an Demo
           </span>
           <svg
             width="24"

@@ -37,7 +37,7 @@ export default function FAQSection() {
   return (
     <section
       id="faqs"
-      className="w-full mx-auto pt-4 sm:pt-6 md:pt-8 pb-6 sm:pb-8 md:pb-8 flex flex-col items-center gap-6 sm:gap-8 md:gap-16"
+      className="w-full mx-auto py-8 sm:py-12 md:py-16 flex flex-col items-center gap-6 sm:gap-8 md:gap-16"
     >
       {/* Header */}
       <div className="w-[90%] md:w-[80%] lg:w-[60%] flex flex-col items-center gap-2">

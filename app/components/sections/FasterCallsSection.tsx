@@ -116,7 +116,7 @@ export default function FasterCallsSection() {
   return (
     <section
       id="use-cases"
-      className="pt-4 sm:pt-6 md:pt-10 pb-6 sm:pb-8 md:pb-10 px-4 md:px-8 lg:px-[6%]"
+      className="py-8 sm:py-12 md:py-16 px-4 md:px-8 lg:px-[6%]"
     >
       {/* Header */}
       <div className="flex flex-col items-center gap-3 md:gap-4 mx-auto max-w-[1008px]">

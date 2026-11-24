@@ -47,11 +47,11 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="flex flex-col items-center pt-2 sm:pt-3 md:pt-8 pb-0 gap-0 w-full"
+      className="flex flex-col items-center py-8 sm:py-12 md:py-16 gap-0 w-full"
     >
       {/* Header — responsive wrap layout */}
       <div
-        className="w-full px-4 lg:px-20 flex flex-wrap justify-between items-start gap-2.5 sm:gap-4 md:gap-8"
+        className="w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 flex flex-wrap justify-between items-start gap-2.5 sm:gap-4 md:gap-8"
       >
         <h2
           className="flex-[1_1_100%] lg:flex-[1_1_400px] font-normal uppercase m-0 font-bebas text-[clamp(40px,5vw,64px)] leading-[1.1] text-primary-black"
@@ -82,14 +82,14 @@ export default function HowItWorksSection() {
         />
       </motion.div>
 
-      {/* Step Cards */}
+      {/* Step Cards — 3 in a row */}
       <div
-        className="w-full px-4 lg:px-20 flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10"
+        className="w-full max-w-[1440px] px-4 sm:px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
       >
         {STEPS.map((step) => (
           <div
             key={step.number}
-            className="group flex-[1_1_100%] md:flex-[1_1_280px] min-w-[280px] pt-8 pb-8 px-5 rounded-xl flex flex-col gap-2 border border-solid border-white bg-primary-beige shadow-[inset_4px_4px_15px_rgba(0,0,0,0.04),inset_-6px_-6px_8px_rgba(255,255,255,1),0px_6px_40px_0px_rgba(219,220,220,0.18)] cursor-pointer hover:bg-primary-black hover:border-primary-black hover:shadow-none"
+            className="group w-full pt-8 pb-8 px-5 rounded-xl flex flex-col gap-2 border border-solid border-white bg-primary-beige shadow-[inset_4px_4px_15px_rgba(0,0,0,0.04),inset_-6px_-6px_8px_rgba(255,255,255,1),0px_6px_40px_0px_rgba(219,220,220,0.18)] cursor-pointer hover:bg-primary-black hover:border-primary-black hover:shadow-none"
           >
             {/* Title + Number Badge */}
             <div className="flex justify-between items-center gap-3">
